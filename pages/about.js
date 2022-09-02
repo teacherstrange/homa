@@ -19,10 +19,10 @@ export default function About() {
           initial="initial"
           animate="enter"
           exit="exit"
-          className="mb-12 md:mb-16 xl:mb-24"
+          className="pt-28 md:pt-24"
         >
           <Container>
-            <m.div variants={fade}>
+            <m.div>
               <h1 className="font-bold text-2xl md:text-3xl xl:text-4xl mb-4">About Page</h1>
               <div className="content max-w-3xl mb-4">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>

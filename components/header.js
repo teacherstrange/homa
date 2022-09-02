@@ -3,10 +3,10 @@ import Container from '@/components/container'
 
 export default function Header() {
   return (
-    <header className="py-4 bg-gray-200 mb-4 md:mb-6 xl:mb-8">
+    <header className="bg-gray-200 fixed top-0 left-0 right-0 w-full py-5 md:py-0 z-[1000]">
       <Container>
-        <div className="flex flex-wrap">
-          <FancyLink destination="/" a11yText="Navigate to the home page" label="Next x Tailwind x Motion" extraClasses="mb-1 md:mb-0" />
+        <div className="flex flex-wrap md:h-[80px] items-center">
+          <FancyLink destination="/" a11yText="Navigate to the home page" label="Homa" extraClasses="mb-1 md:mb-0" />
 
           <nav className="ml-auto flex space-x-3 w-full text-sm md:text-base md:w-auto">
             <FancyLink destination="/" a11yText="Navigate to the home page" label="Home" />
