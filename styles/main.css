@@ -16,3 +16,36 @@
 body {
   @apply font-sans antialiased text-black bg-white;
 }
+
+@screen lg {
+  .nav-has-child {
+    &:focus-within > .nav-child {
+      @apply block opacity-100;
+    }
+    
+    a {
+      &:hover, &:focus {
+        & + .nav-child {
+          @apply block opacity-100;
+        }
+      }
+    }
+  }
+  
+  .nav-child {
+    @apply hidden absolute top-0 left-0 right-0 opacity-0 p-6 border-b border-black/50 backdrop-blur-3xl bg-white bg-opacity-80 w-full;
+
+    &:after {
+      content: ' ';
+      @apply absolute top-0 left-0 bottom-[-1px] w-[100vw] translate-x-[-100vw] border-b border-black/50 backdrop-blur-3xl bg-white bg-opacity-80;
+    }
+
+    &:focus-within {
+      @apply block opacity-100;
+    }
+
+    &:hover {
+      @apply block opacity-100;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 /* Content Stylings */
 .content {
   & > p {
-    @apply mb-5 last-of-type:mb-0;
+    @apply mb-5 last-of-type:mb-0 md:text-xl md:leading-normal;
   }
 
   & > p > a {
@@ -20,4 +20,9 @@
 /* Heading Defaults */
 h1, .h1, h2, .h2, h3, .h3 {
   @apply p-0 mb-6 font-bold;
+}
+
+.display-text {
+  @apply font-black leading-none uppercase;
+  font-size: clamp(50px, 7.5vw, 150px);
 }
