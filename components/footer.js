@@ -154,7 +154,7 @@ export default function Footer() {
             <div className="w-full md:w-1/2 text-sm md:text-base mb-16 md:mb-0">
               <span className="block uppercase text-sm xl:text-base font-medium tracking-widest leading-none xl:leading-none mb-4 md:mb-6 xl:mb-10">For Developers &amp; Studios</span>
               
-              <ul className="w-full mb-10 md:mb-16 xl:mb-24">
+              <ul className="w-full mb-10 md:mb-16 xl:mb-24 flex flex-wrap md:block md:flex-none">
                 <li className="block mb-4 md:mb-6 xl:mb-10">
                   <a
                     href="https://discord.gg/homagames"
@@ -162,8 +162,8 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:opacity-75 focus:opacity-75 flex flex-wrap items-center"
                   >
-                    <span className="w-10 h-10 3xl:w-12 3xl:h-12 rounded-xl bg-[#E6C3E6]/10 mr-4"></span>
-                    <span className="block break-all">/homagames</span>
+                    <span className="w-14 h-14 md:w-10 md:h-10 3xl:w-12 3xl:h-12 rounded-xl bg-[#E6C3E6]/10 mr-4"></span>
+                    <span className="hidden md:block break-all">/homagames</span>
                   </a>
                 </li>
 
@@ -174,8 +174,8 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:opacity-75 focus:opacity-75 flex flex-wrap items-center"
                   >
-                    <span className="w-10 h-10 3xl:w-12 3xl:h-12 rounded-xl bg-[#E6C3E6]/10 mr-4"></span>
-                    <span className="block break-all">/homa-games</span>
+                    <span className="w-14 h-14 md:w-10 md:h-10 3xl:w-12 3xl:h-12 rounded-xl bg-[#E6C3E6]/10 mr-4"></span>
+                    <span className="hidden md:block break-all">/homa-games</span>
                   </a>
                 </li>
 
@@ -186,8 +186,8 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:opacity-75 focus:opacity-75 flex flex-wrap items-center"
                   >
-                    <span className="w-10 h-10 3xl:w-12 3xl:h-12 rounded-xl bg-[#E6C3E6]/10 mr-4"></span>
-                    <span className="block break-all">/homagames</span>
+                    <span className="w-14 h-14 md:w-10 md:h-10 3xl:w-12 3xl:h-12 rounded-xl bg-[#E6C3E6]/10 mr-4"></span>
+                    <span className="hidden md:block break-all">/homagames</span>
                   </a>
                 </li>
 
@@ -198,8 +198,8 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:opacity-75 focus:opacity-75 flex flex-wrap items-center"
                   >
-                    <span className="w-10 h-10 3xl:w-12 3xl:h-12 rounded-xl bg-[#E6C3E6]/10 mr-4"></span>
-                    <span className="block break-all">@homagames</span>
+                    <span className="w-14 h-14 md:w-10 md:h-10 3xl:w-12 3xl:h-12 rounded-xl bg-[#E6C3E6]/10 mr-4"></span>
+                    <span className="hidden md:block break-all">@homagames</span>
                   </a>
                 </li>
               </ul>
@@ -207,7 +207,7 @@ export default function Footer() {
 
               <span className="block uppercase text-sm xl:text-base font-medium tracking-widest leading-none xl:leading-none mb-4 md:mb-6 xl:mb-10">For Our Web3 Community</span>
               
-              <ul className="w-full mb-10 md:mb-16 xl:mb-24">
+              <ul className="w-full mb-10 md:mb-16 xl:mb-24 flex flex-wrap md:block md:flex-none">
                 <li className="block mb-4 md:mb-6 xl:mb-10">
                   <a
                     href="https://discord.gg/homagames"
@@ -215,8 +215,8 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:opacity-75 focus:opacity-75 flex flex-wrap items-center"
                   >
-                    <span className="w-10 h-10 3xl:w-12 3xl:h-12 rounded-xl bg-[#E6C3E6]/10 mr-4"></span>
-                    <span className="block break-all">/homagames</span>
+                    <span className="w-14 h-14 md:w-10 md:h-10 3xl:w-12 3xl:h-12 rounded-xl bg-[#E6C3E6]/10 mr-4"></span>
+                    <span className="hidden md:block break-all">/homagames</span>
                   </a>
                 </li>
 
@@ -227,15 +227,15 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:opacity-75 focus:opacity-75 flex flex-wrap items-center"
                   >
-                    <span className="w-10 h-10 3xl:w-12 3xl:h-12 rounded-xl bg-[#E6C3E6]/10 mr-4"></span>
-                    <span className="block break-all">@homagames</span>
+                    <span className="w-14 h-14 md:w-10 md:h-10 3xl:w-12 3xl:h-12 rounded-xl bg-[#E6C3E6]/10 mr-4"></span>
+                    <span className="hidden md:block break-all">@homagames</span>
                   </a>
                 </li>
               </ul>
 
               <span className="block uppercase text-sm xl:text-base font-medium tracking-widest leading-none xl:leading-none mb-4 md:mb-6 xl:mb-10">For The Fans</span>
               
-              <ul className="w-full">
+              <ul className="w-full flex flex-wrap md:block md:flex-none">
                 <li className="block mb-4 md:mb-6 xl:mb-10">
                   <a
                     href="https://discord.gg/homagames"
@@ -243,8 +243,8 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:opacity-75 focus:opacity-75 flex flex-wrap items-center"
                   >
-                    <span className="w-10 h-10 3xl:w-12 3xl:h-12 rounded-xl bg-[#E6C3E6]/10 mr-4"></span>
-                    <span className="block break-all">@homagames</span>
+                    <span className="w-14 h-14 md:w-10 md:h-10 3xl:w-12 3xl:h-12 rounded-xl bg-[#E6C3E6]/10 mr-4"></span>
+                    <span className="hidden md:block break-all">@homagames</span>
                   </a>
                 </li>
               </ul>
