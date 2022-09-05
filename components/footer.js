@@ -162,7 +162,9 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:opacity-75 focus:opacity-75 flex flex-wrap items-center"
                   >
-                    <span className="w-14 h-14 md:w-10 md:h-10 3xl:w-12 3xl:h-12 rounded-xl bg-[#E6C3E6]/10 mr-4"></span>
+                    <span className="w-14 h-14 md:w-10 md:h-10 3xl:w-12 3xl:h-12 rounded-xl bg-[#E6C3E6]/10 mr-4 flex items-center justify-center">
+                      <svg className="w-[56.5%] text-[#E6C3E6]" viewBox="0 0 28 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23.477 2.291A22.243 22.243 0 0 0 17.935.573a.08.08 0 0 0-.088.042c-.254.46-.485.932-.69 1.415a20.651 20.651 0 0 0-6.225 0A13.84 13.84 0 0 0 10.23.615a.08.08 0 0 0-.088-.042 22.332 22.332 0 0 0-5.564 1.73.061.061 0 0 0-.016.019C1.034 7.595.068 12.738.54 17.819c.004.026.018.05.039.065a22.628 22.628 0 0 0 6.795 3.452.089.089 0 0 0 .096-.03c.528-.72.995-1.482 1.396-2.279a.085.085 0 0 0-.046-.119 15.427 15.427 0 0 1-2.125-1.012.088.088 0 0 1 0-.146l.422-.33a.077.077 0 0 1 .089 0 16.107 16.107 0 0 0 13.683 0 .08.08 0 0 1 .088 0c.138.115.28.227.422.334a.088.088 0 0 1 0 .146c-.679.395-1.39.732-2.125 1.008a.09.09 0 0 0-.048.052.093.093 0 0 0 .002.071c.41.787.875 1.543 1.393 2.263a.088.088 0 0 0 .095.03 22.53 22.53 0 0 0 6.808-3.451.077.077 0 0 0 .034-.065A22.849 22.849 0 0 0 23.5 2.306a.06.06 0 0 0-.023-.015ZM9.529 14.728c-1.343 0-2.447-1.235-2.447-2.746 0-1.51 1.081-2.75 2.447-2.75 1.365 0 2.466 1.243 2.446 2.747-.019 1.503-1.085 2.75-2.446 2.75Zm9.047 0c-1.343 0-2.447-1.235-2.447-2.746 0-1.51 1.081-2.75 2.447-2.75 1.365 0 2.465 1.243 2.446 2.747-.019 1.503-1.073 2.75-2.446 2.75Z" fill="currentColor"/></svg>
+                    </span>
                     <span className="hidden md:block break-all">/homagames</span>
                   </a>
                 </li>
@@ -174,7 +176,9 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:opacity-75 focus:opacity-75 flex flex-wrap items-center"
                   >
-                    <span className="w-14 h-14 md:w-10 md:h-10 3xl:w-12 3xl:h-12 rounded-xl bg-[#E6C3E6]/10 mr-4"></span>
+                    <span className="w-14 h-14 md:w-10 md:h-10 3xl:w-12 3xl:h-12 rounded-xl bg-[#E6C3E6]/10 mr-4 flex items-center justify-center">
+                      <svg className="w-[45%] text-[#E6C3E6]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.4 24H.3V7.95h5.1V24ZM2.85 5.7C1.2 5.7 0 4.5 0 2.85 0 1.2 1.35 0 2.85 0 4.5 0 5.7 1.2 5.7 2.85 5.7 4.5 4.5 5.7 2.85 5.7ZM24 24h-5.1v-8.7c0-2.55-1.05-3.3-2.55-3.3-1.5 0-3 1.2-3 3.45V24h-5.1V7.95h4.8v2.25c.45-1.05 2.25-2.7 4.8-2.7 2.85 0 5.85 1.65 5.85 6.6V24h.3Z" fill="currentColor"/></svg>
+                    </span>
                     <span className="hidden md:block break-all">/homa-games</span>
                   </a>
                 </li>
@@ -186,7 +190,9 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:opacity-75 focus:opacity-75 flex flex-wrap items-center"
                   >
-                    <span className="w-14 h-14 md:w-10 md:h-10 3xl:w-12 3xl:h-12 rounded-xl bg-[#E6C3E6]/10 mr-4"></span>
+                    <span className="w-14 h-14 md:w-10 md:h-10 3xl:w-12 3xl:h-12 rounded-xl bg-[#E6C3E6]/10 mr-4 flex items-center justify-center">
+                      <svg className="w-[50%] text-[#E6C3E6]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 12c0-6.6-5.4-12-12-12S0 5.4 0 12c0 6 4.35 10.95 10.05 11.85v-8.4h-3V12h3V9.3c0-3 1.8-4.65 4.5-4.65 1.35 0 2.7.3 2.7.3v3h-1.5c-1.5 0-1.95.9-1.95 1.8V12h3.3l-.6 3.45h-2.85V24c6-.9 10.35-6 10.35-12Z" fill="currentColor"/></svg>
+                    </span>
                     <span className="hidden md:block break-all">/homagames</span>
                   </a>
                 </li>
@@ -198,7 +204,9 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:opacity-75 focus:opacity-75 flex flex-wrap items-center"
                   >
-                    <span className="w-14 h-14 md:w-10 md:h-10 3xl:w-12 3xl:h-12 rounded-xl bg-[#E6C3E6]/10 mr-4"></span>
+                    <span className="w-14 h-14 md:w-10 md:h-10 3xl:w-12 3xl:h-12 rounded-xl bg-[#E6C3E6]/10 mr-4 flex items-center justify-center">
+                      <svg className="w-[50%] text-[#E6C3E6]" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.997 2.805h5.1c1.2 0 1.8.3 2.25.45.6.3 1.05.45 1.5.9.45.45.75.9.9 1.5.15.45.3 1.05.45 2.25v10.2c0 1.2-.3 1.8-.45 2.25-.3.6-.45 1.05-.9 1.5-.45.45-.9.75-1.5.9-.45.15-1.05.3-2.25.45h-10.2c-1.2 0-1.8-.3-2.25-.45-.6-.3-1.05-.45-1.5-.9-.45-.45-.75-.9-.9-1.5-.15-.45-.3-1.05-.45-2.25v-10.2c0-1.2.3-1.8.45-2.25.3-.6.45-1.05.9-1.5.45-.45.9-.75 1.5-.9.45-.15 1.05-.3 2.25-.45h5.1Zm0-2.25h-5.1c-1.35 0-2.25.3-3 .6s-1.5.75-2.25 1.5-1.05 1.35-1.5 2.25c-.3.75-.45 1.65-.6 3v10.2c0 1.35.3 2.25.6 3s.75 1.5 1.5 2.25 1.35 1.05 2.25 1.5c.75.3 1.65.45 3 .6h10.2c1.35 0 2.25-.3 3-.6s1.5-.75 2.25-1.5 1.05-1.35 1.5-2.25c.3-.75.45-1.65.6-3v-10.2c0-1.35-.3-2.25-.6-3s-.75-1.5-1.5-2.25-1.35-1.05-2.25-1.5c-.75-.3-1.65-.45-3-.6h-5.1Z" fill="currentColor"/><path d="M12.997 6.555c-3.6 0-6.45 2.85-6.45 6.45s2.85 6.45 6.45 6.45 6.45-2.85 6.45-6.45-2.85-6.45-6.45-6.45Zm0 10.65c-2.25 0-4.2-1.8-4.2-4.2 0-2.25 1.8-4.2 4.2-4.2 2.25 0 4.2 1.8 4.2 4.2 0 2.25-1.95 4.2-4.2 4.2ZM19.597 7.905a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" fill="currentColor"/></svg>
+                    </span>
                     <span className="hidden md:block break-all">@homagames</span>
                   </a>
                 </li>
@@ -210,13 +218,15 @@ export default function Footer() {
               <ul className="w-full mb-10 md:mb-16 xl:mb-24 flex flex-wrap md:block md:flex-none">
                 <li className="block mb-4 md:mb-6 xl:mb-10">
                   <a
-                    href="https://discord.gg/homagames"
+                    href="https://discord.gg/homagang"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:opacity-75 focus:opacity-75 flex flex-wrap items-center"
                   >
-                    <span className="w-14 h-14 md:w-10 md:h-10 3xl:w-12 3xl:h-12 rounded-xl bg-[#E6C3E6]/10 mr-4"></span>
-                    <span className="hidden md:block break-all">/homagames</span>
+                    <span className="w-14 h-14 md:w-10 md:h-10 3xl:w-12 3xl:h-12 rounded-xl bg-[#E6C3E6]/10 mr-4 flex items-center justify-center">
+                      <svg className="w-[56.5%] text-[#E6C3E6]" viewBox="0 0 28 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23.477 2.291A22.243 22.243 0 0 0 17.935.573a.08.08 0 0 0-.088.042c-.254.46-.485.932-.69 1.415a20.651 20.651 0 0 0-6.225 0A13.84 13.84 0 0 0 10.23.615a.08.08 0 0 0-.088-.042 22.332 22.332 0 0 0-5.564 1.73.061.061 0 0 0-.016.019C1.034 7.595.068 12.738.54 17.819c.004.026.018.05.039.065a22.628 22.628 0 0 0 6.795 3.452.089.089 0 0 0 .096-.03c.528-.72.995-1.482 1.396-2.279a.085.085 0 0 0-.046-.119 15.427 15.427 0 0 1-2.125-1.012.088.088 0 0 1 0-.146l.422-.33a.077.077 0 0 1 .089 0 16.107 16.107 0 0 0 13.683 0 .08.08 0 0 1 .088 0c.138.115.28.227.422.334a.088.088 0 0 1 0 .146c-.679.395-1.39.732-2.125 1.008a.09.09 0 0 0-.048.052.093.093 0 0 0 .002.071c.41.787.875 1.543 1.393 2.263a.088.088 0 0 0 .095.03 22.53 22.53 0 0 0 6.808-3.451.077.077 0 0 0 .034-.065A22.849 22.849 0 0 0 23.5 2.306a.06.06 0 0 0-.023-.015ZM9.529 14.728c-1.343 0-2.447-1.235-2.447-2.746 0-1.51 1.081-2.75 2.447-2.75 1.365 0 2.466 1.243 2.446 2.747-.019 1.503-1.085 2.75-2.446 2.75Zm9.047 0c-1.343 0-2.447-1.235-2.447-2.746 0-1.51 1.081-2.75 2.447-2.75 1.365 0 2.465 1.243 2.446 2.747-.019 1.503-1.073 2.75-2.446 2.75Z" fill="currentColor"/></svg>
+                    </span>
+                    <span className="hidden md:block break-all">/homagang</span>
                   </a>
                 </li>
 
@@ -227,7 +237,9 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:opacity-75 focus:opacity-75 flex flex-wrap items-center"
                   >
-                    <span className="w-14 h-14 md:w-10 md:h-10 3xl:w-12 3xl:h-12 rounded-xl bg-[#E6C3E6]/10 mr-4"></span>
+                    <span className="w-14 h-14 md:w-10 md:h-10 3xl:w-12 3xl:h-12 rounded-xl bg-[#E6C3E6]/10 mr-4 flex items-center justify-center">
+                      <svg className="w-[53%] text-[#E6C3E6]" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 2.5c-.9.45-1.8.6-2.85.75 1.05-.6 1.8-1.5 2.1-2.7-.9.6-1.95.9-3.15 1.2-.9-.9-2.25-1.5-3.6-1.5-3.15 0-5.55 3-4.8 6-4.05-.15-7.65-2.1-10.2-5.1C.15 3.4.9 6.25 3 7.75c-.75 0-1.5-.3-2.25-.6 0 2.25 1.65 4.35 3.9 4.95-.75.15-1.5.3-2.25.15.6 1.95 2.4 3.45 4.65 3.45-1.8 1.35-4.5 2.1-7.05 1.8 2.25 1.35 4.8 2.25 7.5 2.25 9.15 0 14.25-7.65 13.95-14.7 1.05-.6 1.95-1.5 2.55-2.55Z" fill="currentColor"/></svg>
+                    </span>
                     <span className="hidden md:block break-all">@homagames</span>
                   </a>
                 </li>
@@ -243,7 +255,9 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:opacity-75 focus:opacity-75 flex flex-wrap items-center"
                   >
-                    <span className="w-14 h-14 md:w-10 md:h-10 3xl:w-12 3xl:h-12 rounded-xl bg-[#E6C3E6]/10 mr-4"></span>
+                    <span className="w-14 h-14 md:w-10 md:h-10 3xl:w-12 3xl:h-12 rounded-xl bg-[#E6C3E6]/10 mr-4 flex items-center justify-center">
+                      <svg className="w-[42%] text-[#E6C3E6]" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" clipRule="evenodd" d="M15.677 0c0 .357.034.708.095 1.048a5.763 5.763 0 0 0 2.517 3.76c.902.592 1.97.932 3.123.932v4.123a9.807 9.807 0 0 1-5.735-1.844v8.386C15.677 20.59 12.27 24 8.09 24a7.556 7.556 0 0 1-4.349-1.377A7.588 7.588 0 0 1 .5 16.405c0-4.19 3.402-7.595 7.583-7.59.35 0 .69.028 1.025.073v.975l-.013.006h.013V13.1a3.457 3.457 0 0 0-1.025-.162 3.468 3.468 0 0 0-3.463 3.466c0 1.332.757 2.485 1.86 3.07.016.023.032.045.05.067a.594.594 0 0 0-.045-.072c.485.256 1.03.4 1.61.4a3.468 3.468 0 0 0 3.457-3.337L11.557 0h4.12Z" fill="currentColor"/><path fillRule="evenodd" clipRule="evenodd" d="M15.677 0c0 .357.034.708.095 1.048a5.763 5.763 0 0 0 2.517 3.76c.902.592 1.97.932 3.123.932v4.123a9.807 9.807 0 0 1-5.735-1.844v8.386C15.677 20.59 12.27 24 8.09 24a7.556 7.556 0 0 1-4.349-1.377A7.588 7.588 0 0 1 .5 16.405c0-4.19 3.402-7.595 7.583-7.59.35 0 .69.028 1.025.073v.975l-.013.006h.013V13.1a3.457 3.457 0 0 0-1.025-.162 3.468 3.468 0 0 0-3.463 3.466c0 1.332.757 2.485 1.86 3.07.016.023.032.045.05.067a.594.594 0 0 0-.045-.072c.485.256 1.03.4 1.61.4a3.468 3.468 0 0 0 3.457-3.337L11.557 0h4.12Z" fill="currentColor"/></svg>
+                    </span>
                     <span className="hidden md:block break-all">@homagames</span>
                   </a>
                 </li>
