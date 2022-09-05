@@ -36,8 +36,8 @@ export default function Footer() {
         <div className="col-span-5 md:col-span-6 xl:col-span-5 2xl:col-span-4 md:col-start-7 xl:col-start-8 2xl:col-start-9">
           <div className="flex flex-wrap">
             <nav className="w-full md:w-1/2 text-sm md:text-base mb-16 md:mb-0">
-              <ul className="w-full">
-                <li className="block mb-4 md:mb-6 xl:mb-10">
+              <ul className="w-full flex flex-wrap md:block md:flex-none">
+                <li className="w-1/2 md:w-full block mb-4 md:mb-6 xl:mb-10">
                   <FancyLink
                     destination="/homa-lab"
                     a11yText="Navigate to the homa lab page"
@@ -46,7 +46,7 @@ export default function Footer() {
                   />
                 </li>
 
-                <li className="block mb-4 md:mb-6 xl:mb-10">
+                <li className="w-1/2 md:w-full block mb-4 md:mb-6 xl:mb-10">
                   <FancyLink
                     destination="/homa-lab"
                     a11yText="Navigate to the homa lab page"
@@ -55,7 +55,7 @@ export default function Footer() {
                   />
                 </li>
 
-                <li className="block mb-4 md:mb-6 xl:mb-10">
+                <li className="w-1/2 md:w-full block mb-4 md:mb-6 xl:mb-10">
                   <FancyLink
                     destination="/homa-lab"
                     a11yText="Navigate to the homa lab page"
@@ -64,7 +64,7 @@ export default function Footer() {
                   />
                 </li>
 
-                <li className="block mb-4 md:mb-6 xl:mb-10">
+                <li className="w-1/2 md:w-full block mb-4 md:mb-6 xl:mb-10">
                   <FancyLink
                     destination="/homa-lab"
                     a11yText="Navigate to the homa lab page"
@@ -73,7 +73,7 @@ export default function Footer() {
                   />
                 </li>
 
-                <li className="block mb-4 md:mb-6 xl:mb-10">
+                <li className="w-1/2 md:w-full block mb-4 md:mb-6 xl:mb-10">
                   <FancyLink
                     destination="/homa-lab"
                     a11yText="Navigate to the homa lab page"
@@ -82,7 +82,7 @@ export default function Footer() {
                   />
                 </li>
 
-                <li className="block mb-4 md:mb-6 xl:mb-10">
+                <li className="w-1/2 md:w-full block mb-4 md:mb-6 xl:mb-10">
                   <FancyLink
                     destination="/homa-lab"
                     a11yText="Navigate to the homa lab page"
@@ -91,7 +91,7 @@ export default function Footer() {
                   />
                 </li>
 
-                <li className="block mb-4 md:mb-16 xl:mb-24">
+                <li className="w-1/2 md:w-full block mb-4 md:mb-16 xl:mb-24">
                   <FancyLink
                     destination="/homa-lab"
                     a11yText="Navigate to the homa lab page"
@@ -100,16 +100,7 @@ export default function Footer() {
                   />
                 </li>
 
-
-                <li className="block mb-4 md:mb-6 xl:mb-10">
-                  <FancyLink
-                    destination="/"
-                    a11yText="Navigate to the home page"
-                    label="Home"
-                    className="uppercase text-sm xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:opacity-75 focus:opacity-75"
-                  />
-                </li>
-                <li className="block mb-4 md:mb-6 xl:mb-10">
+                <li className="w-1/2 md:w-full block mb-4 md:mb-6 xl:mb-10">
                   <FancyLink
                     destination="/games"
                     a11yText="Navigate to the games page"
@@ -117,7 +108,7 @@ export default function Footer() {
                     className="uppercase text-sm xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:opacity-75 focus:opacity-75"
                   />
                 </li>
-                <li className="block mb-4 md:mb-6 xl:mb-10">
+                <li className="w-1/2 md:w-full block mb-4 md:mb-6 xl:mb-10">
                   <FancyLink
                     destination="/homa-lab"
                     a11yText="Navigate to the homa lab page"
@@ -125,7 +116,7 @@ export default function Footer() {
                     className="uppercase text-sm xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:opacity-75 focus:opacity-75"
                   />
                 </li>
-                <li className="block mb-4 md:mb-6 xl:mb-10">
+                <li className="w-1/2 md:w-full block mb-4 md:mb-6 xl:mb-10">
                   <FancyLink
                     destination="/community"
                     a11yText="Navigate to the community page"
@@ -133,7 +124,7 @@ export default function Footer() {
                     className="uppercase text-sm xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:opacity-75 focus:opacity-75"
                   />
                 </li>
-                <li className="block mb-4 md:mb-6 xl:mb-10">
+                <li className="w-1/2 md:w-full block mb-4 md:mb-6 xl:mb-10">
                   <FancyLink
                     destination="/about"
                     a11yText="Navigate to the about page"
@@ -141,7 +132,7 @@ export default function Footer() {
                     className="uppercase text-sm xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:opacity-75 focus:opacity-75"
                   />
                 </li>
-                <li className="block mb-4 md:mb-6 xl:mb-10">
+                <li className="w-1/2 md:w-full block mb-4 md:mb-6 xl:mb-10">
                   <FancyLink
                     destination="/careers"
                     a11yText="Navigate to the careers page"
@@ -149,7 +140,7 @@ export default function Footer() {
                     className="uppercase text-sm xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:opacity-75 focus:opacity-75"
                   />
                 </li>
-                <li className="block">
+                <li className="w-1/2 md:w-full block">
                   <FancyLink
                     destination="/blog"
                     a11yText="Navigate to the blog page"
