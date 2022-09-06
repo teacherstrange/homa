@@ -25,6 +25,12 @@ export default function Header() {
     }
   }
 
+  const menuClose = () => {
+    setMobileMenuOpen(false)
+    setMobileChildMenuOpen(false)
+    clearAllBodyScrollLocks()
+  }
+
   return (
     <div className="fixed top-0 left-0 right-0 w-full z-[1000]">
       <header className="pl-6 xl:pl-10 bg-white bg-opacity-50 backdrop-blur-xl border-b border-black/50">
@@ -178,7 +184,7 @@ export default function Header() {
               onClick={menuToggle}
               className="uppercase font-medium tracking-widest h-[60px] items-center justify-center text-base w-full flex border-l border-black/50 lg:hidden"
             >
-              Menu
+              {mobileMenuOpen ? 'Close' : 'Menu'}
             </button>
           </nav>
         </div>
@@ -191,8 +197,8 @@ export default function Header() {
             <nav className="ml-auto w-full">
               <ul className="w-full">
                 <li className="block mb-3">
-                  <Link href="/" onClick={() => setMobileMenuOpen(false)}>
-                    <a className="block border-black border px-6 py-5 uppercase text-base leading-none relative">
+                  <Link href="/">
+                    <a className="block border-black border px-6 py-5 uppercase text-base leading-none relative" onClick={menuClose}>
                       Home
                       
                       <div className="absolute top-0 right-0 bottom-0 w-[60px] border-l border-black flex items-center justify-center">
@@ -203,8 +209,8 @@ export default function Header() {
                 </li>
 
                 <li className="block mb-3">
-                  <Link href="/games" onClick={() => setMobileMenuOpen(false)}>
-                    <a className="block border-black border px-6 py-5 uppercase text-base leading-none relative">
+                  <Link href="/games">
+                    <a className="block border-black border px-6 py-5 uppercase text-base leading-none relative" onClick={menuClose}>
                       Games
                       
                       <div className="absolute top-0 right-0 bottom-0 w-[60px] border-l border-black flex items-center justify-center">
@@ -227,50 +233,50 @@ export default function Header() {
                   { mobileChildMenuOpen && (
                     <ul className="border-t-0 border-black border">
                       <li className="block">
-                        <Link href="/homa-lab" onClick={() => setMobileMenuOpen(false)}>
-                          <a className="block px-6 py-5 uppercase text-base leading-none relative">
+                        <Link href="/homa-lab">
+                          <a className="block px-6 py-5 uppercase text-base leading-none relative" onClick={menuClose}>
                             Overview
                           </a>
                         </Link>
                       </li>
                       <li className="block">
-                        <Link href="/homa-lab/slug" onClick={() => setMobileMenuOpen(false)}>
-                          <a className="block px-6 py-5 uppercase text-base leading-none relative">
+                        <Link href="/homa-lab/slug">
+                          <a className="block px-6 py-5 uppercase text-base leading-none relative" onClick={menuClose}>
                             Ideas
                           </a>
                         </Link>
                       </li>
                       <li className="block">
-                        <Link href="/homa-lab/slug" onClick={() => setMobileMenuOpen(false)}>
-                          <a className="block px-6 py-5 uppercase text-base leading-none relative">
+                        <Link href="/homa-lab/slug">
+                          <a className="block px-6 py-5 uppercase text-base leading-none relative" onClick={menuClose}>
                             Market Watchers
                           </a>
                         </Link>
                       </li>
                       <li className="block">
-                        <Link href="/homa-lab/slug" onClick={() => setMobileMenuOpen(false)}>
-                          <a className="block px-6 py-5 uppercase text-base leading-none relative">
+                        <Link href="/homa-lab/slug">
+                          <a className="block px-6 py-5 uppercase text-base leading-none relative" onClick={menuClose}>
                             Homa SDK
                           </a>
                         </Link>
                       </li>
                       <li className="block">
-                        <Link href="/homa-lab/slug" onClick={() => setMobileMenuOpen(false)}>
-                          <a className="block px-6 py-5 uppercase text-base leading-none relative">
+                        <Link href="/homa-lab/slug">
+                          <a className="block px-6 py-5 uppercase text-base leading-none relative" onClick={menuClose}>
                             Dev Tools
                           </a>
                         </Link>
                       </li>
                       <li className="block">
-                        <Link href="/homa-lab/slug" onClick={() => setMobileMenuOpen(false)}>
-                          <a className="block px-6 py-5 uppercase text-base leading-none relative">
+                        <Link href="/homa-lab/slug">
+                          <a className="block px-6 py-5 uppercase text-base leading-none relative" onClick={menuClose}>
                             Data Analytics
                           </a>
                         </Link>
                       </li>
                       <li className="block">
-                        <Link href="/homa-lab/slug" onClick={() => setMobileMenuOpen(false)}>
-                          <a className="block px-6 py-5 uppercase text-base leading-none relative">
+                        <Link href="/homa-lab/slug">
+                          <a className="block px-6 py-5 uppercase text-base leading-none relative" onClick={menuClose}>
                             Academy
                           </a>
                         </Link>
@@ -280,8 +286,8 @@ export default function Header() {
                 </li>
                 
                 <li className="block mb-3">
-                  <Link href="/community" onClick={() => setMobileMenuOpen(false)}>
-                    <a className="block border-black border px-6 py-5 uppercase text-base leading-none relative">
+                  <Link href="/community">
+                    <a className="block border-black border px-6 py-5 uppercase text-base leading-none relative" onClick={menuClose}>
                       Community
                       
                       <div className="absolute top-0 right-0 bottom-0 w-[60px] border-l border-black flex items-center justify-center">
@@ -292,8 +298,8 @@ export default function Header() {
                 </li>
 
                 <li className="block mb-3">
-                  <Link href="/about" onClick={() => setMobileMenuOpen(false)}>
-                    <a className="block border-black border px-6 py-5 uppercase text-base leading-none relative">
+                  <Link href="/about">
+                    <a className="block border-black border px-6 py-5 uppercase text-base leading-none relative" onClick={menuClose}>
                       About
                       
                       <div className="absolute top-0 right-0 bottom-0 w-[60px] border-l border-black flex items-center justify-center">
@@ -304,8 +310,8 @@ export default function Header() {
                 </li>
 
                 <li className="block mb-3">
-                  <Link href="/careers" onClick={() => setMobileMenuOpen(false)}>
-                    <a className="block border-black border px-6 py-5 uppercase text-base leading-none relative">
+                  <Link href="/careers">
+                    <a className="block border-black border px-6 py-5 uppercase text-base leading-none relative" onClick={menuClose}>
                       Careers
                       
                       <div className="absolute top-0 right-0 bottom-0 w-[60px] border-l border-black flex items-center justify-center">
@@ -316,8 +322,8 @@ export default function Header() {
                 </li>
 
                 <li className="block mb-3">
-                  <Link href="/blog" onClick={() => setMobileMenuOpen(false)}>
-                    <a className="block border-black border px-6 py-5 uppercase text-base leading-none relative">
+                  <Link href="/blog">
+                    <a className="block border-black border px-6 py-5 uppercase text-base leading-none relative" onClick={menuClose}>
                       Blog
                       
                       <div className="absolute top-0 right-0 bottom-0 w-[60px] border-l border-black flex items-center justify-center">
@@ -328,8 +334,8 @@ export default function Header() {
                 </li>
 
                 <li className="block mb-3">
-                  <Link href="/homa-lab" onClick={() => setMobileMenuOpen(false)}>
-                    <a className="block bg-black text-white px-6 py-5 uppercase text-base leading-none relative">
+                  <Link href="/homa-lab">
+                    <a className="block bg-black text-white px-6 py-5 uppercase text-base leading-none relative" onClick={menuClose}>
                       Enter The Homa Lab
                       
                       <div className="absolute top-0 right-0 bottom-0 w-[60px] border-l border-white/50 flex items-center justify-center">
