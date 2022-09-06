@@ -1,9 +1,13 @@
-import FancyLink from '@/components/fancyLink'
-import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
-import Div100vh from 'react-div-100vh'
-import { useRouter } from 'next/router'
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react"
+
+import FancyLink from "@/components/fancyLink"
+import MobileMenu from "@/components/mobile-menu"
+
+import HomaLogoMarkIcon from "@/icons/homa-logo-mark.svg"
+
+import { useRouter } from "next/router"
+import Link from "next/link"
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from "body-scroll-lock"
 
 export default function Header() {
   const router = useRouter()
@@ -37,7 +41,7 @@ export default function Header() {
         <div className="flex flex-wrap items-start">
           <Link href="/">
             <a className="w-[100px] lg:w-[110px] xl:w-[125px] 2xl:w-[160px] flex items-center h-[60px] lg:h-[70px] xl:h-[80px]">
-              <svg className="w-full" viewBox="0 0 200 47" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M102.189 46.715h12.653V12.652h4.379v34.063h12.652V12.652h4.38v34.063h12.652V0h-46.716v46.715ZM51.096 46.715H97.81V0H51.096v46.715Zm12.652-34.063h21.411v21.411H63.748v-21.41ZM153.285 0v46.715h12.652V36.01h21.411v10.705h12.653V0h-46.716Zm34.063 23.358h-21.411V12.652h21.411v10.706ZM34.063 17.032h-21.41V0H0v46.715h12.652V29.684h21.411v17.031h12.652V0H34.063v17.032Z" fill="currentColor"/></svg>
+              <HomaLogoMarkIcon className="w-full" />
             </a>
           </Link>
 
@@ -191,163 +195,11 @@ export default function Header() {
       </header>
 
       {mobileMenuOpen && (
-        <Div100vh className="w-full flex bg-white bg-opacity-50 backdrop-blur-xl lg:hidden">
-          <div className="w-full h-full overflow-scroll p-6 pb-16">
-            {/* Mobile Navigation */}
-            <nav className="ml-auto w-full">
-              <ul className="w-full">
-                <li className="block mb-3">
-                  <Link href="/">
-                    <a className="block border-black border px-6 py-5 uppercase text-base leading-none relative" onClick={menuClose}>
-                      Home
-                      
-                      <div className="absolute top-0 right-0 bottom-0 w-[60px] border-l border-black flex items-center justify-center">
-                        <svg className="w-[20px]" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m10 1 10 10-10 10M0 11h20" stroke="currentColor" stroke-miterlimit="10"/></svg>
-                      </div>
-                    </a>
-                  </Link>
-                </li>
-
-                <li className="block mb-3">
-                  <Link href="/games">
-                    <a className="block border-black border px-6 py-5 uppercase text-base leading-none relative" onClick={menuClose}>
-                      Games
-                      
-                      <div className="absolute top-0 right-0 bottom-0 w-[60px] border-l border-black flex items-center justify-center">
-                        <svg className="w-[20px]" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m10 1 10 10-10 10M0 11h20" stroke="currentColor" stroke-miterlimit="10"/></svg>
-                      </div>
-                    </a>
-                  </Link>
-                </li>
-                
-                {/* Homa Lab */}
-                <li className="block mb-3 nav-has-child">
-                  <button onClick={() => setMobileChildMenuOpen(!mobileChildMenuOpen)} className="block w-full text-left border-black border px-6 py-5 uppercase text-base leading-none relative">
-                    Homa Lab
-                    
-                    <div className="absolute top-0 right-0 bottom-0 w-[60px] border-l border-black flex items-center justify-center">
-                      <svg className="w-[20px] rotate-90" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m10 1 10 10-10 10M0 11h20" stroke="currentColor" stroke-miterlimit="10"/></svg>
-                    </div>
-                  </button>
-
-                  { mobileChildMenuOpen && (
-                    <ul className="border-t-0 border-black border">
-                      <li className="block">
-                        <Link href="/homa-lab">
-                          <a className="block px-6 py-5 uppercase text-base leading-none relative" onClick={menuClose}>
-                            Overview
-                          </a>
-                        </Link>
-                      </li>
-                      <li className="block">
-                        <Link href="/homa-lab/slug">
-                          <a className="block px-6 py-5 uppercase text-base leading-none relative" onClick={menuClose}>
-                            Ideas
-                          </a>
-                        </Link>
-                      </li>
-                      <li className="block">
-                        <Link href="/homa-lab/slug">
-                          <a className="block px-6 py-5 uppercase text-base leading-none relative" onClick={menuClose}>
-                            Market Watchers
-                          </a>
-                        </Link>
-                      </li>
-                      <li className="block">
-                        <Link href="/homa-lab/slug">
-                          <a className="block px-6 py-5 uppercase text-base leading-none relative" onClick={menuClose}>
-                            Homa SDK
-                          </a>
-                        </Link>
-                      </li>
-                      <li className="block">
-                        <Link href="/homa-lab/slug">
-                          <a className="block px-6 py-5 uppercase text-base leading-none relative" onClick={menuClose}>
-                            Dev Tools
-                          </a>
-                        </Link>
-                      </li>
-                      <li className="block">
-                        <Link href="/homa-lab/slug">
-                          <a className="block px-6 py-5 uppercase text-base leading-none relative" onClick={menuClose}>
-                            Data Analytics
-                          </a>
-                        </Link>
-                      </li>
-                      <li className="block">
-                        <Link href="/homa-lab/slug">
-                          <a className="block px-6 py-5 uppercase text-base leading-none relative" onClick={menuClose}>
-                            Academy
-                          </a>
-                        </Link>
-                      </li>
-                    </ul>
-                  )}
-                </li>
-                
-                <li className="block mb-3">
-                  <Link href="/community">
-                    <a className="block border-black border px-6 py-5 uppercase text-base leading-none relative" onClick={menuClose}>
-                      Community
-                      
-                      <div className="absolute top-0 right-0 bottom-0 w-[60px] border-l border-black flex items-center justify-center">
-                        <svg className="w-[20px]" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m10 1 10 10-10 10M0 11h20" stroke="currentColor" stroke-miterlimit="10"/></svg>
-                      </div>
-                    </a>
-                  </Link>
-                </li>
-
-                <li className="block mb-3">
-                  <Link href="/about">
-                    <a className="block border-black border px-6 py-5 uppercase text-base leading-none relative" onClick={menuClose}>
-                      About
-                      
-                      <div className="absolute top-0 right-0 bottom-0 w-[60px] border-l border-black flex items-center justify-center">
-                        <svg className="w-[20px]" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m10 1 10 10-10 10M0 11h20" stroke="currentColor" stroke-miterlimit="10"/></svg>
-                      </div>
-                    </a>
-                  </Link>
-                </li>
-
-                <li className="block mb-3">
-                  <Link href="/careers">
-                    <a className="block border-black border px-6 py-5 uppercase text-base leading-none relative" onClick={menuClose}>
-                      Careers
-                      
-                      <div className="absolute top-0 right-0 bottom-0 w-[60px] border-l border-black flex items-center justify-center">
-                        <svg className="w-[20px]" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m10 1 10 10-10 10M0 11h20" stroke="currentColor" stroke-miterlimit="10"/></svg>
-                      </div>
-                    </a>
-                  </Link>
-                </li>
-
-                <li className="block mb-3">
-                  <Link href="/blog">
-                    <a className="block border-black border px-6 py-5 uppercase text-base leading-none relative" onClick={menuClose}>
-                      Blog
-                      
-                      <div className="absolute top-0 right-0 bottom-0 w-[60px] border-l border-black flex items-center justify-center">
-                        <svg className="w-[20px]" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m10 1 10 10-10 10M0 11h20" stroke="currentColor" stroke-miterlimit="10"/></svg>
-                      </div>
-                    </a>
-                  </Link>
-                </li>
-
-                <li className="block mb-3">
-                  <Link href="/homa-lab">
-                    <a className="block bg-black text-white px-6 py-5 uppercase text-base leading-none relative" onClick={menuClose}>
-                      Enter The Homa Lab
-                      
-                      <div className="absolute top-0 right-0 bottom-0 w-[60px] border-l border-white/50 flex items-center justify-center">
-                        <svg className="w-[20px]" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m10 1 10 10-10 10M0 11h20" stroke="currentColor" stroke-miterlimit="10"/></svg>
-                      </div>
-                    </a>
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </Div100vh>
+        <MobileMenu
+          menuClose={menuClose}
+          setMobileChildMenuOpen={setMobileChildMenuOpen}
+          mobileChildMenuOpen={mobileChildMenuOpen}
+        />
       )}
     </div>
   )

@@ -1,7 +1,7 @@
-import Img from 'next/image'
-import sanity from '@/services/sanity'
-import { useNextSanityImage } from 'next-sanity-image'
-import { useState } from 'react';
+import Img from "next/image"
+import sanity from "@/services/sanity"
+import { useNextSanityImage } from "next-sanity-image"
+import { useState } from "react"
 
 export default function Image({ image, layout, widthOverride, heightOverride, focalPoint, className, priority, noCaption }) {
   const [imageIsLoaded, setImageIsLoaded] = useState(false)

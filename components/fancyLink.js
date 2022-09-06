@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Link from "next/link"
 
 export default function FancyLink( {destination, a11yText, label, className, active } ) {
   return (
