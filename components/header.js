@@ -1,5 +1,6 @@
 import FancyLink from '@/components/fancyLink'
 import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+import Div100vh from 'react-div-100vh'
 import { useRouter } from 'next/router'
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
@@ -184,7 +185,7 @@ export default function Header() {
       </header>
 
       {mobileMenuOpen && (
-        <div className="w-full h-screen flex bg-white bg-opacity-50 backdrop-blur-xl lg:hidden">
+        <Div100vh className="w-full flex bg-white bg-opacity-50 backdrop-blur-xl lg:hidden">
           <div className="w-full h-full overflow-scroll p-6 pb-16">
             {/* Mobile Navigation */}
             <nav className="ml-auto w-full">
@@ -340,7 +341,7 @@ export default function Header() {
               </ul>
             </nav>
           </div>
-        </div>
+        </Div100vh>
       )}
     </div>
   )
