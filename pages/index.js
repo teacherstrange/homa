@@ -8,6 +8,8 @@ import Header from '@/components/header'
 import Footer from '@/components/footer'
 import Container from '@/components/container'
 import FooterCta from '@/components/footer-cta'
+import MousePosition from '@/components/mouse-position'
+import DayInfo from '@/components/day-info'
 
 // Sanity
 // import SanityPageService from '@/services/sanityPageService'
@@ -54,7 +56,11 @@ export default function Home(initialData) {
           exit="exit"
           className=""
         >
-          <div className="w-full h-full min-h-screen bg-white pt-28 md:pt-24 flex items-center justify-center border-b border-black/50">
+          <div className="w-full h-full min-h-screen bg-white pt-28 md:pt-24 flex items-center justify-center border-b border-black/50 relative">
+            <div className="absolute top-0 right-0 mt-24 lg:mt-28 xl:mt-32 px-6 xl:px-10 text-[11px] uppercase tracking-widest font-medium leading-none text-right hidden lg:block">
+              <DayInfo className="mb-1" />
+              <MousePosition />
+            </div>
             <h1 className="font-black text-[8vw] mb-4 uppercase">Home Page</h1>
           </div>
         
