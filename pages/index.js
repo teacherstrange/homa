@@ -1,12 +1,46 @@
+// Tools
+import { LazyMotion, domAnimation, m } from 'framer-motion'
+import { NextSeo } from 'next-seo'
+
+// Components
 import Layout from '@/components/layout'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import Container from '@/components/container'
-import { LazyMotion, domAnimation, m } from 'framer-motion'
-import { NextSeo } from 'next-seo'
 import FooterCta from '@/components/footer-cta'
 
-export default function Home() {
+// Sanity
+// import SanityPageService from '@/services/sanityPageService'
+
+// const query = `{
+//   "home": *[_type == "home"][0]{
+//     title,
+//     imageExample {
+//       asset-> {
+//         ...
+//       },
+//       caption,
+//       alt,
+//       hotspot {
+//         x,
+//         y
+//       },
+//     },
+//     seo {
+//       ...,
+//       shareGraphic {
+//         asset->
+//       }
+//     }
+//   }
+// }`
+
+// const pageService = new SanityPageService(query)
+
+export default function Home(initialData) {
+  // Sanity Data
+  // const { data: { home } } = pageService.getPreviewHook(initialData)()
+
   return (
     <Layout>
       <NextSeo title="Home" />
@@ -96,3 +130,12 @@ export default function Home() {
     </Layout>
   )
 }
+
+// Sanity CMS Props
+// export async function getStaticProps(context) {
+//   const cms = await pageService.fetchQuery(context)
+
+//   return {
+//     props: { ...cms }
+//   }
+// }

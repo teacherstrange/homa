@@ -40,13 +40,13 @@ import FooterCta from '@/components/footer-cta'
 
 // const pageService = new SanityPageService(query)
 
-export default function About(initalData) {
+export default function HomaLabChild(initalData) {
   // Sanity Data
   // const { data: { about } } = pageService.getPreviewHook(initialData)()
   
   return (
     <Layout>
-      <NextSeo title="About" />
+      <NextSeo title="Homa Lab Child" />
 
       <Header />
 
@@ -59,7 +59,7 @@ export default function About(initalData) {
         >
           <Container className="pb-[10vw]">
             <m.div>
-              <h1 className="display-text">About Page</h1>
+              <h1 className="display-text">Homa Lab - Child Page</h1>
               <div className="content max-w-3xl mb-4">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
 
