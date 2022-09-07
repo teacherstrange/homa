@@ -1,6 +1,7 @@
 // Tools
 import { LazyMotion, domAnimation, m } from 'framer-motion'
 import { NextSeo } from 'next-seo'
+import { ScrollParallax } from 'react-just-parallax'
 
 // Components
 import Layout from '@/components/layout'
@@ -10,6 +11,8 @@ import Container from '@/components/container'
 import FooterCta from '@/components/footer-cta'
 import MousePosition from '@/components/mouse-position'
 import DayInfo from '@/components/day-info'
+import Image from 'next/image'
+import Link from 'next/link'
 
 // Sanity
 // import SanityPageService from '@/services/sanityPageService'
@@ -56,12 +59,57 @@ export default function Home(initialData) {
           exit="exit"
           className=""
         >
-          <div className="w-full h-full min-h-screen bg-white pt-28 md:pt-24 flex items-center justify-center border-b border-black/50 relative">
+          <div className="w-full h-full min-h-screen lg:min-h-[1400px] bg-pink/30 pt-24 lg:pt-40 xl:pt-52 border-b border-black/50 px-6 xl:px-10 mx-auto relative overflow-hidden">
+            <div className="w-full h-full absolute inset-0 z-0 object-cover object-top scale-[1.07]">
+              <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.035}>
+                <Image
+                  src="/images/home.jpg"
+                  alt="Character Test"
+                  layout="fill"
+                  className="w-full h-full absolute inset-0 z-0 object-cover object-top"
+                />
+              </ScrollParallax>
+            </div>
+
             <div className="absolute top-0 right-0 mt-24 lg:mt-28 xl:mt-32 px-6 xl:px-10 text-[11px] uppercase tracking-widest font-medium leading-none text-right hidden lg:block">
               <DayInfo className="mb-1" />
               <MousePosition />
             </div>
-            <h1 className="font-black text-[8vw] mb-4 uppercase">Home Page</h1>
+
+            <div className="max-w-screen-3xl mx-auto">
+              <h1 className="font-black text-[clamp(80px,_10.2vw,_210px)] leading-[0.95] mb-4 uppercase relative z-10 w-11/12 lg:w-full">Game The System</h1>
+
+              <div className="w-10/12 lg:w-[50%] xl:w-[45%] 2xl:w-[35%] max-w-[720px] pt-[75%] lg:pt-[10%] relative pb-8 lg:pb-0">
+                <div className="relative z-10">
+                  <p className="text-lg md:text-xl xl:text-2xl mb-6 lg:mb-10">We're believers in data and builders of tools that help game creators <span className="inline border border-black rounded-sm p-1 px-2 uppercase tracking-wider text-sm md:text-base xl:text-lg">make</span> and <span className="inline border border-black rounded-sm p-1 px-2 uppercase tracking-wider text-sm md:text-base xl:text-lg">publish</span> hit games with franchise potential built right in.</p>
+
+                  <div className="flex space-x-2">
+                    <Link href="/">
+                      <a className="bg-black text-white px-3 py-6 uppercase tracking-wide w-1/2 text-center">
+                        Make a Game
+                      </a>
+                    </Link>
+                    <Link href="/">
+                      <a className="bg-black text-white px-3 py-6 uppercase tracking-wide w-1/2 text-center">
+                        Build A Career
+                      </a>
+                    </Link>
+                  </div>
+                </div>
+
+                <ScrollParallax isAbsolutelyPositioned lerpEase={0.15}>
+                  <div className="absolute top-[-15vw] lg:top-auto lg:bottom-[-80%] right-[-10vw] lg:right-[-55%] xl:right-[-70%] w-[55vw] lg:w-[28vw] 2xl:w-[30vw] max-w-[500px] z-0">
+                    <Image
+                      src="/images/character-test.webp"
+                      alt="Character Test"
+                      layout="responsive"
+                      width={930}
+                      height={1236}
+                    />
+                  </div>
+                </ScrollParallax>
+              </div>
+            </div>
           </div>
         
           <m.div>

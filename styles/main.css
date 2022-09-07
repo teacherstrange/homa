@@ -33,11 +33,11 @@ body {
   }
   
   .nav-child {
-    @apply hidden absolute top-0 left-0 right-0 opacity-0 p-6 border-b border-black/50 backdrop-blur-3xl bg-white bg-opacity-80 w-full;
+    @apply hidden absolute top-0 left-0 right-0 opacity-0 p-6 border-b border-black/50 backdrop-blur-3xl bg-white bg-opacity-40 w-full;
 
     &:after {
       content: ' ';
-      @apply absolute top-0 left-0 bottom-[-1px] w-[100vw] translate-x-[-100vw] border-b border-black/50 backdrop-blur-3xl bg-white bg-opacity-80;
+      @apply absolute top-0 left-0 bottom-[-1px] w-[100vw] translate-x-[-100vw] border-b border-black/50 backdrop-blur-3xl bg-white bg-opacity-40;
     }
 
     &:focus-within {
