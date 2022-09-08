@@ -1,12 +1,27 @@
-export default function FooterCta() {
+import Image from "next/image"
+import Link from "next/link"
+import { ScrollParallax } from "react-just-parallax"
+
+export default function FooterCta({ image }) {
   return (
-    <div className="w-full bg-gray-100">
-      <div className="grid grid-cols-12 border-black/50 border-t border-b">
+    <div className="w-full bg-gray-100 relative overflow-hidden">
+      <div className="w-full h-full absolute inset-0 z-0 object-cover object-center scale-[1.075]">
+        <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={0.15} zIndex={0}>
+          <Image
+            src={image ? image : "/images/home.jpg" }
+            alt="Character Test"
+            layout="fill"
+            className="w-full h-full absolute inset-0 z-0 object-cover object-top"
+          />
+        </ScrollParallax>
+      </div>
+
+      <div className="grid grid-cols-12 border-black/50 border-t border-b relative z-10">
         <div className="col-span-10 col-start-2 md:col-span-8 md:col-start-3 xl:col-span-6 xl:col-start-4 border-black/50 border-l border-r bg-transparent h-[18vw]">
         </div>
       </div>
 
-      <div className="grid grid-cols-12 border-black/50">
+      <div className="grid grid-cols-12 border-black/50 relative z-10">
         <div className="col-span-10 col-start-2 md:col-span-8 md:col-start-3 xl:col-span-6 xl:col-start-4 border-black/50 border-l border-r bg-gradient-to-b from-white to-pink p-6 md:p-10 xl:p-16 text-center">
           <span className="block font-black uppercase text-2xl md:text-3xl xl:text-4xl mb-20 md:mb-[15vw] xl:mb-[12.5vw]">Guessing Game Over</span>
 
@@ -14,11 +29,13 @@ export default function FooterCta() {
             <p>Start building games with data, insight and tested hit potential built right in.</p>
           </div>
 
-          <a href="#" className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm">Enter the homa lab</a>
+          <Link href="#">
+            <a className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white">Enter the homa lab</a>
+          </Link>
         </div>
       </div>
 
-      <div className="grid grid-cols-12 border-black/50 border-t border-b">
+      <div className="grid grid-cols-12 border-black/50 border-t border-b relative z-10">
         <div className="col-span-10 col-start-2 md:col-span-8 md:col-start-3 xl:col-span-6 xl:col-start-4 border-black/50 border-l border-r bg-transparent h-[18vw]">
         </div>
       </div>

@@ -13,6 +13,7 @@ import MousePosition from '@/components/mouse-position'
 import DayInfo from '@/components/day-info'
 import Image from 'next/image'
 import Link from 'next/link'
+import SocialScroller from '@/components/social-scroller'
 
 // Sanity
 // import SanityPageService from '@/services/sanityPageService'
@@ -59,7 +60,7 @@ export default function Home(initialData) {
           exit="exit"
           className=""
         >
-          <div className="w-full h-full min-h-screen lg:min-h-[1400px] bg-pink/30 pt-24 lg:pt-40 xl:pt-52 border-b border-black/50 px-6 xl:px-10 mx-auto relative overflow-hidden">
+          <div className="w-full h-full min-h-screen lg:min-h-[135vh] bg-pink/30 pt-24 lg:pt-40 xl:pt-52 border-b border-black/50 px-6 xl:px-10 mx-auto relative overflow-hidden">
             <div className="w-full h-full absolute inset-0 z-0 object-cover object-top scale-[1.07]">
               <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.035}>
                 <Image
@@ -81,7 +82,7 @@ export default function Home(initialData) {
 
               <div className="w-10/12 lg:w-[50%] xl:w-[45%] 2xl:w-[35%] max-w-[720px] pt-[75%] lg:pt-[10%] relative pb-8 lg:pb-0">
                 <div className="relative z-10">
-                  <p className="text-lg md:text-xl xl:text-2xl mb-6 lg:mb-10">We're believers in data and builders of tools that help game creators <span className="inline border border-black rounded-sm p-1 px-2 uppercase tracking-wider text-sm md:text-base xl:text-lg">make</span> and <span className="inline border border-black rounded-sm p-1 px-2 uppercase tracking-wider text-sm md:text-base xl:text-lg">publish</span> hit games with franchise potential built right in.</p>
+                  <p className="text-lg md:text-xl xl:text-2xl mb-6 lg:mb-10">We're believers in data and builders of tools that help game creators <span className="inline border border-black rounded-sm p-1 px-2 uppercase tracking-wider text-sm md:text-base xl:text-lg font-medium">make</span> and <span className="inline border border-black rounded-sm p-1 px-2 uppercase tracking-wider text-sm md:text-base xl:text-lg font-medium">publish</span> hit games with franchise potential built right in.</p>
 
                   <div className="flex space-x-2">
                     <Link href="/">
@@ -178,6 +179,8 @@ export default function Home(initialData) {
             
           </m.div>
         </m.main>
+
+        <SocialScroller />
         <FooterCta />
         <Footer />
       </LazyMotion>
