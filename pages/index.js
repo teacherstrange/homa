@@ -114,10 +114,24 @@ export default function Home(initialData) {
           </div>
         
           <m.div>
-            <div className="bg-gradient-to-b from-white to-pink mb-[5vw]">
+            <div className="bg-gradient-to-b from-white to-pink relative overflow-hidden">
+
+              <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={0.025} zIndex={0}>
+                <div className="absolute bottom-0 right-[3%] z-0 w-[57%] lg:w-[30%] max-w-[320px] lg:max-w-[400px] xl:max-w-[480px]">
+                  <Image
+                    src="/images/horse.webp"
+                    alt="Bee"
+                    layout="responsive"
+                    width={864}
+                    height={865}
+                    className="w-full"
+                  />
+                </div>
+              </ScrollParallax>
+              
               <div className="w-full border-b border-black/50">
                 <div className="grid grid-cols-12 max-w-screen-3xl mx-auto">
-                  <div className="col-span-10 col-start-2 md:col-span-10 md:col-start-2 md:border-l md:border-r border-black/50 py-[15vw] md:px-10">
+                  <div className="col-span-10 col-start-2 md:col-span-10 md:col-start-2 md:border-l md:border-r border-black/50 py-[10vw] md:px-10">
                     <div className="grid grid-cols-10 items-center">
                       <div className="col-span-9 md:col-span-5 mb-12 md:mb-0">
                         <p className="text-2xl uppercase font-bold">HI,<br/>WE'RE HOMA, a gaming technology lab that gives game creators the data-driven tools and human expertise needed to turn their creative ideas into commercial hits.</p>
@@ -130,31 +144,36 @@ export default function Home(initialData) {
                 </div>
               </div>
 
-              <div className="w-full border-b border-black/50">
+              <div className="w-full border-b border-black/50 pb-56 md:pb-0">
                 <div className="grid grid-cols-12 max-w-screen-3xl mx-auto">
                   <div className="col-span-10 col-start-2 md:col-span-10 md:col-start-2 md:border-l md:border-r border-black/50 py-[5vw] md:px-10">
                     <div className="grid grid-cols-12 pb-[10vw]">
-                      <div className="col-span-3">
+                      <div className="col-span-12 lg:col-span-3 mb-5 lg:mb-0">
                         <p className="text-2xl uppercase font-bold">[Icon]</p>
                       </div>
-                      <div className="col-span-7">
-                        <p className="text-2xl uppercase font-bold">Statistic One</p>
+                      <div className="col-span-12 lg:col-span-7">
+                        <span className="text-lg lg:text-lg xl:text-2xl uppercase font-bold block mb-4">We've joined forces with</span>
+                        <span className="font-black text-[clamp(50px,_5vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase max-w-[500px]">1,000+ Studios  Developers</span>
                       </div>
                     </div>
+
                     <div className="grid grid-cols-12 pb-[10vw]">
-                      <div className="col-span-3">
+                      <div className="col-span-12 lg:col-span-3 mb-5 lg:mb-0">
                         <p className="text-2xl uppercase font-bold">[Icon]</p>
                       </div>
-                      <div className="col-span-7">
-                        <p className="text-2xl uppercase font-bold">Statistic Two</p>
+                      <div className="col-span-12 lg:col-span-7">
+                        <span className="text-lg lg:text-lg xl:text-2xl uppercase font-bold block mb-4">Combining our creative expertise into</span>
+                        <span className="font-black text-[clamp(50px,_5vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase max-w-[500px]">80+ Mobile Games</span>
                       </div>
                     </div>
-                    <div className="grid grid-cols-12">
-                      <div className="col-span-3">
+
+                    <div className="grid grid-cols-12 pb-[10vw]">
+                      <div className="col-span-12 lg:col-span-3 mb-5 lg:mb-0">
                         <p className="text-2xl uppercase font-bold">[Icon]</p>
                       </div>
-                      <div className="col-span-7">
-                        <p className="text-2xl uppercase font-bold">Statistic Three</p>
+                      <div className="col-span-12 lg:col-span-7">
+                        <span className="text-lg lg:text-lg xl:text-2xl uppercase font-bold block mb-4">Resulting in chart topping hits and</span>
+                        <span className="font-black text-[clamp(50px,_5vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase max-w-[500px]">1,000,000,000+ Downloads</span>
                       </div>
                     </div>
                   </div>
@@ -162,20 +181,63 @@ export default function Home(initialData) {
               </div>
             </div>
 
-            <Container className="pb-[10vw]">
-              <m.div>
-                <h1 className="font-black leading-none uppercase text-[clamp(40px,_6.5vw,_100px)]">Home Page</h1>
-                <div className="content max-w-3xl mb-4">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
-
-                  <p>Velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                  
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
-
-                  <p>Velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div className="grid grid-cols-12 py-[15vw] px-6 xl:px-10 max-w-screen-3xl mx-auto border-b border-black/50">
+              <div className="order-2 md:order-1 col-span-12 lg:col-span-2 relative z-10">
+                <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">Make A Game</span>
+              </div>
+              
+              <div className="order-3 md:order-2 col-span-12 md:col-span-6 z-10">
+                <h1 className="font-black text-[clamp(50px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase">We’re changing games by bringing data into play</h1>
+                <div className="content max-w-3xl mb-8 xl:mb-12 w-10/12">
+                  <p>Creativity can’t be forced, but with Homa Lab it can be tweaked, iterated and rigorously tested. From idea to monetization, Homa Lab’s real-time flow of data and insight lets you build games that outperform by every conceivable metric.</p>
                 </div>
-              </m.div>
-            </Container>
+
+                <Link href="#">
+                  <a className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white">Enter the homa lab</a>
+                </Link>
+              </div>
+              
+              <div className="order-1 md:order-3 col-span-12 md:col-span-6 lg:col-span-4 relative z-0 h-[300px] md:h-full">
+                <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={-0.14} zIndex={0}>
+                  <div className="absolute top-[-20%] right-0 z-0 w-full max-w-[120px] lg:max-w-[160px]">
+                    <Image
+                      src="/images/bee.webp"
+                      alt="Bee"
+                      layout="responsive"
+                      width={398}
+                      height={548}
+                      className="w-full"
+                    />
+                  </div>
+                </ScrollParallax>
+
+                <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={-0.23} zIndex={0}>
+                  <div className="absolute bottom-0 left-8 z-0 w-full max-w-[80px] lg:max-w-[95px] -scale-x-100 rotate-[15deg]">
+                    <Image
+                      src="/images/bee.webp"
+                      alt="Bee"
+                      layout="responsive"
+                      width={398}
+                      height={548}
+                      className="w-full"
+                    />
+                  </div>
+                </ScrollParallax>
+
+                <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={0.1} zIndex={0}>
+                  <div className="absolute top-[40%] left-[33%] z-0 w-full max-w-[90px] lg:max-w-[110px] rotate-[-14deg]">
+                    <Image
+                      src="/images/bee.webp"
+                      alt="Bee"
+                      layout="responsive"
+                      width={398}
+                      height={548}
+                      className="w-full"
+                    />
+                  </div>
+                </ScrollParallax>
+              </div>
+            </div>
             
           </m.div>
         </m.main>
