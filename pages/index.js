@@ -181,7 +181,7 @@ export default function Home(initialData) {
               </div>
             </div>
 
-            <div className="grid grid-cols-12 py-[15vw] px-6 xl:px-10 max-w-screen-3xl mx-auto border-b border-black/50">
+            <div className="grid grid-cols-12 py-[15vw] px-6 xl:px-10 max-w-screen-3xl mx-auto">
               <div className="order-2 md:order-1 col-span-12 lg:col-span-2 relative z-10">
                 <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">Make A Game</span>
               </div>
@@ -236,6 +236,191 @@ export default function Home(initialData) {
                     />
                   </div>
                 </ScrollParallax>
+              </div>
+            </div>
+
+
+            <div className="w-full flex flex-wrap border-t border-black/50">
+              <div className="w-full lg:w-1/2 px-6 xl:px-10 py-20 lg:py-28 xl:py-32 bg-gray-100 border-b lg:border-b-0 lg:border-r border-black/50">
+                <div className="lg:sticky lg:top-28 xl:top-32 lg:pb-32 xl:pb-48">
+                  <div className="flex w-full lg:h-screen lg:-mt-32 xl:-mt-40 items-center justify-center">
+                    <div className="w-[300px] h-[300px] bg-pink lg:-mt-32 xl:-mt-40"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="w-full lg:w-1/2 pb-12 lg:pb-16 xl:pb-24">
+                {Array.from(Array(9), (e, i) => {
+                  return (
+                    <div className={`w-full ${i + 1 != 9 && 'border-b border-black/50'} px-6 xl:px-10 py-6 xl:py-10 flex flex-wrap`}>
+                      <div className="w-auto mr-12">
+                        <span className="uppercase text-sm tracking-widest mt-1 block font-medium">0{i + 1}</span>
+                      </div>
+                      <div className="w-3/4">
+                        <h3 className="font-black text-3xl lg:text-4xl xl:text-5xl leading-[0.95] mb-12 lg:mb-24 uppercase max-w-[500px] xl:max-w-none">Ideas</h3>
+
+                        <div className="content w-11/12 lg:w-11/12 max-w-[650px]">
+                          <p>Whether through Tiktok, Discord or in-person events like Homa Jams, we believe in creating a community that unities game makers and game players (if there's a distinction) with all sorts of creative people around the world.</p>
+                        </div>
+                      </div>
+                    </div>  
+                  )
+                })}
+              </div>
+            </div>
+
+
+            <div className="relative border-t border-black/50">
+
+              <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={-0.14} zIndex={10}>
+                <div className="absolute bottom-[15vw] right-[10vw] w-[60%] lg:w-1/3 max-w-[300px] lg:max-w-[550px] z-10">
+                  <Image
+                    src="/images/ninja.webp"
+                    alt="Ninja"
+                    layout="responsive"
+                    width={1056}
+                    height={800}
+                    className="w-full"
+                  />
+                </div>
+              </ScrollParallax>
+
+              <div className="relative z-0 flex overflow-x-hidden">
+                <div className="mt-56 lg:mt-[25vw] mb-[16vw] animate-marquee whitespace-nowrap">
+                  <span className="mx-[10vw] lg:mx-[6vw] text-[clamp(150px,_20.2vw,_410px)] font-black uppercase leading-none">Play To Win</span>
+                  <span className="mx-[10vw] lg:mx-[6vw] text-[clamp(150px,_20.2vw,_410px)] font-black uppercase leading-none">Play To Win</span>
+                  <span className="mx-[10vw] lg:mx-[6vw] text-[clamp(150px,_20.2vw,_410px)] font-black uppercase leading-none">Play To Win</span>
+                </div>
+
+                <div className="mt-56 lg:mt-[25vw] mb-[16vw] absolute top-0 animate-marquee2 whitespace-nowrap">
+                  <span className="mx-[10vw] lg:mx-[6vw] text-[clamp(150px,_20.2vw,_410px)] font-black uppercase leading-none">Play To Win</span>
+                  <span className="mx-[10vw] lg:mx-[6vw] text-[clamp(150px,_20.2vw,_410px)] font-black uppercase leading-none">Play To Win</span>
+                  <span className="mx-[10vw] lg:mx-[6vw] text-[clamp(150px,_20.2vw,_410px)] font-black uppercase leading-none">Play To Win</span>
+                </div>
+              </div>
+            </div>
+
+
+            <div className="grid grid-cols-12 pb-12 lg:pb-[15vw] px-6 xl:px-10 max-w-screen-3xl mx-auto">
+              <div className="order-2 md:order-1 col-span-12 lg:col-span-2 relative z-10">
+                <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">Homa Academy</span>
+              </div>
+              
+              <div className="order-3 md:order-2 col-span-12 md:col-span-6 z-10">
+                <h1 className="font-black text-[clamp(50px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase max-w-[500px]">Level up your game</h1>
+                <div className="content max-w-3xl mb-8 xl:mb-12 w-10/12">
+                  <p>The Homa Academy provides developers and studios everywhere the insights needed to create games with hit potential coded right in.</p>
+                  
+                  <p>Stop by to learn the ins and outs of game design, including in-depth game play analysis, methods for ideation &amp; player experience optimization, as well as hands-on game builing tutorials, hangouts and more.</p>
+                </div>
+
+                <Link href="#">
+                  <a className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white">Learn More</a>
+                </Link>
+              </div>
+              
+              <div className="order-1 md:order-3 col-span-12 md:col-span-6 lg:col-span-4 relative z-0 h-[300px] md:h-full">
+                <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={-0.14} zIndex={0}>
+                  <div className="absolute top-[-20%] right-0 z-0 w-full max-w-[120px] lg:max-w-[160px]">
+                    <Image
+                      src="/images/bee.webp"
+                      alt="Bee"
+                      layout="responsive"
+                      width={398}
+                      height={548}
+                      className="w-full"
+                    />
+                  </div>
+                </ScrollParallax>
+
+                <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={-0.23} zIndex={0}>
+                  <div className="absolute bottom-0 left-8 z-0 w-full max-w-[80px] lg:max-w-[95px] -scale-x-100 rotate-[15deg]">
+                    <Image
+                      src="/images/bee.webp"
+                      alt="Bee"
+                      layout="responsive"
+                      width={398}
+                      height={548}
+                      className="w-full"
+                    />
+                  </div>
+                </ScrollParallax>
+
+                <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={0.1} zIndex={0}>
+                  <div className="absolute top-[40%] left-[33%] z-0 w-full max-w-[90px] lg:max-w-[110px] rotate-[-14deg]">
+                    <Image
+                      src="/images/bee.webp"
+                      alt="Bee"
+                      layout="responsive"
+                      width={398}
+                      height={548}
+                      className="w-full"
+                    />
+                  </div>
+                </ScrollParallax>
+              </div>
+            </div>
+
+
+            <div className="">
+              <div className="relative z-0 flex overflow-x-hidden">
+                <div className="animate-marquee whitespace-nowrap">
+                  <img className="inline-block w-[60%] md:w-[40%] xl:w-[30%] aspect-square" src="https://place.dog/500/500" alt="PLACEHOLDER" />
+                  <img className="inline-block w-[60%] md:w-[40%] xl:w-[30%] aspect-square" src="https://place.dog/600/600" alt="PLACEHOLDER" />
+                  <img className="inline-block w-[60%] md:w-[40%] xl:w-[30%] aspect-square" src="https://place.dog/700/700" alt="PLACEHOLDER" />
+                  <img className="inline-block w-[60%] md:w-[40%] xl:w-[30%] aspect-square" src="https://place.dog/800/800" alt="PLACEHOLDER" />
+                </div>
+
+                <div className="absolute top-0 animate-marquee2 whitespace-nowrap">
+                  <img className="inline-block w-[60%] md:w-[40%] xl:w-[30%] aspect-square" src="https://place.dog/500/500" alt="PLACEHOLDER" />
+                  <img className="inline-block w-[60%] md:w-[40%] xl:w-[30%] aspect-square" src="https://place.dog/600/600" alt="PLACEHOLDER" />
+                  <img className="inline-block w-[60%] md:w-[40%] xl:w-[30%] aspect-square" src="https://place.dog/700/700" alt="PLACEHOLDER" />
+                  <img className="inline-block w-[60%] md:w-[40%] xl:w-[30%] aspect-square" src="https://place.dog/800/800" alt="PLACEHOLDER" />
+                </div>
+              </div>
+            </div>
+
+
+            <div className="grid grid-cols-12 py-12 lg:py-[15vw] px-6 xl:px-10 max-w-screen-3xl mx-auto bg-lime text-black">
+              <div className="col-span-12 lg:col-span-2 relative z-10">
+                <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">Build A Career</span>
+              </div>
+              
+              <div className="col-span-12 lg:col-span-8 z-10">
+                <h1 className="font-black text-[clamp(50px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase">We’re changing the game by rewriting the rules</h1>
+                <div className="content max-w-3xl mb-8 xl:mb-12 w-10/12">
+                  <p>Creating tools to superpower others’ creativity requires a lot of creativity on our end too. If you’re creative and up for taking over an industry, we want our logo on your Linkedin.</p>
+                </div>
+
+                <div className="w-full flex flex-wrap border border-black/50 mb-6 lg:mb-8">
+                  <div className="w-full lg:w-1/3 border-b lg:border-b-0 lg:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
+                    <h3 className="font-bold text-2xl lg:text-3xl xl:text-4xl leading-[0.95] mb-12 lg:mb-32 uppercase">WFH, WFParis, WFAnywhere</h3>
+
+                    <div className="content content--small w-11/12">
+                      <p>We’re a distributed team with a flagship HQ in Paris. Work from here, or anywhere.</p>
+                    </div>
+                  </div>
+
+                  <div className="w-full lg:w-1/3 border-b lg:border-b-0 lg:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
+                    <h3 className="font-bold text-2xl lg:text-3xl xl:text-4xl leading-[0.95] mb-12 lg:mb-32 uppercase w-11/12">Work In English</h3>
+
+                    <div className="content content--small w-11/12">
+                      <p>We’re over 25 nationalities strong and we work in English all day long.</p>
+                    </div>
+                  </div>
+
+                  <div className="w-full lg:w-1/3 p-5 lg:p-6 xl:p-8 2xl:p-10">
+                    <h3 className="font-bold text-2xl lg:text-3xl xl:text-4xl leading-[0.95] mb-12 lg:mb-32 uppercase">Work your way up</h3>
+
+                    <div className="content content--small w-11/12">
+                      <p>Twice-yearly reviews: twice-yearly chances to prove you deserve more.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <Link href="#">
+                  <a className="inline-block border border-black/50 font-medium uppercase leading-none py-6 px-10 rounded-sm bg-black text-white hover:bg-black hover:text-white focus:bg-black focus:text-white">Apply for a job at Homa</a>
+                </Link>
               </div>
             </div>
             
