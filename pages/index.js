@@ -114,7 +114,7 @@ export default function Home(initialData) {
           </div>
         
           <m.div>
-            <div className="bg-gradient-to-b from-white to-pink relative overflow-hidden">
+            <div className="bg-gradient-to-b from-pink/20 to-pink relative overflow-hidden">
 
               <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={0.025} zIndex={0}>
                 <div className="absolute bottom-0 right-[3%] z-0 w-[57%] lg:w-[30%] max-w-[320px] lg:max-w-[400px] xl:max-w-[480px]">
@@ -380,50 +380,51 @@ export default function Home(initialData) {
               </div>
             </div>
 
-
-            <div className="grid grid-cols-12 py-12 lg:py-[15vw] px-6 xl:px-10 max-w-screen-3xl mx-auto bg-lime text-black">
-              <div className="col-span-12 lg:col-span-2 relative z-10">
-                <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">Build A Career</span>
-              </div>
-              
-              <div className="col-span-12 lg:col-span-8 z-10">
-                <h1 className="font-black text-[clamp(50px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase">We’re changing the game by rewriting the rules</h1>
-                <div className="content max-w-3xl mb-8 xl:mb-12 w-10/12">
-                  <p>Creating tools to superpower others’ creativity requires a lot of creativity on our end too. If you’re creative and up for taking over an industry, we want our logo on your Linkedin.</p>
+            
+            <div className="bg-lime text-black">
+              <div className="grid grid-cols-12 py-12 lg:py-[15vw] px-6 xl:px-10 max-w-screen-3xl mx-auto">
+                <div className="col-span-12 lg:col-span-2 relative z-10">
+                  <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">Build A Career</span>
                 </div>
+                
+                <div className="col-span-12 lg:col-span-8 z-10">
+                  <h1 className="font-black text-[clamp(50px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase">We’re changing the game by rewriting the rules</h1>
+                  <div className="content max-w-3xl mb-8 xl:mb-12 w-10/12">
+                    <p>Creating tools to superpower others’ creativity requires a lot of creativity on our end too. If you’re creative and up for taking over an industry, we want our logo on your Linkedin.</p>
+                  </div>
 
-                <div className="w-full flex flex-wrap border border-black/50 mb-6 lg:mb-8">
-                  <div className="w-full lg:w-1/3 border-b lg:border-b-0 lg:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
-                    <h3 className="font-bold text-2xl lg:text-3xl xl:text-4xl leading-[0.95] mb-12 lg:mb-32 uppercase">WFH, WFParis, WFAnywhere</h3>
+                  <div className="w-full flex flex-wrap border border-black/50 mb-6 lg:mb-8">
+                    <div className="w-full lg:w-1/3 border-b lg:border-b-0 lg:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
+                      <h3 className="font-bold text-2xl lg:text-3xl xl:text-4xl leading-[0.95] mb-12 lg:mb-32 uppercase">WFH, WFParis, WFAnywhere</h3>
 
-                    <div className="content content--small w-11/12">
-                      <p>We’re a distributed team with a flagship HQ in Paris. Work from here, or anywhere.</p>
+                      <div className="content content--small w-11/12">
+                        <p>We’re a distributed team with a flagship HQ in Paris. Work from here, or anywhere.</p>
+                      </div>
+                    </div>
+
+                    <div className="w-full lg:w-1/3 border-b lg:border-b-0 lg:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
+                      <h3 className="font-bold text-2xl lg:text-3xl xl:text-4xl leading-[0.95] mb-12 lg:mb-32 uppercase w-11/12">Work In English</h3>
+
+                      <div className="content content--small w-11/12">
+                        <p>We’re over 25 nationalities strong and we work in English all day long.</p>
+                      </div>
+                    </div>
+
+                    <div className="w-full lg:w-1/3 p-5 lg:p-6 xl:p-8 2xl:p-10">
+                      <h3 className="font-bold text-2xl lg:text-3xl xl:text-4xl leading-[0.95] mb-12 lg:mb-32 uppercase">Work your way up</h3>
+
+                      <div className="content content--small w-11/12">
+                        <p>Twice-yearly reviews: twice-yearly chances to prove you deserve more.</p>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="w-full lg:w-1/3 border-b lg:border-b-0 lg:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
-                    <h3 className="font-bold text-2xl lg:text-3xl xl:text-4xl leading-[0.95] mb-12 lg:mb-32 uppercase w-11/12">Work In English</h3>
-
-                    <div className="content content--small w-11/12">
-                      <p>We’re over 25 nationalities strong and we work in English all day long.</p>
-                    </div>
-                  </div>
-
-                  <div className="w-full lg:w-1/3 p-5 lg:p-6 xl:p-8 2xl:p-10">
-                    <h3 className="font-bold text-2xl lg:text-3xl xl:text-4xl leading-[0.95] mb-12 lg:mb-32 uppercase">Work your way up</h3>
-
-                    <div className="content content--small w-11/12">
-                      <p>Twice-yearly reviews: twice-yearly chances to prove you deserve more.</p>
-                    </div>
-                  </div>
+                  <Link href="#">
+                    <a className="inline-block border border-black/50 font-medium uppercase leading-none py-6 px-10 rounded-sm bg-black text-white hover:bg-black hover:text-white focus:bg-black focus:text-white">Apply for a job at Homa</a>
+                  </Link>
                 </div>
-
-                <Link href="#">
-                  <a className="inline-block border border-black/50 font-medium uppercase leading-none py-6 px-10 rounded-sm bg-black text-white hover:bg-black hover:text-white focus:bg-black focus:text-white">Apply for a job at Homa</a>
-                </Link>
               </div>
             </div>
-            
           </m.div>
         </m.main>
 

@@ -7,7 +7,7 @@ import InstagramIcon from "@/icons/instagram.svg"
 
 export default function SocialScroller() {
   return (
-    <div className="w-full flex flex-wrap border-t border-black/50">
+    <div className="w-full flex flex-wrap ">
       <div className="w-full lg:w-1/2 px-6 xl:px-10 py-8 lg:py-28 xl:py-32">
         <div className="lg:sticky lg:top-28 xl:top-32 lg:pb-32 xl:pb-48 max-w-screen-md ml-auto">
           <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">The Community</span>

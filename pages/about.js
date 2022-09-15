@@ -63,7 +63,7 @@ export default function About(initalData) {
           exit="exit"
           className=""
         >
-          <div className="w-full h-full min-h-screen lg:min-h-[130vh] bg-pink/30 pt-24 lg:pt-40 xl:pt-52 mb-8 lg:mb-12 border-b border-black/50 px-6 xl:px-10 mx-auto relative overflow-hidden">
+          <div className="w-full h-full min-h-screen lg:min-h-[130vh] bg-pink/30 pt-24 lg:pt-40 xl:pt-52 border-b border-black/50 px-6 xl:px-10 mx-auto relative overflow-hidden">
             <div className="w-full h-full absolute inset-0 z-0 object-cover object-top scale-[1.07]">
               <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.035}>
                 <Image
@@ -81,28 +81,147 @@ export default function About(initalData) {
             </div>
 
             <div className="max-w-screen-3xl mx-auto">
-              <h1 className="font-black text-[clamp(80px,_10.2vw,_210px)] leading-[0.95] mb-4 uppercase relative z-10 w-11/12 lg:w-full">Mobile gaming’s MAJOR PLAYERS</h1>
+              <h1 className="font-black text-[clamp(80px,_9vw,190px)] leading-[0.95] mb-4 uppercase relative z-10 w-11/12 lg:w-full">Mobile gaming’s MAJOR PLAYERS</h1>
             </div>
           </div>
 
-          <Container className="pb-[10vw]">
-            <m.div>
-              <h1 className="display-text">About Page</h1>
-              <div className="content max-w-3xl mb-4">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
-
-                <p>Velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
-
-                <p>Velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <div className="bg-gradient-to-b from-pink/20 to-pink relative overflow-hidden">              
+            <div className="w-full border-b border-black/50">
+              <div className="grid grid-cols-12 max-w-screen-3xl mx-auto">
+                <div className="col-span-10 col-start-2 md:col-span-10 md:col-start-2 md:border-l md:border-r border-black/50 py-[10vw] md:px-10">
+                  <div className="grid grid-cols-10 items-center">
+                    <div className="col-span-9 md:col-span-5 mb-12 md:mb-0">
+                      <p className="text-2xl uppercase font-bold mb-6">Before Homa, making a hit mobile game was blood, sweat and luck. Now, it’s more like step one, step two, step three.</p>
+                      
+                      <p className="text-2xl uppercase font-bold">So, who are we? We’re the people behind mobile gaming’s great leap forward. the creative specialists giving game creators the tools, support and data needed to power up their creativity and multiply their downloads.</p>
+                    </div>
+                    <div className="col-span-5 col-start-4 md:col-span-4 md:col-start-7">
+                      <div className="w-full bg-black opacity-20 h-[50vw] 2xl:h-[720px] rounded-xl"></div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </m.div>
-          </Container>
+            </div>
 
-          <SocialScroller />
-          <FooterCta image={"/images/about.jpg"} />
-          <Footer />
+            <div className="w-full border-b border-black/50">
+              <div className="grid grid-cols-12 max-w-screen-3xl mx-auto">
+                <div className="col-span-10 col-start-2 md:col-span-12 md:col-start-0 pt-[10vw] pb-[5vw] md:px-10">
+                  <div className="grid grid-cols-12">
+                    <div className="col-span-12">
+                      <p className="text-2xl uppercase font-bold mb-8 lg:mb-12">Our Community</p>
+
+                      <h2 className="font-black text-[clamp(46px,_4.45vw,_86px)] leading-[0.9] mb-12 lg:mb-32 uppercase">Build communities and technology that help game makers transform their ideas into games billions are eager to download and play.</h2>
+
+                      <div className="w-full flex flex-wrap border border-black/50 mb-6 lg:mb-8">
+                        <div className="w-full lg:w-1/3 border-b lg:border-b-0 lg:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
+                          <h3 className="font-black text-[clamp(100px,_9vw,_200px)] leading-[0.95] mb-4 uppercase w-11/12">110+</h3>
+
+                          <div className="content w-11/12 mb-16 lg:mb-48">
+                            <p className="uppercase font-bold">Humans</p>
+                          </div>
+                        </div>
+
+                        <div className="w-full lg:w-1/3 border-b lg:border-b-0 lg:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
+                          <h3 className="font-black text-[clamp(100px,_9vw,_200px)] leading-[0.95] mb-4 uppercase w-11/12">25</h3>
+
+                          <div className="content w-11/12 mb-16 lg:mb-48">
+                            <p className="uppercase font-bold">Countries of origin</p>
+                          </div>
+                        </div>
+
+                        <div className="w-full lg:w-1/3 p-5 lg:p-6 xl:p-8 2xl:p-10">
+                          <h3 className="font-black text-[clamp(100px,_9vw,_200px)] leading-[0.95] mb-4 uppercase w-11/12">07</h3>
+
+                          <div className="content w-11/12 mb-16 lg:mb-48">
+                            <p className="uppercase font-bold">Office dogs</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div className="w-full flex flex-wrap">
+            <div className="w-full lg:w-1/2 px-6 xl:px-10 py-20 lg:py-28 xl:py-32 bg-gray-100 border-b lg:border-b-0 lg:border-r border-black/50">
+              <div className="lg:sticky lg:top-28 xl:top-32 lg:pb-32 xl:pb-48">
+                <div className="flex w-full lg:h-screen lg:-mt-32 xl:-mt-40 items-center justify-center">
+                  <div className="w-[300px] h-[300px] bg-pink lg:-mt-32 xl:-mt-40"></div>
+                </div>
+              </div>
+            </div>
+
+            <div className="w-full lg:w-1/2 pb-12 lg:pb-16 xl:pb-24">
+              {Array.from(Array(9), (e, i) => {
+                return (
+                  <div className={`w-full ${i + 1 != 9 && 'border-b border-black/50'} px-6 xl:px-10 py-6 xl:py-10 flex flex-wrap`}>
+                    <div className="w-auto mr-12">
+                      <span className="uppercase text-sm tracking-widest mt-1 block font-medium">0{i + 1}</span>
+                    </div>
+                    <div className="w-3/4">
+                      <h3 className="font-black text-3xl lg:text-4xl xl:text-5xl leading-[0.95] mb-12 lg:mb-24 uppercase max-w-[500px] xl:max-w-none">Title</h3>
+
+                      <div className="content w-11/12 lg:w-11/12 max-w-[650px]">
+                        <p>Copy TBC.</p>
+                      </div>
+                    </div>
+                  </div>  
+                )
+              })}
+            </div>
+          </div>
+
+          
+          {Array.from(Array(3), (e, i) => {
+            return (
+              <div className={`bg-lime text-black border-t border-black/50 ${i !== 2 ? 'z-0 sticky top-0' : ' relative z-10' }`} key={i}>
+                <div className="grid grid-cols-12 py-[15vw] h-screen px-6 xl:px-10 max-w-screen-3xl mx-auto items-center">
+                  
+                  <div className="col-span-12 lg:col-span-6 z-10">
+                    <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">We Value:</span>
+                    <h2 className="display-text mb-6 lg:mb-12 xl:mb-16">Ambition</h2>
+                    <span className="uppercase text-xl lg:text-2xl xl:text-3xl tracking-widest mb-3 lg:mb-5 block font-black leading-none lg:leading-none xl:leading-none">We put flags on summits</span>
+                    <div className="content content--lg max-w-3xl mb-8 xl:mb-12 w-10/12">
+                      <p>We set our goals ambitiously high and don’t shy away from the climb. We’re on a mission to take over an industry thick with incumbents who won’t go quietly into the night. To succeed here, you’ll need a highly metaphorical shield and a sword.</p>
+                    </div>
+                  </div>
+
+                  <div className="col-span-12 lg:col-span-6 z-10 h-full">
+                    <div className="h-full flex items-center justify-center">
+                      <div className="w-[300px] h-[300px] border-black border"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )
+          })}
+
+          <div className="bg-white relative z-10">
+            <div className="">
+              <div className="relative z-0 flex overflow-x-hidden">
+                <div className="animate-marquee whitespace-nowrap">
+                  <img className="inline-block w-[60%] md:w-[40%] xl:w-[30%] aspect-square" src="https://place.dog/500/500" alt="PLACEHOLDER" />
+                  <img className="inline-block w-[60%] md:w-[40%] xl:w-[30%] aspect-square" src="https://place.dog/600/600" alt="PLACEHOLDER" />
+                  <img className="inline-block w-[60%] md:w-[40%] xl:w-[30%] aspect-square" src="https://place.dog/700/700" alt="PLACEHOLDER" />
+                  <img className="inline-block w-[60%] md:w-[40%] xl:w-[30%] aspect-square" src="https://place.dog/800/800" alt="PLACEHOLDER" />
+                </div>
+
+                <div className="absolute top-0 animate-marquee2 whitespace-nowrap">
+                  <img className="inline-block w-[60%] md:w-[40%] xl:w-[30%] aspect-square" src="https://place.dog/500/500" alt="PLACEHOLDER" />
+                  <img className="inline-block w-[60%] md:w-[40%] xl:w-[30%] aspect-square" src="https://place.dog/600/600" alt="PLACEHOLDER" />
+                  <img className="inline-block w-[60%] md:w-[40%] xl:w-[30%] aspect-square" src="https://place.dog/700/700" alt="PLACEHOLDER" />
+                  <img className="inline-block w-[60%] md:w-[40%] xl:w-[30%] aspect-square" src="https://place.dog/800/800" alt="PLACEHOLDER" />
+                </div>
+              </div>
+            </div>
+
+            <SocialScroller />
+            <FooterCta image={"/images/about.jpg"} />
+            <Footer />
+          </div>
         </m.div>
       </LazyMotion>
     </Layout>
