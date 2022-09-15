@@ -1,7 +1,7 @@
 // Tools
 import { LazyMotion, domAnimation, m } from 'framer-motion'
 import { NextSeo } from 'next-seo'
-import { ScrollParallax } from 'react-just-parallax'
+import { MouseParallax, ScrollParallax } from 'react-just-parallax'
 
 // Components
 import Layout from '@/components/layout'
@@ -14,6 +14,7 @@ import DayInfo from '@/components/day-info'
 import Image from 'next/image'
 import Link from 'next/link'
 import SocialScroller from '@/components/social-scroller'
+import { useRef } from 'react'
 
 // Sanity
 // import SanityPageService from '@/services/sanityPageService'
@@ -44,6 +45,8 @@ import SocialScroller from '@/components/social-scroller'
 // const pageService = new SanityPageService(query)
 
 export default function Home(initialData) {
+  const characterBinder = useRef(null);
+
   // Sanity Data
   // const { data: { home } } = pageService.getPreviewHook(initialData)()
 
@@ -61,23 +64,23 @@ export default function Home(initialData) {
           className=""
         >
           <div className="w-full h-full min-h-screen lg:min-h-[125vh] bg-pink/30 pt-24 lg:pt-40 xl:pt-52 border-b border-black/50 px-6 xl:px-10 mx-auto relative overflow-hidden">
-            <div className="w-full h-full absolute inset-0 z-0 object-cover object-top scale-[1.07] -scale-x-100">
-              <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.035}>
-                <Image
-                  src="/images/home.jpg"
-                  alt="Character Test"
-                  layout="fill"
-                  className="w-full h-full absolute inset-0 z-0 object-cover object-top"
-                />
-              </ScrollParallax>
-            </div>
+              <div className="w-full h-full absolute inset-0 z-0 object-cover object-top scale-y-[1.07] -scale-x-100">
+                <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.036}>
+                  <Image
+                    src="/images/home.jpg"
+                    alt="Character Test"
+                    layout="fill"
+                    className="w-full h-full absolute inset-0 z-0 object-cover object-top"
+                  />
+                </ScrollParallax>
+              </div>
 
             <div className="absolute top-0 right-0 mt-24 lg:mt-28 xl:mt-32 px-6 xl:px-10 text-[11px] uppercase tracking-widest font-medium leading-none text-right hidden lg:block">
               <DayInfo className="mb-1" />
               <MousePosition />
             </div>
 
-            <div className="max-w-screen-3xl mx-auto">
+            <div className="max-w-screen-3xl mx-auto" ref={characterBinder}>
               <h1 className="font-black text-[clamp(80px,_10.2vw,_210px)] leading-[0.95] mb-4 uppercase relative z-10 w-11/12 lg:w-full">Game The System</h1>
 
               <div className="w-10/12 lg:w-[50%] xl:w-[45%] 2xl:w-[35%] max-w-[720px] pt-[75%] lg:pt-[10%] relative pb-8 lg:pb-0">
@@ -97,18 +100,19 @@ export default function Home(initialData) {
                     </Link>
                   </div>
                 </div>
-
-                <ScrollParallax isAbsolutelyPositioned lerpEase={0.15}>
-                  <div className="absolute top-[-15vw] lg:top-auto lg:bottom-[-80%] right-[-10vw] lg:right-[-55%] xl:right-[-70%] w-[55vw] lg:w-[28vw] 2xl:w-[30vw] max-w-[500px] z-0">
-                    <Image
-                      src="/images/character-test.webp"
-                      alt="Character Test"
-                      layout="responsive"
-                      width={930}
-                      height={1236}
-                    />
-                  </div>
-                </ScrollParallax>
+                <MouseParallax isAbsolutelyPositioned lerpEase={0.15} strength={0.025}>
+                  <ScrollParallax isAbsolutelyPositioned lerpEase={0.15}>
+                    <div className="absolute top-[-15vw] lg:top-auto lg:bottom-[-80%] right-[-10vw] lg:right-[-55%] xl:right-[-70%] w-[55vw] lg:w-[28vw] 2xl:w-[30vw] max-w-[500px] z-0">
+                      <Image
+                        src="/images/character-test.webp"
+                        alt="Character Test"
+                        layout="responsive"
+                        width={930}
+                        height={1236}
+                      />
+                    </div>
+                  </ScrollParallax>
+                </MouseParallax>
               </div>
             </div>
           </div>
@@ -198,44 +202,50 @@ export default function Home(initialData) {
               </div>
               
               <div className="order-1 md:order-3 col-span-12 md:col-span-6 lg:col-span-4 relative z-0 h-[300px] md:h-full">
-                <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={-0.14} zIndex={0}>
-                  <div className="absolute top-[-20%] right-0 z-0 w-full max-w-[120px] lg:max-w-[160px]">
-                    <Image
-                      src="/images/bee.webp"
-                      alt="Bee"
-                      layout="responsive"
-                      width={398}
-                      height={548}
-                      className="w-full"
-                    />
-                  </div>
-                </ScrollParallax>
+                <MouseParallax isAbsolutelyPositioned lerpEase={0.15} strength={-0.015} zIndex={0}>
+                  <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={-0.14} zIndex={0}>
+                    <div className="absolute top-[-20%] right-0 z-0 w-full max-w-[120px] lg:max-w-[160px]">
+                      <Image
+                        src="/images/bee.webp"
+                        alt="Bee"
+                        layout="responsive"
+                        width={398}
+                        height={548}
+                        className="w-full"
+                      />
+                    </div>
+                  </ScrollParallax>
+                </MouseParallax>
 
-                <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={-0.23} zIndex={0}>
-                  <div className="absolute bottom-0 left-8 z-0 w-full max-w-[80px] lg:max-w-[95px] -scale-x-100 rotate-[15deg]">
-                    <Image
-                      src="/images/bee.webp"
-                      alt="Bee"
-                      layout="responsive"
-                      width={398}
-                      height={548}
-                      className="w-full"
-                    />
-                  </div>
-                </ScrollParallax>
+                <MouseParallax isAbsolutelyPositioned lerpEase={0.15} strength={-0.025} zIndex={0}>
+                  <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={-0.23} zIndex={0}>
+                    <div className="absolute bottom-0 left-8 z-0 w-full max-w-[80px] lg:max-w-[95px] -scale-x-100 rotate-[15deg]">
+                      <Image
+                        src="/images/bee.webp"
+                        alt="Bee"
+                        layout="responsive"
+                        width={398}
+                        height={548}
+                        className="w-full"
+                      />
+                    </div>
+                  </ScrollParallax>
+                </MouseParallax>
 
-                <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={0.1} zIndex={0}>
-                  <div className="absolute top-[40%] left-[33%] z-0 w-full max-w-[90px] lg:max-w-[110px] rotate-[-14deg]">
-                    <Image
-                      src="/images/bee.webp"
-                      alt="Bee"
-                      layout="responsive"
-                      width={398}
-                      height={548}
-                      className="w-full"
-                    />
-                  </div>
-                </ScrollParallax>
+                <MouseParallax isAbsolutelyPositioned lerpEase={0.15} strength={0.025} zIndex={0}>
+                  <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={0.1} zIndex={0}>
+                    <div className="absolute top-[40%] left-[33%] z-0 w-full max-w-[90px] lg:max-w-[110px] rotate-[-14deg]">
+                      <Image
+                        src="/images/bee.webp"
+                        alt="Bee"
+                        layout="responsive"
+                        width={398}
+                        height={548}
+                        className="w-full"
+                      />
+                    </div>
+                  </ScrollParallax>
+                </MouseParallax>
               </div>
             </div>
 
@@ -270,20 +280,21 @@ export default function Home(initialData) {
             </div>
 
 
-            <div className="relative border-t border-black/50">
-
-              <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={-0.14} zIndex={10}>
-                <div className="absolute bottom-[15vw] right-[10vw] w-[60%] lg:w-1/3 max-w-[300px] lg:max-w-[550px] z-10">
-                  <Image
-                    src="/images/ninja.webp"
-                    alt="Ninja"
-                    layout="responsive"
-                    width={1056}
-                    height={800}
-                    className="w-full"
-                  />
-                </div>
-              </ScrollParallax>
+            <div className="relative overflow-hidden border-t border-black/50">
+              <MouseParallax isAbsolutelyPositioned lerpEase={0.15} strength={-0.015} zIndex={10}>
+                <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={-0.14} zIndex={10}>
+                  <div className="absolute bottom-[15vw] right-[10vw] w-[60%] lg:w-1/3 max-w-[300px] lg:max-w-[550px] z-10">
+                    <Image
+                      src="/images/ninja.webp"
+                      alt="Ninja"
+                      layout="responsive"
+                      width={1056}
+                      height={800}
+                      className="w-full"
+                    />
+                  </div>
+                </ScrollParallax>
+              </MouseParallax>
 
               <div className="relative z-0 flex overflow-x-hidden">
                 <div className="mt-56 lg:mt-[25vw] mb-[16vw] animate-marquee whitespace-nowrap">
@@ -320,44 +331,50 @@ export default function Home(initialData) {
               </div>
               
               <div className="order-1 md:order-3 col-span-12 md:col-span-6 lg:col-span-4 relative z-0 h-[300px] md:h-full">
-                <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={-0.14} zIndex={0}>
-                  <div className="absolute top-[-20%] right-0 z-0 w-full max-w-[120px] lg:max-w-[160px]">
-                    <Image
-                      src="/images/bee.webp"
-                      alt="Bee"
-                      layout="responsive"
-                      width={398}
-                      height={548}
-                      className="w-full"
-                    />
-                  </div>
-                </ScrollParallax>
+              <MouseParallax isAbsolutelyPositioned lerpEase={0.15} strength={-0.015} zIndex={0}>
+                  <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={-0.14} zIndex={0}>
+                    <div className="absolute top-[-20%] right-0 z-0 w-full max-w-[120px] lg:max-w-[160px]">
+                      <Image
+                        src="/images/bee.webp"
+                        alt="Bee"
+                        layout="responsive"
+                        width={398}
+                        height={548}
+                        className="w-full"
+                      />
+                    </div>
+                  </ScrollParallax>
+                </MouseParallax>
 
-                <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={-0.23} zIndex={0}>
-                  <div className="absolute bottom-0 left-8 z-0 w-full max-w-[80px] lg:max-w-[95px] -scale-x-100 rotate-[15deg]">
-                    <Image
-                      src="/images/bee.webp"
-                      alt="Bee"
-                      layout="responsive"
-                      width={398}
-                      height={548}
-                      className="w-full"
-                    />
-                  </div>
-                </ScrollParallax>
+                <MouseParallax isAbsolutelyPositioned lerpEase={0.15} strength={-0.025} zIndex={0}>
+                  <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={-0.23} zIndex={0}>
+                    <div className="absolute bottom-0 left-8 z-0 w-full max-w-[80px] lg:max-w-[95px] -scale-x-100 rotate-[15deg]">
+                      <Image
+                        src="/images/bee.webp"
+                        alt="Bee"
+                        layout="responsive"
+                        width={398}
+                        height={548}
+                        className="w-full"
+                      />
+                    </div>
+                  </ScrollParallax>
+                </MouseParallax>
 
-                <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={0.1} zIndex={0}>
-                  <div className="absolute top-[40%] left-[33%] z-0 w-full max-w-[90px] lg:max-w-[110px] rotate-[-14deg]">
-                    <Image
-                      src="/images/bee.webp"
-                      alt="Bee"
-                      layout="responsive"
-                      width={398}
-                      height={548}
-                      className="w-full"
-                    />
-                  </div>
-                </ScrollParallax>
+                <MouseParallax isAbsolutelyPositioned lerpEase={0.15} strength={0.025} zIndex={0}>
+                  <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={0.1} zIndex={0}>
+                    <div className="absolute top-[40%] left-[33%] z-0 w-full max-w-[90px] lg:max-w-[110px] rotate-[-14deg]">
+                      <Image
+                        src="/images/bee.webp"
+                        alt="Bee"
+                        layout="responsive"
+                        width={398}
+                        height={548}
+                        className="w-full"
+                      />
+                    </div>
+                  </ScrollParallax>
+                </MouseParallax>
               </div>
             </div>
 

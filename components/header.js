@@ -37,7 +37,7 @@ export default function Header() {
 
   return (
     <div className="fixed top-0 left-0 right-0 w-full z-[1000]">
-      <header className="pl-6 xl:pl-10 bg-white bg-opacity-30 backdrop-blur-xl border-b border-black/50">
+      <header className="pl-6 xl:pl-10 bg-white bg-opacity-0 backdrop-blur-xl border-b border-black/50">
         <div className="flex flex-wrap items-start">
           <Link href="/">
             <a className="w-[100px] lg:w-[110px] xl:w-[125px] 2xl:w-[160px] flex items-center h-[60px] lg:h-[70px] xl:h-[80px]">
