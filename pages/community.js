@@ -200,7 +200,6 @@ export default function Community(initalData) {
 
 
           <div className="bg-pink/20">
-
             <div className="grid grid-cols-12 pt-[15vw] lg:pt-[12vw] pb-4 lg:pb-[3vw]">
               <div className="col-span-10 col-start-2 lg:col-span-10 lg:col-start-2">
                 <div className="grid grid-cols-10">
@@ -263,23 +262,21 @@ export default function Community(initalData) {
 
 
 
-
-          <Container className="pb-[10vw]">
-            <m.div>
-              <h1 className="display-text">Community Page</h1>
-              <div className="content max-w-3xl mb-4">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
-
-                <p>Velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
-
-                <p>Velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <div className="bg-orange/40">
+            <div className="grid grid-cols-12 py-12 lg:pt-[20vw] lg:pb-[12.5vw] px-6 xl:px-10 max-w-screen-3xl mx-auto">
+              <div className="col-span-12 lg:col-span-2 relative z-10">
+                <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">About</span>
               </div>
-            </m.div>
-          </Container>
+              
+              <div className="col-span-12 lg:col-span-5 z-10">
+                <h2 className="font-black text-[clamp(50px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase">HOMAGANG is a sistergang of  HOMA GAMES</h2>
+                <div className="content max-w-3xl mb-8 xl:mb-12 w-10/12">
+                  <p>Homa Games is one of the world’s biggest mobile gaming engines and publishing arms. It’s a gaming technology lab that gives game creators the tools and human expertise needed to turn their creative ideas into commercial hits. Every day more than 10m people around the world play a game built on, or published through Homa.</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-          <FooterCta />          
           <Footer />
         </m.div>
       </LazyMotion>
