@@ -62,7 +62,11 @@ export default function Careers(initalData) {
           className=""
         >
           <div className="w-full bg-gradient-to-b from-pink to-pink/30 pt-24 lg:pt-40 xl:pt-52 border-b border-black/50 mx-auto relative overflow-hidden">
-
+            <div className="absolute top-0 right-0 mt-24 lg:mt-28 xl:mt-32 px-6 xl:px-10 text-[11px] uppercase tracking-widest font-medium leading-none text-right hidden lg:block">
+              <DayInfo className="mb-1" />
+              <MousePosition />
+            </div>
+            
             <div className="max-w-screen-3xl mx-auto px-6 xl:px-10 mb-[15vw]">
               <h1 className="font-black text-[clamp(80px,_9vw,190px)] leading-[0.95] mb-4 uppercase relative z-10 w-11/12 lg:w-full"><span className="block mb-8 lg:mb-12">Brains over backgrounds.</span><span className="block mb-8 lg:mb-12">Results over CVs.</span><span className="block mb-8 lg:mb-12">Determination over degrees.</span></h1>
             </div>
