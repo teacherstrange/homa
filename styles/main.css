@@ -49,3 +49,7 @@ body {
     }
   }
 }
+
+canvas {
+  @apply w-full;
+}
