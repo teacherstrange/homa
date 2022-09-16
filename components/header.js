@@ -8,8 +8,10 @@ import HomaLogoMarkIcon from "@/icons/homa-logo-mark.svg"
 import { useRouter } from "next/router"
 import Link from "next/link"
 import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from "body-scroll-lock"
+import useScrollDirection from '@/helpers/scroll-direction';
 
 export default function Header() {
+  const scrollDirection = useScrollDirection();
   const router = useRouter()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [mobileChildMenuOpen, setMobileChildMenuOpen] = useState(false)
@@ -36,7 +38,7 @@ export default function Header() {
   }
 
   return (
-    <div className="fixed top-0 left-0 right-0 w-full z-[1000]">
+    <div className={`fixed top-0 left-0 right-0 w-full z-[1000] transition-translate ease-in-out duration-[350ms] ${scrollDirection == 'down' ? 'translate-y-[-100px]' : 'translate-y-[0]'}`}>
       <header className="pl-6 xl:pl-10 bg-white bg-opacity-0 backdrop-blur-xl border-b border-black/50">
         <div className="flex flex-wrap items-start">
           <Link href="/">
