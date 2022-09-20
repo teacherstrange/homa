@@ -73,11 +73,11 @@ export default function BlogBody({blog, numberOfArticles, categories, subPage, i
 
             {!subPage && (
               <div className="flex flex-wrap max-w-screen-3xl mx-auto mb-8 xl:mb-10">
-                <div className="w-full lg:w-2/3 flex flex-nowrap overflow-x-scroll lg:overflow-hidden lg:flex-wrap">
+                <div className="w-full lg:w-2/3 flex flex-nowrap overflow-x-scroll lg:overflow-hidden lg:flex-wrap ">
                   {categories?.map((e, i) => {
                     return (
                       <Link href={`/blog/categories/${e.slug.current}`}>
-                        <a className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white mr-3 mb-3">{e.title}</a>
+                        <a className="inline-block flex-shrink-0 border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white mr-3 mb-3">{e.title}</a>
                       </Link>
                     )
                   })}
