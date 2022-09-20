@@ -112,6 +112,6 @@ export async function getStaticPaths() {
   const paths = await pageService.fetchPaths('categories')
   return {
     paths: paths,
-    fallback: true,
+    fallback: false,
   };
 }
