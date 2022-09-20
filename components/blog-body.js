@@ -25,6 +25,12 @@ export const articlesPerPage = 3;
 export const query = `{
   "blog": *[_type == "blog"] | order(date desc) [$start ... $stop] {
     title,
+    category-> {
+      title,
+      slug {
+        current
+      }
+    },
     slug {
       current
     }
@@ -85,8 +91,8 @@ export default function BlogBody({blog, numberOfArticles, categories, subPage, i
               <div className="flex flex-wrap">
                 <div className="w-full lg:w-1/2 py-6 lg:py-10 pl-6 xl:pl-10 pr-6 xl:pr-10">
                   <div className="max-w-[920px] ml-auto">
-                    <Link href="#">
-                      <a className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white mr-3 mb-6 lg:mb-12">A News Tag</a>
+                    <Link href={`/blog/categories/${blog[0].category.slug.current}`}>
+                      <a className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white mr-3 mb-6 lg:mb-12">{blog[0].category.title}</a>
                     </Link>
 
                     <h2 className="font-black text-[clamp(46px,_4.45vw,_86px)] leading-[0.9] mb-12 lg:mb-[15vw] uppercase w-11/12">Headline that runs over multiple lines lorem ipsum dolor sit amet consectetur adipiscing elit.</h2>
@@ -123,7 +129,7 @@ export default function BlogBody({blog, numberOfArticles, categories, subPage, i
               {blog.map((e, i) => {
                 return (
                   <div className="md:px-4 lg:px-6 w-full md:w-1/2 lg:w-1/3 mb-6 md:mb-20 lg:mb-32">
-                    <Link href="#">
+                    <Link href={`/blog/${e.slug.current}`}>
                       <a className="block border border-black/50 w-full">
                         <div className="aspect-square w-full bg-gray-200 border-b border-black/50"></div>
 
@@ -132,7 +138,9 @@ export default function BlogBody({blog, numberOfArticles, categories, subPage, i
 
 
                           <div className="flex items-end">
-                            <span className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white">News Tag</span>
+                            {e.category && (
+                              <span className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white">{e.category.title}</span>
+                            )}
 
                             <span className="block text-sm lg:text-base text-black/50 leading-none ml-auto">June 8 2022</span>
                           </div>
