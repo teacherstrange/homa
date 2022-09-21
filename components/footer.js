@@ -57,7 +57,7 @@ export default function Footer() {
 
                 <li className="w-1/2 md:w-full block mb-4 md:mb-6 xl:mb-10">
                   <FancyLink
-                    destination="/homa-lab/slug"
+                    destination="/homa-lab/ideas"
                     a11yText="Navigate to the homa lab page"
                     label="Ideas"
                     className="uppercase text-sm xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:opacity-75 focus:opacity-75"
@@ -66,7 +66,7 @@ export default function Footer() {
 
                 <li className="w-1/2 md:w-full block mb-4 md:mb-6 xl:mb-10">
                   <FancyLink
-                    destination="/homa-lab/slug"
+                    destination="/homa-lab/market-watchers"
                     a11yText="Navigate to the homa lab page"
                     label="Market Watcher"
                     className="uppercase text-sm xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:opacity-75 focus:opacity-75"
@@ -75,7 +75,7 @@ export default function Footer() {
 
                 <li className="w-1/2 md:w-full block mb-4 md:mb-6 xl:mb-10">
                   <FancyLink
-                    destination="/homa-lab/slug"
+                    destination="/homa-lab/homa-sdk"
                     a11yText="Navigate to the homa lab page"
                     label="Homa SDK"
                     className="uppercase text-sm xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:opacity-75 focus:opacity-75"
@@ -84,7 +84,7 @@ export default function Footer() {
 
                 <li className="w-1/2 md:w-full block mb-4 md:mb-6 xl:mb-10">
                   <FancyLink
-                    destination="/homa-lab/slug"
+                    destination="/homa-lab/dev-tools"
                     a11yText="Navigate to the homa lab page"
                     label="Dev Tools"
                     className="uppercase text-sm xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:opacity-75 focus:opacity-75"
@@ -93,7 +93,7 @@ export default function Footer() {
 
                 <li className="w-1/2 md:w-full block mb-4 md:mb-6 xl:mb-10">
                   <FancyLink
-                    destination="/homa-lab/slug"
+                    destination="/homa-lab/data-analytics"
                     a11yText="Navigate to the homa lab page"
                     label="Data Analytics"
                     className="uppercase text-sm xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:opacity-75 focus:opacity-75"
@@ -102,7 +102,7 @@ export default function Footer() {
 
                 <li className="w-1/2 md:w-full block mb-4 md:mb-16 xl:mb-24">
                   <FancyLink
-                    destination="/homa-lab/slug"
+                    destination="/homa-lab/homa-academy"
                     a11yText="Navigate to the homa lab page"
                     label="Homa Academy"
                     className="uppercase text-sm xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:opacity-75 focus:opacity-75"

@@ -63,7 +63,7 @@ export default function About(initalData) {
           exit="exit"
           className=""
         >
-          <div className="w-full h-full min-h-screen lg:min-h-[110vh] bg-pink/30 pt-24 lg:pt-40 xl:pt-52 border-b border-black/50 px-6 xl:px-10 mx-auto relative overflow-hidden">
+          <m.div variants={fade} className="w-full h-full min-h-screen lg:min-h-[110vh] bg-pink/30 pt-24 lg:pt-40 xl:pt-52 border-b border-black/50 px-6 xl:px-10 mx-auto relative overflow-hidden">
             <div className="w-full h-full absolute inset-0 z-0 object-cover object-top scale-[1.07]">
               <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.035}>
                 <Image
@@ -83,9 +83,9 @@ export default function About(initalData) {
             <div className="max-w-screen-3xl mx-auto">
               <h1 className="font-black text-[clamp(80px,_9vw,190px)] leading-[0.95] mb-4 uppercase relative z-10 w-11/12 lg:w-full">Mobile gaming’s MAJOR PLAYERS</h1>
             </div>
-          </div>
+          </m.div>
 
-          <div className="bg-gradient-to-b from-pink/20 to-pink relative overflow-hidden">              
+          <m.div variants={fade} className="bg-gradient-to-b from-pink/20 to-pink relative overflow-hidden">              
             <div className="w-full border-b border-black/50">
               <div className="grid grid-cols-12 max-w-screen-3xl mx-auto">
                 <div className="col-span-10 col-start-2 md:col-span-10 md:col-start-2 md:border-l md:border-r border-black/50 py-[10vw] md:px-10">
@@ -142,10 +142,10 @@ export default function About(initalData) {
                 </div>
               </div>
             </div>
-          </div>
+          </m.div>
 
 
-          <div className="w-full flex flex-wrap">
+          <m.div variants={fade} className="w-full flex flex-wrap">
             <div className="w-full lg:w-1/2 px-6 xl:px-10 py-20 lg:py-28 xl:py-32 bg-gray-100 border-b lg:border-b-0 lg:border-r border-black/50">
               <div className="lg:sticky lg:top-28 xl:top-32 lg:pb-32 xl:pb-48">
                 <div className="flex w-full lg:h-screen lg:-mt-32 xl:-mt-40 items-center justify-center">
@@ -172,34 +172,35 @@ export default function About(initalData) {
                 )
               })}
             </div>
-          </div>
+          </m.div>
 
-          
-          {Array.from(Array(3), (e, i) => {
-            return (
-              <div className={`bg-lime text-black border-t border-black/50 ${i !== 2 ? 'z-0 sticky top-0' : ' relative z-10' }`} key={i}>
-                <div className="grid grid-cols-12 py-[15vw] h-screen px-6 xl:px-10 max-w-screen-3xl mx-auto items-center">
-                  
-                  <div className="col-span-12 lg:col-span-6 z-10">
-                    <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">We Value:</span>
-                    <h2 className="display-text mb-6 lg:mb-12 xl:mb-16">Ambition</h2>
-                    <span className="uppercase text-xl lg:text-2xl xl:text-3xl tracking-widest mb-3 lg:mb-5 block font-black leading-none lg:leading-none xl:leading-none">We put flags on summits</span>
-                    <div className="content content--lg max-w-3xl mb-8 xl:mb-12 w-10/12">
-                      <p>We set our goals ambitiously high and don’t shy away from the climb. We’re on a mission to take over an industry thick with incumbents who won’t go quietly into the night. To succeed here, you’ll need a highly metaphorical shield and a sword.</p>
+          <m.div variants={fade}>
+            {Array.from(Array(3), (e, i) => {
+              return (
+                <div className={`bg-lime text-black border-t border-black/50 ${i !== 2 ? 'z-0 sticky top-0' : ' relative z-10' }`} key={i}>
+                  <div className="grid grid-cols-12 py-[15vw] h-screen px-6 xl:px-10 max-w-screen-3xl mx-auto items-center">
+                    
+                    <div className="col-span-12 lg:col-span-6 z-10">
+                      <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">We Value:</span>
+                      <h2 className="display-text mb-6 lg:mb-12 xl:mb-16">Ambition</h2>
+                      <span className="uppercase text-xl lg:text-2xl xl:text-3xl tracking-widest mb-3 lg:mb-5 block font-black leading-none lg:leading-none xl:leading-none">We put flags on summits</span>
+                      <div className="content content--lg max-w-3xl mb-8 xl:mb-12 w-10/12">
+                        <p>We set our goals ambitiously high and don’t shy away from the climb. We’re on a mission to take over an industry thick with incumbents who won’t go quietly into the night. To succeed here, you’ll need a highly metaphorical shield and a sword.</p>
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="col-span-12 lg:col-span-6 z-10 h-full">
-                    <div className="h-full flex items-center justify-center">
-                      <div className="w-[300px] h-[300px] border-black border"></div>
+                    <div className="col-span-12 lg:col-span-6 z-10 h-full">
+                      <div className="h-full flex items-center justify-center">
+                        <div className="w-[300px] h-[300px] border-black border"></div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            )
-          })}
+              )
+            })}
+          </m.div>
 
-          <div className="bg-white relative z-10">
+          <m.div className="bg-white relative z-10">
             <div className="">
               <div className="relative z-0 flex overflow-x-hidden">
                 <div className="animate-marquee whitespace-nowrap">
@@ -221,7 +222,7 @@ export default function About(initalData) {
             <SocialScroller />
             <FooterCta image={"/images/about-footer.jpg"} />
             <Footer />
-          </div>
+          </m.div>
         </m.div>
       </LazyMotion>
     </Layout>

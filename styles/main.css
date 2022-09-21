@@ -17,6 +17,11 @@ body {
   @apply font-sans antialiased text-black bg-white;
 }
 
+/* Soften Page Transition Scrolls */
+html {
+  scroll-behavior: smooth;
+}
+
 @screen lg {
   .nav-has-child {
     &:focus-within > .nav-child {

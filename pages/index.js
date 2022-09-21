@@ -2,6 +2,7 @@
 import { LazyMotion, domAnimation, m } from 'framer-motion'
 import { NextSeo } from 'next-seo'
 import { MouseParallax, ScrollParallax } from 'react-just-parallax'
+import { fade } from '@/helpers/transitions'
 
 // Components
 import Layout from '@/components/layout'
@@ -58,7 +59,7 @@ export default function Home(initialData) {
           exit="exit"
           className=""
         >
-          <div className="w-full h-full min-h-screen lg:min-h-[125vh] bg-pink/30 pt-24 lg:pt-40 xl:pt-52 border-b border-black/50 px-6 xl:px-10 mx-auto relative overflow-hidden">
+          <m.div variants={fade} className="w-full h-full min-h-screen lg:min-h-[125vh] bg-pink/30 pt-24 lg:pt-40 xl:pt-52 border-b border-black/50 px-6 xl:px-10 mx-auto relative overflow-hidden">
               <div className="w-full h-full absolute inset-0 z-0 object-cover object-top scale-y-[1.07] -scale-x-100">
                 <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.036}>
                   <Image
@@ -112,9 +113,9 @@ export default function Home(initialData) {
                 </MouseParallax>
               </div>
             </div>
-          </div>
+          </m.div>
         
-          <m.div>
+          <m.div variants={fade}>
             <div className="bg-gradient-to-b from-pink/20 to-pink relative overflow-hidden">
 
               <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={0.025} zIndex={0}>
@@ -447,13 +448,13 @@ export default function Home(initialData) {
                 </div>
               </div>
             </div>
+
+            <SocialScroller />
+            <CarouselBlog items={blog} />
+            <FooterCta />
+            <Footer />
           </m.div>
         </m.main>
-
-        <SocialScroller />
-        <CarouselBlog items={blog} />
-        <FooterCta />
-        <Footer />
       </LazyMotion>
     </Layout>
   )
