@@ -53,3 +53,67 @@ body {
 canvas {
   @apply w-full;
 }
+
+.embla {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 75%;
+
+  @apply justify-start;
+
+  @screen lg {
+    grid-auto-columns: 60%;
+  }
+}
+
+.embla__slide {
+  @apply border-r border-black/50;
+}
+
+.embla__slide-inner {
+  @apply transition-all ease-in-out duration-500 h-[95vw] lg:h-[50vw] p-6 lg:p-10;
+}
+
+.embla__slide-inner-blur {
+  @apply blur-lg transition-all ease-in-out duration-500;
+}
+
+.is-selected {
+  .embla__slide-inner {
+    @apply bg-pink/20;
+  }
+
+  .embla__slide-inner-blur {
+    @apply blur-0;
+  }
+}
+
+
+
+
+
+.embla--team {
+  .embla__container {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 70%;
+
+    @apply justify-start;
+
+    @screen lg {
+      grid-auto-columns: 27.5%;
+    }
+  }
+
+  .embla__slide {
+    @apply border border-black/50 mr-8 lg:mr-12;
+  }
+
+  .embla__slide-inner {
+    @apply transition-all ease-in-out duration-500 h-auto lg:h-auto p-6 lg:p-10;
+  }
+}

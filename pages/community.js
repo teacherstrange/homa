@@ -18,6 +18,8 @@ import MousePosition from '@/components/mouse-position'
 import DiscordIcon from "@/icons/discord.svg"
 import TwitterIcon from "@/icons/twitter.svg"
 import Link from 'next/link'
+import { CarouselPhone } from '@/components/carousel-phone'
+import { CarouselTeam } from '@/components/carousel-team'
 
 // Sanity
 // import SanityPageService from '@/services/sanityPageService'
@@ -143,7 +145,9 @@ export default function Community(initalData) {
             </div>
           </div>
 
-
+          <div className="mb-[8vw]">
+            <CarouselPhone />
+          </div>
 
 
           <div className="bg-white relative overflow-hidden">
@@ -262,7 +266,7 @@ export default function Community(initalData) {
 
 
 
-          <div className="bg-orange/40">
+          <div className="bg-orange/40 mb-[8vw]">
             <div className="grid grid-cols-12 py-12 lg:pt-[20vw] lg:pb-[12.5vw] px-6 xl:px-10 max-w-screen-3xl mx-auto">
               <div className="col-span-12 lg:col-span-2 relative z-10">
                 <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">About</span>
@@ -275,6 +279,10 @@ export default function Community(initalData) {
                 </div>
               </div>
             </div>
+          </div>
+
+          <div className="mb-[8vw]">
+            <CarouselTeam />
           </div>
 
           <Footer />
