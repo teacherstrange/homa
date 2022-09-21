@@ -63,12 +63,12 @@ export default function About(initalData) {
           exit="exit"
           className=""
         >
-          <div className="w-full h-full min-h-screen lg:min-h-[130vh] bg-pink/30 pt-24 lg:pt-40 xl:pt-52 border-b border-black/50 px-6 xl:px-10 mx-auto relative overflow-hidden">
+          <div className="w-full h-full min-h-screen lg:min-h-[110vh] bg-pink/30 pt-24 lg:pt-40 xl:pt-52 border-b border-black/50 px-6 xl:px-10 mx-auto relative overflow-hidden">
             <div className="w-full h-full absolute inset-0 z-0 object-cover object-top scale-[1.07]">
               <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.035}>
                 <Image
-                  src="/images/about.jpg"
-                  alt="About Test"
+                  src="/images/who-we-are.jpg"
+                  alt="Who We Are Landscape"
                   layout="fill"
                   className="w-full h-full absolute inset-0 z-0 object-cover object-top"
                 />
@@ -219,7 +219,7 @@ export default function About(initalData) {
             </div>
 
             <SocialScroller />
-            <FooterCta image={"/images/about.jpg"} />
+            <FooterCta image={"/images/about-footer.jpg"} />
             <Footer />
           </div>
         </m.div>

@@ -29,6 +29,10 @@ const query = `{
         current
       }
     },
+    publishDate,
+    author-> {
+      name
+    },
     slug {
       current
     }
@@ -73,15 +77,32 @@ export default function BlogSlug(initialData) {
             <div className="w-full border-b border-black/50">
               <div className="flex flex-wrap">
                 <div className="w-full lg:w-1/2 py-6 lg:py-10 pl-6 xl:pl-10 pr-6 xl:pr-10">
-                  <div className="max-w-[920px] ml-auto">
-                    <Link href={`/blog/categories/${article.category.slug.current}`}>
-                      <a className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white mr-3 mb-6 lg:mb-12">{article.category.title}</a>
-                    </Link>
-
-                    <h2 className="font-black text-[clamp(46px,_4.45vw,_86px)] leading-[0.9] mb-12 lg:mb-[15vw] uppercase w-11/12">{article.title}</h2>
-
-                    <div className="flex flex-wrap">
+                  <div className="max-w-[920px] ml-auto flex flex-wrap h-full">
+                    <div className="w-full">
+                      <Link href={`/blog/categories/${article.category.slug.current}`}>
+                        <a className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white mr-3 mb-6 lg:mb-12">{article.category.title}</a>
+                      </Link>
                       
+                      <h2 className="font-black text-[clamp(46px,_4.45vw,_86px)] leading-[0.9] mb-12 lg:mb-[15vw] uppercase w-11/12">{article.title}</h2>
+                    </div>
+
+                    <div className="mt-auto w-full">
+                      {article.publishDate && (
+                        <span className="uppercase text-sm lg:text-base tracking-widest mb-2 lg:mb-4 font-medium flex">
+                          <span className="min-w-[150px]">Published:</span>
+                          <span className="block">{article.publishDate}</span>
+                        </span>
+                      )}
+                      {article.author && (
+                        <span className="uppercase text-sm lg:text-base tracking-widest mb-2 lg:mb-4 font-medium flex">
+                          <span className="min-w-[150px]">Author:</span>
+                          <span className="block">{article.author.name}</span>
+                        </span>
+                      )}
+                      <span className="uppercase text-sm lg:text-base tracking-widest mb-2 lg:mb-4 font-medium flex">
+                        <span className="min-w-[150px]">Read Time:</span>
+                        <span className="block">X minutes</span>
+                      </span>
                     </div>
                   </div>
                 </div>

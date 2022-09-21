@@ -84,7 +84,7 @@ export default function Header() {
                   </li>
                   <li className="block">
                     <FancyLink
-                      destination="/homa-lab/slug"
+                      destination="/homa-lab/ideas"
                       a11yText="Navigate to the homa lab page"
                       label="Ideas"
                       className="uppercase font-medium tracking-widest lg:text-sm lg:leading-none xl:text-base xl:leading-none inline-block py-4"
@@ -92,7 +92,7 @@ export default function Header() {
                   </li>
                   <li className="block">
                     <FancyLink
-                      destination="/homa-lab/slug"
+                      destination="/homa-lab/market-watchers"
                       a11yText="Navigate to the homa lab page"
                       label="Market Watchers"
                       className="uppercase font-medium tracking-widest lg:text-sm lg:leading-none xl:text-base xl:leading-none inline-block py-4"
@@ -100,7 +100,7 @@ export default function Header() {
                   </li>
                   <li className="block">
                     <FancyLink
-                      destination="/homa-lab/slug"
+                      destination="/homa-lab/homa-sdk"
                       a11yText="Navigate to the homa lab page"
                       label="Homa SDK"
                       className="uppercase font-medium tracking-widest lg:text-sm lg:leading-none xl:text-base xl:leading-none inline-block py-4"
@@ -108,7 +108,7 @@ export default function Header() {
                   </li>
                   <li className="block">
                     <FancyLink
-                      destination="/homa-lab/slug"
+                      destination="/homa-lab/dev-tools"
                       a11yText="Navigate to the homa lab page"
                       label="Dev Tools"
                       className="uppercase font-medium tracking-widest lg:text-sm lg:leading-none xl:text-base xl:leading-none inline-block py-4"
@@ -116,7 +116,7 @@ export default function Header() {
                   </li>
                   <li className="block">
                     <FancyLink
-                      destination="/homa-lab/slug"
+                      destination="/homa-lab/data-analytics"
                       a11yText="Navigate to the homa lab page"
                       label="Data Analytics"
                       className="uppercase font-medium tracking-widest lg:text-sm lg:leading-none xl:text-base xl:leading-none inline-block py-4"
@@ -124,7 +124,7 @@ export default function Header() {
                   </li>
                   <li className="block">
                     <FancyLink
-                      destination="/homa-lab/slug"
+                      destination="/homa-lab/homa-academy"
                       a11yText="Navigate to the homa lab page"
                       label="Homa Academy"
                       className="uppercase font-medium tracking-widest lg:text-sm lg:leading-none xl:text-base xl:leading-none inline-block py-4"

@@ -2,7 +2,7 @@ import React, { useCallback, useEffect } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import ClassNames from 'embla-carousel-class-names'
 
-export const CarouselPhone = () => {
+export const CarouselPhone = ({ heading }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, speed: 3.5, align: 'start', inViewThreshold: 1 }, [ClassNames()])
 
   const scrollPrev = useCallback(() => {
@@ -17,7 +17,9 @@ export const CarouselPhone = () => {
     <div className="embla">
       <div className="w-[91.05vw] ml-auto flex flex-wrap mb-6">
         <div className="flex-1">
-          <h2 className="font-black text-[clamp(46px,_4.45vw,_86px)] leading-[0.9] uppercase">Watch This Space on Tik-Tok</h2>
+          { heading && (
+            <h2 className="font-black text-[clamp(46px,_4.45vw,_86px)] leading-[0.9] uppercase">{heading}</h2>
+          )}
         </div>
 
         <div className="flex lg:justify-end w-full lg:w-auto lg:ml-auto pr-6 lg:pr-10 mb-5 lg:mb-0">

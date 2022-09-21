@@ -16,40 +16,34 @@ import Link from 'next/link'
 import SocialScroller from '@/components/social-scroller'
 import { useRef } from 'react'
 import PixelatedImage from '@/components/pixelated-image'
+import { CarouselBlog } from '@/components/carousel-blog'
 
 // Sanity
-// import SanityPageService from '@/services/sanityPageService'
+import SanityPageService from '@/services/sanityPageService'
 
-// const query = `{
-//   "home": *[_type == "home"][0]{
-//     title,
-//     imageExample {
-//       asset-> {
-//         ...
-//       },
-//       caption,
-//       alt,
-//       hotspot {
-//         x,
-//         y
-//       },
-//     },
-//     seo {
-//       ...,
-//       shareGraphic {
-//         asset->
-//       }
-//     }
-//   }
-// }`
+const query = `{
+  "blog": *[_type == "blog"][0...5]{
+    title,
+    slug {
+      current
+    },
+    category-> {
+      title,
+      slug {
+        current
+      }
+    },
+    publishDate
+  }
+}`
 
-// const pageService = new SanityPageService(query)
+const pageService = new SanityPageService(query)
 
 export default function Home(initialData) {
   const characterBinder = useRef(null);
 
   // Sanity Data
-  // const { data: { home } } = pageService.getPreviewHook(initialData)()
+  const { data: { blog } } = pageService.getPreviewHook(initialData)()
 
   return (
     <Layout>
@@ -457,6 +451,7 @@ export default function Home(initialData) {
         </m.main>
 
         <SocialScroller />
+        <CarouselBlog items={blog} />
         <FooterCta />
         <Footer />
       </LazyMotion>
@@ -465,10 +460,8 @@ export default function Home(initialData) {
 }
 
 // Sanity CMS Props
-// export async function getStaticProps(context) {
-//   const cms = await pageService.fetchQuery(context)
+export async function getStaticProps(context) {
+  const cms = await pageService.fetchQuery(context)
 
-//   return {
-//     props: { ...cms }
-//   }
-// }
+  return cms
+}

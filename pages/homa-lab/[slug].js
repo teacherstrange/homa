@@ -13,40 +13,26 @@ import Container from '@/components/container'
 import FooterCta from '@/components/footer-cta'
 
 // Sanity
-// import SanityPageService from '@/services/sanityPageService'
+import SanityPageService from '@/services/sanityPageService'
 
-// const query = `{
-//   "about": *[_type == "about"][0]{
-//     title,
-//     imageExample {
-//       asset-> {
-//         ...
-//       },
-//       caption,
-//       alt,
-//       hotspot {
-//         x,
-//         y
-//       },
-//     },
-//     seo {
-//       ...,
-//       shareGraphic {
-//         asset->
-//       }
-//     }
-//   }
-// }`
+const query = `{
+  "product": *[_type == "products" && slug.current == $slug][0] {
+    title,
+    slug {
+      current
+    }
+  },
+}`
 
-// const pageService = new SanityPageService(query)
+const pageService = new SanityPageService(query)
 
-export default function HomaLabChild(initalData) {
+export default function HomaLabChild(initialData) {
   // Sanity Data
-  // const { data: { about } } = pageService.getPreviewHook(initialData)()
+  const { data: { product } } = pageService.getPreviewHook(initialData)()
   
   return (
     <Layout>
-      <NextSeo title="Homa Lab Child" />
+      <NextSeo title={product.title} />
 
       <Header />
 
@@ -59,7 +45,7 @@ export default function HomaLabChild(initalData) {
         >
           <Container className="pb-[10vw]">
             <m.div>
-              <h1 className="display-text">Homa Lab - Child Page</h1>
+              <h1 className="display-text">{product.title}</h1>
               <div className="content max-w-3xl mb-4">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
 
@@ -80,11 +66,16 @@ export default function HomaLabChild(initalData) {
   )
 }
 
-// Sanity CMS Props
-// export async function getStaticProps(context) {
-//   const cms = await pageService.fetchQuery(context)
+export async function getStaticProps(context) {
+  const cms = await pageService.fetchQuery(context)
 
-//   return {
-//     props: { ...cms }
-//   }
-// }
+  return cms
+}
+
+export async function getStaticPaths() {
+  const paths = await pageService.fetchPaths('products')
+  return {
+    paths: paths,
+    fallback: false,
+  };
+}

@@ -66,12 +66,12 @@ export default function Community(initalData) {
           exit="exit"
           className=""
         >
-          <div className="w-full h-full min-h-screen lg:min-h-[130vh] bg-pink/30 pt-24 lg:pt-40 xl:pt-52 px-6 xl:px-10 mx-auto relative overflow-hidden">
+          <div className="w-full h-full min-h-screen lg:min-h-[110vh] bg-pink/30 pt-24 lg:pt-40 xl:pt-52 px-6 xl:px-10 mx-auto relative overflow-hidden">
             <div className="w-full h-full absolute inset-0 z-0 object-cover object-top scale-[1.07]">
               <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.035}>
                 <Image
-                  src="/images/about.jpg"
-                  alt="About Test"
+                  src="/images/community.jpg"
+                  alt="Community Landscape"
                   layout="fill"
                   className="w-full h-full absolute inset-0 z-0 object-cover object-top"
                 />
@@ -146,9 +146,8 @@ export default function Community(initalData) {
           </div>
 
           <div className="mb-[8vw]">
-            <CarouselPhone />
+            <CarouselPhone heading="Watch This Space on Tik-Tok" />
           </div>
-
 
           <div className="bg-white relative overflow-hidden">
             <div className="w-full border-b border-t border-black/50">

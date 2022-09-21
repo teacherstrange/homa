@@ -63,12 +63,12 @@ export default function HomaLab(initalData) {
           exit="exit"
           className=""
         >
-          <div className="w-full h-full min-h-screen lg:min-h-[130vh] bg-pink/30 pt-24 lg:pt-40 xl:pt-52 border-b border-black/50 px-6 xl:px-10 mx-auto relative overflow-hidden">
+          <div className="w-full h-full min-h-screen lg:min-h-[110vh] bg-pink/30 pt-24 lg:pt-40 xl:pt-52 border-b border-black/50 px-6 xl:px-10 mx-auto relative overflow-hidden">
             <div className="w-full h-full absolute inset-0 z-0 object-cover object-top scale-[1.07]">
               <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.035}>
                 <Image
-                  src="/images/about.jpg"
-                  alt="About Test"
+                  src="/images/homa-lab.jpg"
+                  alt="Homa Lab Landscape"
                   layout="fill"
                   className="w-full h-full absolute inset-0 z-0 object-cover object-top"
                 />
@@ -93,7 +93,7 @@ export default function HomaLab(initalData) {
 
           <div className="border-b border-black/50 relative overflow-hidden">
             <Container>
-              <div className="flex flex-wrap py-12 pb-72 lg:py-[12vw]">
+              <div className="flex flex-wrap py-12 pb-96 lg:py-[12vw]">
                 <div className="w-full lg:w-1/2">
                   <h2 className="font-bold text-xl lg:text-2xl xl:text-3xl mb-8 lg:mb-[5vw] uppercase w-10/12 tracking-wide">Welcome to our data-powered centrifuge of ideas, insights and tools to game the system and score HITS. Lab coat optional.</h2>
 
@@ -104,7 +104,7 @@ export default function HomaLab(initalData) {
 
                 <MouseParallax isAbsolutelyPositioned lerpEase={0.15} strength={0.025}>
                   <ScrollParallax isAbsolutelyPositioned lerpEase={0.15}>
-                    <div className="absolute bottom-[-30px] right-[10vw] w-[55vw] lg:w-[35vw] xl:w-[32vw] 2xl:w-[30vw] max-w-[250px] lg:max-w-[600px] z-0">
+                    <div className="absolute bottom-[-30px] right-[10vw] w-[55vw] lg:w-[32vw] xl:w-[32vw] 2xl:w-[30vw] max-w-[230px] lg:max-w-[480px] z-0">
                       {/* <Image
                         src="/images/character-test.webp"
                         alt="Character Test"
@@ -113,7 +113,7 @@ export default function HomaLab(initalData) {
                         height={1236}
                       /> */}
 
-                      <PixelatedImage image={'/images/character-test.webp'} width={'930'} height={1236} />
+                      <PixelatedImage image={'/images/princess.webp'} width={994} height={1612} />
                     </div>
                   </ScrollParallax>
                 </MouseParallax>
@@ -189,7 +189,7 @@ export default function HomaLab(initalData) {
 
                 <div className="w-full flex flex-wrap border border-black/50 mb-6 lg:mb-8">
                   <div className="w-full lg:w-1/3 border-b lg:border-b-0 lg:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
-                    <h3 className="font-bold text-2xl lg:text-3xl xl:text-4xl leading-[0.95] mb-12 lg:mb-32 uppercase">Analysis &amp; Feedback</h3>
+                    <h3 className="font-bold text-2xl lg:text-3xl xl:text-3xl leading-[0.95] mb-12 lg:mb-32 uppercase">Analysis &amp; Feedback</h3>
 
                     <div className="content content--small w-11/12">
                       <p>The weekly Homa Hangout where we dissect hit games.</p>
@@ -197,7 +197,7 @@ export default function HomaLab(initalData) {
                   </div>
 
                   <div className="w-full lg:w-1/3 border-b lg:border-b-0 lg:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
-                    <h3 className="font-bold text-2xl lg:text-3xl xl:text-4xl leading-[0.95] mb-12 lg:mb-32 uppercase w-11/12">Best in class mentorship</h3>
+                    <h3 className="font-bold text-2xl lg:text-3xl xl:text-3xl leading-[0.95] mb-12 lg:mb-32 uppercase w-11/12">Best in class mentorship</h3>
 
                     <div className="content content--small w-11/12">
                       <p>Best practice guides for ideation and game design.</p>
@@ -205,7 +205,7 @@ export default function HomaLab(initalData) {
                   </div>
 
                   <div className="w-full lg:w-1/3 p-5 lg:p-6 xl:p-8 2xl:p-10">
-                    <h3 className="font-bold text-2xl lg:text-3xl xl:text-4xl leading-[0.95] mb-12 lg:mb-32 uppercase">Access to our library</h3>
+                    <h3 className="font-bold text-2xl lg:text-3xl xl:text-3xl leading-[0.95] mb-12 lg:mb-32 uppercase">Access to our library</h3>
 
                     <div className="content content--small w-11/12">
                       <p>Resource examples for (hyper and hybrid) casual games, UI/UX analysis and examples</p>
@@ -220,7 +220,19 @@ export default function HomaLab(initalData) {
             </div>
           </div>
 
-          <FooterCta />          
+          <FooterCta image="/images/homa-lab-footer.jpg">
+            <div className="col-span-10 col-start-2 md:col-span-8 md:col-start-3 xl:col-span-6 xl:col-start-4 border-black/50 border-l border-r bg-white bg-gradient-to-b from-pink/20 to-pink p-6 md:p-10 xl:p-16 text-center">
+              <span className="block font-black uppercase text-2xl md:text-3xl xl:text-4xl mb-20 md:mb-[15vw] xl:mb-[12.5vw]">One hit is good, Multiple is the goal.</span>
+
+              <div className="w-8/12 mx-auto max-w-md mb-20 md:mb-[15vw] xl:mb-[12.5vw]">
+
+              <Link href="#">
+                <a className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white">Enter the Homa Lab</a>
+              </Link>
+              </div>
+            </div>
+          </FooterCta>
+          
           <Footer />
         </m.div>
       </LazyMotion>
