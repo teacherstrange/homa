@@ -130,3 +130,39 @@ canvas {
     }
   }
 }
+
+
+.roll-btn {
+  @apply relative;
+}
+
+.roll-btn__front {
+  @apply bg-black block text-white text-center uppercase px-6 py-6 tracking-wide relative;
+  -webkit-transform-origin: 50% 100% 0;
+  transform-origin: 50% 100% 0;
+  transition: -webkit-transform .3s cubic-bezier(.76,0,.24,1) 0s;
+  transition: transform .3s cubic-bezier(.76,0,.24,1) 0s;
+  transition: transform .3s cubic-bezier(.76,0,.24,1) 0s,-webkit-transform .3s cubic-bezier(.76,0,.24,1) 0s;
+}
+
+.roll-btn__back {
+  @apply bg-black block text-white h-full w-full text-center uppercase px-6 py-6 tracking-wide absolute left-0 top-[100%] z-[-1];
+  -webkit-transform-origin: 50% 0 0;
+  transform-origin: 50% 0 0;
+  -webkit-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+  transition: -webkit-transform .3s cubic-bezier(.76,0,.24,1) 0s;
+  transition: transform .3s cubic-bezier(.76,0,.24,1) 0s;
+  transition: transform .3s cubic-bezier(.76,0,.24,1) 0s,-webkit-transform .3s cubic-bezier(.76,0,.24,1) 0s;
+}
+
+.roll-btn:hover {
+  .roll-btn__front {
+    -webkit-transform: translateY(-100%) rotateX(90deg);
+    transform: translateY(-100%) rotateX(90deg);
+  }
+  .roll-btn__back {
+    -webkit-transform: translateY(-100%) rotateX(0);
+    transform: translateY(-100%) rotateX(0);
+  }
+}

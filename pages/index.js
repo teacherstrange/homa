@@ -89,19 +89,16 @@ export default function Home(initialData) {
 
                   <div className="flex space-x-2">
                     <Link href="/">
-                      <a className="bg-black text-white px-3 py-6 uppercase tracking-wide w-1/2 text-center group">
-                        <div className="relative">
-                          <span className="block group-hover:opacity-0">Make A Game</span>
-                          <span className="absolute top-0 left-0 right-0 hidden  group-hover:block"><TextScrambler text="Make A Game" seed={10} step={1} singleLine /></span>
-                        </div>
+                      <a href="/community" class="roll-btn w-1/2" >
+                        <span class="roll-btn__front">Make A Game</span>
+                        <span class="roll-btn__back">Make A Game</span>
                       </a>
                     </Link>
+
                     <Link href="/">
-                      <a className="bg-black text-white px-3 py-6 uppercase tracking-wide w-1/2 text-center group">
-                        <div className="relative">
-                          <span className="block group-hover:opacity-0">Build A Career</span>
-                          <span className="absolute top-0 left-0 right-0 hidden  group-hover:block"><TextScrambler text="Build A Career" seed={12} step={1} singleLine /></span>
-                        </div>
+                      <a href="/community" class="roll-btn w-1/2" >
+                        <span class="roll-btn__front">Build A Career</span>
+                        <span class="roll-btn__back">Build A Career</span>
                       </a>
                     </Link>
                   </div>
@@ -415,7 +412,10 @@ export default function Home(initialData) {
                   </div>
 
                   <Link href="#">
-                    <a className="inline-block border border-black/50 font-medium uppercase leading-none py-6 px-10 rounded-sm bg-black text-white hover:bg-black hover:text-white focus:bg-black focus:text-white">Apply for a job at Homa</a>
+                    <a href="/community" class="roll-btn inline-block" >
+                      <span class="roll-btn__front">Apply for a job at Homa</span>
+                      <span class="roll-btn__back">Apply for a job at Homa</span>
+                    </a>
                   </Link>
                 </div>
               </div>
