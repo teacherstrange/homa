@@ -17,6 +17,7 @@ import MousePosition from '@/components/mouse-position'
 import Link from 'next/link'
 import Image from 'next/image'
 import PixelatedImage from '@/components/pixelated-image'
+import TextScrambler from '@/components/text-scrambler'
 
 // Sanity
 // import SanityPageService from '@/services/sanityPageService'
@@ -82,7 +83,7 @@ export default function HomaLab(initalData) {
               </div>
 
               <div className="mx-auto relative z-10">
-                <h1 className="font-black text-[clamp(80px,_8.5vw,180px)] leading-[0.95] mb-16 lg:mb-32 uppercase relative z-10 w-11/12 lg:w-full">If you’re not using this, you’re just playing around.</h1>
+                <h1 className="font-black text-[clamp(80px,_8.5vw,180px)] leading-[0.95] mb-16 lg:mb-32 uppercase relative z-10 w-11/12 lg:w-full"><TextScrambler text="If you’re not using this, you’re just playing around" seed={50} /></h1>
 
                 <Link href="/">
                   <a className="bg-black text-white px-12 py-6 uppercase tracking-wide w-1/2 text-center">

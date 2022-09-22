@@ -17,6 +17,7 @@ import DayInfo from '@/components/day-info'
 import Link from 'next/link'
 import Image from 'next/image'
 import SocialScroller from '@/components/social-scroller'
+import TextScrambler from '@/components/text-scrambler'
 
 // Sanity
 // import SanityPageService from '@/services/sanityPageService'
@@ -81,7 +82,7 @@ export default function About(initalData) {
             </div>
 
             <div className="max-w-screen-3xl mx-auto">
-              <h1 className="font-black text-[clamp(80px,_9vw,190px)] leading-[0.95] mb-4 uppercase relative z-10 w-11/12 lg:w-full">Mobile gaming’s MAJOR PLAYERS</h1>
+              <h1 className="font-black text-[clamp(80px,_9vw,190px)] leading-[0.95] mb-4 uppercase relative z-10 w-11/12 lg:w-full"><TextScrambler text="Mobile gaming’s major players" seed={25} /></h1>
             </div>
           </m.div>
 

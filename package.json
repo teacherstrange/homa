@@ -26,7 +26,9 @@
     "start": "next start"
   },
   "dependencies": {
+    "@a7sc11u/scramble": "0.0.6",
     "@svgr/webpack": "^6.3.1",
+    "@twistezo/react-text-scramble": "^1.0.6",
     "body-scroll-lock": "^4.0.0-beta.0",
     "embla-carousel-class-names": "^7.0.3",
     "embla-carousel-react": "^7.0.3",

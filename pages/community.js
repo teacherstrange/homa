@@ -21,6 +21,7 @@ import Link from 'next/link'
 import { CarouselPhone } from '@/components/carousel-phone'
 import { CarouselTeam } from '@/components/carousel-team'
 import AccordionList from '@/components/accordion'
+import TextScrambler from '@/components/text-scrambler'
 
 // Sanity
 // import SanityPageService from '@/services/sanityPageService'
@@ -86,7 +87,7 @@ export default function Community(initalData) {
               </div>
 
               <div className="max-w-screen-3xl mx-auto">
-                <h1 className="font-black text-[clamp(80px,_8.5vw,180px)] leading-[0.95] mb-4 uppercase relative z-10 w-11/12 lg:w-full">OUt of the game, into the universe.</h1>
+                <h1 className="font-black text-[clamp(80px,_8.5vw,180px)] leading-[0.95] mb-4 uppercase relative z-10 w-11/12 lg:w-full"><TextScrambler text="Out of the game, into the universe." seed={30} /></h1>
               </div>
             </div>
 

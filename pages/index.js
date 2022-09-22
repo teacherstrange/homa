@@ -22,6 +22,7 @@ import { CarouselBlog } from '@/components/carousel-blog'
 // Sanity
 import SanityPageService from '@/services/sanityPageService'
 import TestWebgl from '@/components/test-webgl'
+import TextScrambler from '@/components/text-scrambler'
 
 const query = `{
   "blog": *[_type == "blog"][0...5]{
@@ -78,7 +79,9 @@ export default function Home(initialData) {
             </div>
 
             <div className="max-w-screen-3xl mx-auto" ref={characterBinder}>
-              <h1 className="font-black text-[clamp(80px,_10.2vw,_210px)] leading-[0.95] mb-4 uppercase relative z-10 w-11/12 lg:w-full">Game The System</h1>
+              <h1 className="font-black text-[clamp(80px,_10.2vw,_210px)] leading-[0.95] mb-4 uppercase relative z-10 w-11/12 lg:w-full">
+                <TextScrambler text="Game The System" seed={10} />
+              </h1>
 
               <div className="w-10/12 lg:w-[50%] xl:w-[45%] 2xl:w-[35%] max-w-[720px] pt-[75%] lg:pt-[10%] relative pb-8 lg:pb-0">
                 <div className="relative z-10">
