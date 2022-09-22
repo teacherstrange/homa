@@ -3,12 +3,12 @@ import { ImagePixelated } from "react-pixelate"
 import { useInView } from "framer-motion"
 
 export default function PixelatedImage({ image, width, height }) {
-  const [currentIndex, setCurrentIndex] = useState(40);
+  const [currentIndex, setCurrentIndex] = useState(15);
   const ref = useRef(null)
   const isInView = useInView(ref)
 
   useEffect(() => {
-    let speed = 100
+    let speed = 200
 
     const i_id = setInterval(() => {
       if (currentIndex == 0) {
@@ -23,7 +23,7 @@ export default function PixelatedImage({ image, width, height }) {
       clearInterval(i_id);
       
       if (!isInView) {
-        setCurrentIndex(40)
+        setCurrentIndex(15)
       }
     }
   },[currentIndex, isInView]);
@@ -34,9 +34,9 @@ export default function PixelatedImage({ image, width, height }) {
         src={image}
         width={width}
         height={height}
-        pixelSize={currentIndex}
-        centered
-        fillTransparencyColor={'transparent'}
+        pixelSize={0}
+        // centered
+        // fillTransparencyColor={'transparent'}
       />
     </div>
   )

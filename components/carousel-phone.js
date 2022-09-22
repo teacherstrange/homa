@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import ClassNames from 'embla-carousel-class-names'
+import ArrowRightIcon from '@/icons/arrow-right.svg'
 
 export const CarouselPhone = ({ heading }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, speed: 3.5, align: 'start', inViewThreshold: 1 }, [ClassNames()])
@@ -23,8 +24,12 @@ export const CarouselPhone = ({ heading }) => {
         </div>
 
         <div className="flex lg:justify-end w-full lg:w-auto lg:ml-auto pr-6 lg:pr-10 mb-5 lg:mb-0">
-          <button class="embla__prev w-10 lg:w-16 h-10 lg:h-16 flex items-center p-4 justify-center border border-black/50 border-r-0" onClick={scrollPrev}>Prev</button>
-          <button class="embla__next w-10 lg:w-16 h-10 lg:h-16 flex items-center p-4 justify-center border border-black/50" onClick={scrollNext}>Next</button>
+          <button class="embla__prev w-12 lg:w-16 h-12 lg:h-16 flex items-center p-3 lg:p-4 justify-center border border-black/50 border-r-0" onClick={scrollPrev}>
+            <ArrowRightIcon className="w-full rotate-180" />
+          </button>
+          <button class="embla__next w-12 lg:w-16 h-12 lg:h-16 flex items-center p-3 lg:p-4 justify-center border border-black/50" onClick={scrollNext}>
+            <ArrowRightIcon className="w-full" />
+          </button>
         </div>
       </div>
 
