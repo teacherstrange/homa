@@ -21,6 +21,7 @@ import { CarouselBlog } from '@/components/carousel-blog'
 
 // Sanity
 import SanityPageService from '@/services/sanityPageService'
+import TestWebgl from '@/components/test-webgl'
 
 const query = `{
   "blog": *[_type == "blog"][0...5]{
@@ -333,54 +334,11 @@ export default function Home(initialData) {
                 </Link>
               </div>
               
-              <div className="order-1 md:order-3 col-span-12 md:col-span-6 lg:col-span-4 relative z-0 h-[300px] md:h-full">
-                <MouseParallax isAbsolutelyPositioned lerpEase={0.15} strength={-0.015} zIndex={0}>
-                  <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={-0.14} zIndex={0}>
-                    <div className="absolute top-[-20%] right-0 z-0 w-full max-w-[120px] lg:max-w-[160px]">
-                      {/* <Image
-                        src="/images/bee.webp"
-                        alt="Bee"
-                        layout="responsive"
-                        width={398}
-                        height={548}
-                        className="w-full"
-                      /> */}
-                      <PixelatedImage image={'/images/bee.webp'} width={398} height={548} />
-                    </div>
-                  </ScrollParallax>
-                </MouseParallax>
+              <div className="order-1 md:order-3 col-span-12 md:col-span-6 lg:col-span-4 relative z-0 md:h-full mb-8 lg:mb-0">
 
-                <MouseParallax isAbsolutelyPositioned lerpEase={0.15} strength={-0.025} zIndex={0}>
-                  <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={-0.23} zIndex={0}>
-                    <div className="absolute bottom-0 left-8 z-0 w-full max-w-[80px] lg:max-w-[95px] -scale-x-100 rotate-[15deg]">
-                      {/* <Image
-                        src="/images/bee.webp"
-                        alt="Bee"
-                        layout="responsive"
-                        width={398}
-                        height={548}
-                        className="w-full"
-                      /> */}
-                      <PixelatedImage image={'/images/bee.webp'} width={398} height={548} />
-                    </div>
-                  </ScrollParallax>
-                </MouseParallax>
+                {/* Henry to replace with WebGl */}
+                <TestWebgl />
 
-                <MouseParallax isAbsolutelyPositioned lerpEase={0.15} strength={0.025} zIndex={0}>
-                  <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={0.1} zIndex={0}>
-                    <div className="absolute top-[40%] left-[33%] z-0 w-full max-w-[90px] lg:max-w-[110px] rotate-[-14deg]">
-                      {/* <Image
-                        src="/images/bee.webp"
-                        alt="Bee"
-                        layout="responsive"
-                        width={398}
-                        height={548}
-                        className="w-full"
-                      /> */}
-                      <PixelatedImage image={'/images/bee.webp'} width={398} height={548} />
-                    </div>
-                  </ScrollParallax>
-                </MouseParallax>
               </div>
             </div>
 

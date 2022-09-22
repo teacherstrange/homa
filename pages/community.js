@@ -20,6 +20,7 @@ import TwitterIcon from "@/icons/twitter.svg"
 import Link from 'next/link'
 import { CarouselPhone } from '@/components/carousel-phone'
 import { CarouselTeam } from '@/components/carousel-team'
+import AccordionList from '@/components/accordion'
 
 // Sanity
 // import SanityPageService from '@/services/sanityPageService'
@@ -281,8 +282,16 @@ export default function Community(initalData) {
               </div>
             </div>
 
-            <div className="mb-[8vw]">
+            <div className="pb-[8vw] mb-[8vw] border-b border-black/50">
               <CarouselTeam />
+            </div>
+
+            <div className="mb-[8vw]">
+              <div className="max-w-screen-2xl mx-auto">
+                <div className="px-6 lg:px-24">
+                  <AccordionList />
+                </div>
+              </div>
             </div>
 
             <Footer />
