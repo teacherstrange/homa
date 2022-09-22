@@ -2,7 +2,7 @@ import { TextScramble } from "@a7sc11u/scramble"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
 
-export default function TextScrambler({ text, seed }) {
+export default function TextScrambler({ text, seed, step }) {
   const scrambleIsInView = useRef(null)
   const isInView = useInView(scrambleIsInView)
 
@@ -12,12 +12,12 @@ export default function TextScrambler({ text, seed }) {
         <TextScramble
           as="div"
           play={true}
-          speed={0.5}
-          scramble={5}
-          step={1}
+          speed={0.75}
+          scramble={1}
+          step={step ? step : 1}
           stepInterval={1}
-          seed={seed ? seed : 10}
-          seedInterval={5}
+          seed={seed ? seed : 3}
+          seedInterval={10}
           text={text}
         />
       ) : (

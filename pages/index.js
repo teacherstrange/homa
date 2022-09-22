@@ -80,7 +80,7 @@ export default function Home(initialData) {
 
             <div className="max-w-screen-3xl mx-auto" ref={characterBinder}>
               <h1 className="font-black text-[clamp(80px,_10.2vw,_210px)] leading-[0.95] mb-4 uppercase relative z-10 w-11/12 lg:w-full">
-                <TextScrambler text="Game The System" seed={10} />
+                <TextScrambler text="Game The System" seed={12} step={1} />
               </h1>
 
               <div className="w-10/12 lg:w-[50%] xl:w-[45%] 2xl:w-[35%] max-w-[720px] pt-[75%] lg:pt-[10%] relative pb-8 lg:pb-0">

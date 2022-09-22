@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import TextScrambler from './text-scrambler';
 
 export default function MousePosition() {
   const [mouseCoords, setMouseCoords] = useState({x: 0, y: 0});
@@ -21,13 +20,11 @@ export default function MousePosition() {
   
   return (
     <div>
-      <span className="flex space-x-2 justify-end">
-        <span className="flex">
-          <span>x:</span><TextScrambler text={`${mouseCoords.x}`} seed={5} />
-        </span>
-        <span className="flex">
-          <span>y:</span><TextScrambler text={`${mouseCoords.y}`} seed={5} />
-        </span>
+      <span className="block">x 
+      {mouseCoords.x < 1000 && '0'}{mouseCoords.x}
+      &nbsp;:&nbsp;
+      y
+      {mouseCoords.y < 1000 && '0'}{mouseCoords.y}
       </span>
     </div>
   )

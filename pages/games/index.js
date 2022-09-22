@@ -72,7 +72,7 @@ export default function Games(initalData) {
               </div>
 
               <div className="max-w-screen-3xl mx-auto">
-                <h1 className="font-black text-[clamp(80px,_9vw,190px)] leading-[0.95] mb-4 uppercase relative z-10 w-11/12 lg:w-full"><TextScrambler text="Win with the ease of cheating" seed={28} /></h1>
+                <h1 className="font-black text-[clamp(80px,_9vw,190px)] leading-[0.95] mb-4 uppercase relative z-10 w-11/12 lg:w-full"><TextScrambler text="Win with the ease of cheating" seed={15} step={2} /></h1>
 
                 <div className="w-10/12 lg:w-[50%] xl:w-[45%] 2xl:w-[40%] max-w-[720px] pt-[5%] lg:pt-[10%] relative pb-8 lg:pb-0">
                   <div className="relative z-10">
