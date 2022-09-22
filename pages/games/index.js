@@ -19,38 +19,47 @@ import Link from 'next/link'
 import PixelatedImage from '@/components/pixelated-image'
 import { CarouselPhone } from '@/components/carousel-phone'
 import TextScrambler from '@/components/text-scrambler'
+import { CarouselGames } from '@/components/carousel-games'
+import { CarouselCards } from '@/components/carousel-cards'
+
 
 // Sanity
-// import SanityPageService from '@/services/sanityPageService'
+import SanityPageService from '@/services/sanityPageService'
 
-// const query = `{
-//   "about": *[_type == "about"][0]{
-//     title,
-//     imageExample {
-//       asset-> {
-//         ...
-//       },
-//       caption,
-//       alt,
-//       hotspot {
-//         x,
-//         y
-//       },
-//     },
-//     seo {
-//       ...,
-//       shareGraphic {
-//         asset->
-//       }
-//     }
-//   }
-// }`
+const query = `{
+  "games": *[_type == "gamesLibrary"]{
+    title,
+    partnerName,
+    googlePlayStoreLink,
+    appStoreLink
+  },
+  "successStories": *[_type == "caseStudies"]{
+    title,
+    heroImage {
+      asset-> {
+        ...
+      },
+      caption,
+      alt,
+      hotspot {
+        x,
+        y
+      },
+    },
+    partnerName,
+    projectName,
+    publishDate,
+    slug {
+      current
+    }
+  }
+}`
 
-// const pageService = new SanityPageService(query)
+const pageService = new SanityPageService(query)
 
-export default function Games(initalData) {
+export default function Games(initialData) {
   // Sanity Data
-  // const { data: { about } } = pageService.getPreviewHook(initialData)()
+  const { data: { games, successStories } } = pageService.getPreviewHook(initialData)()
   
   return (
     <Layout>
@@ -103,11 +112,11 @@ export default function Games(initalData) {
             </div>
 
             <div className="mb-[8vw]">
-              <CarouselPhone heading="Greatest Hits To Date" />
+              <CarouselGames heading="Greatest Hits To Date" items={games} />
             </div>
 
             <Container>
-              <div className="flex flex-wrap py-12 lg:py-[10vw]">
+              <div className="flex flex-wrap py-12 lg:pt-[10vw] lg:pb-[15vw]">
                 <div className="w-full lg:w-1/2">
                   <h2 className="font-black text-[clamp(50px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-[5vw] uppercase w-11/12">From Customers to partners</h2>
 
@@ -121,6 +130,8 @@ export default function Games(initalData) {
                 </div>
               </div>
             </Container>
+
+            <CarouselCards heading="Our Partners" items={successStories} />
 
 
             <div className="relative border-b border-black/50">
@@ -340,7 +351,7 @@ export default function Games(initalData) {
                 </div>
               </div>
 
-              <div className="grid grid-cols-12 border-black/50 border-t border-b relative z-10">
+              <div className="grid grid-cols-12 border-black/50 border-t relative z-10">
                 <div className="col-span-10 col-start-2 border-black/50 border-l border-r bg-transparent h-[12vw]">
                   <div className="flex flex-wrap h-full">
                     <div className="w-full lg:w-1/2"></div>
@@ -373,10 +384,8 @@ export default function Games(initalData) {
 }
 
 // Sanity CMS Props
-// export async function getStaticProps(context) {
-//   const cms = await pageService.fetchQuery(context)
+export async function getStaticProps(context) {
+  const cms = await pageService.fetchQuery(context)
 
-//   return {
-//     props: { ...cms }
-//   }
-// }
+  return cms
+}

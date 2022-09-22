@@ -61,13 +61,15 @@ export default function Home(initialData) {
           exit="exit"
           className=""
         >
-          <m.div variants={fade} className="w-full h-full min-h-screen lg:min-h-[125vh] bg-pink/30 pt-24 lg:pt-40 xl:pt-52 border-b border-black/50 px-6 xl:px-10 mx-auto relative overflow-hidden">
+          <m.div variants={fade} className="w-full h-full min-h-screen lg:min-h-[115vh] bg-pink/30 pt-24 lg:pt-40 xl:pt-52 border-b border-black/50 px-6 xl:px-10 mx-auto relative overflow-hidden">
               <div className="w-full h-full absolute inset-0 z-0 object-cover object-top scale-y-[1.07] -scale-x-100">
                 <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.036}>
                   <Image
                     src="/images/home.jpg"
                     alt="Character Test"
                     layout="fill"
+                    quality={75}
+                    priority
                     className="w-full h-full absolute inset-0 z-0 object-cover object-top"
                   />
                 </ScrollParallax>
@@ -80,7 +82,7 @@ export default function Home(initialData) {
 
             <div className="max-w-screen-3xl mx-auto" ref={characterBinder}>
               <h1 className="font-black text-[clamp(80px,_10.2vw,_210px)] leading-[0.95] mb-4 uppercase relative z-10 w-11/12 lg:w-full">
-                <TextScrambler text="Game The System" seed={12} step={1} />
+                <TextScrambler text="Game The System" seed={12} step={1} singleLine />
               </h1>
 
               <div className="w-10/12 lg:w-[50%] xl:w-[45%] 2xl:w-[35%] max-w-[720px] pt-[75%] lg:pt-[10%] relative pb-8 lg:pb-0">
@@ -124,7 +126,6 @@ export default function Home(initialData) {
         
           <m.div variants={fade}>
             <div className="bg-gradient-to-b from-pink/20 to-pink relative overflow-hidden">
-
               <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={0.025} zIndex={0}>
                 <div className="absolute bottom-0 right-[3%] z-0 w-[57%] lg:w-[30%] max-w-[320px] lg:max-w-[400px] xl:max-w-[480px]">
                   {/* <Image
@@ -139,7 +140,7 @@ export default function Home(initialData) {
                 </div>
               </ScrollParallax>
               
-              <div className="w-full border-b border-black/50">
+              <div className="w-full border-b border-black/50 relative z-10">
                 <div className="grid grid-cols-12 max-w-screen-3xl mx-auto">
                   <div className="col-span-10 col-start-2 md:col-span-10 md:col-start-2 md:border-l md:border-r border-black/50 py-[10vw] md:px-10">
                     <div className="grid grid-cols-10 items-center">
@@ -154,7 +155,7 @@ export default function Home(initialData) {
                 </div>
               </div>
 
-              <div className="w-full border-b border-black/50 pb-56 md:pb-0">
+              <div className="w-full border-b border-black/50 pb-56 md:pb-0 relative z-10">
                 <div className="grid grid-cols-12 max-w-screen-3xl mx-auto">
                   <div className="col-span-10 col-start-2 md:col-span-10 md:col-start-2 md:border-l md:border-r border-black/50 py-[5vw] md:px-10">
                     <div className="grid grid-cols-12 pb-[10vw]">
@@ -193,7 +194,8 @@ export default function Home(initialData) {
 
             <div className="grid grid-cols-12 py-[15vw] px-6 xl:px-10 max-w-screen-3xl mx-auto">
               <div className="order-2 md:order-1 col-span-12 lg:col-span-2 relative z-10">
-                <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">Make A Game</span>
+                <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">
+                  <TextScrambler text="Make A Game" seed={5} step={1} singleLine /></span>
               </div>
               
               <div className="order-3 md:order-2 col-span-12 md:col-span-6 z-10">
@@ -203,7 +205,7 @@ export default function Home(initialData) {
                 </div>
 
                 <Link href="#">
-                  <a className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white group">
+                  <a className="pill-btn group">
                     <div className="relative">
                       <span className="block group-hover:opacity-0">Build A Career</span>
                       <span className="absolute top-0 left-0 right-0 hidden  group-hover:block"><TextScrambler text="Build A Career" seed={5} step={1} singleLine /></span>
@@ -329,7 +331,7 @@ export default function Home(initialData) {
 
             <div className="grid grid-cols-12 pb-12 lg:pb-[15vw] px-6 xl:px-10 max-w-screen-3xl mx-auto">
               <div className="order-2 md:order-1 col-span-12 lg:col-span-2 relative z-10">
-                <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">Homa Academy</span>
+                <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium"><TextScrambler text="Homa Academy" seed={5} step={1} singleLine /></span>
               </div>
               
               <div className="order-3 md:order-2 col-span-12 md:col-span-6 z-10">
@@ -341,7 +343,12 @@ export default function Home(initialData) {
                 </div>
 
                 <Link href="#">
-                  <a className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white">Learn More</a>
+                  <a className="pill-btn group">
+                    <div className="relative">
+                      <span className="block group-hover:opacity-0">Learn More</span>
+                      <span className="absolute top-0 left-0 right-0 hidden  group-hover:block"><TextScrambler text="Learn More" seed={5} step={1} singleLine /></span>
+                    </div>
+                  </a>
                 </Link>
               </div>
               
@@ -376,7 +383,7 @@ export default function Home(initialData) {
             <div className="bg-lime text-black">
               <div className="grid grid-cols-12 py-12 lg:py-[15vw] px-6 xl:px-10 max-w-screen-3xl mx-auto">
                 <div className="col-span-12 lg:col-span-2 relative z-10">
-                  <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">Build A Career</span>
+                  <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium"><TextScrambler text="Build a career" seed={5} step={1} singleLine /></span>
                 </div>
                 
                 <div className="col-span-12 lg:col-span-8 z-10">

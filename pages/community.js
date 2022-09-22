@@ -76,6 +76,8 @@ export default function Community(initalData) {
                     src="/images/community.jpg"
                     alt="Community Landscape"
                     layout="fill"
+                    quality={75}
+                    priority
                     className="w-full h-full absolute inset-0 z-0 object-cover object-top"
                   />
                 </ScrollParallax>

@@ -71,6 +71,8 @@ export default function About(initalData) {
                   src="/images/who-we-are.jpg"
                   alt="Who We Are Landscape"
                   layout="fill"
+                  quality={75}
+                  priority
                   className="w-full h-full absolute inset-0 z-0 object-cover object-top"
                 />
               </ScrollParallax>

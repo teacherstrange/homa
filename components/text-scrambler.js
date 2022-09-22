@@ -7,7 +7,7 @@ export default function TextScrambler({ text, seed, step, singleLine }) {
   const isInView = useInView(scrambleIsInView)
 
   return (
-    <div ref={scrambleIsInView} className={`${singleLine ? 'whitespace-nowrap' : ''}`}>
+    <div ref={scrambleIsInView} className={`${singleLine ? 'lg:whitespace-nowrap' : ''}`}>
       { isInView ? (
         <TextScramble
           as="div"
