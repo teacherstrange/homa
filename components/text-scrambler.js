@@ -2,12 +2,12 @@ import { TextScramble } from "@a7sc11u/scramble"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
 
-export default function TextScrambler({ text, seed, step }) {
+export default function TextScrambler({ text, seed, step, singleLine }) {
   const scrambleIsInView = useRef(null)
   const isInView = useInView(scrambleIsInView)
 
   return (
-    <div ref={scrambleIsInView}>
+    <div ref={scrambleIsInView} className={`${singleLine ? 'whitespace-nowrap' : ''}`}>
       { isInView ? (
         <TextScramble
           as="div"
@@ -21,7 +21,7 @@ export default function TextScrambler({ text, seed, step }) {
           text={text}
         />
       ) : (
-        <span className="block">{text}</span>
+        <span className="block overflow-hidden">{text}</span>
       )}
     </div>
   )

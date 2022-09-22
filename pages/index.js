@@ -89,13 +89,19 @@ export default function Home(initialData) {
 
                   <div className="flex space-x-2">
                     <Link href="/">
-                      <a className="bg-black text-white px-3 py-6 uppercase tracking-wide w-1/2 text-center">
-                        Make a Game
+                      <a className="bg-black text-white px-3 py-6 uppercase tracking-wide w-1/2 text-center group">
+                        <div className="relative">
+                          <span className="block group-hover:opacity-0">Make A Game</span>
+                          <span className="absolute top-0 left-0 right-0 hidden  group-hover:block"><TextScrambler text="Make A Game" seed={10} step={1} singleLine /></span>
+                        </div>
                       </a>
                     </Link>
                     <Link href="/">
-                      <a className="bg-black text-white px-3 py-6 uppercase tracking-wide w-1/2 text-center">
-                        Build A Career
+                      <a className="bg-black text-white px-3 py-6 uppercase tracking-wide w-1/2 text-center group">
+                        <div className="relative">
+                          <span className="block group-hover:opacity-0">Build A Career</span>
+                          <span className="absolute top-0 left-0 right-0 hidden  group-hover:block"><TextScrambler text="Build A Career" seed={12} step={1} singleLine /></span>
+                        </div>
                       </a>
                     </Link>
                   </div>
@@ -200,7 +206,12 @@ export default function Home(initialData) {
                 </div>
 
                 <Link href="#">
-                  <a className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white">Enter the homa lab</a>
+                  <a className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white group">
+                    <div className="relative">
+                      <span className="block group-hover:opacity-0">Build A Career</span>
+                      <span className="absolute top-0 left-0 right-0 hidden  group-hover:block"><TextScrambler text="Build A Career" seed={5} step={1} singleLine /></span>
+                    </div>
+                  </a>
                 </Link>
               </div>
               
