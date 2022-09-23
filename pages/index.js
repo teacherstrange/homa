@@ -19,6 +19,11 @@ import { useRef } from 'react'
 import PixelatedImage from '@/components/pixelated-image'
 import { CarouselBlog } from '@/components/carousel-blog'
 
+import MobileHandIcon from '@/icons/mobile-hand.svg'
+import GlobeIcon from '@/icons/globe.svg'
+import DownloadIcon from '@/icons/download.svg'
+import PhoneIcon from '@/icons/phone.svg'
+
 // Sanity
 import SanityPageService from '@/services/sanityPageService'
 import TestWebgl from '@/components/test-webgl'
@@ -89,16 +94,16 @@ export default function Home(initialData) {
                 <div className="relative z-10">
                   <p className="text-lg md:text-xl xl:text-2xl mb-6 lg:mb-10">We're believers in data and builders of tools that help game creators <span className="inline border border-black rounded-sm p-1 px-2 uppercase tracking-wider text-sm md:text-base xl:text-lg font-medium">make</span> and <span className="inline border border-black rounded-sm p-1 px-2 uppercase tracking-wider text-sm md:text-base xl:text-lg font-medium">publish</span> hit games with franchise potential built right in.</p>
 
-                  <div className="flex space-x-2">
-                    <Link href="/">
-                      <a href="/community" class="roll-btn w-1/2" >
+                  <div className="flex flex-wrap md:-mx-2">
+                    <Link href="/homa-lab">
+                      <a class="roll-btn w-full md:w-1/2 mb-6 md:mb-0 md:px-2" >
                         <span class="roll-btn__front">Make A Game</span>
                         <span class="roll-btn__back">Make A Game</span>
                       </a>
                     </Link>
 
-                    <Link href="/">
-                      <a href="/community" class="roll-btn w-1/2" >
+                    <Link href="/careers">
+                      <a class="roll-btn w-full md:w-1/2 md:px-2">
                         <span class="roll-btn__front">Build A Career</span>
                         <span class="roll-btn__back">Build A Career</span>
                       </a>
@@ -148,7 +153,35 @@ export default function Home(initialData) {
                         <p className="text-2xl uppercase font-bold">HI,<br/>WE'RE HOMA, a gaming technology lab that gives game creators the data-driven tools and human expertise needed to turn their creative ideas into commercial hits.</p>
                       </div>
                       <div className="col-span-5 col-start-4 md:col-span-4 md:col-start-7">
-                        <div className="w-full bg-black opacity-20 h-[50vw] 2xl:h-[720px] rounded-xl"></div>
+                        <div className="w-[75%] lg:w-[75%] relative mx-auto">
+                          <PhoneIcon className="w-full relative z-0" />
+
+                          <div className="absolute top-0 right-0 mr-[-55%] lg:mr-[-45%] mt-[15%] z-10 w-full lg:w-[70%]">
+                            <div className="w-full">
+                              <span className="block uppercase font-medium tracking-wider text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-b-0 border-black/50 px-3 py-5">Game Name</span>
+                            </div>
+                            <div className="w-full">
+                              <span className="block uppercase font-medium tracking-wider text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-black/50 px-3 py-5">Game Partner</span>
+                            </div>
+                          </div>
+
+                          <div className="absolute inset-0 z-1 scale-[0.922] mt-[-4%]">
+                            <Image
+                              src="/images/game-example.webp"
+                              layout="responsive"
+                              width={496}
+                              height={882}
+                              quality={75}
+                              className="w-full"
+                            />
+                          </div>
+
+                          <div className="absolute bottom-0 left-0 ml-[-80%] md:ml-[-20%] mb-[15%] z-10 w-[200%] md:w-[70%] min-w-[290px]">
+                            <div className="w-full">
+                              <span className="block uppercase font-medium tracking-wider text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-black/50 px-3 py-5 text-center">10,000,000 installs</span>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -160,7 +193,7 @@ export default function Home(initialData) {
                   <div className="col-span-10 col-start-2 md:col-span-10 md:col-start-2 md:border-l md:border-r border-black/50 py-[5vw] md:px-10">
                     <div className="grid grid-cols-12 pb-[10vw]">
                       <div className="col-span-12 lg:col-span-3 mb-5 lg:mb-0">
-                        <p className="text-2xl uppercase font-bold">[Icon]</p>
+                        <GlobeIcon className="w-1/2 max-w-[70px] lg:max-w-[100px] lg:mx-auto" />
                       </div>
                       <div className="col-span-12 lg:col-span-7">
                         <span className="text-lg lg:text-lg xl:text-2xl uppercase font-bold block mb-4">We've joined forces with</span>
@@ -170,7 +203,7 @@ export default function Home(initialData) {
 
                     <div className="grid grid-cols-12 pb-[10vw]">
                       <div className="col-span-12 lg:col-span-3 mb-5 lg:mb-0">
-                        <p className="text-2xl uppercase font-bold">[Icon]</p>
+                        <MobileHandIcon className="w-1/2 max-w-[70px] lg:max-w-[100px] lg:mx-auto" />
                       </div>
                       <div className="col-span-12 lg:col-span-7">
                         <span className="text-lg lg:text-lg xl:text-2xl uppercase font-bold block mb-4">Combining our creative expertise into</span>
@@ -180,7 +213,7 @@ export default function Home(initialData) {
 
                     <div className="grid grid-cols-12 pb-[10vw]">
                       <div className="col-span-12 lg:col-span-3 mb-5 lg:mb-0">
-                        <p className="text-2xl uppercase font-bold">[Icon]</p>
+                        <DownloadIcon className="w-1/2 max-w-[70px] lg:max-w-[100px] lg:mx-auto" />
                       </div>
                       <div className="col-span-12 lg:col-span-7">
                         <span className="text-lg lg:text-lg xl:text-2xl uppercase font-bold block mb-4">Resulting in chart topping hits and</span>
@@ -204,7 +237,7 @@ export default function Home(initialData) {
                   <p>Creativity can’t be forced, but with Homa Lab it can be tweaked, iterated and rigorously tested. From idea to monetization, Homa Lab’s real-time flow of data and insight lets you build games that outperform by every conceivable metric.</p>
                 </div>
 
-                <Link href="#">
+                <Link href="/careers">
                   <a className="pill-btn group">
                     <div className="relative">
                       <span className="block group-hover:opacity-0">Build A Career</span>
@@ -342,7 +375,7 @@ export default function Home(initialData) {
                   <p>Stop by to learn the ins and outs of game design, including in-depth game play analysis, methods for ideation &amp; player experience optimization, as well as hands-on game builing tutorials, hangouts and more.</p>
                 </div>
 
-                <Link href="#">
+                <Link href="homa-lab/homa-academy">
                   <a className="pill-btn group">
                     <div className="relative">
                       <span className="block group-hover:opacity-0">Learn More</span>
@@ -418,8 +451,8 @@ export default function Home(initialData) {
                     </div>
                   </div>
 
-                  <Link href="#">
-                    <a href="/community" class="roll-btn inline-block" >
+                  <Link href="/careers">
+                    <a class="roll-btn inline-block" >
                       <span class="roll-btn__front">Apply for a job at Homa</span>
                       <span class="roll-btn__back">Apply for a job at Homa</span>
                     </a>

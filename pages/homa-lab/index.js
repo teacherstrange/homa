@@ -27,6 +27,7 @@ import GridOverlay from '@/components/grid-overlay'
 const query = `{
   "products": *[_type == "products"]{
     title,
+    introText,
     slug {
       current
     },
@@ -92,11 +93,9 @@ export default function HomaLab(initialData) {
               <div className="max-w-screen-3xl mx-auto relative z-10">
                 <h1 className="font-black text-[clamp(80px,_8.5vw,170px)] leading-[0.95] mb-16 lg:mb-32 uppercase relative z-10 w-11/12 lg:w-full"><TextScrambler text="If you’re not using this, you’re just playing around" seed={50} step={3} /></h1>
 
-                <Link href="/">
-                  <a className="bg-black text-white px-12 py-6 uppercase tracking-wide w-1/2 text-center">
-                    Submit your game
-                  </a>
-                </Link>
+                <a href="https://lab-v2.homagames.com/login" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-12 py-6 uppercase tracking-wide w-1/2 text-center">
+                  Submit your game
+                </a>
               </div>
             </div>
 
@@ -144,7 +143,7 @@ export default function HomaLab(initialData) {
                             </div>
                             <div className="w-full mt-auto">
                               <div className="content mb-6 lg:mb-12 w-11/12">
-                                <p>We have teams of people who have one job: to watch the market, scope the trends and come up with hot-ticket game ideas for you to run with.</p>
+                                <p>{e.introText}</p>
                               </div>
 
                               <Link href={`/homa-lab/${e.slug.current}`}>
@@ -231,9 +230,7 @@ export default function HomaLab(initialData) {
 
                 <div className="w-8/12 mx-auto max-w-md mb-20 md:mb-[15vw] xl:mb-[12.5vw]">
 
-                <Link href="#">
-                  <a className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white">Enter the Homa Lab</a>
-                </Link>
+                <a href="https://lab-v2.homagames.com/login" target="_blank" rel="noopener noreferrer" className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white">Enter the Homa Lab</a>
                 </div>
               </div>
             </FooterCta>
