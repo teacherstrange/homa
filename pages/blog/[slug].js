@@ -19,10 +19,23 @@ import Image from 'next/image'
 
 // Sanity
 import SanityPageService from '@/services/sanityPageService'
+import BodyRenderer from '@/components/body-renderer'
+import SanityImage from '@/components/sanity-image'
 
 const query = `{
   "article": *[_type == "blog" && slug.current == $slug][0]{
     title,
+    heroImage {
+      asset-> {
+        ...
+      },
+      caption,
+      alt,
+      hotspot {
+        x,
+        y
+      },
+    },
     category-> {
       title,
       slug {
@@ -32,6 +45,26 @@ const query = `{
     publishDate,
     author-> {
       name
+    },
+    contentBlocks[] {
+      ...,
+      text,
+      authorName,
+      authorJobTitle,
+      image {
+        asset-> {
+          ...
+        },
+        overrideVideo {
+          asset-> {
+            ...
+          }
+        },
+        overrideVimeoVideo,
+        alt,
+        caption,
+        captionSubHeading
+      },
     },
     slug {
       current
@@ -110,8 +143,8 @@ export default function BlogSlug(initialData) {
                   <div className="w-full lg:w-1/2 lg:border-l border-black/50 relative overflow-hidden">
                     <div className="scale-[1.125] w-full h-full aspect-square">
                       <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.05}>
-                        <Image
-                          src="/images/about.jpg"
+                        <SanityImage
+                          image={article.heroImage}
                           alt="About Test"
                           layout="fill"
                           className="w-full h-full absolute inset-0 z-0 object-cover object-top"
@@ -122,9 +155,9 @@ export default function BlogSlug(initialData) {
                 </div>
               </div>
 
-              <div className="content py-[10vw]">
+              <div className="content pt-[10vw] pb-[5vw] px-6 lg:px-10">
                 <div className="w-full">
-                  <p className="text-center">Article content will go here...</p>
+                  <BodyRenderer body={article.contentBlocks} />
                 </div>
               </div>
 

@@ -133,7 +133,6 @@ export default function Games(initialData) {
 
             <CarouselCards heading="Our Partners" items={successStories} />
 
-
             <div className="relative border-b border-black/50">
               <MouseParallax isAbsolutelyPositioned lerpEase={0.15} strength={-0.05} zIndex={10}>
                 <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={-0.14} zIndex={10}>
@@ -256,13 +255,25 @@ export default function Games(initialData) {
             </div>
 
 
-            <div className="bg-[#54596F] text-white">
+            <div className="bg-[#54596F] text-white relative overflow-hidden">
+
+              <div className="absolute bottom-0 right-0 w-[45%] max-w-[850px]">
+                <Image
+                  src="/images/our-team-cta.jpg"
+                  alt="About Test"
+                  layout="responsive"
+                  width={1910}
+                  height={2032}
+                  className="w-full"
+                />
+              </div>
+
               <div className="grid grid-cols-12 py-12 lg:py-[10vw] px-6 xl:px-10 max-w-screen-3xl mx-auto">
                 <div className="col-span-12 lg:col-span-2 relative z-10">
                   <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">Our Team</span>
                 </div>
                 
-                <div className="col-span-12 lg:col-span-7 z-10">
+                <div className="col-span-12 lg:col-span-7 z-10 realtive">
                   <h2 className="font-black text-[clamp(50px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase">People you'll meet along the way.</h2>
                   <div className="content max-w-3xl mb-8 xl:mb-12 w-10/12">
                     <p>In addition to having the data needed to supercharge your creativity, you’ll be working alongside a group of experts who want your game to succeed as much as you do.</p>
@@ -272,15 +283,15 @@ export default function Games(initialData) {
                     <div className="w-full border-b border-white p-5 lg:p-6 xl:p-8 2xl:p-10">
                       <h3 className="font-bold text-xl lg:text-2xl xl:text-3xl leading-[0.95] mb-4 lg:mb-6 uppercase">Publishing Manager</h3>
 
-                      <div className="content content--small w-11/12">
+                      <div className="content content--small w-9/12 lg:w-11/12">
                         <p>Helps you to ideate, improve, and test your game.</p>
                       </div>
                     </div>
 
                     <div className="w-full border-b border-white p-5 lg:p-6 xl:p-8 2xl:p-10">
-                      <h3 className="font-bold text-xl lg:text-2xl xl:text-3xl leading-[0.95] mb-4 lg:mb-6 uppercase w-11/12">Creative Ads Expert</h3>
+                      <h3 className="font-bold text-xl lg:text-2xl xl:text-3xl leading-[0.95] mb-4 lg:mb-6 uppercase w-9/12 lg:w-11/12">Creative Ads Expert</h3>
 
-                      <div className="content content--small w-11/12">
+                      <div className="content content--small w-9/12 lg:w-11/12">
                         <p>Increases User Acquisition with creative Ad campaigns based on the latest trends.</p>
                       </div>
                     </div>
@@ -288,7 +299,7 @@ export default function Games(initialData) {
                     <div className="w-full border-b border-white p-5 lg:p-6 xl:p-8 2xl:p-10">
                       <h3 className="font-bold text-xl lg:text-2xl xl:text-3xl leading-[0.95] mb-4 lg:mb-6 uppercase">Game Designer</h3>
 
-                      <div className="content content--small w-11/12">
+                      <div className="content content--small w-9/12 lg:w-11/12">
                         <p>Provides guidance on how to improve gameplay and mechanics.</p>
                       </div>
                     </div>
@@ -296,7 +307,7 @@ export default function Games(initialData) {
                     <div className="w-full p-5 lg:p-6 xl:p-8 2xl:p-10">
                       <h3 className="font-bold text-xl lg:text-2xl xl:text-3xl leading-[0.95] mb-4 lg:mb-6 uppercase">UA and Monetization Manager</h3>
 
-                      <div className="content content--small w-11/12">
+                      <div className="content content--small w-9/12 lg:w-11/12">
                         <p>Monetize your game and boost retention by putting our trusted ad partners’ technology to good use.</p>
                       </div>
                     </div>

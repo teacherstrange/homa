@@ -19,7 +19,7 @@ export const CarouselBlog = ({items}) => {
     <div className="embla embla--team embla--blog border-t border-black/50 pt-[8vw] mb-[8vw]">
       <div className="w-[91.05vw] ml-auto flex flex-wrap mb-6">
         <div className="flex-1">
-          <h2 className="font-black text-[clamp(46px,_4.45vw,_86px)] leading-[0.9] uppercase">News Feed</h2>
+          <h2 className="font-bold text-xl lg:text-2xl xl:text-3xl leading-[0.9] lg:leading-[0.9] xl:leading-[0.9] uppercase">News Feed</h2>
         </div>
 
         <div className="flex lg:justify-end w-full lg:w-auto lg:ml-auto pr-6 lg:pr-10 mb-5 lg:mb-0">

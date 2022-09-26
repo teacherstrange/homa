@@ -114,6 +114,10 @@ canvas {
     @apply justify-start;
 
     @screen lg {
+      grid-auto-columns: 40.5%;
+    }
+
+    @screen xl {
       grid-auto-columns: 27.5%;
     }
   }
@@ -125,9 +129,25 @@ canvas {
   .embla__slide-inner {
     @apply transition-all ease-in-out duration-500 h-auto lg:h-auto p-6 lg:p-10;
   }
+
+  .is-selected {
+    @apply bg-pink/20;
+    
+    .embla__slide-inner {
+      @apply bg-transparent;
+    }
+  }
 }
 
 .embla--blog {
+  .embla__container {
+    grid-auto-columns: 70%;
+
+    @screen lg {
+      grid-auto-columns: 32.5%;
+    }
+  }
+
   .is-selected {
     .embla__slide-inner {
       @apply bg-white;

@@ -25,36 +25,41 @@ import AccordionList from '@/components/accordion'
 import TextScrambler from '@/components/text-scrambler'
 
 // Sanity
-// import SanityPageService from '@/services/sanityPageService'
+import SanityPageService from '@/services/sanityPageService'
 
-// const query = `{
-//   "about": *[_type == "about"][0]{
-//     title,
-//     imageExample {
-//       asset-> {
-//         ...
-//       },
-//       caption,
-//       alt,
-//       hotspot {
-//         x,
-//         y
-//       },
-//     },
-//     seo {
-//       ...,
-//       shareGraphic {
-//         asset->
-//       }
-//     }
-//   }
-// }`
+const query = `{
+  "team": *[_type == "team"]{
+    title,
+    image {
+      asset-> {
+        ...
+      },
+      caption,
+      alt,
+      hotspot {
+        x,
+        y
+      },
+    },
+    jobTitle,
+    company,
+    linkedIn,
+    twitter,
+  },
+  "community": *[_type == "community"][0]{
+    title,
+    gangQAndA[] {
+      question,
+      answer
+    }
+  }
+}`
 
-// const pageService = new SanityPageService(query)
+const pageService = new SanityPageService(query)
 
-export default function Community(initalData) {
+export default function Community(initialData) {
   // Sanity Data
-  // const { data: { about } } = pageService.getPreviewHook(initialData)()
+  const { data: { team, community } } = pageService.getPreviewHook(initialData)()
   
   return (
     <Layout>
@@ -311,13 +316,13 @@ export default function Community(initalData) {
             </div>
 
             <div className="pb-[8vw] mb-[8vw] border-b border-black/50">
-              <CarouselTeam />
+              <CarouselTeam items={team} />
             </div>
 
             <div className="mb-[8vw]">
               <div className="max-w-screen-2xl mx-auto">
                 <div className="px-6 lg:px-24">
-                  <AccordionList />
+                  <AccordionList items={community.gangQAndA} />
                 </div>
               </div>
             </div>
@@ -402,10 +407,8 @@ export default function Community(initalData) {
 }
 
 // Sanity CMS Props
-// export async function getStaticProps(context) {
-//   const cms = await pageService.fetchQuery(context)
+export async function getStaticProps(context) {
+  const cms = await pageService.fetchQuery(context)
 
-//   return {
-//     props: { ...cms }
-//   }
-// }
+  return cms
+}

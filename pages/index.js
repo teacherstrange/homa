@@ -28,6 +28,7 @@ import PhoneIcon from '@/icons/phone.svg'
 import SanityPageService from '@/services/sanityPageService'
 import TestWebgl from '@/components/test-webgl'
 import TextScrambler from '@/components/text-scrambler'
+import GridOverlay from '@/components/grid-overlay'
 
 const query = `{
   "blog": *[_type == "blog"][0...5]{
@@ -152,6 +153,8 @@ export default function Home(initialData) {
                       <div className="col-span-9 md:col-span-5 mb-12 md:mb-0">
                         <p className="text-2xl uppercase font-bold">HI,<br/>WE'RE HOMA, a gaming technology lab that gives game creators the data-driven tools and human expertise needed to turn their creative ideas into commercial hits.</p>
                       </div>
+
+                      {/* Abstract */}
                       <div className="col-span-5 col-start-4 md:col-span-4 md:col-start-7">
                         <div className="w-[75%] lg:w-[75%] relative mx-auto">
                           <PhoneIcon className="w-full relative z-0" />
@@ -300,10 +303,23 @@ export default function Home(initialData) {
 
 
             <div className="w-full flex flex-wrap border-t border-black/50">
-              <div className="w-full lg:w-1/2 px-6 xl:px-10 py-20 lg:py-28 xl:py-32 bg-gray-100 border-b lg:border-b-0 lg:border-r border-black/50">
-                <div className="lg:sticky lg:top-28 xl:top-32 lg:pb-32 xl:pb-48">
-                  <div className="flex w-full lg:h-screen lg:-mt-32 xl:-mt-40 items-center justify-center">
-                    <div className="w-[300px] h-[300px] bg-pink lg:-mt-32 xl:-mt-40"></div>
+              <div className="w-full lg:w-1/2 border-b lg:border-b-0 lg:border-r border-black/50">
+                <div className="lg:sticky lg:top-0 xl:top-0 lg:pb-0 xl:pb-48">
+                  <div className="flex w-full lg:h-screen items-center justify-center relative overflow-hidden">
+                    <GridOverlay />
+                    <div className="w-full h-full p-6 xl:p-10 flex items-center justify-center relative z-10">
+                      {/* <div className="w-[300px] h-[300px] bg-pink lg:-mt-32 xl:-mt-40"></div> */}
+                      <div className="w-[66%]">
+                        <Image
+                          src="/images/graph.webp"
+                          layout="responsive"
+                          width={1152}
+                          height={1150}
+                          quality={80}
+                          className="w-full"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -457,6 +473,62 @@ export default function Home(initialData) {
                       <span class="roll-btn__back">Apply for a job at Homa</span>
                     </a>
                   </Link>
+                </div>
+              </div>
+            </div>
+
+
+            <div className="bg-orange/40 relative overflow-hidden pb-[25vw] lg:pb-0">
+              <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.05} zIndex={0}>
+                <div className="scale-[1.12] absolute inset-0 w-full h-full">
+                  <Image
+                    src="/images/hope-cta.jpg"
+                    alt="About Test"
+                    layout="fill"
+                    className="w-full h-full absolute inset-0 z-0 object-cover object-center"
+                  />             
+                </div>   
+              </ScrollParallax>
+
+              <div className="grid grid-cols-12 py-12 lg:pt-[15vw] lg:pb-[20.5vw] px-6 xl:px-10 max-w-screen-3xl mx-auto">
+                
+                <div className="col-span-12 lg:col-span-7 z-10 mb-12 lg:mb-0">
+                  <h2 className="font-black text-[clamp(50px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase">There's Hope. Then there's Homa.</h2>
+                  <div className="content max-w-3xl mb-8 xl:mb-12 w-10/12">
+                    <p>With us, every step of your game’s build and launch phase – from ideation right through to monetization - is managed by experts and tested, tweaked and improved by data-rich technology. To see our process and the hits its produced:</p>
+                  </div>
+                </div>
+
+                <div className="col-span-5 col-start-4 lg:col-span-3 lg:col-start-9">
+                  <div className="w-[75%] lg:w-[75%] relative mx-auto">
+                    <PhoneIcon className="w-full relative z-0" />
+
+                    <div className="absolute top-0 right-0 mr-[-55%] lg:mr-[-45%] mt-[15%] z-10 w-full lg:w-[70%]">
+                      <div className="w-full">
+                        <span className="block uppercase font-medium tracking-wider text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-b-0 border-black/50 px-3 py-5">Game Name</span>
+                      </div>
+                      <div className="w-full">
+                        <span className="block uppercase font-medium tracking-wider text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-black/50 px-3 py-5">Game Partner</span>
+                      </div>
+                    </div>
+
+                    <div className="absolute inset-0 z-1 scale-[0.922] mt-[-4%]">
+                      <Image
+                        src="/images/game-example.webp"
+                        layout="responsive"
+                        width={496}
+                        height={882}
+                        quality={75}
+                        className="w-full"
+                      />
+                    </div>
+
+                    <div className="absolute bottom-0 left-0 ml-[-80%] md:ml-[-20%] mb-[15%] z-10 w-[200%] md:w-[70%] min-w-[290px]">
+                      <div className="w-full">
+                        <span className="block uppercase font-medium tracking-wider text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-black/50 px-3 py-5 text-center">10,000,000 installs</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
