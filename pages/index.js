@@ -36,6 +36,17 @@ const query = `{
     slug {
       current
     },
+    heroImage {
+      asset-> {
+        ...
+      },
+      caption,
+      alt,
+      hotspot {
+        x,
+        y
+      },
+    },
     category-> {
       title,
       slug {
@@ -43,6 +54,10 @@ const query = `{
       }
     },
     publishDate
+  },
+  "products": *[_type == "products"]{
+    title,
+    introText
   }
 }`
 
@@ -52,7 +67,7 @@ export default function Home(initialData) {
   const characterBinder = useRef(null);
 
   // Sanity Data
-  const { data: { blog } } = pageService.getPreviewHook(initialData)()
+  const { data: { blog, products } } = pageService.getPreviewHook(initialData)()
 
   return (
     <Layout>
@@ -325,17 +340,17 @@ export default function Home(initialData) {
               </div>
 
               <div className="w-full lg:w-1/2 pb-12 lg:pb-16 xl:pb-24">
-                {Array.from(Array(9), (e, i) => {
+                {products.map((e, i) => {
                   return (
                     <div className={`w-full ${i + 1 != 9 && 'border-b border-black/50'} px-6 xl:px-10 py-6 xl:py-10 flex flex-wrap`}>
                       <div className="w-auto mr-12">
                         <span className="uppercase text-sm tracking-widest mt-1 block font-medium">0{i + 1}</span>
                       </div>
                       <div className="w-3/4">
-                        <h3 className="font-black text-3xl lg:text-4xl xl:text-5xl leading-[0.95] mb-12 lg:mb-24 uppercase max-w-[500px] xl:max-w-none">Ideas</h3>
+                        <h3 className="font-black text-3xl lg:text-4xl xl:text-5xl leading-[0.95] mb-12 lg:mb-24 uppercase max-w-[500px] xl:max-w-none">{e.title}</h3>
 
                         <div className="content w-11/12 lg:w-11/12 max-w-[650px]">
-                          <p>Whether through Tiktok, Discord or in-person events like Homa Jams, we believe in creating a community that unities game makers and game players (if there's a distinction) with all sorts of creative people around the world.</p>
+                          <p>{e.introText}</p>
                         </div>
                       </div>
                     </div>  

@@ -26,6 +26,8 @@ import TextScrambler from '@/components/text-scrambler'
 
 // Sanity
 import SanityPageService from '@/services/sanityPageService'
+import SanityImage from '@/components/sanity-image'
+import GridOverlay from '@/components/grid-overlay'
 
 const query = `{
   "team": *[_type == "team"]{
@@ -51,6 +53,22 @@ const query = `{
     gangQAndA[] {
       question,
       answer
+    },
+    roadmap[] {
+      date,
+      heading,
+      text,
+      image {
+        asset-> {
+          ...
+        },
+        caption,
+        alt,
+        hotspot {
+          x,
+          y
+        },
+      },
     }
   }
 }`
@@ -182,13 +200,13 @@ export default function Community(initialData) {
                         </div>
                       </div>
                       <div className="col-span-10 lg:col-span-5 lg:col-start-6 relative overflow-hidden">
-                        <div className="scale-[1.25] w-full h-full aspect-square">
+                        <div className="scale-[1.15] w-full h-full aspect-square">
                           <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.05}>
                             <Image
-                              src="/images/about.jpg"
+                              src="/images/character-yours.jpg"
                               alt="About Test"
                               layout="fill"
-                              className="w-full h-full absolute inset-0 z-0 object-cover object-top"
+                              className="w-full h-full absolute inset-0 z-0 object-cover object-center"
                             />
                           </ScrollParallax>
                         </div>
@@ -223,7 +241,7 @@ export default function Community(initialData) {
                   </div>
                 </div>
               </div>
-              {Array.from(Array(4), (e, i) => {
+              {community.roadmap.map((e, i) => {
                 return (
                   <div className="relative overflow-hidden" key={i}>
                     <div className={`w-full ${i == 0 && 'border-t'} border-b border-black/50`}>
@@ -232,23 +250,24 @@ export default function Community(initialData) {
                           <div className="grid grid-cols-10">
                             <div className="col-span-9 lg:col-span-5 mb-12 lg:mb-0 py-10 lg:py-12 lg:px-12 flex flex-wrap">
                               <div className="w-full mb-auto">
-                                <span className="uppercase text-base tracking-widest mb-5 lg:mb-8 block font-medium">Q3_2022_</span>
-                                <h2 className="font-black text-[clamp(46px,_4.45vw,_86px)] leading-[0.9] mb-12 lg:mb-32 uppercase">HomaGang Showtime</h2>
+                                <span className="uppercase text-base tracking-widest mb-5 lg:mb-8 block font-medium">{e.date}</span>
+                                <h2 className="font-black text-[clamp(46px,_4.45vw,_86px)] leading-[0.9] mb-12 lg:mb-32 uppercase">{e.heading}</h2>
                               </div>
                               <div className="w-full mt-auto">
                                 <div className="w-11/12">
-                                  <p className="font-bold text-xl lg:text-2xl xl:text-3xl uppercase w-10/12 tracking-wide mb-0">Let the community take ownership of their favourite Homa characters and step into their shoes. If they have shoes. And feet.</p>
+                                  <p className="font-bold text-xl lg:text-2xl xl:text-3xl uppercase w-10/12 tracking-wide mb-0">{e.text}</p>
                                 </div>
                               </div>
                             </div>
                             <div className="col-span-10 lg:col-span-5 lg:col-start-6 relative overflow-hidden">
-                              <div className="scale-[1.25] w-full h-full aspect-square">
+                              <GridOverlay/>
+                              <div className="scale-[1.1725] w-full h-full aspect-square">
                                 <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.05}>
-                                  <Image
-                                    src="/images/about.jpg"
-                                    alt="About Test"
+                                  <SanityImage
+                                    image={e.image}
+                                    alt="Roadmap"
                                     layout="fill"
-                                    className="w-full h-full absolute inset-0 z-0 object-cover object-top"
+                                    className="w-full h-full absolute inset-0 z-0 object-cover object-center"
                                   />
                                 </ScrollParallax>
                               </div>

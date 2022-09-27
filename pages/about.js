@@ -21,36 +21,41 @@ import TextScrambler from '@/components/text-scrambler'
 import PixelatedImage from '@/components/pixelated-image'
 
 // Sanity
-// import SanityPageService from '@/services/sanityPageService'
+import SanityPageService from '@/services/sanityPageService'
+import SanityImage from '@/components/sanity-image'
 
-// const query = `{
-//   "about": *[_type == "about"][0]{
-//     title,
-//     imageExample {
-//       asset-> {
-//         ...
-//       },
-//       caption,
-//       alt,
-//       hotspot {
-//         x,
-//         y
-//       },
-//     },
-//     seo {
-//       ...,
-//       shareGraphic {
-//         asset->
-//       }
-//     }
-//   }
-// }`
+const query = `{
+  "about": *[_type == "about"][0]{
+    title,
+    servicesList[] {
+      heading,
+      text,
+      image {
+        asset-> {
+          ...
+        },
+        caption,
+        alt,
+        hotspot {
+          x,
+          y
+        },
+      },
+    },
+    seo {
+      ...,
+      shareGraphic {
+        asset->
+      }
+    }
+  }
+}`
 
-// const pageService = new SanityPageService(query)
+const pageService = new SanityPageService(query)
 
-export default function About(initalData) {
+export default function About(initialData) {
   // Sanity Data
-  // const { data: { about } } = pageService.getPreviewHook(initialData)()
+  const { data: { about } } = pageService.getPreviewHook(initialData)()
   
   return (
     <Layout>
@@ -191,26 +196,30 @@ export default function About(initalData) {
 
 
           <m.div variants={fade} className="w-full flex flex-wrap">
-            <div className="w-full lg:w-1/2 px-6 xl:px-10 py-20 lg:py-28 xl:py-32 bg-gray-100 border-b lg:border-b-0 lg:border-r border-black/50">
-              <div className="lg:sticky lg:top-28 xl:top-32 lg:pb-32 xl:pb-48">
-                <div className="flex w-full lg:h-screen lg:-mt-32 xl:-mt-40 items-center justify-center">
-                  <div className="w-[300px] h-[300px] bg-pink lg:-mt-32 xl:-mt-40"></div>
+            <div className="w-full lg:w-1/2 bg-gray-100 border-b lg:border-b-0 lg:border-r border-black/50">
+              <div className="lg:sticky lg:top-0 lg:pb-32 xl:pb-48">
+                <div className="flex w-full">
+                  <SanityImage
+                    image={about.servicesList[0].image}
+                    layout="responsive"
+                    className="absolute inset-0 object-cover object-center"
+                  />
                 </div>
               </div>
             </div>
 
             <div className="w-full lg:w-1/2 pb-12 lg:pb-16 xl:pb-24">
-              {Array.from(Array(9), (e, i) => {
+              {about.servicesList.map((e, i) => {
                 return (
                   <div className={`w-full ${i + 1 != 9 && 'border-b border-black/50'} px-6 xl:px-10 py-6 xl:py-10 flex flex-wrap`}>
                     <div className="w-auto mr-12">
                       <span className="uppercase text-sm tracking-widest mt-1 block font-medium">0{i + 1}</span>
                     </div>
                     <div className="w-3/4">
-                      <h3 className="font-black text-3xl lg:text-4xl xl:text-5xl leading-[0.95] mb-12 lg:mb-24 uppercase max-w-[500px] xl:max-w-none">Title</h3>
+                      <h3 className="font-black text-3xl lg:text-4xl xl:text-5xl leading-[0.95] mb-12 lg:mb-24 uppercase max-w-[500px] xl:max-w-none">{e.heading}</h3>
 
                       <div className="content w-11/12 lg:w-11/12 max-w-[650px]">
-                        <p>Copy TBC.</p>
+                        <p>{e.text}</p>
                       </div>
                     </div>
                   </div>  
@@ -275,10 +284,8 @@ export default function About(initalData) {
 }
 
 // Sanity CMS Props
-// export async function getStaticProps(context) {
-//   const cms = await pageService.fetchQuery(context)
+export async function getStaticProps(context) {
+  const cms = await pageService.fetchQuery(context)
 
-//   return {
-//     props: { ...cms }
-//   }
-// }
+  return cms
+}

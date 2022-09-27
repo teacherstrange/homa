@@ -36,6 +36,21 @@ const query = `{
         y
       },
     },
+    contentSections[] {
+      title,
+      shortDescription,
+      longDescription,
+      sectionItems[] {
+        text
+      },
+      sectionDownloadsLinks[] {
+        buttonText,
+        buttonUrl
+      }
+    },
+    sectionItemsSingleSection[] {
+      text,
+    },
     slug {
       current
     }
@@ -85,8 +100,8 @@ export default function HomaLabChild(initialData) {
                 </div>
 
                 <div className="w-full lg:w-1/2 lg:border-l border-black/50 relative overflow-hidden">
+                  <GridOverlay />
                   <div className="scale-[1.125] w-full h-full aspect-square">
-                    <GridOverlay />
                     <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.05}>
                       <SanityImage
                         image={product.heroImage}
@@ -98,6 +113,30 @@ export default function HomaLabChild(initialData) {
                 </div>
               </div>
             </div>
+            {product.contentSections && (
+              <div className="w-full flex flex-wrap">
+                <div className="w-full lg:w-1/2 px-6 xl:px-10 py-20 lg:py-28 xl:py-32 border-b lg:border-r border-black/50">
+                  <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">{product.title} Overview</span>
+                  {product.contentSections?.map((e, i) => {
+                    return (
+                      <div key={i} className="mb-5 lg:mb-8">
+                        <span className="font-bold text-xl lg:text-2xl xl:text-3xl uppercase tracking-wide leading-[1] lg:leading-[1] xl:leading-[1] block mb-3 lg:mb-5">{e.title}</span>
+                        <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">{e.shortDescription}</span>
+
+                        {e.sectionDownloadsLinks?.map((e, i) => {
+                          return (
+                            <a key={i} className="inline-block flex-shrink-0 border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white mr-3 mb-3" href={e.buttonUrl} target="_blank" rel="noopener noreferrer">{e.buttonText}</a>
+                          )
+                        })}
+                      </div>
+                    )
+                  })}
+                </div>
+                <div className="w-full lg:w-1/2 px-6 xl:px-10 py-20 lg:py-28 xl:py-32 border-b lg:border-r border-black/50 relative overflow-hidden aspect-square">
+                  <GridOverlay/>
+                </div>
+              </div>
+            )}
 
             <div className="w-full flex flex-wrap">
               <div className="w-full lg:w-1/2 px-6 xl:px-10 py-20 lg:py-28 xl:py-32 bg-gray-100 border-b lg:border-b-0 lg:border-r border-black/50">
@@ -109,22 +148,67 @@ export default function HomaLabChild(initialData) {
               </div>
 
               <div className="w-full lg:w-1/2 pb-12 lg:pb-16 xl:pb-24">
-                {Array.from(Array(9), (e, i) => {
+                {product.contentSections?.map((e, i) => {
                   return (
-                    <div className={`w-full ${i + 1 != 9 && 'border-b border-black/50'} px-6 xl:px-10 py-6 xl:py-10 flex flex-wrap`}>
-                      <div className="w-auto mr-12">
-                        <span className="uppercase text-sm tracking-widest mt-1 block font-medium">0{i + 1}</span>
-                      </div>
-                      <div className="w-3/4">
-                        <h3 className="font-black text-3xl lg:text-4xl xl:text-5xl leading-[0.95] mb-12 lg:mb-24 uppercase max-w-[500px] xl:max-w-none">Ideas</h3>
+                    <>
+                      <div className={`w-full ${i + 1 != 9 && 'border-b border-black/50'} px-6 xl:px-10 py-6 xl:py-10 flex flex-wrap`}>
+                        <div className="w-3/4">
+                          <h3 className="font-black text-5xl lg:text-6xl xl:text-7xl leading-[0.95] mb-12 lg:mb-24 uppercase max-w-[500px] xl:max-w-none">{e.title}</h3>
 
-                        <div className="content w-11/12 lg:w-11/12 max-w-[650px]">
-                          <p>Whether through Tiktok, Discord or in-person events like Homa Jams, we believe in creating a community that unities game makers and game players (if there's a distinction) with all sorts of creative people around the world.</p>
+                          <div className="w-11/12 lg:w-11/12 max-w-[650px] pb-[15vw]">
+                            <div className="content mb-6 lg:mb-10">
+                              <p>{e.longDescription}</p>
+                            </div>
+
+                            {e.sectionDownloadsLinks?.map((e, i) => {
+                              return (
+                                <a key={i} className="inline-block flex-shrink-0 border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white mr-3 mb-3" href={e.buttonUrl} target="_blank" rel="noopener noreferrer">{e.buttonText}</a>
+                              )
+                            })}
+                          </div>
                         </div>
                       </div>
-                    </div>  
+                      {e.sectionItems?.map((e, i) => {
+                        return (
+                          <div className={`w-full ${i + 1 != 9 && 'border-b border-black/50'} px-6 xl:px-10 py-6 xl:py-10 flex flex-wrap`}>
+                            <div className="w-full">
+                              <h3 className="font-black text-5xl lg:text-6xl xl:text-7xl leading-[0.95] mb-12 lg:mb-24 uppercase max-w-[500px] xl:max-w-none">0{i + 1}</h3>
+
+                              <div className="w-11/12 lg:w-11/12 max-w-[650px]">
+                                <p className="font-bold text-xl lg:text-2xl xl:text-3xl uppercase tracking-wide leading-[1] lg:leading-[1] xl:leading-[1]">{e.text}</p>
+                              </div>
+                            </div>
+                          </div>
+                        )
+                      })}
+                    </>
                   )
                 })}
+                {product.sectionItemsSingleSection?.map((e, i) => {
+                  return (
+                    <div className={`w-full ${i + 1 != 9 && 'border-b border-black/50'} px-6 xl:px-10 py-6 xl:py-10 flex flex-wrap`}>
+                      <div className="w-full">
+                        <h3 className="font-black text-5xl lg:text-6xl xl:text-7xl leading-[0.95] mb-12 lg:mb-24 uppercase max-w-[500px] xl:max-w-none">0{i + 1}</h3>
+
+                        <div className="w-11/12 lg:w-11/12 max-w-[650px]">
+                          <p className="font-bold text-xl lg:text-2xl xl:text-3xl uppercase tracking-wide leading-[1] lg:leading-[1] xl:leading-[1]">{e.text}</p>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
+
+                {!product.sectionItemsSingleSection && !product.contentSections && (
+                  <div className={`w-full px-6 xl:px-10 py-6 xl:py-10 flex flex-wrap`}>
+                    <div className="w-full">
+                      <h3 className="font-black text-5xl lg:text-6xl xl:text-7xl leading-[0.95] mb-12 lg:mb-24 uppercase max-w-[500px] xl:max-w-none">01</h3>
+
+                      <div className="w-11/12 lg:w-11/12 max-w-[650px]">
+                        <p className="font-bold text-xl lg:text-2xl xl:text-3xl uppercase tracking-wide leading-[1] lg:leading-[1] xl:leading-[1]">Coming soon...</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
 

@@ -20,6 +20,7 @@ import Image from 'next/image'
 // Sanity
 import SanityPageService from '@/services/sanityPageService'
 import SanityImage from '@/components/sanity-image'
+import BodyRenderer from '@/components/body-renderer'
 
 const query = `{
   "article": *[_type == "caseStudies" && slug.current == $slug][0]{
@@ -33,6 +34,30 @@ const query = `{
       hotspot {
         x,
         y
+      },
+    },
+    contentSections[] {
+      ...,
+      title,
+      contentBlocks[] {
+        ...,
+        text,
+        authorName,
+        authorJobTitle,
+        image {
+          asset-> {
+            ...
+          },
+          overrideVideo {
+            asset-> {
+              ...
+            }
+          },
+          overrideVimeoVideo,
+          alt,
+          caption,
+          captionSubHeading
+        },
       },
     },
     publishDate,
@@ -49,6 +74,11 @@ const pageService = new SanityPageService(query)
 export default function CaseStudySlug(initialData) {
   // Sanity Data
   const { data: { article } } = pageService.getPreviewHook(initialData)()
+
+  const kebabCase = string => string
+        .replace(/([a-z])([A-Z])/g, "$1-$2")
+        .replace(/[\s_]+/g, '-')
+        .toLowerCase();
   
   return (
     <Layout>
@@ -133,9 +163,16 @@ export default function CaseStudySlug(initialData) {
                 </div>
               </div>
 
-              <div className="content py-[10vw]">
+              <div className="content pt-[10vw] pb-[5vw] px-6 lg:px-10">
                 <div className="w-full">
-                  <p className="text-center">Article content will go here...</p>
+                  {article.contentSections.map((e, i) => {
+                    return (
+                      <div id={kebabCase(`${e.title}`)} key={i}>
+                        <h1>{e.title}</h1>
+                        <BodyRenderer body={e.contentBlocks} />
+                      </div>
+                    )
+                  })}
                 </div>
               </div>
 
