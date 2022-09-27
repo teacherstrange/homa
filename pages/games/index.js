@@ -81,11 +81,11 @@ export default function Games(initialData) {
               </div>
 
               <div className="max-w-screen-3xl mx-auto">
-                <h1 className="font-black text-[clamp(80px,_9vw,190px)] leading-[0.95] mb-4 uppercase relative z-10 w-11/12 lg:w-full"><TextScrambler text="Win with the ease of cheating" seed={15} step={2} /></h1>
+                <h1 className="font-black text-[clamp(50px,_9vw,190px)] leading-[0.95] mb-4 uppercase relative z-10 w-11/12 lg:w-full"><TextScrambler text="Win with the ease of cheating" seed={15} step={2} /></h1>
 
-                <div className="w-10/12 lg:w-[50%] xl:w-[45%] 2xl:w-[40%] max-w-[720px] pt-[5%] lg:pt-[10%] relative pb-8 lg:pb-0">
+                <div className="w-full lg:w-[50%] xl:w-[45%] 2xl:w-[40%] max-w-[720px] pt-[5%] lg:pt-[10%] relative pb-8 lg:pb-0">
                   <div className="relative z-10">
-                    <p className="text-xl md:text-2xl xl:text-3xl mb-12 lg:mb-16">By combining data and expertise to superpower creativity, we’re making better games possible and more hits probable. It’s a full on game changer for game makers.</p>
+                    <p className="text-lg md:text-2xl xl:text-3xl mb-12 lg:mb-16">By combining data and expertise to superpower creativity, we’re making better games possible and more hits probable. It’s a full on game changer for game makers.</p>
 
                     <Link href="/">
                       <a className="bg-black text-white px-12 py-6 uppercase tracking-wide w-1/2 text-center">
@@ -96,7 +96,7 @@ export default function Games(initialData) {
                 </div>
                 
                 <ScrollParallax isAbsolutelyPositioned lerpEase={0.15}>
-                  <div className="absolute bottom-0 right-[3%] lg:right-[7%] z-0 w-[60%] lg:w-[65%] xl:w-[40%] max-w-[400px] lg:max-w-[580px] xl:max-w-[700px]">
+                  <div className="absolute bottom-0 right-[15%] md:right-[3%] lg:right-[7%] z-0 w-[70%] lg:w-[65%] xl:w-[40%] max-w-[400px] lg:max-w-[580px] xl:max-w-[700px]">
                     {/* <Image
                       src="/images/horse.webp"
                       alt="Bee"
@@ -257,7 +257,7 @@ export default function Games(initialData) {
 
             <div className="bg-[#54596F] text-white relative overflow-hidden">
 
-              <div className="absolute bottom-0 right-0 w-[45%] max-w-[850px]">
+              <div className="absolute bottom-0 right-0 w-[75%] lg:w-[45%] max-w-[850px]">
                 <Image
                   src="/images/our-team-cta.jpg"
                   alt="About Test"
@@ -268,7 +268,7 @@ export default function Games(initialData) {
                 />
               </div>
 
-              <div className="grid grid-cols-12 py-12 lg:py-[10vw] px-6 xl:px-10 max-w-screen-3xl mx-auto">
+              <div className="grid grid-cols-12 py-12 pb-[85vw] lg:py-[10vw] px-6 xl:px-10 max-w-screen-3xl mx-auto">
                 <div className="col-span-12 lg:col-span-2 relative z-10">
                   <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">Our Team</span>
                 </div>

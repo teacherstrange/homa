@@ -165,7 +165,7 @@ export default function CaseStudySlug(initialData) {
 
               <div className="content pt-[10vw] pb-[5vw] px-6 lg:px-10">
                 <div className="w-full">
-                  {article.contentSections.map((e, i) => {
+                  {article.contentSections?.map((e, i) => {
                     return (
                       <div id={kebabCase(`${e.title}`)} key={i}>
                         <h1>{e.title}</h1>

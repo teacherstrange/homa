@@ -280,7 +280,7 @@ export default function Footer() {
 
       {/* Mobile Logo */}
       <div className="grid grid-cols-5 md:grid-cols-12">
-        <div className="col-span-5 block md:hidden">
+        <div className="col-span-5 block md:hidden mt-32 md:mt-0">
           <HomaLogoIcon className="w-full mb-12" />
 
           <div className="w-full 2xl:space-x-8">

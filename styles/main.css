@@ -141,7 +141,7 @@ canvas {
 
 .embla--blog {
   .embla__container {
-    grid-auto-columns: 70%;
+    grid-auto-columns: 90%;
 
     @screen lg {
       grid-auto-columns: 32.5%;

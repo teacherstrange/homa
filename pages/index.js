@@ -102,11 +102,11 @@ export default function Home(initialData) {
             </div>
 
             <div className="max-w-screen-3xl mx-auto" ref={characterBinder}>
-              <h1 className="font-black text-[clamp(80px,_10.2vw,_210px)] leading-[0.95] mb-4 uppercase relative z-10 w-11/12 lg:w-full">
+              <h1 className="font-black text-[clamp(60px,_10.2vw,_210px)] leading-[0.95] mb-4 uppercase relative z-10 w-full md:w-11/12 lg:w-full">
                 <TextScrambler text="Game The System" seed={12} step={1} singleLine />
               </h1>
 
-              <div className="w-10/12 lg:w-[50%] xl:w-[45%] 2xl:w-[35%] max-w-[720px] pt-[75%] lg:pt-[10%] relative pb-8 lg:pb-0">
+              <div className="w-full lg:w-[50%] xl:w-[45%] 2xl:w-[35%] max-w-[720px] pt-[75%] lg:pt-[10%] relative pb-8 lg:pb-0">
                 <div className="relative z-10">
                   <p className="text-lg md:text-xl xl:text-2xl mb-6 lg:mb-10">We're believers in data and builders of tools that help game creators <span className="inline border border-black rounded-sm p-1 px-2 uppercase tracking-wider text-sm md:text-base xl:text-lg font-medium">make</span> and <span className="inline border border-black rounded-sm p-1 px-2 uppercase tracking-wider text-sm md:text-base xl:text-lg font-medium">publish</span> hit games with franchise potential built right in.</p>
 
@@ -128,7 +128,7 @@ export default function Home(initialData) {
                 </div>
                 <MouseParallax isAbsolutelyPositioned lerpEase={0.15} strength={0.025}>
                   <ScrollParallax isAbsolutelyPositioned lerpEase={0.15}>
-                    <div className="absolute top-[-15vw] lg:top-auto lg:bottom-[-80%] right-[-10vw] lg:right-[-55%] xl:right-[-70%] w-[55vw] lg:w-[28vw] 2xl:w-[30vw] max-w-[500px] z-0">
+                    <div className="absolute top-[-15vw] lg:top-auto lg:bottom-[-80%] right-[-5vw] lg:right-[-55%] xl:right-[-70%] w-[55vw] lg:w-[28vw] 2xl:w-[30vw] max-w-[500px] z-0">
                       {/* <Image
                         src="/images/character-test.webp"
                         alt="Character Test"
@@ -148,7 +148,7 @@ export default function Home(initialData) {
           <m.div variants={fade}>
             <div className="bg-gradient-to-b from-pink/20 to-pink relative overflow-hidden">
               <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={0.025} zIndex={0}>
-                <div className="absolute bottom-0 right-[3%] z-0 w-[57%] lg:w-[30%] max-w-[320px] lg:max-w-[400px] xl:max-w-[480px]">
+                <div className="absolute bottom-0 right-[10%] md:right-[3%] z-0 w-[77%] lg:w-[30%] max-w-[320px] lg:max-w-[400px] xl:max-w-[480px]">
                   {/* <Image
                     src="/images/horse.webp"
                     alt="Bee"
@@ -170,11 +170,11 @@ export default function Home(initialData) {
                       </div>
 
                       {/* Abstract */}
-                      <div className="col-span-5 col-start-4 md:col-span-4 md:col-start-7">
-                        <div className="w-[75%] lg:w-[75%] relative mx-auto">
+                      <div className="col-span-6 col-start-3 md:col-span-4 md:col-start-7">
+                        <div className="w-[100%] lg:w-[75%] relative mx-auto">
                           <PhoneIcon className="w-full relative z-0" />
 
-                          <div className="absolute top-0 right-0 mr-[-55%] lg:mr-[-45%] mt-[15%] z-10 w-full lg:w-[70%]">
+                          <div className="absolute top-0 right-0 mr-[-35%] lg:mr-[-45%] mt-[15%] z-10 w-full lg:w-[70%]">
                             <div className="w-full">
                               <span className="block uppercase font-medium tracking-wider text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-b-0 border-black/50 px-3 py-5">Game Name</span>
                             </div>
@@ -194,7 +194,7 @@ export default function Home(initialData) {
                             />
                           </div>
 
-                          <div className="absolute bottom-0 left-0 ml-[-80%] md:ml-[-20%] mb-[15%] z-10 w-[200%] md:w-[70%] min-w-[290px]">
+                          <div className="absolute bottom-0 left-0 ml-[-40%] md:ml-[-20%] mb-[15%] z-10 w-[130%] md:w-[70%] min-w-[120px] md:min-w-[290px]">
                             <div className="w-full">
                               <span className="block uppercase font-medium tracking-wider text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-black/50 px-3 py-5 text-center">10,000,000 installs</span>
                             </div>
@@ -211,31 +211,31 @@ export default function Home(initialData) {
                   <div className="col-span-10 col-start-2 md:col-span-10 md:col-start-2 md:border-l md:border-r border-black/50 py-[5vw] md:px-10">
                     <div className="grid grid-cols-12 pb-[10vw]">
                       <div className="col-span-12 lg:col-span-3 mb-5 lg:mb-0">
-                        <GlobeIcon className="w-1/2 max-w-[70px] lg:max-w-[100px] lg:mx-auto" />
+                        <GlobeIcon className="w-[40%] max-w-[50px] lg:max-w-[100px] lg:mx-auto" />
                       </div>
                       <div className="col-span-12 lg:col-span-7">
                         <span className="text-lg lg:text-lg xl:text-2xl uppercase font-bold block mb-4">We've joined forces with</span>
-                        <span className="font-black text-[clamp(50px,_5vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase max-w-[500px]">1,000+ Studios  Developers</span>
+                        <span className="font-black text-[clamp(40px,_5vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase max-w-[500px]">1,000+ Studios  Developers</span>
                       </div>
                     </div>
 
                     <div className="grid grid-cols-12 pb-[10vw]">
                       <div className="col-span-12 lg:col-span-3 mb-5 lg:mb-0">
-                        <MobileHandIcon className="w-1/2 max-w-[70px] lg:max-w-[100px] lg:mx-auto" />
+                        <MobileHandIcon className="w-[40%] max-w-[50px] lg:max-w-[100px] lg:mx-auto" />
                       </div>
                       <div className="col-span-12 lg:col-span-7">
                         <span className="text-lg lg:text-lg xl:text-2xl uppercase font-bold block mb-4">Combining our creative expertise into</span>
-                        <span className="font-black text-[clamp(50px,_5vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase max-w-[500px]">80+ Mobile Games</span>
+                        <span className="font-black text-[clamp(40px,_5vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase max-w-[500px]">80+ Mobile Games</span>
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-12 pb-[10vw]">
+                    <div className="grid grid-cols-12 pb-[30vw] md:pb-[10vw]">
                       <div className="col-span-12 lg:col-span-3 mb-5 lg:mb-0">
-                        <DownloadIcon className="w-1/2 max-w-[70px] lg:max-w-[100px] lg:mx-auto" />
+                        <DownloadIcon className="w-[40%] max-w-[50px] lg:max-w-[100px] lg:mx-auto" />
                       </div>
                       <div className="col-span-12 lg:col-span-7">
                         <span className="text-lg lg:text-lg xl:text-2xl uppercase font-bold block mb-4">Resulting in chart topping hits and</span>
-                        <span className="font-black text-[clamp(50px,_5vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase max-w-[500px]">1,000,000,000+ Downloads</span>
+                        <span className="font-black text-[clamp(40px,_5vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase max-w-[500px]">1,000,000,000+ Downloads</span>
                       </div>
                     </div>
                   </div>
@@ -250,7 +250,7 @@ export default function Home(initialData) {
               </div>
               
               <div className="order-3 md:order-2 col-span-12 md:col-span-6 z-10">
-                <h1 className="font-black text-[clamp(50px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase">We’re changing games by bringing data into play</h1>
+                <h1 className="font-black text-[clamp(35px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase">We’re changing games by bringing data into play</h1>
                 <div className="content max-w-3xl mb-8 xl:mb-12 w-10/12">
                   <p>Creativity can’t be forced, but with Homa Lab it can be tweaked, iterated and rigorously tested. From idea to monetization, Homa Lab’s real-time flow of data and insight lets you build games that outperform by every conceivable metric.</p>
                 </div>
@@ -514,11 +514,11 @@ export default function Home(initialData) {
                   </div>
                 </div>
 
-                <div className="col-span-5 col-start-4 lg:col-span-3 lg:col-start-9">
-                  <div className="w-[75%] lg:w-[75%] relative mx-auto">
+                <div className="col-span-6 col-start-4 md:col-span-4 md:col-start-8">
+                  <div className="w-[100%] lg:w-[75%] relative mx-auto">
                     <PhoneIcon className="w-full relative z-0" />
 
-                    <div className="absolute top-0 right-0 mr-[-55%] lg:mr-[-45%] mt-[15%] z-10 w-full lg:w-[70%]">
+                    <div className="absolute top-0 right-0 mr-[-35%] lg:mr-[-45%] mt-[15%] z-10 w-full lg:w-[70%]">
                       <div className="w-full">
                         <span className="block uppercase font-medium tracking-wider text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-b-0 border-black/50 px-3 py-5">Game Name</span>
                       </div>
@@ -538,7 +538,7 @@ export default function Home(initialData) {
                       />
                     </div>
 
-                    <div className="absolute bottom-0 left-0 ml-[-80%] md:ml-[-20%] mb-[15%] z-10 w-[200%] md:w-[70%] min-w-[290px]">
+                    <div className="absolute bottom-0 left-0 ml-[-40%] md:ml-[-20%] mb-[15%] z-10 w-[130%] md:w-[70%] min-w-[120px] md:min-w-[290px]">
                       <div className="w-full">
                         <span className="block uppercase font-medium tracking-wider text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-black/50 px-3 py-5 text-center">10,000,000 installs</span>
                       </div>
