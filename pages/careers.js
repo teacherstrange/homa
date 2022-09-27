@@ -70,7 +70,7 @@ export default function Careers(initalData) {
               </div>
               
               <div className="max-w-screen-3xl mx-auto px-6 xl:px-10 mb-[15vw]">
-                <h1 className="font-black text-[clamp(80px,_9vw,190px)] leading-[0.95] mb-4 uppercase relative z-10 w-11/12 lg:w-full">
+                <h1 className="font-black text-[clamp(35px,_9vw,190px)] leading-[0.95] mb-4 uppercase relative z-10 w-11/12 lg:w-full">
                   <span className="block mb-8 lg:mb-12">
                     <TextScrambler text="Brains over backgrounds." seed={22} step={2} />
                   </span>
@@ -106,7 +106,7 @@ export default function Careers(initalData) {
                         <p className="text-2xl uppercase font-bold">[Icon]</p>
                       </div>
                       <div className="col-span-12 lg:col-span-7">
-                        <span className="block font-black text-[clamp(50px,_5vw,_86px)] leading-[0.95] mb-8 lg:mb-12 uppercase max-w-[550px]">Trust from day one</span>
+                        <span className="block font-black text-[clamp(35px,_5vw,_86px)] leading-[0.95] mb-8 lg:mb-12 uppercase max-w-[550px]">Trust from day one</span>
 
                         <div className="content max-w-[550px]">
                           <p>Take a long lunch. Go to the dentist. Book a spin class. We’ll trust you to get the job done.</p>
@@ -119,7 +119,7 @@ export default function Careers(initalData) {
                         <p className="text-2xl uppercase font-bold">[Icon]</p>
                       </div>
                       <div className="col-span-12 lg:col-span-7">
-                        <span className="block font-black text-[clamp(50px,_5vw,_86px)] leading-[0.95] mb-8 lg:mb-12 uppercase max-w-[550px]">Continuous learning</span>
+                        <span className="block font-black text-[clamp(35px,_5vw,_86px)] leading-[0.95] mb-8 lg:mb-12 uppercase max-w-[550px]">Continuous learning</span>
 
                         <div className="content max-w-[550px]">
                           <p>Knowledge shares, Learning Days and a full-on learning platform mean you’ll gain experience and knowledge here.</p>
@@ -132,7 +132,7 @@ export default function Careers(initalData) {
                         <p className="text-2xl uppercase font-bold">[Icon]</p>
                       </div>
                       <div className="col-span-12 lg:col-span-7">
-                        <span className="block font-black text-[clamp(50px,_5vw,_86px)] leading-[0.95] mb-8 lg:mb-12 uppercase max-w-[550px]">Competitive Cash</span>
+                        <span className="block font-black text-[clamp(35px,_5vw,_86px)] leading-[0.95] mb-8 lg:mb-12 uppercase max-w-[550px]">Competitive Cash</span>
 
                         <div className="content max-w-[550px]">
                           <p>We’re looking for people who care about our mission as much as we do – and we know care doesn’t come cheap.</p>

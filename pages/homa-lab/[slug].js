@@ -74,12 +74,12 @@ export default function HomaLabChild(initialData) {
           initial="initial"
           animate="enter"
           exit="exit"
-          className="pt-20 lg:pt-[70px] xl:pt-[81px]"
+          className="pt-[55px] lg:pt-[70px] xl:pt-[81px]"
         >
           <m.div variants={fade}>
             <div className="w-full border-b border-black/50">
               <div className="flex flex-wrap">
-                <div className="w-full lg:w-1/2 py-6 lg:py-10 pl-6 xl:pl-10 pr-6 xl:pr-10">
+                <div className="w-full order-2 lg:order-1 lg:w-1/2 py-6 lg:py-10 pl-6 xl:pl-10 pr-6 xl:pr-10">
                   <div className="max-w-[920px] ml-auto flex flex-wrap h-full">
                     <div className="w-full">
                       <h2 className="display-text w-11/12">{product.title}</h2>
@@ -99,7 +99,7 @@ export default function HomaLabChild(initialData) {
                   </div>
                 </div>
 
-                <div className="w-full lg:w-1/2 lg:border-l border-black/50 relative overflow-hidden">
+                <div className="w-full lg:w-1/2 order-1 lg:order-2 lg:border-l border-b lg:border-b-0 border-black/50 relative overflow-hidden">
                   <GridOverlay />
                   <div className="scale-[1.125] w-full h-full aspect-square">
                     <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.05}>
@@ -152,7 +152,7 @@ export default function HomaLabChild(initialData) {
                   return (
                     <>
                       <div className={`w-full ${i + 1 != 9 && 'border-b border-black/50'} px-6 xl:px-10 py-6 xl:py-10 flex flex-wrap`}>
-                        <div className="w-3/4">
+                        <div className="w-full lg:w-3/4">
                           <h3 className="font-black text-5xl lg:text-6xl xl:text-7xl leading-[0.95] mb-12 lg:mb-24 uppercase max-w-[500px] xl:max-w-none">{e.title}</h3>
 
                           <div className="w-11/12 lg:w-11/12 max-w-[650px] pb-[15vw]">

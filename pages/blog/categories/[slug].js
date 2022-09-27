@@ -60,7 +60,7 @@ export default function BlogCategory(initialData) {
                   </a>
                 </Link>
 
-                <h1 className="font-black text-[clamp(60px,_5vw,_100px)] leading-[0.95] uppercase w-11/12">{currentCat.title}</h1>
+                <h1 className="font-black text-[clamp(50px,_5vw,_100px)] leading-[0.95] uppercase w-11/12">{currentCat.title}</h1>
 
                 <span className="text-base uppercase tracking-widest font-medium leading-none block">{blog.length} Results</span>
               </div>

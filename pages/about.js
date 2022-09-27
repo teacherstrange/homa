@@ -90,7 +90,7 @@ export default function About(initialData) {
             </div>
 
             <div className="max-w-screen-3xl mx-auto">
-              <h1 className="font-black text-[clamp(80px,_9vw,190px)] leading-[0.95] mb-4 uppercase relative z-10 w-11/12 lg:w-full"><TextScrambler text="Mobile gaming’s major players" seed={25} step={2} /></h1>
+              <h1 className="font-black text-[clamp(55px,_9vw,190px)] leading-[0.95] mb-4 uppercase relative z-10 w-11/12 lg:w-full"><TextScrambler text="Mobile gaming’s major players" seed={25} step={2} /></h1>
             </div>
           </m.div>
 
@@ -197,7 +197,7 @@ export default function About(initialData) {
 
           <m.div variants={fade} className="w-full flex flex-wrap">
             <div className="w-full lg:w-1/2 bg-gray-100 border-b lg:border-b-0 lg:border-r border-black/50">
-              <div className="lg:sticky lg:top-0 lg:pb-32 xl:pb-48">
+              <div className="lg:sticky lg:top-0 lg:pb-32 xl:pb-48 relative overflow-hidden">
                 <div className="flex w-full">
                   <SanityImage
                     image={about.servicesList[0].image}
