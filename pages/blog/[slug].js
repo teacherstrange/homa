@@ -147,7 +147,7 @@ export default function BlogSlug(initialData) {
                           image={article.heroImage}
                           alt="About Test"
                           layout="fill"
-                          className="w-full h-full absolute inset-0 z-0 object-cover object-top"
+                          className="w-full h-full absolute inset-0 z-0 object-cover object-center"
                         />
                       </ScrollParallax>
                     </div>

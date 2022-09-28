@@ -18,6 +18,7 @@ import SocialScroller from '@/components/social-scroller'
 import { useRef } from 'react'
 import PixelatedImage from '@/components/pixelated-image'
 import { CarouselBlog } from '@/components/carousel-blog'
+import Marquee from "react-fast-marquee";
 
 import MobileHandIcon from '@/icons/mobile-hand.svg'
 import GlobeIcon from '@/icons/globe.svg'
@@ -29,6 +30,7 @@ import SanityPageService from '@/services/sanityPageService'
 import TestWebgl from '@/components/test-webgl'
 import TextScrambler from '@/components/text-scrambler'
 import GridOverlay from '@/components/grid-overlay'
+import SanityImage from '@/components/sanity-image'
 
 const query = `{
   "blog": *[_type == "blog"][0...5]{
@@ -58,6 +60,25 @@ const query = `{
   "products": *[_type == "products"]{
     title,
     introText
+  },
+  "home": *[_type == "home"][0]{
+    title,
+    introText,
+    makeAGameCtaHeading,
+    makeAGameCtaText,
+    homaAcademyCtaHeading,
+    homaAcademyCtaText,
+    scrollingImages[] {
+      asset-> {
+        ...
+      },
+      caption,
+      alt,
+      hotspot {
+        x,
+        y
+      },
+    }
   }
 }`
 
@@ -67,7 +88,7 @@ export default function Home(initialData) {
   const characterBinder = useRef(null);
 
   // Sanity Data
-  const { data: { blog, products } } = pageService.getPreviewHook(initialData)()
+  const { data: { blog, products, home } } = pageService.getPreviewHook(initialData)()
 
   return (
     <Layout>
@@ -166,7 +187,7 @@ export default function Home(initialData) {
                   <div className="col-span-10 col-start-2 md:col-span-10 md:col-start-2 md:border-l md:border-r border-black/50 py-[10vw] md:px-10">
                     <div className="grid grid-cols-10 items-center">
                       <div className="col-span-9 md:col-span-5 mb-12 md:mb-0">
-                        <p className="text-2xl uppercase font-bold">HI,<br/>WE'RE HOMA, a gaming technology lab that gives game creators the data-driven tools and human expertise needed to turn their creative ideas into commercial hits.</p>
+                        <p className="text-2xl uppercase font-bold">{home.introText}</p>
                       </div>
 
                       {/* Abstract */}
@@ -250,9 +271,9 @@ export default function Home(initialData) {
               </div>
               
               <div className="order-3 md:order-2 col-span-12 md:col-span-6 z-10">
-                <h1 className="font-black text-[clamp(35px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase">We’re changing games by bringing data into play</h1>
+                <h2 className="font-black text-[clamp(35px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase">{home.makeAGameCtaHeading}</h2>
                 <div className="content max-w-3xl mb-8 xl:mb-12 w-10/12">
-                  <p>Creativity can’t be forced, but with Homa Lab it can be tweaked, iterated and rigorously tested. From idea to monetization, Homa Lab’s real-time flow of data and insight lets you build games that outperform by every conceivable metric.</p>
+                  <p>{home.makeAGameCtaText}</p>
                 </div>
 
                 <Link href="/careers">
@@ -399,11 +420,9 @@ export default function Home(initialData) {
               </div>
               
               <div className="order-3 md:order-2 col-span-12 md:col-span-6 z-10">
-                <h1 className="font-black text-[clamp(50px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase max-w-[500px]">Level up your game</h1>
+                <h2 className="font-black text-[clamp(50px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase max-w-[500px]">{home.homaAcademyCtaHeading}</h2>
                 <div className="content max-w-3xl mb-8 xl:mb-12 w-10/12">
-                  <p>The Homa Academy provides developers and studios everywhere the insights needed to create games with hit potential coded right in.</p>
-                  
-                  <p>Stop by to learn the ins and outs of game design, including in-depth game play analysis, methods for ideation &amp; player experience optimization, as well as hands-on game builing tutorials, hangouts and more.</p>
+                  <p>{home.homaAcademyCtaText}</p>
                 </div>
 
                 <Link href="homa-lab/homa-academy">
@@ -426,20 +445,50 @@ export default function Home(initialData) {
 
 
             <div className="">
-              <div className="relative z-0 flex overflow-x-hidden">
-                <div className="animate-marquee whitespace-nowrap">
-                  <img className="inline-block w-[60%] md:w-[40%] xl:w-[30%] aspect-square" src="https://place.dog/500/500" alt="PLACEHOLDER" />
-                  <img className="inline-block w-[60%] md:w-[40%] xl:w-[30%] aspect-square" src="https://place.dog/600/600" alt="PLACEHOLDER" />
-                  <img className="inline-block w-[60%] md:w-[40%] xl:w-[30%] aspect-square" src="https://place.dog/700/700" alt="PLACEHOLDER" />
-                  <img className="inline-block w-[60%] md:w-[40%] xl:w-[30%] aspect-square" src="https://place.dog/800/800" alt="PLACEHOLDER" />
+              <div className="relative z-0">
+                <Marquee speed={130} gradient={false}>
+                  {home.scrollingImages.map((e, i) => {
+                    return (
+                      <span className="inline-block w-[60%] md:w-[40%] xl:w-[30%] h-[60vw] md:h-[40vw] xl:h-[30vw] aspect-square relative overflow-hidden" key={i}>
+                        <SanityImage
+                          key={i}
+                          image={e}
+                          layout="fill"
+                          className="block w-full h-full inset-0 scale-[1.02]"
+                        />
+                      </span>
+                    )
+                  })}
+                </Marquee>
+                {/* <div className="animate-marquee whitespace-nowrap">
+                  {home.scrollingImages.map((e, i) => {
+                    return (
+                      <span className="inline-block w-[60%] md:w-[40%] xl:w-[30%] h-[60vw] md:h-[40vw] xl:h-[30vw] aspect-square relative overflow-hidden" key={i}>
+                        <SanityImage
+                          key={i}
+                          image={e}
+                          layout="fill"
+                          className="block w-full h-full inset-0"
+                        />
+                      </span>
+                    )
+                  })}
                 </div>
 
                 <div className="absolute top-0 animate-marquee2 whitespace-nowrap">
-                  <img className="inline-block w-[60%] md:w-[40%] xl:w-[30%] aspect-square" src="https://place.dog/500/500" alt="PLACEHOLDER" />
-                  <img className="inline-block w-[60%] md:w-[40%] xl:w-[30%] aspect-square" src="https://place.dog/600/600" alt="PLACEHOLDER" />
-                  <img className="inline-block w-[60%] md:w-[40%] xl:w-[30%] aspect-square" src="https://place.dog/700/700" alt="PLACEHOLDER" />
-                  <img className="inline-block w-[60%] md:w-[40%] xl:w-[30%] aspect-square" src="https://place.dog/800/800" alt="PLACEHOLDER" />
-                </div>
+                  {home.scrollingImages.map((e, i) => {
+                    return (
+                      <span className="inline-block w-[60vw] md:w-[40vw] xl:w-[30vw] h-[60vw] md:h-[40vw] xl:h-[30vw] aspect-square relative overflow-hidden" key={i}>
+                        <SanityImage
+                          key={i}
+                          image={e}
+                          layout="fill"
+                          className="block w-full h-full inset-0"
+                        />
+                      </span>
+                    )
+                  })}
+                </div> */}
               </div>
             </div>
 

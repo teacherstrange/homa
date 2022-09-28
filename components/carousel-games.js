@@ -18,7 +18,7 @@ export const CarouselGames = ({ heading, items }) => {
   }, [emblaApi])
 
   return (
-    <div className="embla">
+    <div className="embla embla--games">
       <div className="w-[91.05vw] lg:w-[93vw] ml-auto flex flex-wrap mb-6">
         <div className="flex-1">
           { heading && (

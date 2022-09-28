@@ -92,15 +92,22 @@ canvas {
 }
 
 .is-selected {
-  .embla__slide-inner {
-    @apply bg-pink/20;
-  }
-
   .embla__slide-inner-blur {
     @apply blur-0;
   }
 }
 
+.embla--games {
+  .is-selected {
+    .embla__slide-inner {
+      @apply bg-pink/20;
+    }
+
+    .embla__slide-inner-blur {
+      @apply blur-0;
+    }
+  }
+}
 
 
 
@@ -131,7 +138,7 @@ canvas {
   }
 
   .is-selected {
-    @apply bg-pink/20;
+    
     
     .embla__slide-inner {
       @apply bg-transparent;
@@ -209,4 +216,10 @@ canvas {
 
 .pill-btn {
   @apply inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white;
+}
+
+.cover-image {
+  img {
+    @apply object-cover object-center;
+  }
 }

@@ -36,6 +36,11 @@ export const CarouselBlog = ({items}) => {
       <div class="embla__viewport w-[91.05vw] ml-auto bg-opacity-70 overflow-hidden" ref={emblaNewsRef}>
         <div className="embla__container">
           {items.map((e, i) => {
+            let d = new Date(e.publishDate);
+            let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d);
+            let mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(d);
+            let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d);
+
             return (
               <Link href={`/blog/${e.slug.current}`}>
                 <a className="embla__slide" key={i}>
@@ -55,7 +60,7 @@ export const CarouselBlog = ({items}) => {
                           <span className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white">{e.category.title}</span>
                         )}
 
-                        <span className="block text-sm lg:text-base text-black/50 leading-none ml-auto">{e.publishDate}</span>
+                        <span className="block text-sm lg:text-base text-black/50 leading-none ml-auto">{da} {mo} {ye}</span>
                       </div>
                     </div>
                   </div>
