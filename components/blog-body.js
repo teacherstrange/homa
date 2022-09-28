@@ -22,7 +22,7 @@ import SkipButtons from './skip-buttons'
 import TextScrambler from './text-scrambler'
 import SanityImage from './sanity-image'
 
-export const articlesPerPage = 3;
+export const articlesPerPage = 9;
 
 export const query = `{
   "blog": *[_type == "blog"] | order(date desc) [$start ... $stop] {
@@ -153,7 +153,7 @@ export default function BlogBody({blog, numberOfArticles, categories, subPage, i
                   return (
                     <div className="md:px-4 lg:px-6 w-full md:w-1/2 lg:w-1/3 mb-6 md:mb-20 lg:mb-32" key={i}>
                       <Link href={`/blog/${e.slug.current}`}>
-                        <a className="block border border-black/50 w-full">
+                        <a className="block border border-black/50 w-full h-full">
                           <div className="aspect-square w-full bg-gray-200 border-b border-black/50 relative overflow-hidden">
                             <SanityImage
                               image={e.heroImage}
@@ -182,10 +182,10 @@ export default function BlogBody({blog, numberOfArticles, categories, subPage, i
               </div>
 
               {/* PAGINATION */}
-              {numberOfArticles > 3 && (
+              {numberOfArticles > 9 && (
                 <div className="mb-8 lg:mb-12 xl:mb-16">
                   <SkipButtons index={index} maxIndex={Math.floor(numberOfArticles/articlesPerPage)} />
-                </div>           
+                </div> 
               )}
             </div>
 
