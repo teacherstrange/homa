@@ -27,7 +27,8 @@ import { CarouselCards } from '@/components/carousel-cards'
 import SanityPageService from '@/services/sanityPageService'
 
 const query = `{
-  "games": *[_type == "gamesLibrary"]{
+  "games": *[_type == "gamesLibrary"] | order(orderRank asc){
+    projectCode,
     title,
     partnerName,
     googlePlayStoreLink,
@@ -52,6 +53,23 @@ const query = `{
     slug {
       current
     }
+  },
+  "gamesLanding": *[_type == "games"][1] {
+    title,
+    heroIntroText,
+    fromCustomersToCollaboratorsText,
+    peopleYoullMeetText,
+    peopleYoullMeet[] {
+      heading,
+      text
+    },
+    buildABrandCtaText,
+    seo {
+      ...,
+      shareGraphic {
+        asset->
+      }
+    }
   }
 }`
 
@@ -59,11 +77,26 @@ const pageService = new SanityPageService(query)
 
 export default function Games(initialData) {
   // Sanity Data
-  const { data: { games, successStories } } = pageService.getPreviewHook(initialData)()
+  const { data: { games, successStories, gamesLanding } } = pageService.getPreviewHook(initialData)()
   
   return (
     <Layout>
-      <NextSeo title="Games" />
+      <NextSeo
+        title={gamesLanding.seo?.metaTitle ? gamesLanding.seo?.metaTitle : 'Games'}
+        description={gamesLanding.seo?.metaDesc ? gamesLanding.seo?.metaDesc : null}
+        openGraph={{
+          title: gamesLanding.seo?.metaTitle ? gamesLanding.seo?.metaTitle : gamesLanding.title,
+          description: gamesLanding.seo?.metaDesc ? gamesLanding.seo?.metaDesc : null,
+          images: gamesLanding.seo?.shareGraphic?.asset[
+            {
+              url: gamesLanding.seo?.shareGraphic?.asset.url ? gamesLanding.seo?.shareGraphic?.asset.url : null,
+              width: gamesLanding.seo?.shareGraphic?.asset.metadata.dimensions.width ? gamesLanding.seo?.shareGraphic?.asset.metadata.dimensions.width : null,
+              height: gamesLanding.seo?.shareGraphic?.asset.metadata.dimensions.height ? gamesLanding.seo?.shareGraphic?.asset.metadata.dimensions.height : null,
+              type: 'image/jpeg',
+            }
+          ]
+        }}
+      />
 
       <Header />
 
@@ -85,7 +118,7 @@ export default function Games(initialData) {
 
                 <div className="w-full lg:w-[50%] xl:w-[45%] 2xl:w-[40%] max-w-[720px] pt-[5%] lg:pt-[10%] relative pb-8 lg:pb-0">
                   <div className="relative z-10">
-                    <p className="text-lg md:text-2xl xl:text-3xl mb-12 lg:mb-16">By combining data and expertise to superpower creativity, we’re making better games possible and more hits probable. It’s a full on game changer for game makers.</p>
+                    <p className="text-lg md:text-2xl xl:text-3xl mb-12 lg:mb-16">{gamesLanding.heroIntroText}</p>
 
                     <a href="https://lab-v2.homagames.com/login" target="_blank" rel="noreferrer noopener" className="bg-black text-white px-12 py-6 uppercase tracking-wide w-1/2 text-center">
                       Submit your game
@@ -94,7 +127,7 @@ export default function Games(initialData) {
                 </div>
                 
                 <ScrollParallax isAbsolutelyPositioned lerpEase={0.15}>
-                  <div className="absolute bottom-0 right-[15%] md:right-[3%] lg:right-[7%] z-0 w-[70%] lg:w-[65%] xl:w-[40%] max-w-[400px] lg:max-w-[580px] xl:max-w-[700px]">
+                  <div className="absolute bottom-0 right-[10%] md:right-[3%] lg:right-[10%] z-0 w-[75%] lg:w-[65%] xl:w-[40%] max-w-[400px] lg:max-w-[580px] xl:max-w-[650px]">
                     {/* <Image
                       src="/images/horse.webp"
                       alt="Bee"
@@ -103,7 +136,7 @@ export default function Games(initialData) {
                       height={865}
                       className="w-full"
                     /> */}
-                    <PixelatedImage image={'/images/horse.webp'} width={864} height={865} />
+                    <PixelatedImage image={'/images/farmer.webp'} width={1120} height={1186} />
                   </div>
                 </ScrollParallax>
               </div>
@@ -116,10 +149,10 @@ export default function Games(initialData) {
             <Container>
               <div className="flex flex-wrap py-12 lg:pt-[10vw] lg:pb-[15vw]">
                 <div className="w-full lg:w-1/2">
-                  <h2 className="font-black text-[clamp(48px,_4.17vw,_80px)] leading-[0.95] mb-8 lg:mb-[5vw] uppercase w-11/12">From Customers to collaborators</h2>
+                  <h2 className="font-black text-[clamp(48px,_4.17vw,_80px)] leading-[0.95] mb-8 lg:mb-[5vw] uppercase w-11/12 break-words">From Customers to collaborators</h2>
 
                   <div className="w-11/12 content mb-8 lg:mb-12">
-                    <p>We help mobile gaming’s major players make major games, plural. We’re not an off-the-shelf and out-the-door type of outfit. We’re partners building an armada of partnerships. Here are a few success stories we love to tell.</p>
+                    <p>{gamesLanding.fromCustomersToCollaboratorsText}</p>
                   </div>
                 </div>
 
@@ -263,41 +296,21 @@ export default function Games(initialData) {
                 <div className="col-span-12 lg:col-span-7 z-10 realtive">
                   <h2 className="font-black text-[clamp(50px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase">People you'll meet along the way.</h2>
                   <div className="content max-w-3xl mb-8 xl:mb-12 w-10/12">
-                    <p>In addition to having the data needed to supercharge your creativity, you’ll be working alongside a group of experts who want your game to succeed as much as you do.</p>
+                    <p>{gamesLanding.peopleYoullMeetText}</p>
                   </div>
 
                   <div className="w-full flex flex-wrap border border-white mb-6 lg:mb-8 max-w-[650px]">
-                    <div className="w-full border-b border-white p-5 lg:p-6 xl:p-8 2xl:p-10">
-                      <h3 className="font-bold text-xl lg:text-2xl xl:text-3xl leading-[0.95] mb-4 lg:mb-6 uppercase">Publishing Manager</h3>
+                    {gamesLanding.peopleYoullMeet.map((e, i) => {
+                      return (
+                        <div className="w-full border-b border-white p-5 lg:p-6 xl:p-8 2xl:p-10" key={i}>
+                          <h3 className="font-bold text-xl lg:text-2xl xl:text-3xl leading-[0.95] mb-4 lg:mb-6 uppercase">{e.heading}</h3>
 
-                      <div className="content content--small w-9/12 lg:w-11/12">
-                        <p>to help you to ideate, improve, and test your game.</p>
-                      </div>
-                    </div>
-
-                    <div className="w-full border-b border-white p-5 lg:p-6 xl:p-8 2xl:p-10">
-                      <h3 className="font-bold text-xl lg:text-2xl xl:text-3xl leading-[0.95] mb-4 lg:mb-6 uppercase w-9/12 lg:w-11/12">Creative Ads Expert</h3>
-
-                      <div className="content content--small w-9/12 lg:w-11/12">
-                        <p>to increase User Acquisition with creative Ad campaigns based on the latest trends.</p>
-                      </div>
-                    </div>
-
-                    <div className="w-full border-b border-white p-5 lg:p-6 xl:p-8 2xl:p-10">
-                      <h3 className="font-bold text-xl lg:text-2xl xl:text-3xl leading-[0.95] mb-4 lg:mb-6 uppercase">Game Designer</h3>
-
-                      <div className="content content--small w-9/12 lg:w-11/12">
-                        <p>to provide guidance on how to improve gameplay and mechanics.</p>
-                      </div>
-                    </div>
-                    
-                    <div className="w-full p-5 lg:p-6 xl:p-8 2xl:p-10">
-                      <h3 className="font-bold text-xl lg:text-2xl xl:text-3xl leading-[0.95] mb-4 lg:mb-6 uppercase">UA and Monetization Manager</h3>
-
-                      <div className="content content--small w-9/12 lg:w-11/12">
-                        <p>to monetize your game and boost retention by putting our trusted ad partners’ technology to good use.</p>
-                      </div>
-                    </div>
+                          <div className="content content--small w-9/12 lg:w-11/12">
+                            <p>{e.text}</p>
+                          </div>
+                        </div>
+                      )
+                    })}
                   </div>
 
                   <a href="https://lab-v2.homagames.com/login" target="_blank" rel="noreferrer noopener" className="inline-block font-medium uppercase leading-none py-6 px-10 rounded-sm bg-white text-black hover:bg-black hover:text-white focus:bg-black focus:text-white">Submit your game</a>
@@ -323,7 +336,7 @@ export default function Games(initialData) {
                       <h2 className="font-black text-[clamp(50px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-[10vw] uppercase">Build a brand, then make a game out of it.</h2>
 
                       <div className="w-11/12 content mb-8 lg:mb-12">
-                        <p>Good characters shouldn't be confined to a single game or two. That's why we're building an interconnected universe where your characters can have a life of their own – increasing your visibility and creating new revenue streams from your intellectual property.</p>
+                        <p>{gamesLanding.buildABrandCtaText}</p>
                       </div>
 
                       <Link href="/community">

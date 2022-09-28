@@ -47,7 +47,10 @@ export default function BlogCategory(initialData) {
 
   return (
     <Layout>
-      <NextSeo title="Blog" />
+      <NextSeo
+        title={currentCat.title}
+        description="Homa Games team is international, dynamic and passionate about games, working fully with partners all around the world."
+      />
 
       <Header />
 

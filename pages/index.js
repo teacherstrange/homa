@@ -78,6 +78,12 @@ const query = `{
         x,
         y
       },
+    },
+    seo {
+      ...,
+      shareGraphic {
+        asset->
+      }
     }
   }
 }`
@@ -92,7 +98,10 @@ export default function Home(initialData) {
 
   return (
     <Layout>
-      <NextSeo title="Home" />
+      <NextSeo
+        title={home.seo?.metaTitle ? home.seo?.metaTitle : 'Home'}
+        description={home.seo?.metaDesc ? home.seo?.metaDesc : null}
+      />
 
       <Header />
       

@@ -65,6 +65,12 @@ const query = `{
     partnerName,
     slug {
       current
+    },
+    seo {
+      ...,
+      shareGraphic {
+        asset->
+      }
     }
   }
 }`
@@ -82,7 +88,10 @@ export default function CaseStudySlug(initialData) {
   
   return (
     <Layout>
-      <NextSeo title={article.title} />
+      <NextSeo
+        title={article.seo?.metaTitle ? article.seo?.metaTitle : article.title }
+        description={article.seo?.metaDesc ? article.seo?.metaDesc : null}
+      />
 
       <Header />
 

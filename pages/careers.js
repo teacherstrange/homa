@@ -32,6 +32,14 @@ import SanityImage from '@/components/sanity-image'
 const query = `{
   "careers": *[_type == "careers"][0]{
     title,
+    introText,
+    successCtaItems[] {
+      text
+    },
+    introPerkItems[] {
+      heading,
+      text
+    },
     scrollingImages[] {
       asset-> {
         ...
@@ -63,7 +71,10 @@ export default function Careers(initialData) {
   
   return (
     <Layout>
-      <NextSeo title="Careers" />
+      <NextSeo
+        title={careers.seo?.metaTitle ? careers.seo?.metaTitle : 'Careers'}
+        description={careers.seo?.metaDesc ? careers.seo?.metaDesc : null}
+      />
 
       <Header />
 
@@ -103,7 +114,7 @@ export default function Careers(initialData) {
 
                         <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">Work With Us</span>
 
-                        <p className="text-xl lg:text-2xl xl:text-3xl uppercase font-bold">We’re building a modern workplace with a remote-friendly way of working. We ask for a lot, but in return we give a lot – like the flexibility to fit work around your life, and the ability to do work you’re proud of.</p>
+                        <p className="text-xl lg:text-2xl xl:text-3xl uppercase font-bold">{careers.introText}</p>
                       </div>
                     </div>
                   </div>
@@ -112,45 +123,37 @@ export default function Careers(initialData) {
 
               <div className="w-full border-b border-black/50 pb-56 md:pb-0">
                 <div className="grid grid-cols-12 max-w-screen-3xl mx-auto">
-                  <div className="col-span-10 col-start-2 md:col-span-10 md:col-start-2 md:border-l md:border-r border-black/50 py-[5vw] md:px-10">
-                    <div className="grid grid-cols-12 pb-[10vw]">
-                      <div className="col-span-12 lg:col-span-3 mb-5 lg:mb-0">
-                        <HappyIcon className="w-[40%] max-w-[50px] lg:max-w-[100px] lg:mx-auto" />
-                      </div>
-                      <div className="col-span-12 lg:col-span-7">
-                        <span className="block font-black text-[clamp(35px,_5vw,_86px)] leading-[0.95] mb-8 lg:mb-12 uppercase max-w-[550px]">Trust from day one</span>
+                  <div className="col-span-10 col-start-2 md:col-span-10 md:col-start-2 md:border-l md:border-r border-black/50 pb-0 md:pb-[10vw] py-[10vw] md:px-10">
+                    {careers.introPerkItems.map((e, i) => {
+                      return (
+                        <div className={`grid grid-cols-12 ${(i + 1) !== careers.introPerkItems.length && 'pb-[10vw]'}`} key={i}>
+                          <div className="col-span-12 lg:col-span-3 mb-5 lg:mb-0">
+                            { i == 0 && (
+                              <HappyIcon className="w-[40%] max-w-[50px] lg:max-w-[100px] lg:mx-auto" />
+                            )}
 
-                        <div className="content max-w-[550px]">
-                          <p>Take a long lunch. Go to the dentist. Book a spin class. We’ll trust you to get the job done.</p>
+                            { i == 1 && (
+                              <BookIcon className="w-[40%] max-w-[50px] lg:max-w-[100px] lg:mx-auto" />
+                            )}
+
+                            { i == 2 && (
+                              <CashIcon className="w-[40%] max-w-[50px] lg:max-w-[100px] lg:mx-auto" />
+                            )}
+
+                            { i > 2 && (
+                              <HappyIcon className="w-[40%] max-w-[50px] lg:max-w-[100px] lg:mx-auto" />
+                            )}
+                          </div>
+                          <div className="col-span-12 lg:col-span-7">
+                            <span className="block font-black text-[clamp(35px,_5vw,_86px)] leading-[0.95] mb-8 lg:mb-12 uppercase max-w-[550px]">{e.heading}</span>
+
+                            <div className="content max-w-[550px]">
+                              <p>{e.text}</p>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-12 pb-[10vw]">
-                      <div className="col-span-12 lg:col-span-3 mb-5 lg:mb-0">
-                        <BookIcon className="w-[40%] max-w-[50px] lg:max-w-[100px] lg:mx-auto" />
-                      </div>
-                      <div className="col-span-12 lg:col-span-7">
-                        <span className="block font-black text-[clamp(35px,_5vw,_86px)] leading-[0.95] mb-8 lg:mb-12 uppercase max-w-[550px]">Continuous learning</span>
-
-                        <div className="content max-w-[550px]">
-                          <p>Knowledge shares, Learning Days and a full-on learning platform mean you’ll gain experience and knowledge here.</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-12 md:pb-[10vw]">
-                      <div className="col-span-12 lg:col-span-3 mb-5 lg:mb-0">
-                        <CashIcon className="w-[40%] max-w-[50px] lg:max-w-[100px] lg:mx-auto" />
-                      </div>
-                      <div className="col-span-12 lg:col-span-7">
-                        <span className="block font-black text-[clamp(35px,_5vw,_86px)] leading-[0.95] mb-8 lg:mb-12 uppercase max-w-[550px]">Competitive Cash</span>
-
-                        <div className="content max-w-[550px]">
-                          <p>We’re looking for people who care about our mission as much as we do – and we know care doesn’t come cheap.</p>
-                        </div>
-                      </div>
-                    </div>
+                      )
+                    })}
                   </div>
                 </div>
               </div>
@@ -178,71 +181,33 @@ export default function Careers(initialData) {
                   <h2 className="display-text w-11/12 lg:w-9/12 mb-12 lg:mb-24 xl:mb-32">Success is its own reward. But there are perks as well.</h2>
 
                   <div className="w-full flex flex-wrap border border-black/50 mb-6 lg:mb-8">
-                    <div className="w-full lg:w-1/3 xl:w-1/3 border-b lg:border-b lg:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
+                    {careers.successCtaItems.map((e, i) => {
+                      let border = 'border-b lg:border-b lg:border-r border-black/50'
 
-                      <div className="content content--small w-11/12 flex flex-wrap h-full">
-                        <div className="w-full mb-24 content">
-                          <p>If you’re interested in working from our newly-renovated Paris HQ with a rooftop garden and WeWork amenities, we’ve got a desk right here...</p>
+                      if (i == 2) {
+                        border = 'lg:border-r-0 border-b lg:border-b border-black/50'
+                      }
+
+                      if (i == 3 || i == 4 | i == 5) {
+                        border = 'lg:border-r border-b lg:border-b-0 border-black/50'
+                      }
+
+                      if (i == 5) {
+                        border = 'lg:border-r-0 border-black/50'
+                      }
+                      return (
+                      <div className={`w-full lg:w-1/3 xl:w-1/3 p-5 lg:p-6 xl:p-8 2xl:p-10 ${border}`} key={i}>
+
+                        <div className="content content--small w-11/12 flex flex-wrap h-full">
+                          <div className="w-full mb-24 content">
+                            <p>{e.text}</p>
+                          </div>
+
+                          <LocationIcon className="w-1/4 max-w-[120px] mt-auto" />
                         </div>
-
-                        <LocationIcon className="w-1/4 max-w-[120px] mt-auto" />
                       </div>
-                    </div>
-
-                    <div className="w-full lg:w-1/3 xl:w-1/3 border-b lg:border-b lg:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
-
-                      <div className="content content--small w-11/12 flex flex-wrap h-full">
-                        <div className="w-full mb-24 content">
-                          <p>Don’t live in France or have a right to work here? No worries, we offer sponsorship and relocation packages.</p>
-                        </div>
-
-                        <LocationIcon className="w-1/4 max-w-[120px] mt-auto" />
-                      </div>
-                    </div>
-
-                    <div className="w-full lg:w-1/3 xl:w-1/3 border-b lg:border-b lg:border-r-0 border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
-
-                      <div className="content content--small w-11/12 flex flex-wrap h-full">
-                        <div className="w-full mb-24 content">
-                          <p>Don't speak French and don't want to learn it? Pas de problème, we work in English.</p>
-                        </div>
-
-                        <LocationIcon className="w-1/4 max-w-[120px] mt-auto" />
-                      </div>
-                    </div>
-
-                    <div className="w-full lg:w-1/3 xl:w-1/3 border-b lg:border-b-0 lg:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
-
-                      <div className="content content--small w-11/12 flex flex-wrap h-full">
-                        <div className="w-full mb-24 content">
-                          <p>If you’re interested in working from our newly-renovated Paris HQ with a rooftop garden and WeWork amenities, we’ve got a desk right here...</p>
-                        </div>
-
-                        <LocationIcon className="w-1/4 max-w-[120px] mt-auto" />
-                      </div>
-                    </div>
-
-                    <div className="w-full lg:w-1/3 xl:w-1/3 border-b lg:border-b-0 lg:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
-
-                      <div className="content content--small w-11/12 flex flex-wrap h-full">
-                        <div className="w-full mb-24 content">
-                          <p>Don’t live in France or have a right to work here? No worries, we offer sponsorship and relocation packages.</p>
-                        </div>
-
-                        <LocationIcon className="w-1/4 max-w-[120px] mt-auto" />
-                      </div>
-                    </div>
-
-                    <div className="w-full lg:w-1/3 xl:w-1/3 border-b-0 lg:border-b-0 lg:border-r-0 border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
-
-                      <div className="content content--small w-11/12 flex flex-wrap h-full">
-                        <div className="w-full mb-24 content">
-                          <p>Don't speak French and don't want to learn it? Pas de problème, we work in English.</p>
-                        </div>
-
-                        <LocationIcon className="w-1/4 max-w-[120px] mt-auto" />
-                      </div>
-                    </div>
+                      )
+                    })}
                   </div>
 
                   <a href="https://apply.workable.com/homa-games/" target="_blank" rel="noopener noreferrer" class="roll-btn inline-block">

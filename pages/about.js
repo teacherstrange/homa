@@ -24,6 +24,7 @@ import PixelatedImage from '@/components/pixelated-image'
 import SanityPageService from '@/services/sanityPageService'
 import SanityImage from '@/components/sanity-image'
 import Marquee from 'react-fast-marquee'
+import SanityBlockContent from '@sanity/block-content-to-react'
 
 const query = `{
   "about": *[_type == "about"][0]{
@@ -54,6 +55,13 @@ const query = `{
         y
       },
     },
+    introText,
+    ourCommunityHeading,
+    ourCommunityStats[] {
+      number,
+      thing,
+    },
+    ourPeopleCtaHeading,
     seo {
       ...,
       shareGraphic {
@@ -71,7 +79,10 @@ export default function About(initialData) {
   
   return (
     <Layout>
-      <NextSeo title="About" />
+      <NextSeo
+        title={about.seo?.metaTitle ? about.seo?.metaTitle : 'About'}
+        description={about.seo?.metaDesc ? about.seo?.metaDesc : null}
+      />
 
       <Header />
 
@@ -111,10 +122,14 @@ export default function About(initialData) {
               <div className="grid grid-cols-12 max-w-screen-3xl mx-auto">
                 <div className="col-span-10 col-start-2 md:col-span-10 md:col-start-2 md:border-l md:border-r border-black/50 py-[15vw] pb-[50vw] md:py-[15vw] md:px-10">
                   <div className="grid grid-cols-10 items-center relative">
-                    <div className="col-span-9 md:col-span-5 mb-12 md:mb-0 relative z-10">
-                      <p className="text-2xl uppercase font-bold mb-6">Before Homa, making a hit mobile game was blood, sweat and luck. Now, it’s more like step one, step two, step three.</p>
-                      
-                      <p className="text-2xl uppercase font-bold">So, who are we? We’re the people behind mobile gaming’s great leap forward. the creative specialists giving game creators the tools, support and data needed to power up their creativity and multiply their downloads.</p>
+                    <div className="col-span-9 md:col-span-5 mb-12 md:mb-0 relative z-10 content text-2xl md:text-2xl lg:text-2xl xl:text-2xl uppercase font-bold content--nolead">
+
+                    <SanityBlockContent
+                      serializers={{ 
+                        container: ({ children }) => children
+                      }}
+                        blocks={about.introText}
+                      />
                     </div>
 
                     <MouseParallax isAbsolutelyPositioned lerpEase={0.15} strength={0.015}>
@@ -145,32 +160,20 @@ export default function About(initialData) {
                     <div className="col-span-12">
                       <p className="text-2xl uppercase font-bold mb-8 lg:mb-12">Our Community</p>
 
-                      <h2 className="font-black text-[clamp(46px,_4.45vw,_86px)] leading-[0.9] mb-12 lg:mb-32 uppercase">Build communities and technology that help game makers transform their ideas into games billions are eager to download and play.</h2>
+                      <h2 className="font-black text-[clamp(46px,_4.45vw,_86px)] leading-[0.9] mb-12 lg:mb-32 uppercase">{about.ourCommunityHeading}</h2>
 
                       <div className="w-full flex flex-wrap border border-black/50 mb-6 lg:mb-8">
-                        <div className="w-full lg:w-1/3 border-b lg:border-b-0 lg:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
-                          <h3 className="font-black text-[clamp(100px,_9vw,_200px)] leading-[0.95] mb-4 uppercase w-11/12">110+</h3>
+                      {about.ourCommunityStats.map((e, i) => {
+                        return (
+                          <div className={`w-full lg:w-1/3 p-5 lg:p-6 xl:p-8 2xl:p-10 ${ (i + 1) !== about.ourCommunityStats.length ? 'border-b lg:border-b-0 border-black/50 lg:border-r' : '' }`} key={i}>
+                            <h3 className="font-black text-[clamp(100px,_9vw,_200px)] leading-[0.95] mb-4 uppercase w-11/12">{e.number}</h3>
 
-                          <div className="content w-11/12 mb-16 lg:mb-48">
-                            <p className="uppercase font-bold">Humans</p>
+                            <div className="content w-11/12 mb-16 lg:mb-48">
+                              <p className="uppercase font-bold">{e.thing}</p>
+                            </div>
                           </div>
-                        </div>
-
-                        <div className="w-full lg:w-1/3 border-b lg:border-b-0 lg:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
-                          <h3 className="font-black text-[clamp(100px,_9vw,_200px)] leading-[0.95] mb-4 uppercase w-11/12">04</h3>
-
-                          <div className="content w-11/12 mb-16 lg:mb-48">
-                            <p className="uppercase font-bold">Headquarters</p>
-                          </div>
-                        </div>
-
-                        <div className="w-full lg:w-1/3 p-5 lg:p-6 xl:p-8 2xl:p-10">
-                          <h3 className="font-black text-[clamp(100px,_9vw,_200px)] leading-[0.95] mb-4 uppercase w-11/12">24</h3>
-
-                          <div className="content w-11/12 mb-16 lg:mb-48">
-                            <p className="uppercase font-bold">Countries of origin</p>
-                          </div>
-                        </div>
+                          )
+                        })}
                       </div>
                     </div>
                   </div>
@@ -195,7 +198,7 @@ export default function About(initialData) {
 
             <div className="max-w-screen-xl mx-auto text-center relative z-10">
               <span className="text-2xl uppercase font-bold mb-8 lg:mb-12 block">Our People</span>
-              <h2 className="font-black text-[clamp(50px,_5.5vw,120px)] leading-[0.95] uppercase text-center relative z-10 w-11/12 lg:w-full mb-8 lg:mb-12">To lead the world,<br/> you need people from all over it</h2>
+              <h2 className="font-black text-[clamp(50px,_5.5vw,120px)] leading-[0.95] uppercase text-center relative z-10 w-11/12 lg:w-full mb-8 lg:mb-12">{about.ourPeopleCtaHeading}</h2>
 
               <Link href="/careers">
                 <a class="roll-btn w-auto inline-block">

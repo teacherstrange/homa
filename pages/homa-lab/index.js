@@ -48,6 +48,15 @@ const query = `{
         asset->
       }
     }
+  },
+  "homaLab": *[_type == "homaLab"][0] {
+    title,
+    seo {
+      ...,
+      shareGraphic {
+        asset->
+      }
+    }
   }
 }`
 
@@ -55,11 +64,14 @@ const pageService = new SanityPageService(query)
 
 export default function HomaLab(initialData) {
   // Sanity Data
-  const { data: { products } } = pageService.getPreviewHook(initialData)()
+  const { data: { products, homaLab } } = pageService.getPreviewHook(initialData)()
   
   return (
     <Layout>
-      <NextSeo title="Homa Lab" />
+      <NextSeo
+        title={homaLab.seo?.metaTitle ? homaLab.seo?.metaTitle : 'Homa Lab'}
+        description={homaLab.seo?.metaDesc ? homaLab.seo?.metaDesc : null}
+      />
 
       <Header />
 

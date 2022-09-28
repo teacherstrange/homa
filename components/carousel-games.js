@@ -64,9 +64,11 @@ export const CarouselGames = ({ heading, items }) => {
                     </div>
                   </div>
 
-                  <div className="flex flex-wrap w-full mt-auto">
-                    <a href={e.appStoreLink} target="_blank" rel="noopener noreferrer" className="block uppercase font-medium tracking-widest text-sm leading-none xl:text-base xl:leading-none flex-1">Download Game</a>
-                  </div>
+                  {(e.appStoreLink || e.googlePlayStoreLink) && (
+                    <div className="flex flex-wrap w-full mt-auto">
+                      <a href={e.appStoreLink ? e.appStoreLink : e.googlePlayStoreLink} target="_blank" rel="noopener noreferrer" className="block uppercase font-medium tracking-widest text-sm leading-none xl:text-base xl:leading-none flex-1">Download Game</a>
+                    </div>
+                  )}
                 </div>
               </div>
             )

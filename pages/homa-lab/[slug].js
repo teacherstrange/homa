@@ -54,6 +54,12 @@ const query = `{
     },
     slug {
       current
+    },
+    seo {
+      ...,
+      shareGraphic {
+        asset->
+      }
     }
   },
 }`
@@ -66,7 +72,10 @@ export default function HomaLabChild(initialData) {
   
   return (
     <Layout>
-      <NextSeo title={product.title} />
+      <NextSeo
+        title={product.seo?.metaTitle ? product.seo?.metaTitle : product.title }
+        description={product.seo?.metaDesc ? product.seo?.metaDesc : null}
+      />
 
       <Header />
 

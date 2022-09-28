@@ -64,7 +64,10 @@ export default function BlogBody({blog, numberOfArticles, categories, subPage, i
   
   return (
     <Layout>
-      <NextSeo title="Blog" />
+      <NextSeo
+        title="Latest Tips & Tricks in the Mobile Industry"
+        description="Homa Games team is international, dynamic and passionate about games, working fully with partners all around the world."
+      />
 
       <Header />
 
@@ -187,7 +190,6 @@ export default function BlogBody({blog, numberOfArticles, categories, subPage, i
             </div>
 
             <FooterCta />
-
             <Footer />
           </m.div>
         </m.div>

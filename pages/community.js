@@ -69,6 +69,12 @@ const query = `{
           y
         },
       },
+    },
+    seo {
+      ...,
+      shareGraphic {
+        asset->
+      }
     }
   }
 }`
@@ -81,7 +87,10 @@ export default function Community(initialData) {
   
   return (
     <Layout>
-      <NextSeo title="Community" />
+      <NextSeo
+        title={community.seo?.metaTitle ? community.seo.metaTitle : 'Community'}
+        description={community.seo?.metaDesc ? community.seo.metaDesc : null}
+      />
 
       <Header />
 
