@@ -210,10 +210,14 @@ export default function HomaLab(initialData) {
                       <h3 className="font-bold text-2xl lg:text-3xl xl:text-3xl leading-[0.95] mb-12 lg:mb-32 uppercase">UI/UX analysis and examples</h3>
                     </div>
                   </div>
-
-                  <Link href="#">
-                    <a className="inline-block border border-black/50 font-medium uppercase leading-none py-6 px-10 rounded-sm bg-black text-white hover:bg-black hover:text-white focus:bg-black focus:text-white">Take a Look</a>
-                  </Link>
+                    
+                  <a
+                    href="https://academy.homagames.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block border border-black/50 font-medium uppercase leading-none py-6 px-10 rounded-sm bg-black text-white hover:bg-black hover:text-white focus:bg-black focus:text-white">
+                      Take a Look
+                  </a>
                 </div>
               </div>
             </div>

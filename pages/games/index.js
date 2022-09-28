@@ -87,11 +87,9 @@ export default function Games(initialData) {
                   <div className="relative z-10">
                     <p className="text-lg md:text-2xl xl:text-3xl mb-12 lg:mb-16">By combining data and expertise to superpower creativity, we’re making better games possible and more hits probable. It’s a full on game changer for game makers.</p>
 
-                    <Link href="/">
-                      <a className="bg-black text-white px-12 py-6 uppercase tracking-wide w-1/2 text-center">
-                        Submit your game
-                      </a>
-                    </Link>
+                    <a href="https://lab-v2.homagames.com/login" target="_blank" rel="noreferrer noopener" className="bg-black text-white px-12 py-6 uppercase tracking-wide w-1/2 text-center">
+                      Submit your game
+                    </a>
                   </div>
                 </div>
                 
@@ -237,9 +235,8 @@ export default function Games(initialData) {
                     </div>
                   </div>
 
-                  <Link href="#">
-                    <a className="inline-block border border-black/50 font-medium uppercase leading-none py-6 px-10 rounded-sm bg-black text-white hover:bg-black hover:text-white focus:bg-black focus:text-white">Submit your game</a>
-                  </Link>
+                
+                  <a href="https://lab-v2.homagames.com/login" target="_blank" rel="noreferrer noopener" className="inline-block border border-black/50 font-medium uppercase leading-none py-6 px-10 rounded-sm bg-black text-white hover:bg-black hover:text-white focus:bg-black focus:text-white">Submit your game</a>
                 </div>
               </div>
             </div>
@@ -303,9 +300,7 @@ export default function Games(initialData) {
                     </div>
                   </div>
 
-                  <Link href="#">
-                    <a className="inline-block font-medium uppercase leading-none py-6 px-10 rounded-sm bg-white text-black hover:bg-black hover:text-white focus:bg-black focus:text-white">Submit your game</a>
-                  </Link>
+                  <a href="https://lab-v2.homagames.com/login" target="_blank" rel="noreferrer noopener" className="inline-block font-medium uppercase leading-none py-6 px-10 rounded-sm bg-white text-black hover:bg-black hover:text-white focus:bg-black focus:text-white">Submit your game</a>
                 </div>
               </div>
             </div>
@@ -331,7 +326,7 @@ export default function Games(initialData) {
                         <p>Good characters shouldn't be confined to a single game or two. That's why we're building an interconnected universe where your characters can have a life of their own – increasing your visibility and creating new revenue streams from your intellectual property.</p>
                       </div>
 
-                      <Link href="#">
+                      <Link href="/community">
                         <a className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white">Learn more</a>
                       </Link>
                     </div>

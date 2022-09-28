@@ -425,14 +425,17 @@ export default function Home(initialData) {
                   <p>{home.homaAcademyCtaText}</p>
                 </div>
 
-                <Link href="homa-lab/homa-academy">
-                  <a className="pill-btn group">
-                    <div className="relative">
-                      <span className="block group-hover:opacity-0">Learn More</span>
-                      <span className="absolute top-0 left-0 right-0 hidden  group-hover:block"><TextScrambler text="Learn More" seed={5} step={1} singleLine /></span>
-                    </div>
-                  </a>
-                </Link>
+                <a
+                  href="https://academy.homagames.com/"
+                  target="_blank"
+                  rel="noopener noreferrer" 
+                  className="pill-btn group"
+                >
+                  <div className="relative">
+                    <span className="block group-hover:opacity-0">Learn More</span>
+                    <span className="absolute top-0 left-0 right-0 hidden  group-hover:block"><TextScrambler text="Learn More" seed={5} step={1} singleLine /></span>
+                  </div>
+                </a>
               </div>
               
               <div className="order-1 md:order-3 col-span-12 md:col-span-6 lg:col-span-4 relative z-0 md:h-full mb-8 lg:mb-0">

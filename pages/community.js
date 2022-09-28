@@ -194,9 +194,8 @@ export default function Community(initialData) {
                             <p>We call it Homa Gang. Get a character and step inside.</p>
                           </div>
 
-                          <Link href="#">
-                            <a className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white">Learn More</a>
-                          </Link>
+
+                          <a href="https://www.homagang.xyz/" target="_blank" rel="noopener noreferrer" className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white">Learn More</a>
                         </div>
                       </div>
                       <div className="col-span-10 lg:col-span-5 lg:col-start-6 relative overflow-hidden">
