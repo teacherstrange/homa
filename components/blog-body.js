@@ -148,7 +148,7 @@ export default function BlogBody({blog, numberOfArticles, categories, subPage, i
                   let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d);
 
                   return (
-                    <div className="md:px-4 lg:px-6 w-full md:w-1/2 lg:w-1/3 mb-6 md:mb-20 lg:mb-32">
+                    <div className="md:px-4 lg:px-6 w-full md:w-1/2 lg:w-1/3 mb-6 md:mb-20 lg:mb-32" key={i}>
                       <Link href={`/blog/${e.slug.current}`}>
                         <a className="block border border-black/50 w-full">
                           <div className="aspect-square w-full bg-gray-200 border-b border-black/50 relative overflow-hidden">

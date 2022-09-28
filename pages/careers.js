@@ -25,36 +25,41 @@ import BookIcon from '@/icons/book.svg'
 import CashIcon from '@/icons/cash.svg'
 
 // Sanity
-// import SanityPageService from '@/services/sanityPageService'
+import SanityPageService from '@/services/sanityPageService'
+import Marquee from 'react-fast-marquee'
+import SanityImage from '@/components/sanity-image'
 
-// const query = `{
-//   "about": *[_type == "about"][0]{
-//     title,
-//     imageExample {
-//       asset-> {
-//         ...
-//       },
-//       caption,
-//       alt,
-//       hotspot {
-//         x,
-//         y
-//       },
-//     },
-//     seo {
-//       ...,
-//       shareGraphic {
-//         asset->
-//       }
-//     }
-//   }
-// }`
+const query = `{
+  "careers": *[_type == "careers"][0]{
+    title,
+    scrollingImages[] {
+      asset-> {
+        ...
+      },
+      caption,
+      alt,
+      hotspot {
+        x,
+        y
+      },
+    },
+    seo {
+      ...,
+      shareGraphic {
+        asset->
+      }
+    }
+  }
+}`
 
-// const pageService = new SanityPageService(query)
+const pageService = new SanityPageService(query)
 
-export default function Careers({initalData, careers}) {
+export default function Careers(initialData) {
   // Sanity Data
-  // const { data: { about } } = pageService.getPreviewHook(initialData)()
+  const { data: { careers } } = pageService.getPreviewHook(initialData)()
+  
+  // Workable Data
+  const careerPosts = initialData.careersWorkable
   
   return (
     <Layout>
@@ -249,21 +254,20 @@ export default function Careers({initalData, careers}) {
             </div>
 
             <div className="">
-              <div className="relative z-0 flex overflow-x-hidden">
-                <div className="animate-marquee whitespace-nowrap">
-                  <img className="inline-block w-[60%] md:w-[40%] xl:w-[30%] aspect-square" src="https://place.dog/500/500" alt="PLACEHOLDER" />
-                  <img className="inline-block w-[60%] md:w-[40%] xl:w-[30%] aspect-square" src="https://place.dog/600/600" alt="PLACEHOLDER" />
-                  <img className="inline-block w-[60%] md:w-[40%] xl:w-[30%] aspect-square" src="https://place.dog/700/700" alt="PLACEHOLDER" />
-                  <img className="inline-block w-[60%] md:w-[40%] xl:w-[30%] aspect-square" src="https://place.dog/800/800" alt="PLACEHOLDER" />
-                </div>
-
-                <div className="absolute top-0 animate-marquee2 whitespace-nowrap">
-                  <img className="inline-block w-[60%] md:w-[40%] xl:w-[30%] aspect-square" src="https://place.dog/500/500" alt="PLACEHOLDER" />
-                  <img className="inline-block w-[60%] md:w-[40%] xl:w-[30%] aspect-square" src="https://place.dog/600/600" alt="PLACEHOLDER" />
-                  <img className="inline-block w-[60%] md:w-[40%] xl:w-[30%] aspect-square" src="https://place.dog/700/700" alt="PLACEHOLDER" />
-                  <img className="inline-block w-[60%] md:w-[40%] xl:w-[30%] aspect-square" src="https://place.dog/800/800" alt="PLACEHOLDER" />
-                </div>
-              </div>
+              <Marquee speed={130} gradient={false}>
+                {careers.scrollingImages.map((e, i) => {
+                  return (
+                    <span className="inline-block w-[60%] md:w-[40%] xl:w-[30%] h-[60vw] md:h-[40vw] xl:h-[30vw] aspect-square relative overflow-hidden" key={i}>
+                      <SanityImage
+                        key={i}
+                        image={e}
+                        layout="fill"
+                        className="block w-full h-full inset-0 scale-[1.02]"
+                      />
+                    </span>
+                  )
+                })}
+              </Marquee>
             </div>
 
             <div className="w-full bg-pink/20 border-b border-black/50 mx-auto relative overflow-hidden">
@@ -273,7 +277,7 @@ export default function Careers({initalData, careers}) {
                   <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">Open Roles</span>
                   
                   <div className="mb-8 lg:mb-12">
-                    {careers.jobs.slice(0,8).map((e, i) => {
+                    {careerPosts?.jobs.slice(0,8).map((e, i) => {
                       return (
                         <a key={i} href={e.shortlink} target="_blank" rel="noreferrer noopener" className={`flex flex-wrap border-l border-r border-b border-black/50 p-6 lg:p-10 hover:bg-pink focus:bg-pink ${(i == 0) && 'border-t'}`}>
                           <div className="w-full lg:w-2/3 pr-8 lg:pr-16 xl:pr-24 mb-6 lg:mb-0">
@@ -343,13 +347,13 @@ export default function Careers({initalData, careers}) {
 
 
 export async function getStaticProps(context) {
-  // const cms = await pageService.fetchQuery(context)
+  const cms = await pageService.fetchQueryBlank(context)
 
   const res = await fetch(`https://apply.workable.com/api/v1/widget/accounts/homa-games?details=true`);
 
-  const careers = await res.json()
+  const careersWorkable = await res.json()
 
   return {
-    props: { careers }
+    props: { ...cms, careersWorkable }
   }
 }
