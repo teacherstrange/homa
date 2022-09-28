@@ -71,11 +71,16 @@ export default function MobileMenu({ menuClose, setMobileChildMenuOpen, mobileCh
                     </Link>
                   </li>
                   <li className="block">
-                    <Link href="/homa-lab/homa-academy">
+                    <Link href="/homa-lab/submissions-and-creatives">
                       <a className="block px-6 py-5 uppercase text-base leading-none relative" onClick={menuClose}>
-                        Homa Academy
+                        Submissions And Creatives
                       </a>
                     </Link>
+                  </li>
+                  <li className="block">
+                    <a href="https://academy.homagames.com/" target="_blank" rel="noopener noreferrer" className="block px-6 py-5 uppercase text-base leading-none relative" onClick={menuClose}>
+                      Homa Academy
+                    </a>
                   </li>
                 </ul>
               )}

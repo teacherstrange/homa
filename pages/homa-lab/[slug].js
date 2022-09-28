@@ -25,6 +25,7 @@ const query = `{
   "product": *[_type == "products" && slug.current == $slug][0] {
     title,
     introText,
+    introTextLong,
     heroImage {
       asset-> {
         ...
@@ -82,12 +83,14 @@ export default function HomaLabChild(initialData) {
                 <div className="w-full order-2 lg:order-1 lg:w-1/2 py-6 lg:py-10 pl-6 xl:pl-10 pr-6 xl:pr-10">
                   <div className="max-w-[920px] ml-auto flex flex-wrap h-full">
                     <div className="w-full">
-                      <h2 className="display-text w-11/12">{product.title}</h2>
+                      <h2 className="font-black leading-none uppercase text-[clamp(45px,_6vw,100px)] w-11/12">{product.title}</h2>
                     </div>
                     <div className="mt-auto w-full">
-                      <div className="content max-w-3xl mb-6 lg:mb-10 w-11/12">
-                        <p>{product.introText}</p>
-                      </div>
+                      {product.introTextLong && (
+                        <div className="content max-w-3xl mb-6 lg:mb-10 w-11/12">
+                          <p>{product.introTextLong}</p>
+                        </div>
+                      )}
 
                       <a className="pill-btn group" href="https://lab-v2.homagames.com/login" target="_blank" rel="noopener noreferrer">
                         <div className="relative">

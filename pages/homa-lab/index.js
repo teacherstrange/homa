@@ -189,36 +189,30 @@ export default function HomaLab(initialData) {
                   <h1 className="font-black text-[clamp(50px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase">Level up your game</h1>
                   <div className="content max-w-3xl mb-8 xl:mb-12 w-10/12">
                     <p>The Academy is a dev-centered learning hub where you can access game design and game play analysis of the latest hits, training on how to build great games, methods for ideation and player experience optimization.</p>
+
+                    <p>The academy offers:</p>
                   </div>
 
                   <div className="w-full flex flex-wrap border border-black/50 mb-6 lg:mb-8">
-                    <div className="w-full lg:w-1/3 border-b lg:border-b-0 lg:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
-                      <h3 className="font-bold text-2xl lg:text-3xl xl:text-3xl leading-[0.95] mb-12 lg:mb-32 uppercase">Analysis &amp; Feedback</h3>
-
-                      <div className="content content--small w-11/12">
-                        <p>The weekly Homa Hangout where we dissect hit games.</p>
-                      </div>
+                    <div className="w-full lg:w-1/2 2xl:w-1/4 border-b 2xl:border-b-0 lg:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
+                      <h3 className="font-bold text-2xl lg:text-3xl xl:text-3xl leading-[0.95] mb-12 lg:mb-32 uppercase">The weekly Homa Hangout where we dissect hit games.</h3>
                     </div>
 
-                    <div className="w-full lg:w-1/3 border-b lg:border-b-0 lg:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
-                      <h3 className="font-bold text-2xl lg:text-3xl xl:text-3xl leading-[0.95] mb-12 lg:mb-32 uppercase w-11/12">Best in class mentorship</h3>
-
-                      <div className="content content--small w-11/12">
-                        <p>Best practice guides for ideation and game design.</p>
-                      </div>
+                    <div className="w-full lg:w-1/2 2xl:w-1/4 border-b 2xl:border-b-0 2xl:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
+                      <h3 className="font-bold text-2xl lg:text-3xl xl:text-3xl leading-[0.95] mb-12 lg:mb-32 uppercase w-11/12">Best practice guides for ideation and game design</h3>
                     </div>
 
-                    <div className="w-full lg:w-1/3 p-5 lg:p-6 xl:p-8 2xl:p-10">
-                      <h3 className="font-bold text-2xl lg:text-3xl xl:text-3xl leading-[0.95] mb-12 lg:mb-32 uppercase">Access to our library</h3>
+                    <div className="w-full lg:w-1/2 2xl:w-1/4 border-b lg:border-b-0 lg:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
+                      <h3 className="font-bold text-2xl lg:text-3xl xl:text-3xl leading-[0.95] mb-12 lg:mb-32 uppercase w-11/12">Resource examples for (hyper and hybrid) casual games</h3>
+                    </div>
 
-                      <div className="content content--small w-11/12">
-                        <p>Resource examples for (hyper and hybrid) casual games, UI/UX analysis and examples</p>
-                      </div>
+                    <div className="w-full lg:w-1/2 2xl:w-1/4 p-5 lg:p-6 xl:p-8 2xl:p-10">
+                      <h3 className="font-bold text-2xl lg:text-3xl xl:text-3xl leading-[0.95] mb-12 lg:mb-32 uppercase">UI/UX analysis and examples</h3>
                     </div>
                   </div>
 
                   <Link href="#">
-                    <a className="inline-block border border-black/50 font-medium uppercase leading-none py-6 px-10 rounded-sm bg-black text-white hover:bg-black hover:text-white focus:bg-black focus:text-white">Learn More</a>
+                    <a className="inline-block border border-black/50 font-medium uppercase leading-none py-6 px-10 rounded-sm bg-black text-white hover:bg-black hover:text-white focus:bg-black focus:text-white">Take a Look</a>
                   </Link>
                 </div>
               </div>

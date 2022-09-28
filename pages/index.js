@@ -235,7 +235,7 @@ export default function Home(initialData) {
                         <GlobeIcon className="w-[40%] max-w-[50px] lg:max-w-[100px] lg:mx-auto" />
                       </div>
                       <div className="col-span-12 lg:col-span-7">
-                        <span className="text-lg lg:text-lg xl:text-2xl uppercase font-bold block mb-4">We've joined forces with</span>
+                        <span className="text-lg lg:text-lg xl:text-2xl uppercase font-bold block mb-4">Our data-driven creations have helped</span>
                         <span className="font-black text-[clamp(40px,_5vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase max-w-[500px]">1,000+ Studios  Developers</span>
                       </div>
                     </div>
@@ -245,7 +245,7 @@ export default function Home(initialData) {
                         <MobileHandIcon className="w-[40%] max-w-[50px] lg:max-w-[100px] lg:mx-auto" />
                       </div>
                       <div className="col-span-12 lg:col-span-7">
-                        <span className="text-lg lg:text-lg xl:text-2xl uppercase font-bold block mb-4">Combining our creative expertise into</span>
+                        <span className="text-lg lg:text-lg xl:text-2xl uppercase font-bold block mb-4">turn their creative ideas into</span>
                         <span className="font-black text-[clamp(40px,_5vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase max-w-[500px]">80+ Mobile Games</span>
                       </div>
                     </div>
@@ -255,7 +255,7 @@ export default function Home(initialData) {
                         <DownloadIcon className="w-[40%] max-w-[50px] lg:max-w-[100px] lg:mx-auto" />
                       </div>
                       <div className="col-span-12 lg:col-span-7">
-                        <span className="text-lg lg:text-lg xl:text-2xl uppercase font-bold block mb-4">Resulting in chart topping hits and</span>
+                        <span className="text-lg lg:text-lg xl:text-2xl uppercase font-bold block mb-4">Resulting in</span>
                         <span className="font-black text-[clamp(40px,_5vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase max-w-[500px]">1,000,000,000+ Downloads</span>
                       </div>
                     </div>
@@ -510,7 +510,7 @@ export default function Home(initialData) {
                       <h3 className="font-bold text-2xl lg:text-3xl xl:text-4xl leading-[0.95] mb-12 lg:mb-32 uppercase">WFH, WFParis, WFAnywhere</h3>
 
                       <div className="content content--small w-11/12">
-                        <p>We’re a distributed team with a flagship HQ in Paris. Work from here, or anywhere.</p>
+                        <p>We’re in Paris, you don’t need you to be.</p>
                       </div>
                     </div>
 
@@ -559,7 +559,7 @@ export default function Home(initialData) {
                 <div className="col-span-12 lg:col-span-7 z-10 mb-12 lg:mb-0">
                   <h2 className="font-black text-[clamp(50px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase">There's Hope. Then there's Homa.</h2>
                   <div className="content max-w-3xl mb-8 xl:mb-12 w-10/12">
-                    <p>With us, every step of your game’s build and launch phase – from ideation right through to monetization - is managed by experts and tested, tweaked and improved by data-rich technology. To see our process and the hits its produced:</p>
+                    <p>We play to win, so our clients can win. With us, every step of your game’s build and launch phase – from ideation right through to monetization - is managed by experts and tested, tweaked and improved by data-rich technology.</p>
                   </div>
                 </div>
 

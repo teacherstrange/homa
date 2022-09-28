@@ -118,7 +118,7 @@ export default function Games(initialData) {
             <Container>
               <div className="flex flex-wrap py-12 lg:pt-[10vw] lg:pb-[15vw]">
                 <div className="w-full lg:w-1/2">
-                  <h2 className="font-black text-[clamp(50px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-[5vw] uppercase w-11/12">From Customers to partners</h2>
+                  <h2 className="font-black text-[clamp(48px,_4.17vw,_80px)] leading-[0.95] mb-8 lg:mb-[5vw] uppercase w-11/12">From Customers to collaborators</h2>
 
                   <div className="w-11/12 content mb-8 lg:mb-12">
                     <p>We help mobile gaming’s major players make major games, plural. We’re not an off-the-shelf and out-the-door type of outfit. We’re partners building an armada of partnerships. Here are a few success stories we love to tell.</p>
@@ -206,17 +206,7 @@ export default function Games(initialData) {
                   <h2 className="font-black text-[clamp(50px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase w-[70%] lg:w-[50%] max-w-[800px]">How we get your game in lights.</h2>
 
                   <div className="w-full flex flex-wrap border border-black/50 mb-6 lg:mb-8">
-                    <div className="w-full lg:w-1/2 xl:w-1/4 border-b lg:border-b-0 lg:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
-                      <div className="w-full h-[200px] xl:h-auto xl:aspect-square border-black/50 border mb-6 lg:mb-10"></div>
-
-                      <h3 className="font-bold text-2xl lg:text-3xl xl:text-4xl leading-[0.95] mb-5 lg:mb-8 uppercase">Test your idea</h3>
-
-                      <div className="content content--small w-11/12">
-                        <p>There’s no reward in building a game no one will download or play. With Homa, you’ll have access to all the latest trends, niches and statistics you need to make sure you’re building games billions will play.</p>
-                      </div>
-                    </div>
-
-                    <div className="w-full lg:w-1/2 xl:w-1/4 border-b lg:border-b-0 lg:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
+                    <div className="w-full lg:w-1/3 xl:w-1/3 border-b lg:border-b-0 lg:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
                       <div className="w-full h-[200px] xl:h-auto xl:aspect-square border-black/50 border mb-6 lg:mb-10"></div>
 
                       <h3 className="font-bold text-2xl lg:text-3xl xl:text-4xl leading-[0.95] mb-5 lg:mb-8 uppercase">Send a prototype</h3>
@@ -226,7 +216,7 @@ export default function Games(initialData) {
                       </div>
                     </div>
 
-                    <div className="w-full lg:w-1/2 xl:w-1/4 border-b lg:border-b-0 lg:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
+                    <div className="w-full lg:w-1/3 xl:w-1/3 border-b lg:border-b-0 lg:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
                       <div className="w-full h-[200px] xl:h-auto xl:aspect-square border-black/50 border mb-6 lg:mb-10"></div>
 
                       <h3 className="font-bold text-2xl lg:text-3xl xl:text-4xl leading-[0.95] mb-5 lg:mb-8 uppercase">Build a game</h3>
@@ -236,7 +226,7 @@ export default function Games(initialData) {
                       </div>
                     </div>
 
-                    <div className="w-full lg:w-1/2 xl:w-1/4 p-5 lg:p-6 xl:p-8 2xl:p-10">
+                    <div className="w-full lg:w-1/3 xl:w-1/3 p-5 lg:p-6 xl:p-8 2xl:p-10">
                       <div className="w-full h-[200px] xl:h-auto xl:aspect-square border-black/50 border mb-6 lg:mb-10"></div>
 
                       <h3 className="font-bold text-2xl lg:text-3xl xl:text-4xl leading-[0.95] mb-5 lg:mb-8 uppercase">Launch a hit</h3>
@@ -284,7 +274,7 @@ export default function Games(initialData) {
                       <h3 className="font-bold text-xl lg:text-2xl xl:text-3xl leading-[0.95] mb-4 lg:mb-6 uppercase">Publishing Manager</h3>
 
                       <div className="content content--small w-9/12 lg:w-11/12">
-                        <p>Helps you to ideate, improve, and test your game.</p>
+                        <p>to help you to ideate, improve, and test your game.</p>
                       </div>
                     </div>
 
@@ -292,7 +282,7 @@ export default function Games(initialData) {
                       <h3 className="font-bold text-xl lg:text-2xl xl:text-3xl leading-[0.95] mb-4 lg:mb-6 uppercase w-9/12 lg:w-11/12">Creative Ads Expert</h3>
 
                       <div className="content content--small w-9/12 lg:w-11/12">
-                        <p>Increases User Acquisition with creative Ad campaigns based on the latest trends.</p>
+                        <p>to increase User Acquisition with creative Ad campaigns based on the latest trends.</p>
                       </div>
                     </div>
 
@@ -300,7 +290,7 @@ export default function Games(initialData) {
                       <h3 className="font-bold text-xl lg:text-2xl xl:text-3xl leading-[0.95] mb-4 lg:mb-6 uppercase">Game Designer</h3>
 
                       <div className="content content--small w-9/12 lg:w-11/12">
-                        <p>Provides guidance on how to improve gameplay and mechanics.</p>
+                        <p>to provide guidance on how to improve gameplay and mechanics.</p>
                       </div>
                     </div>
                     
@@ -308,7 +298,7 @@ export default function Games(initialData) {
                       <h3 className="font-bold text-xl lg:text-2xl xl:text-3xl leading-[0.95] mb-4 lg:mb-6 uppercase">UA and Monetization Manager</h3>
 
                       <div className="content content--small w-9/12 lg:w-11/12">
-                        <p>Monetize your game and boost retention by putting our trusted ad partners’ technology to good use.</p>
+                        <p>to monetize your game and boost retention by putting our trusted ad partners’ technology to good use.</p>
                       </div>
                     </div>
                   </div>
