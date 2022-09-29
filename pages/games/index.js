@@ -31,6 +31,7 @@ const query = `{
     projectCode,
     title,
     partnerName,
+    gameplayVideo,
     googlePlayStoreLink,
     appStoreLink
   },
