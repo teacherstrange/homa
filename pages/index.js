@@ -482,8 +482,12 @@ export default function Home(initialData) {
               <div className="order-1 md:order-3 col-span-12 md:col-span-6 lg:col-span-4 relative z-0 md:h-full mb-8 lg:mb-0">
 
                 {/* Henry to replace with WebGl */}
-                <TestWebgl />
+                {/* <TestWebgl /> */}
+                <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-full scale-[1.1]`}>
+                  <source src={'/videos/stairs.webm'} type="video/webm" />
 
+                  Sorry. Your browser does not support the video tag.
+                </video>
               </div>
             </div>
 
@@ -537,19 +541,25 @@ export default function Home(initialData) {
             </div>
 
             
-            <div className="bg-lime text-black">
+            <div className="bg-lime text-black relative overflow-hidden">
               <div className="grid grid-cols-12 py-12 lg:py-[15vw] px-6 xl:px-10 max-w-screen-3xl mx-auto">
                 <div className="col-span-12 lg:col-span-2 relative z-10">
                   <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium"><TextScrambler text="Build a career" seed={5} step={1} singleLine /></span>
                 </div>
                 
-                <div className="col-span-12 lg:col-span-8 z-10">
+                <div className="col-span-12 lg:col-span-8 z-10 relative">
+                  <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-[60%] absolute top-0 right-0 z-[1] translate-x-[65%] lg:translate-y-[10%] xl:translate-y-[-5%] hidden lg:block`}>
+                    <source src={'/videos/rocket.webm'} type="video/webm" />
+
+                    Sorry. Your browser does not support the video tag.
+                  </video>
+
                   <h1 className="font-black text-[clamp(50px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase">We're changing gaming by rewriting the rules</h1>
                   <div className="content max-w-3xl mb-8 xl:mb-12 md:w-9/12 xl:w-7/12">
                     <p>Creating tools to superpower others’ creativity requires a lot of creativity on our end too. If you’re creative and up for taking over an industry, we want our logo on your Linkedin.</p>
                   </div>
 
-                  <div className="w-full flex flex-wrap border border-black/50 mb-6 lg:mb-8">
+                  <div className="w-full flex flex-wrap border border-black/50 mb-6 lg:mb-8 relative bg-lime z-[10]">
                     <div className="w-full lg:w-1/3 border-b lg:border-b-0 lg:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
                       <h3 className="font-bold text-2xl lg:text-3xl xl:text-3xl leading-[0.95] mb-12 lg:mb-32 uppercase">WFH, WFParis, WFAnywhere</h3>
 
