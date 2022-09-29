@@ -48,7 +48,7 @@ function getSerializers() {
 
 export const blockSerializers = getSerializers()
 
-const BodyRenderer = ({ body }) => {
+const BodyRenderer = ({ body, caseStudy }) => {
   if (!body) return <></>
   return body.map((item) => {
     const type = item._type
@@ -59,7 +59,7 @@ const BodyRenderer = ({ body }) => {
 
     if (!Component || !serializer) throw new Error(`No serializer implemented for body object: ${type}`)    
     
-    return Wrapper ? <Wrapper key={item._key}><Component {...item} {...args} /></Wrapper> : <Component key={item._key} {...item} {...args} />
+    return Wrapper ? <Wrapper key={item._key}><Component {...item} {...args} caseStudy={caseStudy} /></Wrapper> : <Component key={item._key} {...item} {...args} />
   })
 }
 

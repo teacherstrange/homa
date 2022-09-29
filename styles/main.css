@@ -172,12 +172,12 @@ canvas {
   }
 
   .embla__slide-title {
-    @apply opacity-0 transition-opacity ease-in-out duration-300 hidden;
+    @apply opacity-0 transition-opacity ease-in-out duration-300;
   }
 
   .is-selected {
     .embla__slide-title {
-      @apply opacity-100 block;
+      @apply opacity-100;
     }
   }
 }

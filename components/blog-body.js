@@ -22,7 +22,7 @@ import SkipButtons from './skip-buttons'
 import TextScrambler from './text-scrambler'
 import SanityImage from './sanity-image'
 
-export const articlesPerPage = 9;
+export const articlesPerPage = 24;
 
 export const query = `{
   "blog": *[_type == "blog"] | order(date desc) [$start ... $stop] {
@@ -113,9 +113,13 @@ export default function BlogBody({blog, numberOfArticles, categories, subPage, i
                         <a className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white mr-3 mb-6 lg:mb-12">{blog[0].category.title}</a>
                       </Link>
 
-                      <h2 className="font-black text-[clamp(40px,_4.45vw,_86px)] leading-[0.9] mb-12 lg:mb-[15vw] uppercase w-11/12">Headline that runs over multiple lines lorem ipsum dolor sit amet consectetur adipiscing elit.</h2>
+                      <Link href={`/blog/${blog[0].slug.current}`}>
+                        <a className="block">
+                          <h2 className="font-black text-[clamp(40px,_4.45vw,_86px)] leading-[0.9] mb-12 lg:mb-[15vw] uppercase w-11/12">{blog[0].title}</h2>
+                        </a>
+                      </Link>
 
-                      <div className="flex flex-wrap">
+                      {/* <div className="flex flex-wrap">
                         {Array.from(Array(4), (e, i) => {
                           return (
                             <Link href="#">
@@ -123,15 +127,14 @@ export default function BlogBody({blog, numberOfArticles, categories, subPage, i
                             </Link>
                           )
                         })}
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                   <div className="w-full lg:w-1/2 lg:border-l border-black/50 relative overflow-hidden">
                     <div className="scale-[1.125] w-full h-full aspect-square">
                       <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.05}>
-                        <Image
-                          src="/images/about.jpg"
-                          alt="About Test"
+                        <SanityImage
+                          image={blog[0].heroImage}
                           layout="fill"
                           className="w-full h-full absolute inset-0 z-0 object-cover object-top"
                         />
@@ -182,7 +185,7 @@ export default function BlogBody({blog, numberOfArticles, categories, subPage, i
               </div>
 
               {/* PAGINATION */}
-              {numberOfArticles > 9 && (
+              {numberOfArticles > 24 && (
                 <div className="mb-8 lg:mb-12 xl:mb-16">
                   <SkipButtons index={index} maxIndex={Math.floor(numberOfArticles/articlesPerPage)} />
                 </div> 

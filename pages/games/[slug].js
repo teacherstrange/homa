@@ -81,6 +81,11 @@ export default function CaseStudySlug(initialData) {
   // Sanity Data
   const { data: { article } } = pageService.getPreviewHook(initialData)()
 
+  let d = new Date(article.publishDate);
+  let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d);
+  let mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(d);
+  let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d);
+
   const kebabCase = string => string
         .replace(/([a-z])([A-Z])/g, "$1-$2")
         .replace(/[\s_]+/g, '-')
@@ -118,16 +123,13 @@ export default function CaseStudySlug(initialData) {
               </div>
             </div>
 
-            <div className="bg-white relative overflow-hidden">              
+            <div className="bg-white">              
               <div className="w-full border-b border-black/50">
                 <div className="flex flex-wrap">
                   <div className="w-full lg:w-1/2 py-6 lg:py-10 pl-6 xl:pl-10 pr-6 xl:pr-10">
                     <div className="max-w-[920px] ml-auto flex flex-wrap h-full">
                       <div className="w-full">
-                        {/* @TODO Wire up */}
-                        <Link href={`/blog/`}>
-                          <a className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white mr-3 mb-6 lg:mb-12">Success Story</a>
-                        </Link>
+                        <span className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm mr-3 mb-6 lg:mb-12">Success Story</span>
 
                         <h2 className="font-black text-[clamp(46px,_4.45vw,_86px)] leading-[0.9] mb-12 lg:mb-[15vw] uppercase w-11/12">{article.title}</h2>
                       </div>
@@ -136,7 +138,7 @@ export default function CaseStudySlug(initialData) {
                         {article.publishDate && (
                           <span className="uppercase text-sm lg:text-base tracking-widest mb-2 lg:mb-4 font-medium flex">
                             <span className="min-w-[150px]">Published:</span>
-                            <span className="block">{article.publishDate}</span>
+                            <span className="block">{da} {mo} {ye}</span>
                           </span>
                         )}
                         {article.projectName && (
@@ -172,18 +174,28 @@ export default function CaseStudySlug(initialData) {
                 </div>
               </div>
 
-              <div className="content pt-[10vw] pb-[5vw] px-6 lg:px-10">
-                <div className="w-full">
-                  {article.contentSections?.map((e, i) => {
-                    return (
-                      <div id={kebabCase(`${e.title}`)} key={i}>
-                        <h1>{e.title}</h1>
-                        <BodyRenderer body={e.contentBlocks} />
-                      </div>
-                    )
-                  })}
+                <div className="w-full flex flex-wrap px-6 lg:px-10 mt-[10vw] mb-[5vw]">
+                  <div className="w-full lg:w-[12%] mb-12 lg:mb-0 lg:pt-1">
+                    <div className="lg:sticky lg:top-28 xl:top-32">
+                      {article.contentSections?.map((e, i) => {
+                        return (
+                          <a href={`#${kebabCase(`${e.title}`)}`} className={`uppercase block text-sm lg:text-base tracking-widest mb-2 lg:mb-4 font-medium ${i == 0 ? 'text-black' : 'text-black/30'}`}>{e.title}</a>
+                        )
+                      })}
+
+                      <span className="uppercase block text-sm lg:text-base tracking-widest mb-2 lg:mb-4 font-medium mt-6 lg:mt-12">Share:</span>
+                    </div>
+                  </div>
+                  <div className="w-full lg:w-[88%] content lg:translate-x-[-6%]">
+                    {article.contentSections?.map((e, i) => {
+                      return (
+                        <div id={kebabCase(`${e.title}`)} key={i} className="scroll-mt-32">
+                          <BodyRenderer body={e.contentBlocks} caseStudy />
+                        </div>
+                      )
+                    })}
+                  </div>
                 </div>
-              </div>
 
               <FooterCta image={"/images/about.jpg"} />
               <Footer />

@@ -48,7 +48,7 @@ export const CarouselCards = ({ heading, items }) => {
                   <div className="embla__slide-inner flex flex-wrap relative overflow-hidden">
                     <div className="absolute top-0 left-0 right-0 z-10 w-full p-6 lg:p-10">
                       <span className="block uppercase font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 embla__slide-title">
-                        <TextScrambler noInViewWatch text={e.title} seed={40} step={1} />
+                        {e.title}
                       </span>
                     </div>
 
