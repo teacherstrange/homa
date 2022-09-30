@@ -620,10 +620,10 @@ export default function Home(initialData) {
 
                     <div className="absolute top-0 right-0 mr-[-35%] lg:mr-[-50%] mt-[15%] z-10 w-full lg:w-[70%]">
                       <div className="w-full">
-                        <span className="block uppercase font-medium tracking-wider text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-b-0 border-black/50 px-3 py-5">{home.featuredGames[0].title}</span>
+                        <span className="block uppercase font-medium tracking-wider text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-b-0 border-black/50 px-3 py-5">{home.featuredGames[2].title}</span>
                       </div>
                       <div className="w-full">
-                        <span className="block uppercase font-medium tracking-wider text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-black/50 px-3 py-5">{home.featuredGames[0].partnerName}</span>
+                        <span className="block uppercase font-medium tracking-wider text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-black/50 px-3 py-5">{home.featuredGames[2].partnerName}</span>
                       </div>
                     </div>
 
@@ -635,7 +635,7 @@ export default function Home(initialData) {
                       </svg>
 
                       <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`object-cover object-center w-full h-full absolute inset-0 phone-mask`}>
-                        <source src={home.featuredGames[0].gameplayVideo} type="video/mp4" />
+                        <source src={home.featuredGames[2].gameplayVideo} type="video/mp4" />
 
                         Sorry. Your browser does not support the video tag.
                       </video>
@@ -652,7 +652,7 @@ export default function Home(initialData) {
 
                     <div className="absolute bottom-0 left-0 ml-[-40%] md:ml-[-20%] mb-[15%] z-10 w-[130%] md:w-[70%] min-w-[120px] md:min-w-[290px]">
                       <div className="w-full">
-                        <span className="block uppercase font-medium tracking-wider text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-black/50 px-3 py-5 text-center">{home.featuredGames[0].installs} installs</span>
+                        <span className="block uppercase font-medium tracking-wider text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-black/50 px-3 py-5 text-center">{home.featuredGames[2].installs} installs</span>
                       </div>
                     </div>
                   </div>
