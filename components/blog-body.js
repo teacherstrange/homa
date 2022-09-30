@@ -21,6 +21,7 @@ import SanityPageService from '@/services/sanityPageService'
 import SkipButtons from './skip-buttons'
 import TextScrambler from './text-scrambler'
 import SanityImage from './sanity-image'
+import BlogCard from './blog-card'
 
 export const articlesPerPage = 24;
 
@@ -155,30 +156,13 @@ export default function BlogBody({blog, numberOfArticles, categories, subPage, i
 
                   return (
                     <div className="md:px-4 lg:px-6 w-full md:w-1/2 lg:w-1/3 mb-6 md:mb-20 lg:mb-32" key={i}>
-                      <Link href={`/blog/${e.slug.current}`}>
-                        <a className="block border border-black/50 w-full h-full">
-                          <div className="aspect-square w-full bg-gray-200 border-b border-black/50 relative overflow-hidden">
-                            <SanityImage
-                              image={e.heroImage}
-                              layout="fill"
-                              className="block w-full h-full absolute inset-0 aspect-square scale-[1.03]"
-                            />
-                          </div>
-
-                          <div className="p-6 xl:p-10">
-                            <h2 className="font-bold text-xl lg:text-2xl xl:text-3xl uppercase w-full mb-12 md:mb-20 lg:mb-28 xl:mb-32">{e.title}</h2>
-
-
-                            <div className="flex items-end">
-                              {e.category && (
-                                <span className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white">{e.category.title}</span>
-                              )}
-
-                              <span className="block text-sm lg:text-base text-black/50 leading-none ml-auto">{da} {mo} {ye}</span>
-                            </div>
-                          </div>
-                        </a>
-                      </Link>
+                      <BlogCard
+                        href={`/blog/${e.slug.current}`}
+                        heading={e.title}
+                        image={e.heroImage}
+                        category={e.category.title}
+                        date={`${da} ${mo} ${ye}`}
+                      />
                     </div>
                   )
                 })}

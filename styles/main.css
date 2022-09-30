@@ -159,11 +159,6 @@ canvas {
     @apply mr-8 xl:mr-16;
   }
 
-  .is-selected {
-    .embla__slide-inner {
-      @apply bg-white;
-    }
-  }
 }
 
 .embla--card {

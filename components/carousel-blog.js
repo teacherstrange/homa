@@ -43,7 +43,7 @@ export const CarouselBlog = ({items}) => {
 
             return (
               <Link href={`/blog/${e.slug.current}`}>
-                <a className="embla__slide" key={i}>
+                <a className="embla__slide hover:bg-pink focus:bg-pink" key={i}>
                   <div className="w-full bg-gray-100 aspect-square border-b border-black/50 relative overflow-hidden">
                     <SanityImage
                       image={e.heroImage}

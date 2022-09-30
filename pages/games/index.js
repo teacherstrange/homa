@@ -240,45 +240,59 @@ export default function Games(initialData) {
               <div className="grid grid-cols-12 py-12 lg:py-[10vw] px-6 xl:px-10 max-w-screen-3xl mx-auto">
                 
                 <div className="col-span-12 z-10">
-                  <h2 className="font-black text-[clamp(50px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase w-[70%] lg:w-[50%] max-w-[800px]">How we get your game in lights.</h2>
+                  <h2 className="font-black text-[clamp(50px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase w-[70%] lg:w-[50%] max-w-[800px]">How we get your game in lights</h2>
 
                   <div className="w-full flex flex-wrap border border-black/50 mb-6 lg:mb-8">
-                    <div className="w-full lg:w-1/3 xl:w-1/3 border-b lg:border-b-0 lg:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
+                    <div className="w-full lg:w-1/2 xl:w-1/4 border-b xl:border-b-0 lg:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
+                      <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-full`}>
+                        <source src={'/videos/chess.webm'} type="video/webm" />
+
+                        Sorry. Your browser does not support the video tag.
+                      </video>
+
+                      <h3 className="font-bold text-2xl lg:text-3xl xl:text-3xl leading-[0.95] mb-5 lg:mb-8 uppercase">Test your idea</h3>
+
+                      <div className="content content--small w-11/12">
+                        <p>There’s no reward in building a game no one will download or play. With Homa, you’ll have access to all the latest trends, niches and statistics you need to make sure you’re building games billions will play.</p>
+                      </div>
+                    </div>
+
+                    <div className="w-full lg:w-1/2 xl:w-1/4 border-b xl:border-b-0 xl:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
                       <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-full`}>
                         <source src={'/videos/cog.webm'} type="video/webm" />
 
                         Sorry. Your browser does not support the video tag.
                       </video>
 
-                      <h3 className="font-bold text-2xl lg:text-3xl xl:text-4xl leading-[0.95] mb-5 lg:mb-8 uppercase">Send a prototype</h3>
+                      <h3 className="font-bold text-2xl lg:text-3xl xl:text-3xl leading-[0.95] mb-5 lg:mb-8 uppercase">Send a prototype</h3>
 
                       <div className="content content--small w-11/12">
                         <p>Send a prototype our way and one of our Publishing Managers will be in touch to talk about how we can help, one-to-one.</p>
                       </div>
                     </div>
 
-                    <div className="w-full lg:w-1/3 xl:w-1/3 border-b lg:border-b-0 lg:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
+                    <div className="w-full lg:w-1/2 xl:w-1/4 border-b lg:border-b-0 lg:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
                       <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-full`}>
                         <source src={'/videos/brick.webm'} type="video/webm" />
 
                         Sorry. Your browser does not support the video tag.
                       </video>
 
-                      <h3 className="font-bold text-2xl lg:text-3xl xl:text-4xl leading-[0.95] mb-5 lg:mb-8 uppercase">Build a game</h3>
+                      <h3 className="font-bold text-2xl lg:text-3xl xl:text-3xl leading-[0.95] mb-5 lg:mb-8 uppercase">Build a game</h3>
 
                       <div className="content content--small w-11/12">
                         <p>With our SDK you can start iterating immediately to perfect your game by every metric, from cost of acquisition to retention to session times. You’ll also get hot-off-the-press insights from our Market Intelligence team.</p>
                       </div>
                     </div>
 
-                    <div className="w-full lg:w-1/3 xl:w-1/3 p-5 lg:p-6 xl:p-8 2xl:p-10">
+                    <div className="w-full lg:w-1/2 xl:w-1/4 p-5 lg:p-6 xl:p-8 2xl:p-10">
                       <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-full`}>
                         <source src={'/videos/rocket.webm'} type="video/webm" />
 
                         Sorry. Your browser does not support the video tag.
                       </video>
 
-                      <h3 className="font-bold text-2xl lg:text-3xl xl:text-4xl leading-[0.95] mb-5 lg:mb-8 uppercase">Launch a hit</h3>
+                      <h3 className="font-bold text-2xl lg:text-3xl xl:text-3xl leading-[0.95] mb-5 lg:mb-8 uppercase">Launch a hit</h3>
 
                       <div className="content content--small w-11/12">
                         <p>Once everything is running smoothly, we’ll push it out into the world using the right channels at the right time to maximize impact and land at the top of the charts, where the real money is.</p>
