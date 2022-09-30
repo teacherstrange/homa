@@ -611,7 +611,7 @@ export default function Home(initialData) {
                     <p>To see our process and the hits its produced:</p>
                   </div>
 
-                  <ScramblePillButton href="/games" label="Learn More" internal/>
+                  <ScramblePillButton href="/games" label="View Our Games" internal/>
                 </div>
 
                 <div className="col-span-6 col-start-4 md:col-span-4 md:col-start-8">
