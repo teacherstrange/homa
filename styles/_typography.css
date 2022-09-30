@@ -69,22 +69,26 @@ h1, .h1, h2, .h2, h3, .h3 {
   @apply text-[68px];
   
   @screen md {
-    @apply text-[120px]
+    @apply text-[120px] translate-x-[-0.3vw]
   }
 
   @screen lg {
-    @apply text-[11vw];
+    @apply text-[11.02vw];
   }
   
   @screen xl {
-    @apply text-[10.85vw];
+    @apply text-[10.9vw];
   }
 
   @screen 2xl {
-    @apply text-[10.97vw];
+    @apply text-[11.02vw];
   }
 
-  @media screen and (min-width: 1900px) {
-    @apply text-[11.075vw];
+  @screen 3xl {
+    @apply text-[11.15vw];
+  }
+
+  @media screen and (min-width: 2300px) {
+    @apply text-[11.24vw];
   }
 }
