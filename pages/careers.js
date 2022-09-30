@@ -23,6 +23,12 @@ import GraphIcon from '@/icons/graph.svg'
 import HappyIcon from '@/icons/happy.svg'
 import BookIcon from '@/icons/book.svg'
 import CashIcon from '@/icons/cash.svg'
+import DiamondIcon from '@/icons/diamond.svg'
+import FlagpoleIcon from '@/icons/flagpole.svg'
+import HouseIcon from '@/icons/house.svg'
+import PinIcon from '@/icons/pin.svg'
+import VolumeIcon from '@/icons/volume.svg'
+import WorldIcon from '@/icons/world.svg'
 
 // Sanity
 import SanityPageService from '@/services/sanityPageService'
@@ -198,12 +204,18 @@ export default function Careers(initialData) {
                       return (
                       <div className={`w-full lg:w-1/3 xl:w-1/3 p-5 lg:p-6 xl:p-8 2xl:p-10 ${border}`} key={i}>
 
-                        <div className="content content--small w-11/12 flex flex-wrap h-full">
-                          <div className="w-full mb-24 content">
+                        <div className="content content--small w-11/12 flex flex-wrap h-full lg:aspect-square">
+                          <div className="w-full mb-24 lg:mb-auto content">
                             <p>{e.text}</p>
                           </div>
+                          
+                          {i == 0 && (<HouseIcon className="w-[35%] max-w-[90px] lg:max-w-[200px] mt-auto" />) }
+                          {i == 1 && (<PinIcon className="w-[35%] max-w-[90px] lg:max-w-[200px] mt-auto" />) }
+                          {i == 2 && (<VolumeIcon className="w-[35%] max-w-[90px] lg:max-w-[200px] mt-auto" />) }
+                          {i == 3 && (<DiamondIcon className="w-[35%] max-w-[90px] lg:max-w-[200px] mt-auto" />) }
+                          {i == 4 && (<FlagpoleIcon className="w-[35%] max-w-[90px] lg:max-w-[200px] mt-auto" />) }
+                          {i == 5 && (<WorldIcon className="w-[35%] max-w-[90px] lg:max-w-[200px] mt-auto" />) }
 
-                          <LocationIcon className="w-1/4 max-w-[120px] mt-auto" />
                         </div>
                       </div>
                       )
