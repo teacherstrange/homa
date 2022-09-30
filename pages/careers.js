@@ -217,8 +217,9 @@ export default function Careers(initialData) {
                 </div>
               </div>
             </div>
-
-            <div className="">
+            
+            {/* DISABLED DUE TO MISSING CONTENT */}
+            {/* <div className="">
               <Marquee speed={130} gradient={false}>
                 {careers.scrollingImages.map((e, i) => {
                   return (
@@ -233,7 +234,7 @@ export default function Careers(initialData) {
                   )
                 })}
               </Marquee>
-            </div>
+            </div> */}
 
             <div className="w-full bg-pink/20 border-b border-black/50 mx-auto relative overflow-hidden">
               <div className="grid grid-cols-12 max-w-screen-3xl mx-auto">

@@ -484,8 +484,9 @@ export default function Home(initialData) {
               </div>
             </div>
 
-
-            <div className="">
+            
+            {/* DISABLED DUE TO MISSING CONTENT */}
+            {/* <div className="">
               <div className="relative z-0">
                 <Marquee speed={130} gradient={false}>
                   {home.scrollingImages.map((e, i) => {
@@ -501,37 +502,8 @@ export default function Home(initialData) {
                     )
                   })}
                 </Marquee>
-                {/* <div className="animate-marquee whitespace-nowrap">
-                  {home.scrollingImages.map((e, i) => {
-                    return (
-                      <span className="inline-block w-[60%] md:w-[40%] xl:w-[30%] h-[60vw] md:h-[40vw] xl:h-[30vw] aspect-square relative overflow-hidden" key={i}>
-                        <SanityImage
-                          key={i}
-                          image={e}
-                          layout="fill"
-                          className="block w-full h-full inset-0"
-                        />
-                      </span>
-                    )
-                  })}
-                </div>
-
-                <div className="absolute top-0 animate-marquee2 whitespace-nowrap">
-                  {home.scrollingImages.map((e, i) => {
-                    return (
-                      <span className="inline-block w-[60vw] md:w-[40vw] xl:w-[30vw] h-[60vw] md:h-[40vw] xl:h-[30vw] aspect-square relative overflow-hidden" key={i}>
-                        <SanityImage
-                          key={i}
-                          image={e}
-                          layout="fill"
-                          className="block w-full h-full inset-0"
-                        />
-                      </span>
-                    )
-                  })}
-                </div> */}
               </div>
-            </div>
+            </div> */}
 
             
             <div className="bg-lime text-black relative overflow-hidden">

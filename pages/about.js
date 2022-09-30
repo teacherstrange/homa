@@ -349,7 +349,9 @@ export default function About(initialData) {
           </m.div>
 
           <m.div className="bg-white relative z-10">
-            <Marquee speed={130} gradient={false}>
+            
+            {/* DISABLED DUE TO MISSING CONTENT */}
+            {/* <Marquee speed={130} gradient={false}>
               {about.scrollingImages.map((e, i) => {
                 return (
                   <span className="inline-block w-[60%] md:w-[40%] xl:w-[30%] h-[60vw] md:h-[40vw] xl:h-[30vw] aspect-square relative overflow-hidden" key={i}>
@@ -362,7 +364,7 @@ export default function About(initialData) {
                   </span>
                 )
               })}
-            </Marquee>
+            </Marquee> */}
 
             <SocialScroller />
             <FooterCta image={"/images/about-footer.jpg"} />
