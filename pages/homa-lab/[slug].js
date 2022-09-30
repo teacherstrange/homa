@@ -20,6 +20,7 @@ import { ScrollParallax } from 'react-just-parallax'
 import SanityImage from '@/components/sanity-image'
 import TextScrambler from '@/components/text-scrambler'
 import GridOverlay from '@/components/grid-overlay'
+import GridOverlayDense from '@/components/grid-overlay-dense'
 
 const query = `{
   "product": *[_type == "products" && slug.current == $slug][0] {
@@ -84,7 +85,7 @@ export default function HomaLabChild(initialData) {
           initial="initial"
           animate="enter"
           exit="exit"
-          className="pt-[55px] lg:pt-[70px] xl:pt-[81px]"
+          className="pt-[54px] lg:pt-[69px] xl:pt-[80px]"
         >
           <m.div variants={fade}>
             <div className="w-full border-b border-black/50">
@@ -112,7 +113,7 @@ export default function HomaLabChild(initialData) {
                 </div>
 
                 <div className="w-full lg:w-1/2 order-1 lg:order-2 lg:border-l border-b lg:border-b-0 border-black/50 relative overflow-hidden">
-                  <GridOverlay />
+                  <GridOverlayDense offset/>
                   <div className="scale-[1.125] w-full h-full aspect-square">
                     <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.05}>
                       <SanityImage
@@ -144,17 +145,30 @@ export default function HomaLabChild(initialData) {
                     )
                   })}
                 </div>
-                <div className="w-full lg:w-1/2 px-6 xl:px-10 py-20 lg:py-28 xl:py-32 border-b lg:border-r border-black/50 relative overflow-hidden aspect-square">
-                  <GridOverlay/>
+                <div className="w-full lg:w-1/2 py-20 lg:py-28 xl:py-32 lg:border-r border-black/50 relative overflow-hidden aspect-square">
+                  <GridOverlayDense/>
                 </div>
               </div>
             )}
 
             <div className="w-full flex flex-wrap">
-              <div className="w-full lg:w-1/2 px-6 xl:px-10 py-20 lg:py-28 xl:py-32 bg-gray-100 border-b lg:border-b-0 lg:border-r border-black/50">
-                <div className="lg:sticky lg:top-28 xl:top-32 lg:pb-32 xl:pb-48">
-                  <div className="flex w-full lg:h-screen lg:-mt-32 xl:-mt-40 items-center justify-center">
-                    <div className="w-[300px] h-[300px] bg-pink lg:-mt-32 xl:-mt-40"></div>
+              <div className="w-full lg:w-1/2 border-b lg:border-b-0 lg:border-r border-black/50">
+              <div className="lg:sticky lg:top-0 xl:top-0 lg:pb-0">
+                  <div className="flex w-full lg:h-screen items-center justify-center relative overflow-hidden">
+                    <GridOverlayDense />
+                    <div className="w-full h-full p-6 xl:p-10 flex items-center justify-center relative z-10">
+                      {/* <div className="w-[300px] h-[300px] bg-pink lg:-mt-32 xl:-mt-40"></div> */}
+                      <div className="w-[75%]">
+                        <Image
+                          src="/images/graph.webp"
+                          layout="responsive"
+                          width={1152}
+                          height={1150}
+                          quality={80}
+                          className="w-full"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

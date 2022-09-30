@@ -28,6 +28,7 @@ import TextScrambler from '@/components/text-scrambler'
 import SanityPageService from '@/services/sanityPageService'
 import SanityImage from '@/components/sanity-image'
 import GridOverlay from '@/components/grid-overlay'
+import { CarouselTikTok } from '@/components/carousel-tiktok'
 
 const query = `{
   "team": *[_type == "team"]{
@@ -53,6 +54,10 @@ const query = `{
     gangQAndA[] {
       question,
       answer
+    },
+    tikToks[] {
+      url,
+      video
     },
     roadmap[] {
       date,
@@ -184,7 +189,7 @@ export default function Community(initialData) {
             </div>
 
             <div className="mb-[8vw]">
-              <CarouselPhone heading="Watch This Space on Tik-Tok" />
+              <CarouselTikTok heading="Watch This Space, on Tik-Tok" items={community.tikToks} />
             </div>
 
             <div className="bg-white relative overflow-hidden">

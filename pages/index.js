@@ -31,6 +31,7 @@ import TestWebgl from '@/components/test-webgl'
 import TextScrambler from '@/components/text-scrambler'
 import GridOverlay from '@/components/grid-overlay'
 import SanityImage from '@/components/sanity-image'
+import GridOverlayDense from '@/components/grid-overlay-dense'
 
 const query = `{
   "blog": *[_type == "blog"][0...5]{
@@ -368,12 +369,12 @@ export default function Home(initialData) {
 
             <div className="w-full flex flex-wrap border-t border-black/50">
               <div className="w-full lg:w-1/2 border-b lg:border-b-0 lg:border-r border-black/50">
-                <div className="lg:sticky lg:top-0 xl:top-0 lg:pb-0 xl:pb-48">
+                <div className="lg:sticky lg:top-0 xl:top-0 lg:pb-0">
                   <div className="flex w-full lg:h-screen items-center justify-center relative overflow-hidden">
-                    <GridOverlay />
+                    <GridOverlayDense />
                     <div className="w-full h-full p-6 xl:p-10 flex items-center justify-center relative z-10">
                       {/* <div className="w-[300px] h-[300px] bg-pink lg:-mt-32 xl:-mt-40"></div> */}
-                      <div className="w-[66%]">
+                      <div className="w-[75%]">
                         <Image
                           src="/images/graph.webp"
                           layout="responsive"
