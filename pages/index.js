@@ -149,10 +149,12 @@ export default function Home(initialData) {
 
               <div className="w-full lg:w-[50%] xl:w-[45%] 2xl:w-[35%] max-w-[720px] pt-[75%] lg:pt-[10%] relative pb-8 lg:pb-0">
                 <div className="relative z-10">
-                  <p className="text-lg md:text-xl xl:text-2xl mb-6 lg:mb-10">We're believers in data and builders of tools that help game creators <Link href="/homa-lab"><a className="inline-block border border-black rounded-sm p-[2px] px-2 uppercase tracking-wider text-sm md:text-base xl:text-lg font-medium hover:bg-black hover:text-white focus:bg-black focus:text-white group"><span className="relative block"><span className="inline-block group-hover:opacity-0">Make</span><span className="absolute top-0 left-0 right-0 hidden  group-hover:block"><TextScrambler text="Make" seed={5} step={1} singleLine /></span></span></a></Link> and <Link href="/publish"><a className="inline-block border border-black rounded-sm p-[2px] px-2 uppercase tracking-wider text-sm md:text-base xl:text-lg font-medium hover:bg-black hover:text-white focus:bg-black focus:text-white group"><span className="relative block"><span className="inline-block group-hover:opacity-0">Publish</span><span className="absolute top-0 left-0 right-0 hidden  group-hover:block"><TextScrambler text="Publish" seed={5} step={1} singleLine /></span></span></a></Link> hit games with franchise potential built right in.</p>
+                  <div className="mb-6 lg:mb-10">
+                    <p className="text-lg md:text-xl xl:text-2xl">We're believers in data and builders of tools that help game creators <Link href="/homa-lab"><a className="inline-block border border-black rounded-sm p-[2px] px-2 uppercase tracking-wider text-sm md:text-base xl:text-lg font-medium hover:bg-black hover:text-white focus:bg-black focus:text-white group"><span className="relative block"><span className="inline-block group-hover:opacity-0">Make</span><span className="absolute top-0 left-0 right-0 hidden  group-hover:block"><TextScrambler text="Make" seed={5} step={1} singleLine /></span></span></a></Link> and <Link href="/publish"><a className="inline-block border border-black rounded-sm p-[2px] px-2 uppercase tracking-wider text-sm md:text-base xl:text-lg font-medium hover:bg-black hover:text-white focus:bg-black focus:text-white group"><span className="relative block"><span className="inline-block group-hover:opacity-0">Publish</span><span className="absolute top-0 left-0 right-0 hidden  group-hover:block"><TextScrambler text="Publish" seed={5} step={1} singleLine /></span></span></a></Link> hit games with franchise potential built right in.</p>
+                  </div>
 
-                  <div className="flex flex-wrap md:mx-[-1px]">
-                    <div className="md:px-[1px] w-full md:w-1/2 mb-6 md:mb-0">
+                  <div className="grid grid-cols-2 gap-1">
+                    <div className="col-span-2 md:col-span-1 mb-6 md:mb-0">
                       <Link href="/homa-lab">
                         <a class="roll-btn w-full" >
                           <span class="roll-btn__front">Make A Game</span>
@@ -161,7 +163,7 @@ export default function Home(initialData) {
                       </Link>
                     </div>
 
-                    <div className="md:px-[1px] w-full md:w-1/2">
+                    <div className="col-span-2 md:col-span-1">
                       <Link href="/careers">
                         <a class="roll-btn w-full md:w-1/2">
                           <span class="roll-btn__front">Build A Career</span>
