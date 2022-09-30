@@ -32,6 +32,7 @@ import TextScrambler from '@/components/text-scrambler'
 import GridOverlay from '@/components/grid-overlay'
 import SanityImage from '@/components/sanity-image'
 import GridOverlayDense from '@/components/grid-overlay-dense'
+import ScramblePillButton from '@/components/scramble-pill-button'
 
 const query = `{
   "blog": *[_type == "blog"][0...5]{
@@ -148,7 +149,7 @@ export default function Home(initialData) {
 
               <div className="w-full lg:w-[50%] xl:w-[45%] 2xl:w-[35%] max-w-[720px] pt-[75%] lg:pt-[10%] relative pb-8 lg:pb-0">
                 <div className="relative z-10">
-                  <p className="text-lg md:text-xl xl:text-2xl mb-6 lg:mb-10">We're believers in data and builders of tools that help game creators <Link href="/homa-lab"><a className="inline border border-black rounded-sm p-1 px-2 uppercase tracking-wider text-sm md:text-base xl:text-lg font-medium hover:bg-black hover:text-white focus:bg-black focus:text-white">make</a></Link> and <Link href="/games"><a className="inline border border-black rounded-sm p-1 px-2 uppercase tracking-wider text-sm md:text-base xl:text-lg font-medium hover:bg-black hover:text-white focus:bg-black focus:text-white">publish</a></Link> hit games with franchise potential built right in.</p>
+                  <p className="text-lg md:text-xl xl:text-2xl mb-6 lg:mb-10">We're believers in data and builders of tools that help game creators <Link href="/homa-lab"><a className="inline-block border border-black rounded-sm p-[2px] px-2 uppercase tracking-wider text-sm md:text-base xl:text-lg font-medium hover:bg-black hover:text-white focus:bg-black focus:text-white group"><span className="relative block"><span className="inline-block group-hover:opacity-0">Make</span><span className="absolute top-0 left-0 right-0 hidden  group-hover:block"><TextScrambler text="Make" seed={5} step={1} singleLine /></span></span></a></Link> and <Link href="/publish"><a className="inline-block border border-black rounded-sm p-[2px] px-2 uppercase tracking-wider text-sm md:text-base xl:text-lg font-medium hover:bg-black hover:text-white focus:bg-black focus:text-white group"><span className="relative block"><span className="inline-block group-hover:opacity-0">Publish</span><span className="absolute top-0 left-0 right-0 hidden  group-hover:block"><TextScrambler text="Publish" seed={5} step={1} singleLine /></span></span></a></Link> hit games with franchise potential built right in.</p>
 
                   <div className="flex flex-wrap md:mx-[-2px]">
                     <div className="md:px-[2px] w-full md:w-1/2 mb-6 md:mb-0">
@@ -216,9 +217,9 @@ export default function Home(initialData) {
                       {/* Abstract */}
                       <div className="col-span-6 col-start-3 md:col-span-4 md:col-start-7">
                         <div className="w-[100%] md:w-[85%] lg:w-[65%] relative mx-auto">
-                          <PhoneIcon className="w-full relative z-0" />
+                          <PhoneIcon className="w-full relative z-0 opacity-90" />
 
-                          <div className="absolute top-0 right-0 mr-[-35%] lg:mr-[-45%] mt-[15%] z-10 w-full lg:w-[70%]">
+                          <div className="absolute top-0 right-0 mr-[-35%] lg:mr-[-50%] mt-[15%] z-10 w-full lg:w-[70%]">
                             <div className="w-full">
                               <span className="block uppercase font-medium tracking-wider text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-b-0 border-black/50 px-3 py-5">{home.featuredGames[0].title}</span>
                             </div>
@@ -227,8 +228,14 @@ export default function Home(initialData) {
                             </div>
                           </div>
 
-                          <div className="absolute inset-0 z-1 scale-y-[0.96] overflow-hidden rounded-[9%] mt-[-1px] scale-x-[0.94]">
-                            <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`object-cover object-center w-full h-full absolute inset-0 scale-[1.03]`}>
+
+                          <div className="absolute inset-0 z-1 scale-y-[0.961] scale-x-[0.96] translate-x-[1.2%] border-1 border-black">
+
+                            <svg className="w-full scale-y-[0.97] scale-x-[0.97] translate-y-[-1.5%] translate-x-[-1.5%] absolute inset-0 z-30" viewBox="0 0 355 623" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="1" y="1" width="352.72" height="620.72" rx="48" stroke="#0F0F19" stroke-width="2"/>
+                            </svg>
+
+                            <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`object-cover object-center w-full h-full absolute inset-0 phone-mask`}>
                               <source src={home.featuredGames[0].gameplayVideo} type="video/mp4" />
 
                               Sorry. Your browser does not support the video tag.
@@ -304,15 +311,8 @@ export default function Home(initialData) {
                 <div className="content max-w-3xl mb-8 xl:mb-12 w-10/12">
                   <p>{home.makeAGameCtaText}</p>
                 </div>
-
-                <Link href="/homa-lab">
-                  <a className="pill-btn group">
-                    <div className="relative">
-                      <span className="block group-hover:opacity-0">Enter The Homa Lab</span>
-                      <span className="absolute top-0 left-0 right-0 hidden  group-hover:block"><TextScrambler text="Enter The Homa Lab" seed={5} step={1} singleLine /></span>
-                    </div>
-                  </a>
-                </Link>
+                
+                <ScramblePillButton href="/homa-lab" label="Enter The Homa Lab" internal />
               </div>
               
               <div className="order-1 md:order-3 col-span-12 md:col-span-6 lg:col-span-4 relative z-0 h-[300px] md:h-full">
@@ -395,13 +395,13 @@ export default function Home(initialData) {
                     <span className="uppercase text-sm tracking-widest mt-1 block font-medium">00</span>
                   </div>
                   <div className="w-3/4">
-                    <h3 className="font-black text-3xl lg:text-5xl xl:text-5xl 2xl:text-6xl leading-[0.95] tracking-tight mb-24 lg:mb-48 uppercase max-w-[500px] xl:max-w-none">Game The System</h3>
+                    <h3 className="font-black text-3xl lg:text-5xl xl:text-5xl 2xl:text-6xl leading-[0.95] tracking-tight mb-24 lg:mb-[31vw] uppercase max-w-[500px] xl:max-w-none">Game The System</h3>
                   </div>
                 </div>
                 {products.map((e, i) => {
                   return (
                     <Link href={`/homa-lab/${e.slug.current}`} key={i}>
-                      <a className={`w-full ${i + 1 != products.length && 'border-b border-black/50'} px-6 xl:px-10 py-6 xl:py-10 flex flex-wrap hover:bg-pink focus:bg-pink`}>
+                      <a className={`w-full ${i + 1 != products.length && 'border-b border-black/50'} px-6 xl:px-10 py-6 xl:py-10 flex flex-wrap hover:bg-pink focus:bg-pink lg:pb-[20vw] xl:pb-[20vw]`}>
                         <div className="w-auto mr-12">
                           <span className="uppercase text-sm tracking-widest mt-1 block font-medium">0{i + 1}</span>
                         </div>
@@ -466,18 +466,8 @@ export default function Home(initialData) {
 
                   <p>Stop by to learn the ins and outs of game design, including in-depth game play analysis, methods for ideation &amp; player experience optimization, as well as hands-on game building tutorials, hangouts and more. </p>
                 </div>
-
-                <a
-                  href="https://academy.homagames.com/"
-                  target="_blank"
-                  rel="noopener noreferrer" 
-                  className="pill-btn group"
-                >
-                  <div className="relative">
-                    <span className="block group-hover:opacity-0">Learn More</span>
-                    <span className="absolute top-0 left-0 right-0 hidden  group-hover:block"><TextScrambler text="Learn More" seed={5} step={1} singleLine /></span>
-                  </div>
-                </a>
+                
+                <ScramblePillButton href="https://academy.homagames.com/" label="Learn More"/>
               </div>
               
               <div className="order-1 md:order-3 col-span-12 md:col-span-6 lg:col-span-4 relative z-0 md:h-full mb-8 lg:mb-0">
@@ -612,30 +602,21 @@ export default function Home(initialData) {
               <div className="grid grid-cols-12 py-12 lg:pt-[15vw] lg:pb-[20.5vw] px-6 xl:px-10 max-w-screen-3xl mx-auto">
                 
                 <div className="col-span-12 lg:col-span-7 z-10 mb-12 lg:mb-0">
-                  <h2 className="font-black text-[clamp(50px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase">There's Hope.<br/>Then there's Homa.</h2>
+                  <h2 className="font-black text-[clamp(50px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase">There’s Hope.<br/>Then there’s Homa.</h2>
                   <div className="content max-w-3xl mb-6 xl:mb-8 w-10/12">
                     <p>With us, every step of your game’s build and launch phase – from ideation right through to monetization - is managed by experts and tested, tweaked and improved by data-rich technology.</p>
 
                     <p>To see our process and the hits its produced:</p>
                   </div>
 
-                  <Link href="/games">
-                    <a
-                      className="pill-btn group"
-                    >
-                      <div className="relative">
-                        <span className="block group-hover:opacity-0">Learn More</span>
-                        <span className="absolute top-0 left-0 right-0 hidden  group-hover:block"><TextScrambler text="Learn More" seed={5} step={1} singleLine /></span>
-                      </div>
-                    </a>
-                  </Link>
+                  <ScramblePillButton href="/games" label="Learn More" internal/>
                 </div>
 
                 <div className="col-span-6 col-start-4 md:col-span-4 md:col-start-8">
                   <div className="w-[100%] lg:w-[75%] relative mx-auto">
-                    <PhoneIcon className="w-full relative z-0" />
+                    <PhoneIcon className="w-full relative z-0 opacity-[0.85]" />
 
-                    <div className="absolute top-0 right-0 mr-[-35%] lg:mr-[-45%] mt-[15%] z-10 w-full lg:w-[70%]">
+                    <div className="absolute top-0 right-0 mr-[-35%] lg:mr-[-50%] mt-[15%] z-10 w-full lg:w-[70%]">
                       <div className="w-full">
                         <span className="block uppercase font-medium tracking-wider text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-b-0 border-black/50 px-3 py-5">{home.featuredGames[0].title}</span>
                       </div>
@@ -644,8 +625,14 @@ export default function Home(initialData) {
                       </div>
                     </div>
 
-                    <div className="absolute inset-0 z-1 scale-y-[0.96] overflow-hidden rounded-[9%] mt-[-1px] scale-x-[0.94]">
-                      <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`object-cover object-center w-full h-full absolute inset-0 scale-[1.03]`}>
+
+                    <div className="absolute inset-0 z-1 scale-y-[0.961] scale-x-[0.96] translate-x-[1.2%] border-1 border-black">
+
+                      <svg className="w-full scale-y-[0.97] scale-x-[0.97] translate-y-[-1.5%] translate-x-[-1.5%] absolute inset-0 z-30" viewBox="0 0 355 623" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="1" y="1" width="352.72" height="620.72" rx="48" stroke="#0F0F19" stroke-width="2"/>
+                      </svg>
+
+                      <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`object-cover object-center w-full h-full absolute inset-0 phone-mask`}>
                         <source src={home.featuredGames[0].gameplayVideo} type="video/mp4" />
 
                         Sorry. Your browser does not support the video tag.

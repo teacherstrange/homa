@@ -49,10 +49,16 @@ export const CarouselTikTok = ({ heading, items }) => {
 
                   <div className="w-full flex justify-center embla__slide-inner-blur my-auto lg:py-0">
                     <div className="w-[55%] lg:w-[40%] relative">
-                      <PhoneIcon className="w-full relative z-0" />
-                      <div className="absolute inset-0 z-1 scale-y-[0.96] overflow-hidden rounded-[9%] mt-[-1px] scale-x-[0.93]">
+                      <PhoneIcon className="w-full relative z-0 opacity-[0.85]" />
+
+                      <div className="absolute inset-0 z-1 scale-y-[0.961] scale-x-[0.96] translate-x-[1.2%] border-1 border-black">
+
+                        <svg className="w-full scale-y-[0.97] scale-x-[0.97] translate-y-[-1.5%] translate-x-[-1.5%] absolute inset-0 z-30" viewBox="0 0 355 623" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect x="1" y="1" width="352.72" height="620.72" rx="48" stroke="#0F0F19" stroke-width="2"/>
+                        </svg>
+
                         {e.video ? (
-                        <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`object-cover object-center w-full h-full absolute inset-0 scale-[1.03]`}>
+                        <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`object-cover object-center w-full h-full absolute inset-0 phone-mask`}>
                           <source src={e.video} type="video/mp4" />
 
                           Sorry. Your browser does not support the video tag.
@@ -64,7 +70,7 @@ export const CarouselTikTok = ({ heading, items }) => {
                             width={496}
                             height={882}
                             quality={75}
-                            className="w-full"
+                            className="w-full object-cover object-center h-full absolute inset-0 phone-mask"
                           />
                         )}
                       </div>

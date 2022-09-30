@@ -25,6 +25,7 @@ import { CarouselCards } from '@/components/carousel-cards'
 
 // Sanity
 import SanityPageService from '@/services/sanityPageService'
+import ScramblePillButton from '@/components/scramble-pill-button'
 
 const query = `{
   "games": *[_type == "gamesLibrary"] | order(orderRank asc){
@@ -355,10 +356,8 @@ export default function Games(initialData) {
                       <div className="w-11/12 content mb-8 lg:mb-12">
                         <p>{gamesLanding.buildABrandCtaText}</p>
                       </div>
-
-                      <Link href="/community">
-                        <a className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white">Learn more</a>
-                      </Link>
+                      
+                      <ScramblePillButton href="/community" label="Learn More" internal />
                     </div>
 
                     <div className="w-full lg:w-1/2 lg:border-l border-black/50 bg-gray-200 overflow-hidden relative">
@@ -395,9 +394,7 @@ export default function Games(initialData) {
                   <p>There’s no secret to success, just a winning formula. So why stop at one?</p>
                 </div>
 
-                <Link href="#">
-                  <a className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white">Learn more</a>
-                </Link>
+                <ScramblePillButton href="/homa-lab" label="Learn More" internal />
               </div>
             </FooterCta>
 

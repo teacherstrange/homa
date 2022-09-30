@@ -227,3 +227,10 @@ canvas {
     @apply object-cover object-center;
   }
 }
+
+.phone-mask, .phone-backer, .phone-mask img {
+  -webkit-mask-image: url('/icons/phone-block.svg');
+  mask-image: url('/icons/phone-block.svg');
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}

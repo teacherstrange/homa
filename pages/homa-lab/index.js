@@ -23,6 +23,7 @@ import TextScrambler from '@/components/text-scrambler'
 import SanityPageService from '@/services/sanityPageService'
 import SanityImage from '@/components/sanity-image'
 import GridOverlay from '@/components/grid-overlay'
+import ScramblePillButton from '@/components/scramble-pill-button'
 
 const query = `{
   "products": *[_type == "products"]{
@@ -158,9 +159,7 @@ export default function HomaLab(initialData) {
                                 <p>{e.introText}</p>
                               </div>
 
-                              <Link href={`/homa-lab/${e.slug.current}`}>
-                                <a className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white">Learn More</a>
-                              </Link>
+                              <ScramblePillButton href={`/homa-lab/${e.slug.current}`} label="Learn More" internal />
                             </div>
                           </div>
                           <div className="col-span-10 lg:col-span-5 lg:col-start-6 relative overflow-hidden lg:border-l lg:border-black/50">

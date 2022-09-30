@@ -6,6 +6,7 @@ import FacebookIcon from "@/icons/facebook.svg"
 import InstagramIcon from "@/icons/instagram.svg"
 import TextScrambler from "./text-scrambler"
 import Link from "next/link"
+import ScramblePillButton from "./scramble-pill-button"
 
 export default function SocialScroller() {
   return (
@@ -20,16 +21,7 @@ export default function SocialScroller() {
             <p>We’re not just building tools to help developers build better games. We're creating a universe where players can take ownership of their favorite character and step into a web of games, adventure and prizes.</p>
           </div>
 
-          <Link href="/community">
-            <a
-              className="pill-btn group"
-            >
-              <div className="relative">
-                <span className="block group-hover:opacity-0">Learn More</span>
-                <span className="absolute top-0 left-0 right-0 hidden  group-hover:block"><TextScrambler text="Learn More" seed={5} step={1} singleLine /></span>
-              </div>
-            </a>
-          </Link>
+          <ScramblePillButton href="/community" label="Learn More" internal />
         </div>
       </div>
 

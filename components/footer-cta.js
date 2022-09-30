@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { ScrollParallax } from "react-just-parallax"
+import ScramblePillButton from "./scramble-pill-button"
 import TextScrambler from "./text-scrambler"
 
 export default function FooterCta({ image, children }) {
@@ -32,12 +33,7 @@ export default function FooterCta({ image, children }) {
               <p>Start building games with data, insight and tested hit potential built right in.</p>
             </div>
 
-            <a className="pill-btn group" href="https://lab-v2.homagames.com/login" target="_blank" rel="noopener noreferrer">
-              <div className="relative">
-                <span className="block group-hover:opacity-0">Enter The Homa Lab</span>
-                <span className="absolute top-0 left-0 right-0 hidden  group-hover:block"><TextScrambler text="Enter The Homa Lab" seed={5} step={1} singleLine /></span>
-              </div>
-            </a>
+            <ScramblePillButton href="https://lab-v2.homagames.com/login" label="Enter The Homa Lab"/>
           </div> }
       </div>
 
