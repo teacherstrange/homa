@@ -307,17 +307,23 @@ export default function Games(initialData) {
             </div>
 
 
-            <div className="bg-[#54596F] text-white relative overflow-hidden">
+            <div className="relative overflow-hidden">
 
               <div className="absolute bottom-0 right-0 w-[75%] lg:w-[45%] max-w-[850px]">
-                <Image
+                {/* <Image
                   src="/images/our-team-cta.jpg"
                   alt="About Test"
                   layout="responsive"
                   width={1910}
                   height={2032}
                   className="w-full"
-                />
+                /> */}
+
+                {/* <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-full`}>
+                  <source src={'/videos/chess.webm'} type="video/webm" />
+
+                  Sorry. Your browser does not support the video tag.
+                </video> */}
               </div>
 
               <div className="grid grid-cols-12 py-12 pb-[85vw] lg:py-[10vw] px-6 xl:px-10 max-w-screen-3xl mx-auto">
@@ -325,16 +331,16 @@ export default function Games(initialData) {
                   <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">Our Team</span>
                 </div>
                 
-                <div className="col-span-12 lg:col-span-7 z-10 realtive">
+                <div className="col-span-12 lg:col-span-7 z-10 relative">
                   <h2 className="font-black text-[clamp(50px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase">People you'll meet along the way.</h2>
-                  <div className="content max-w-3xl mb-8 xl:mb-12 w-10/12">
+                  <div className="content max-w-[720px] mb-8 xl:mb-12 w-9/12">
                     <p>{gamesLanding.peopleYoullMeetText}</p>
                   </div>
 
-                  <div className="w-full flex flex-wrap border border-white mb-6 lg:mb-8 max-w-[650px]">
+                  <div className="w-full flex flex-wrap border border-black/50 mb-6 lg:mb-8 max-w-[650px] bg-white relative z-10">
                     {gamesLanding.peopleYoullMeet.map((e, i) => {
                       return (
-                        <div className="w-full border-b border-white p-5 lg:p-6 xl:p-8 2xl:p-10" key={i}>
+                        <div className={`w-full border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10 ${(i + 1) == gamesLanding.peopleYoullMeet.length ? '' : 'border-b' }`} key={i}>
                           <h3 className="font-bold text-xl lg:text-2xl xl:text-3xl leading-[0.95] mb-4 lg:mb-6 uppercase">{e.heading}</h3>
 
                           <div className="content content--small w-9/12 lg:w-11/12">
@@ -345,7 +351,15 @@ export default function Games(initialData) {
                     })}
                   </div>
 
-                  <a href="https://lab-v2.homagames.com/login" target="_blank" rel="noreferrer noopener" className="inline-block font-medium uppercase leading-none py-6 px-10 rounded-sm bg-white text-black hover:bg-black hover:text-white focus:bg-black focus:text-white">Submit your game</a>
+                  <a href="https://lab-v2.homagames.com/login" target="_blank" rel="noreferrer noopener" className="inline-block font-medium uppercase leading-none py-6 px-10 rounded-sm bg-black text-white hover:bg-black hover:text-white focus:bg-black focus:text-white">Submit your game</a>
+                </div>
+
+                <div className="col-span-12 lg:col-span-3 relative hidden xl:block self-center">
+                  <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-full scale-[1.4] xl:scale-[1.5] translate-x-[-25%] xl:translate-x-[-30%] xl:translate-y-[20%]`}>
+                    <source src={'/videos/chess.webm'} type="video/webm" />
+
+                    Sorry. Your browser does not support the video tag.
+                  </video>
                 </div>
               </div>
             </div>
