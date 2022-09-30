@@ -142,7 +142,7 @@ export default function Home(initialData) {
               <MousePosition />
             </div>
 
-            <div className="max-w-screen-3xl mx-auto" ref={characterBinder}>
+            <div className=" mx-auto" ref={characterBinder}>
               <h1 className="font-black index-heading tracking-tight leading-[0.95] mb-4 uppercase relative z-10 w-full md:w-11/12 lg:w-full">
                 <TextScrambler text="Game The System" seed={12} step={1} singleLine />
               </h1>
