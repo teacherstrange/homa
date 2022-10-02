@@ -65,6 +65,11 @@ h1, .h1, h2, .h2, h3, .h3 {
   font-size: clamp(50px, 7.5vw, 150px);
 }
 
+.display-text--large {
+  @apply font-black leading-none uppercase;
+  font-size: clamp(60px, 8vw, 180px);
+}
+
 .index-heading {
   @apply text-[68px];
   

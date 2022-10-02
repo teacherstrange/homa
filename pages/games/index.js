@@ -109,7 +109,7 @@ export default function Games(initialData) {
           exit="exit"
         >
           <m.div variants={fade}>
-            <div className="w-full h-full min-h-screen bg-gradient-to-t from-pink/20 to-pink pt-24 lg:pt-40 xl:pt-52 border-b border-black/50 px-6 xl:px-10 mx-auto relative overflow-hidden mb-[8vw]">
+            <div className="w-full min-h-screen bg-gradient-to-t from-pink/20 to-pink pt-24 lg:pt-40 xl:pt-52 border-b border-black/50 px-6 xl:px-10 mx-auto relative overflow-hidden mb-[8vw]">
               <div className="absolute top-0 right-0 mt-24 lg:mt-28 xl:mt-32 px-6 xl:px-10 text-[11px] uppercase tracking-widest font-medium leading-none text-right hidden lg:block">
                 <DayInfo className="mb-1" />
                 <MousePosition />
@@ -118,11 +118,11 @@ export default function Games(initialData) {
               <div className="max-w-screen-3xl mx-auto">
                 <h1 className="font-black text-[clamp(50px,_9vw,190px)] leading-[0.95] mb-4 uppercase relative z-10 w-11/12 lg:w-full"><TextScrambler text="Win with the ease of cheating" seed={15} step={2} /></h1>
 
-                <div className="w-full lg:w-[50%] xl:w-[45%] 2xl:w-[40%] max-w-[720px] pt-[5%] lg:pt-[10%] relative pb-8 lg:pb-0">
+                <div className="w-full lg:w-[50%] xl:w-[45%] 2xl:w-[40%] max-w-[600px] pt-[5%] lg:pt-[10%] relative pb-8 lg:pb-0">
                   <div className="relative z-10">
-                    <p className="text-lg md:text-2xl xl:text-3xl mb-12 lg:mb-16">{gamesLanding.heroIntroText}</p>
+                    <p className="text-lg md:text-xl xl:text-2xl mb-12 lg:mb-16">{gamesLanding.heroIntroText}</p>
 
-                    <a href="https://lab-v2.homagames.com/login" target="_blank" rel="noreferrer noopener" className="bg-black text-white px-12 py-6 uppercase tracking-wide w-1/2 text-center">
+                    <a href="https://lab-v2.homagames.com/login" target="_blank" rel="noreferrer noopener" className="bg-black text-white px-12 py-6 uppercase tracking-wide w-1/2 text-center block mb-6 lg:mb-10">
                       Submit your game
                     </a>
                   </div>
@@ -149,16 +149,16 @@ export default function Games(initialData) {
             </div>
 
             <Container>
-              <div className="flex flex-wrap py-12 lg:pt-[10vw] lg:pb-[5vw] xl:pb-0">
+              <div className="flex flex-wrap py-12 lg:pt-[10vw] lg:pb-[5vw] xl:pb-0 overflow-hidden">
                 <div className="w-full lg:w-1/2">
-                  <h2 className="font-black text-[clamp(48px,_4.17vw,_80px)] leading-[0.95] mb-8 lg:mb-[5vw] uppercase w-11/12 break-words">From Customers to collaborators</h2>
+                  <h2 className="font-black text-[clamp(48px,_4.17vw,_80px)] leading-[0.95] mb-8 lg:mb-[5vw] uppercase w-11/12 break-words">From Customers<br/>to partners</h2>
 
-                  <div className="w-11/12 content mb-8 lg:mb-12">
+                  <div className="w-10/12 content mb-8 lg:mb-12 max-w-[720px]">
                     <p>{gamesLanding.fromCustomersToCollaboratorsText}</p>
                   </div>
                 </div>
 
-                <div className="w-full lg:w-1/2 flex items-start translate-y-[-15%] lg:translate-y-[-25%]">
+                <div className="w-full lg:w-1/2 flex items-start translate-y-[-15%] lg:translate-y-[-25%] scale-[1.1]">
                   <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-full`}>
                     <source src={'/videos/faces.webm'} type="video/webm" />
 
@@ -237,7 +237,7 @@ export default function Games(initialData) {
 
 
             <div className="bg-lime text-black">
-              <div className="grid grid-cols-12 py-12 lg:py-[10vw] px-6 xl:px-10 max-w-screen-3xl mx-auto">
+              <div className="grid grid-cols-12 py-12 lg:py-[10vw] px-6 xl:px-24 max-w-screen-3xl mx-auto">
                 
                 <div className="col-span-12 z-10">
                   <h2 className="font-black text-[clamp(50px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase w-[70%] lg:w-[50%] max-w-[800px]">How we get your game in lights</h2>
@@ -250,7 +250,7 @@ export default function Games(initialData) {
                         Sorry. Your browser does not support the video tag.
                       </video>
 
-                      <h3 className="font-bold text-2xl lg:text-3xl xl:text-3xl leading-[0.95] mb-5 lg:mb-8 uppercase">Test your idea</h3>
+                      <h3 className="font-black tracking-tight text-xl lg:text-2xl xl:text-2xl leading-[0.95] mb-5 lg:mb-8 uppercase">Test your idea</h3>
 
                       <div className="content content--small w-11/12">
                         <p>There’s no reward in building a game no one will download or play. With Homa, you’ll have access to all the latest trends, niches and statistics you need to make sure you’re building games billions will play.</p>
@@ -264,7 +264,7 @@ export default function Games(initialData) {
                         Sorry. Your browser does not support the video tag.
                       </video>
 
-                      <h3 className="font-bold text-2xl lg:text-3xl xl:text-3xl leading-[0.95] mb-5 lg:mb-8 uppercase">Send a prototype</h3>
+                      <h3 className="font-black tracking-tight text-xl lg:text-2xl xl:text-2xl leading-[0.95] mb-5 lg:mb-8 uppercase">Send a prototype</h3>
 
                       <div className="content content--small w-11/12">
                         <p>Send a prototype our way and one of our Publishing Managers will be in touch to talk about how we can help, one-to-one.</p>
@@ -278,7 +278,7 @@ export default function Games(initialData) {
                         Sorry. Your browser does not support the video tag.
                       </video>
 
-                      <h3 className="font-bold text-2xl lg:text-3xl xl:text-3xl leading-[0.95] mb-5 lg:mb-8 uppercase">Build a game</h3>
+                      <h3 className="font-black tracking-tight text-xl lg:text-2xl xl:text-2xl leading-[0.95] mb-5 lg:mb-8 uppercase">Build a game</h3>
 
                       <div className="content content--small w-11/12">
                         <p>With our SDK you can start iterating immediately to perfect your game by every metric, from cost of acquisition to retention to session times. You’ll also get hot-off-the-press insights from our Market Intelligence team.</p>
@@ -292,7 +292,7 @@ export default function Games(initialData) {
                         Sorry. Your browser does not support the video tag.
                       </video>
 
-                      <h3 className="font-bold text-2xl lg:text-3xl xl:text-3xl leading-[0.95] mb-5 lg:mb-8 uppercase">Launch a hit</h3>
+                      <h3 className="font-black tracking-tight text-xl lg:text-2xl xl:text-2xl leading-[0.95] mb-5 lg:mb-8 uppercase">Launch a hit</h3>
 
                       <div className="content content--small w-11/12">
                         <p>Once everything is running smoothly, we’ll push it out into the world using the right channels at the right time to maximize impact and land at the top of the charts, where the real money is.</p>
@@ -301,7 +301,7 @@ export default function Games(initialData) {
                   </div>
 
                 
-                  <a href="https://lab-v2.homagames.com/login" target="_blank" rel="noreferrer noopener" className="inline-block border border-black/50 font-medium uppercase leading-none py-6 px-10 rounded-sm bg-black text-white hover:bg-black hover:text-white focus:bg-black focus:text-white">Submit your game</a>
+                  <a href="https://lab-v2.homagames.com/login" target="_blank" rel="noreferrer noopener" className="inline-block border border-black/50 font-medium uppercase leading-none py-6 px-12 text-center rounded-sm bg-black text-white hover:bg-black hover:text-white focus:bg-black focus:text-white lg:w-1/2 xl:w-1/4">Submit your game</a>
                 </div>
               </div>
             </div>
@@ -415,14 +415,16 @@ export default function Games(initialData) {
             </div>
 
             <FooterCta image="/images/about-footer.jpg">
-              <div className="col-span-10 col-start-2 md:col-span-8 md:col-start-3 xl:col-span-6 xl:col-start-4 border-black/50 border-l border-r bg-white bg-gradient-to-b from-pink/20 to-pink p-6 md:p-10 xl:p-16 text-center">
-                <span className="block font-black uppercase text-2xl md:text-3xl xl:text-4xl mb-20 md:mb-[15vw] xl:mb-[12.5vw]">One hit is good, Multiple is the goal.</span>
+              <div className="col-span-10 col-start-2 md:col-span-8 md:col-start-3 xl:col-span-6 xl:col-start-4 border-black/50 border-l border-r bg-white bg-gradient-to-b from-pink/20 to-pink p-6 md:p-10 xl:p-16 text-center aspect-square flex flex-wrap">
+                <span className="block font-black uppercase text-2xl md:text-3xl xl:text-4xl mb-auto w-full">One hit is good, Multiple is the goal.</span>
 
-                <div className="w-8/12 mx-auto max-w-md mb-20 md:mb-[15vw] xl:mb-[12.5vw] text-lg md:text-xl xl:text-2xl">
+                <div className="w-8/12 mx-auto max-w-md mb-20 md:mb-[15vw] xl:mb-[12.5vw] text-lg md:text-xl xl:text-2xl my-auto">
                   <p>There’s no secret to success, just a winning formula. So why stop at one?</p>
                 </div>
-
-                <ScramblePillButton href="/homa-lab" label="Learn More" internal />
+                
+                <div className="mt-auto w-full">
+                  <ScramblePillButton href="/homa-lab" label="Learn More" internal />
+                </div>
               </div>
             </FooterCta>
 

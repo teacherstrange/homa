@@ -506,7 +506,7 @@ export default function Home(initialData) {
             </div> */}
 
             
-            <div className="bg-lime text-black relative overflow-hidden">
+            <div className="bg-lime text-black relative overflow-hidden border-t border-b border-black/50">
               <div className="grid grid-cols-12 py-12 lg:py-[15vw] px-6 xl:px-10 max-w-screen-3xl mx-auto">
                 <div className="col-span-12 lg:col-span-2 relative z-10">
                   <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium"><TextScrambler text="Build a career" seed={5} step={1} singleLine /></span>
@@ -551,7 +551,7 @@ export default function Home(initialData) {
                   </div>
 
                   <Link href="/careers">
-                    <a class="roll-btn inline-block" >
+                    <a class="roll-btn inline-block lg:w-1/3" >
                       <span class="roll-btn__front">Apply for a job at Homa</span>
                       <span class="roll-btn__back">Apply for a job at Homa</span>
                     </a>
@@ -573,7 +573,7 @@ export default function Home(initialData) {
                 </div>   
               </ScrollParallax>
 
-              <div className="grid grid-cols-12 py-12 lg:pt-[15vw] lg:pb-[20.5vw] px-6 xl:px-10 max-w-screen-3xl mx-auto">
+              <div className="grid grid-cols-12 py-12 lg:pt-[15vw] lg:pb-[20.5vw] px-6 lg:px-24 xl:px-32 max-w-screen-3xl mx-auto">
                 
                 <div className="col-span-12 lg:col-span-7 z-10 mb-12 lg:mb-0">
                   <h2 className="font-black text-[clamp(50px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase">There’s Hope.<br/>Then there’s Homa.</h2>
@@ -586,8 +586,8 @@ export default function Home(initialData) {
                   <ScramblePillButton href="/games" label="View Our Games" internal/>
                 </div>
 
-                <div className="col-span-6 col-start-4 md:col-span-4 md:col-start-8">
-                  <div className="w-[100%] lg:w-[75%] relative mx-auto">
+                <div className="col-span-6 col-start-4 lg:col-span-4 lg:col-start-8">
+                  <div className="w-[100%] lg:w-[70%] relative mx-auto lg:translate-y-[-1.5vw] lg:translate-x-[2.5vw]">
                     <PhoneIcon className="w-full relative z-0 opacity-[0.85]" />
 
                     <div className="absolute top-0 right-0 mr-[-35%] lg:mr-[-50%] mt-[15%] z-10 w-full lg:w-[70%]">

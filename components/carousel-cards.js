@@ -25,7 +25,7 @@ export const CarouselCards = ({ heading, items }) => {
       <div className="w-[91.05vw] lg:w-[93vw] ml-auto flex flex-wrap mb-6">
         <div className="flex-1">
           { heading && (
-            <h2 className="font-black text-[clamp(46px,_4.45vw,_86px)] leading-[0.9] uppercase">{heading}</h2>
+            <h2 className="font-black text-[clamp(40px,_4vw,_64px)] leading-[0.9] uppercase">{heading}</h2>
           )}
         </div>
 
@@ -47,7 +47,7 @@ export const CarouselCards = ({ heading, items }) => {
                 <a className="embla__slide">
                   <div className="embla__slide-inner flex flex-wrap relative overflow-hidden">
                     <div className="absolute top-0 left-0 right-0 z-10 w-full p-6 lg:p-10">
-                      <span className="block uppercase font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 embla__slide-title">
+                      <span className="block uppercase font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl leading-none lg:leading-none xl:leading-none 2xl:leading-none embla__slide-title">
                         {e.title}
                       </span>
                     </div>

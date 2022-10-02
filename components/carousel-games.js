@@ -22,7 +22,7 @@ export const CarouselGames = ({ heading, items }) => {
       <div className="w-[91.05vw] lg:w-[93vw] ml-auto flex flex-wrap mb-6">
         <div className="flex-1">
           { heading && (
-            <h2 className="font-black text-[clamp(40px,_4.45vw,_86px)] leading-[0.9] uppercase">{heading}</h2>
+            <h2 className="font-black text-[clamp(40px,_4vw,_64px)] leading-[0.9] uppercase">{heading}</h2>
           )}
         </div>
 

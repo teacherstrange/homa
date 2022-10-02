@@ -147,7 +147,7 @@ export default function About(initialData) {
                         lerpEase={0.015}
                         zIndex={0}
                       >
-                        <div className="absolute bottom-[-55vw] left-[20vw] md:left-auto md:bottom-[-15vw] md:right-[-10vw] w-[120%] md:w-[66%] z-0">
+                        <div className="absolute bottom-[-55vw] left-[20vw] md:left-auto md:bottom-[-20vw] md:right-[-10vw] w-[120%] md:w-[66%] z-0">
                           {/* <Image
                             src="/images/character-test.webp"
                             alt="Character Test"
@@ -222,7 +222,7 @@ export default function About(initialData) {
               </ScrollParallax>
             </div>
 
-            <div className="max-w-screen-xl mx-auto text-center relative z-10">
+            <div className="md:max-w-screen-md xl:max-w-screen-lg mx-auto text-center relative z-10">
               <span className="text-2xl uppercase font-bold mb-8 lg:mb-12 block">Our People</span>
               <h2 className="font-black text-[clamp(50px,_5.5vw,120px)] leading-[0.95] uppercase text-center relative z-10 w-11/12 lg:w-full mb-8 lg:mb-12">{about.ourPeopleCtaHeading}</h2>
 
@@ -253,7 +253,7 @@ export default function About(initialData) {
                 return (
                   <div
                     className={`w-full ${
-                      i + 1 != 9 && "border-b border-black/50"
+                      i + 1 != about.servicesList.length && "border-b border-black/50"
                     } px-6 xl:px-10 py-6 xl:py-10 flex flex-wrap`}
                   >
                     <div className="w-auto mr-12">
@@ -276,7 +276,7 @@ export default function About(initialData) {
 
           <m.div variants={fade}>
             <div className={`bg-lime text-black border-t border-black/50 z-0 sticky top-0`}>
-              <div className="grid grid-cols-12 py-[15vw] h-screen px-6 xl:px-10 max-w-screen-3xl mx-auto items-center">
+              <div className="grid grid-cols-12 h-screen px-6 xl:px-10 max-w-screen-3xl mx-auto items-center">
                 
                 <div className="col-span-12 lg:col-span-6 z-10">
                   <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">We Value:</span>
@@ -289,7 +289,7 @@ export default function About(initialData) {
 
                 <div className="col-span-12 lg:col-span-6 z-10 h-full">
                   <div className="h-full flex items-center justify-center relative">
-                    <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-full translate-y-[-5%]`}>
+                    <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-full translate-y-[-1%]`}>
                       <source src={'/videos/flagpole.webm'} type="video/webm" />
 
                       Sorry. Your browser does not support the video tag.
@@ -300,7 +300,7 @@ export default function About(initialData) {
             </div>
 
             <div className={`bg-lime text-black border-t border-black/50 z-0 sticky top-0`}>
-              <div className="grid grid-cols-12 py-[15vw] h-screen px-6 xl:px-10 max-w-screen-3xl mx-auto items-center">
+              <div className="grid grid-cols-12 h-screen px-6 xl:px-10 max-w-screen-3xl mx-auto items-center">
                 
                 <div className="col-span-12 lg:col-span-6 z-10">
                   <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">We Value:</span>
@@ -313,7 +313,7 @@ export default function About(initialData) {
 
                 <div className="col-span-12 lg:col-span-6 z-10 h-full">
                   <div className="h-full flex items-center justify-center">
-                    <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-full translate-y-[-5%]`}>
+                    <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-full translate-y-[-1%]`}>
                       <source src={'/videos/hands.webm'} type="video/webm" />
 
                       Sorry. Your browser does not support the video tag.
@@ -324,7 +324,7 @@ export default function About(initialData) {
             </div>
 
             <div className={`bg-lime text-black border-t border-black/50 relative z-10`}>
-              <div className="grid grid-cols-12 py-[15vw] h-screen px-6 xl:px-10 max-w-screen-3xl mx-auto items-center">
+              <div className="grid grid-cols-12 h-screen px-6 xl:px-10 max-w-screen-3xl mx-auto items-center">
                 
                 <div className="col-span-12 lg:col-span-6 z-10">
                   <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">We Value:</span>
@@ -337,7 +337,7 @@ export default function About(initialData) {
 
                 <div className="col-span-12 lg:col-span-6 z-10 h-full">
                   <div className="h-full flex items-center justify-center">
-                    <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-full translate-y-[-5%]`}>
+                    <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-full translate-y-[-1%]`}>
                       <source src={'/videos/eye.webm'} type="video/webm" />
 
                       Sorry. Your browser does not support the video tag.

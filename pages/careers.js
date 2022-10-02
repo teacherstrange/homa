@@ -99,7 +99,7 @@ export default function Careers(initialData) {
               </div>
               
               <div className="max-w-screen-3xl mx-auto px-6 xl:px-10 mb-[15vw]">
-                <h1 className="font-black text-[clamp(35px,_9vw,190px)] leading-[0.95] mb-4 uppercase relative z-10 w-11/12 lg:w-full">
+                <h1 className="font-black text-[clamp(35px,_9vw,190px)] leading-[0.95] tracking-tight mb-4 uppercase relative z-10 w-11/12 lg:w-full">
                   <span className="block mb-8 lg:mb-12">
                     <TextScrambler text="Brains over backgrounds." seed={22} step={2} />
                   </span>
@@ -184,7 +184,7 @@ export default function Careers(initialData) {
               <div className="grid grid-cols-12 py-24 lg:py-[10vw] px-6 xl:px-10 max-w-screen-3xl mx-auto">
                 
                 <div className="col-span-12 z-10">
-                  <h2 className="display-text w-11/12 lg:w-9/12 mb-12 lg:mb-24 xl:mb-32">Success is its own reward. But there are perks as well.</h2>
+                  <h2 className="display-text--large w-11/12 lg:w-11/12 mb-12 lg:mb-24 xl:mb-32">Success is its own reward. But there are perks as well.</h2>
 
                   <div className="w-full flex flex-wrap border border-black/50 mb-6 lg:mb-8">
                     {careers.successCtaItems.map((e, i) => {
@@ -305,8 +305,8 @@ export default function Careers(initialData) {
                   </div>
 
                   <a href="https://apply.workable.com/homa-games/" target="_blank" rel="noopener noreferrer" class="roll-btn inline-block">
-                    <span class="roll-btn__front">All Career Opportunities</span>
-                    <span class="roll-btn__back">All Career Opportunities</span>
+                    <span class="roll-btn__front">See All Open Roles</span>
+                    <span class="roll-btn__back">See All Open Roles</span>
                   </a>
                 </div>
               </div>

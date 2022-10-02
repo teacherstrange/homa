@@ -39,7 +39,7 @@ export const CarouselTeam = ({items}) => {
           {items?.map((e, i) => {
             return (
               <div className="embla__slide" key={i}>
-                <div className="w-full bg-gray-100 aspect-square border-b border-black/50 relative overflow-hidden">
+                <div className="w-full bg-gray-100 aspect-square border-b border-black/50 relative overflow-hidden bg-blend-multiply mix-blend-multiply">
                   <SanityImage image={e.image} layout="fill" className="block w-full h-full absolute inset-0 aspect-square scale-[1.03] embla__slide-inner-blur" />
                 </div>
                 <div className="embla__slide-inner">
