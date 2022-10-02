@@ -93,7 +93,7 @@ export default function Careers(initialData) {
               </div>
               
               <div className="max-w-screen-3xl mx-auto px-6 xl:px-10 mb-[15vw]">
-                <h1 className="font-black text-[clamp(35px,_9vw,190px)] leading-[0.95] tracking-tight mb-4 uppercase relative z-10 w-11/12 lg:w-full">
+                <h1 className="font-black text-[clamp(40px,_9vw,190px)] leading-[0.95] tracking-tight mb-4 uppercase relative z-10 w-11/12 lg:w-full">
                   <span className="block mb-8 lg:mb-12">
                     <TextScrambler text="Brains over backgrounds." seed={22} step={2} />
                   </span>
@@ -121,12 +121,12 @@ export default function Careers(initialData) {
                 </div>
               </div>
 
-              <div className="w-full border-b border-black/50 pb-56 md:pb-0">
+              <div className="w-full border-b border-black/50 pb-32 md:pb-0">
                 <div className="grid grid-cols-12 max-w-screen-3xl mx-auto">
-                  <div className="col-span-10 col-start-2 md:col-span-10 md:col-start-2 md:border-l md:border-r border-black/50 pb-0 md:pb-[10vw] py-[10vw] md:px-10">
+                  <div className="col-span-12 md:col-span-10 md:col-start-2 md:border-l md:border-r border-black/50 pb-0 md:pb-[10vw] py-[10vw] px-6 md:px-10">
                     {careers.introPerkItems.map((e, i) => {
                       return (
-                        <div className={`grid grid-cols-12 ${(i + 1) !== careers.introPerkItems.length && 'pb-[10vw]'}`} key={i}>
+                        <div className={`grid grid-cols-12 ${(i + 1) !== careers.introPerkItems.length && 'pb-[15vw] lg:pb-[10vw]'}`} key={i}>
                           <div className="col-span-12 lg:col-span-3 mb-5 lg:mb-0">
                             { i == 0 && (
                               <HappyIcon className="w-[40%] max-w-[50px] lg:max-w-[100px] lg:mx-auto" />
@@ -244,14 +244,14 @@ export default function Careers(initialData) {
 
             <div className="w-full bg-pink/20 border-b border-black/50 mx-auto relative overflow-hidden">
               <div className="grid grid-cols-12 max-w-screen-3xl mx-auto">
-                <div className="col-span-10 col-start-2 md:col-span-10 md:col-start-2 md:border-l md:border-r border-black/50 py-[10vw] md:px-16 xl:px-24 relative">
+                <div className="col-span-12 md:col-span-10 md:col-start-2 md:border-l md:border-r border-black/50 py-[10vw] px-6 md:px-16 xl:px-24 relative">
                   <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-[65%] absolute top-0 right-0 hidden lg:block translate-y-[-15.5%]`}>
                     <source src={'/videos/faces.webm'} type="video/webm" />
 
                     Sorry. Your browser does not support the video tag.
                   </video>
 
-                  <h2 className="display-text w-8/12 xl:w-[60%] mb-8 lg:mb-24">Want to join us?</h2>
+                  <h2 className="display-text w-10/12 xl:w-[60%] mb-8 lg:mb-24">Want to join us?</h2>
                   <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">Open Roles</span>
                   
                   <div className="mb-8 lg:mb-12">

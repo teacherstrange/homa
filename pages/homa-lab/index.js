@@ -155,9 +155,9 @@ export default function HomaLab(initialData) {
                 <div className="bg-white relative overflow-hidden" key={i}>
                   <div className="w-full border-b border-black/50">
                     <div className="grid grid-cols-12 ">
-                      <div className="col-span-10 col-start-2 lg:col-span-10 lg:col-start-2 lg:border-l lg:border-r border-black/50">
+                      <div className="col-span-12 col-start-0 lg:col-span-10 lg:col-start-2 lg:border-l lg:border-r border-black/50">
                         <div className="grid grid-cols-10">
-                          <div className="col-span-9 lg:col-span-5 mb-12 lg:mb-0 py-10 lg:py-12 lg:px-12 flex flex-wrap">
+                          <div className="col-span-9 lg:col-span-5 mb-12 lg:mb-0 py-10 lg:py-12 px-6 lg:px-12 flex flex-wrap">
                             <div className="w-full mb-auto">
                               <span className="uppercase text-base tracking-widest mb-5 lg:mb-8 block font-medium">0{i + 1}</span>
                               <h2 className="font-black text-[clamp(46px,_4.45vw,_86px)] leading-[0.9] mb-12 lg:mb-32 uppercase w-11/12 max-w-[600px]">{e.title}</h2>

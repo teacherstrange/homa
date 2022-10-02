@@ -198,13 +198,13 @@ export default function Community(initialData) {
             </div>
 
             <div className="bg-white relative overflow-hidden">
-              <div className="w-full border-b border-t border-black/50">
-                <div className="grid grid-cols-12 ">
-                  <div className="col-span-10 col-start-2 lg:col-span-10 lg:col-start-2 lg:border-l lg:border-r border-black/50">
+              <div className="w-full border-b lg:border-t border-black/50">
+                <div className="grid grid-cols-12">
+                  <div className="col-span-12 lg:col-span-10 lg:col-start-2 lg:border-l lg:border-r border-black/50">
                     <div className="grid grid-cols-10">
-                      <div className="col-span-9 lg:col-span-5 mb-12 lg:mb-0 py-10 lg:py-12 lg:px-12 flex flex-wrap">
+                      <div className="col-span-9 lg:col-span-5 mb-12 lg:mb-0 py-10 lg:py-12 px-6 lg:px-12 flex flex-wrap ">
                         <div className="w-full mb-auto">
-                          <h2 className="font-black text-[clamp(46px,_4.45vw,_86px)] leading-[0.9] mb-12 lg:mb-32 uppercase max-w-[750px]">Make The Character Yours</h2>
+                          <h2 className="font-black text-[clamp(46px,_4.45vw,_86px)] leading-[0.9] mb-12 lg:mb-32 uppercase max-w-[750px] ">Make The Character Yours</h2>
                         </div>
                         <div className="w-full mt-auto">
                           <div className="content mb-6 lg:mb-12 w-11/12">
@@ -235,7 +235,7 @@ export default function Community(initialData) {
               </div>
               <div className="w-full border-b border-black/50 hidden lg:block">
                 <div className="grid grid-cols-12">
-                  <div className="col-span-10 col-start-2 lg:col-span-10 lg:col-start-2 lg:border-l lg:border-r border-black/50 h-[8vw]">
+                  <div className="col-span-12 lg:col-span-10 lg:col-start-2 lg:border-l lg:border-r border-black/50 h-[8vw]">
                     <div className="grid grid-cols-10">
                       <div className="col-span-9 lg:col-span-5">
                       </div>
@@ -251,9 +251,9 @@ export default function Community(initialData) {
 
             <div className="bg-pink/20">
               <div className="grid grid-cols-12 pt-[15vw] lg:pt-[12vw] pb-4 lg:pb-[3vw]">
-                <div className="col-span-10 col-start-2 lg:col-span-10 lg:col-start-2">
+                <div className="col-span-12 lg:col-span-10 lg:col-start-2">
                   <div className="grid grid-cols-10">
-                    <div className="col-span-9 lg:col-span-9 flex flex-wrap">
+                    <div className="col-span-9 lg:col-span-9 flex flex-wrap px-6 lg:px-0">
                       <h2 className="display-text">Our Roadmap</h2>
                     </div>
                   </div>
@@ -264,16 +264,16 @@ export default function Community(initialData) {
                   <div className="relative overflow-hidden" key={i}>
                     <div className={`w-full ${i == 0 && 'border-t'} border-b border-black/50`}>
                       <div className="grid grid-cols-12">
-                        <div className="col-span-10 col-start-2 lg:col-span-10 lg:col-start-2 lg:border-l lg:border-r border-black/50">
+                        <div className="col-span-12 lg:col-span-10 lg:col-start-2 lg:border-l lg:border-r border-black/50">
                           <div className="grid grid-cols-10">
-                            <div className="col-span-9 lg:col-span-5 mb-12 lg:mb-0 py-10 lg:py-12 lg:px-12 flex flex-wrap">
+                            <div className="col-span-9 lg:col-span-5 mb-12 lg:mb-0 py-10 lg:py-12 px-6 lg:px-12 flex flex-wrap">
                               <div className="w-full mb-auto">
                                 <span className="uppercase text-base tracking-widest mb-5 lg:mb-8 block font-medium">{e.date}</span>
                                 <h2 className="font-black text-[clamp(46px,_4.45vw,_86px)] leading-[0.9] mb-12 lg:mb-32 uppercase">{e.heading}</h2>
                               </div>
                               <div className="w-full mt-auto">
                                 <div className="w-11/12">
-                                  <p className="font-bold text-xl lg:text-2xl xl:text-3xl uppercase w-10/12 tracking-wide mb-0">{e.text}</p>
+                                  <p className="font-bold text-xl lg:text-2xl xl:text-3xl uppercase w-full lg:w-10/12 tracking-wide mb-0">{e.text}</p>
                                 </div>
                               </div>
                             </div>

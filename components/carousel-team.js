@@ -19,7 +19,7 @@ export const CarouselTeam = ({items}) => {
 
   return (
     <div className="embla embla--team">
-      <div className="w-[91.05vw] ml-auto flex flex-wrap mb-6">
+      <div className="w-full lg:w-[91.05vw] ml-auto flex flex-wrap mb-6 px-6 lg:px-0">
         <div className="flex-1">
         <h2 className="font-bold text-xl lg:text-2xl xl:text-3xl leading-[0.9] lg:leading-[0.9] xl:leading-[0.9] uppercase">Our Partners &amp; Investors</h2>
         </div>

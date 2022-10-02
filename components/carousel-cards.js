@@ -22,7 +22,7 @@ export const CarouselCards = ({ heading, items }) => {
 
   return (
     <div className="embla embla--card relative">
-      <div className="w-[91.05vw] lg:w-[93vw] ml-auto flex flex-wrap mb-6">
+      <div className="w-[100vw] lg:w-[93vw] ml-auto flex flex-wrap mb-6 px-6 lg:px-0">
         <div className="flex-1">
           { heading && (
             <h2 className="font-black text-[clamp(40px,_4vw,_64px)] leading-[0.9] uppercase">{heading}</h2>

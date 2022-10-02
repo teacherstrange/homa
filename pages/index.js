@@ -271,7 +271,7 @@ export default function Home(initialData) {
 
               <div className="w-full border-b border-black/50 pb-56 md:pb-0 relative z-10">
                 <div className="grid grid-cols-12 max-w-screen-3xl mx-auto">
-                  <div className="col-span-10 col-start-2 md:col-span-10 md:col-start-2 md:border-l md:border-r border-black/50 py-[5vw] md:px-10">
+                  <div className="col-span-12  md:col-span-10 md:col-start-2 md:border-l md:border-r border-black/50 py-[5vw] px-6 md:px-10">
                     <div className="grid grid-cols-12 pt-[4vw] pb-[10vw]">
                       <div className="col-span-12 lg:col-span-3 mb-5 lg:mb-0">
                         <GlobeIcon className="w-[40%] max-w-[50px] lg:max-w-[100px] lg:mx-auto" />
@@ -580,7 +580,7 @@ export default function Home(initialData) {
               <div className="grid grid-cols-12 py-12 lg:pt-[15vw] lg:pb-[20.5vw] px-6 lg:px-24 xl:px-32 max-w-screen-3xl mx-auto">
                 
                 <div className="col-span-12 lg:col-span-7 z-10 mb-12 lg:mb-0">
-                  <h2 className="font-black text-[clamp(50px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase">There’s Hope.<br/>Then there’s Homa.</h2>
+                  <h2 className="font-black text-[clamp(43px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase">There’s Hope.<br/>Then there’s Homa.</h2>
                   <div className="content max-w-3xl mb-6 xl:mb-8 w-10/12">
                     <p>With us, every step of your game’s build and launch phase – from ideation right through to monetization - is managed by experts and tested, tweaked and improved by data-rich technology.</p>
 

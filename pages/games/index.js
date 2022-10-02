@@ -150,7 +150,7 @@ export default function Games(initialData) {
             <Container>
               <div className="flex flex-wrap py-12 lg:pt-[10vw] lg:pb-[5vw] xl:pb-0 overflow-hidden">
                 <div className="w-full lg:w-1/2">
-                  <h2 className="font-black text-[clamp(48px,_4.17vw,_80px)] leading-[0.95] mb-8 lg:mb-[5vw] uppercase w-11/12 break-words">From Customers<br/>to partners</h2>
+                  <h2 className="font-black text-[clamp(44px,_4.17vw,_80px)] leading-[0.95] mb-8 lg:mb-[5vw] uppercase w-11/12 break-words">From Customers<br/>to partners</h2>
 
                   <div className="w-10/12 content mb-8 lg:mb-12 max-w-[720px]">
                     <p>{gamesLanding.fromCustomersToCollaboratorsText}</p>
@@ -239,7 +239,7 @@ export default function Games(initialData) {
               <div className="grid grid-cols-12 py-12 lg:py-[10vw] px-6 xl:px-24 max-w-screen-3xl mx-auto">
                 
                 <div className="col-span-12 z-10">
-                  <h2 className="font-black text-[clamp(50px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase w-[70%] lg:w-[50%] max-w-[800px]">How we get your game in lights</h2>
+                  <h2 className="font-black text-[clamp(44px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase w-[85%] lg:w-[50%] max-w-[800px]">How we get your game in lights</h2>
 
                   <div className="w-full flex flex-wrap border border-black/50 mb-6 lg:mb-8">
                     <div className="w-full lg:w-1/2 xl:w-1/4 border-b xl:border-b-0 lg:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
@@ -325,7 +325,7 @@ export default function Games(initialData) {
                 </video> */}
               </div>
 
-              <div className="grid grid-cols-12 py-12 pb-[85vw] lg:py-[10vw] px-6 xl:px-10 max-w-screen-3xl mx-auto">
+              <div className="grid grid-cols-12 py-12 pb-12 lg:py-[10vw] px-6 xl:px-10 max-w-screen-3xl mx-auto">
                 <div className="col-span-12 lg:col-span-2 relative z-10">
                   <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">Our Team</span>
                 </div>
@@ -342,7 +342,7 @@ export default function Games(initialData) {
                         <div className={`w-full border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10 ${(i + 1) == gamesLanding.peopleYoullMeet.length ? '' : 'border-b' }`} key={i}>
                           <h3 className="font-bold text-xl lg:text-2xl xl:text-3xl leading-[0.95] mb-4 lg:mb-6 uppercase">{e.heading}</h3>
 
-                          <div className="content content--small w-9/12 lg:w-11/12">
+                          <div className="content content--small w-11/12 lg:w-11/12">
                             <p>{e.text}</p>
                           </div>
                         </div>
