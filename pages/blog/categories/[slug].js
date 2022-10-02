@@ -10,7 +10,6 @@ import { NextSeo } from 'next-seo';
 import DayInfo from '@/components/day-info';
 import MousePosition from '@/components/mouse-position';
 import Link from 'next/link';
-import SanityImage from '@/components/sanity-image';
 import BlogCard from '@/components/blog-card';
 
 const query = `{

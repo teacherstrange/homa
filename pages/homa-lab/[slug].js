@@ -9,18 +9,16 @@ import { fade } from '@/helpers/transitions'
 import Layout from '@/components/layout'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
-import Container from '@/components/container'
 import FooterCta from '@/components/footer-cta'
 
 // Sanity
 import SanityPageService from '@/services/sanityPageService'
 import Image from 'next/image'
-import Link from 'next/link'
 import { ScrollParallax } from 'react-just-parallax'
 import SanityImage from '@/components/sanity-image'
 import TextScrambler from '@/components/text-scrambler'
-import GridOverlay from '@/components/grid-overlay'
 import GridOverlayDense from '@/components/grid-overlay-dense'
+import ScramblePillButton from '@/components/scramble-pill-button'
 
 const query = `{
   "product": *[_type == "products" && slug.current == $slug][0] {
@@ -138,7 +136,7 @@ export default function HomaLabChild(initialData) {
 
                         {e.sectionDownloadsLinks?.map((e, i) => {
                           return (
-                            <a key={i} className="inline-block flex-shrink-0 border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white mr-3 mb-3" href={e.buttonUrl} target="_blank" rel="noopener noreferrer">{e.buttonText}</a>
+                            <ScramblePillButton href={e.buttonUrl} label={e.buttonText} key={i} className="mr-3 mb-3" />
                           )
                         })}
                       </div>
@@ -177,7 +175,7 @@ export default function HomaLabChild(initialData) {
                 {product.contentSections?.map((e, i) => {
                   return (
                     <>
-                      <div className={`w-full ${i + 1 != 9 && 'border-b border-black/50'} px-6 xl:px-10 py-6 xl:py-10 flex flex-wrap`}>
+                      <div className={`w-full ${i + 1 != product.contentSections.length && 'border-b border-black/50'} px-6 xl:px-10 py-6 xl:py-10 flex flex-wrap`}>
                         <div className="w-full lg:w-3/4">
                           <h3 className="font-black text-5xl lg:text-6xl xl:text-7xl leading-[0.95] mb-12 lg:mb-24 uppercase max-w-[500px] xl:max-w-none">{e.title}</h3>
 
@@ -188,7 +186,7 @@ export default function HomaLabChild(initialData) {
 
                             {e.sectionDownloadsLinks?.map((e, i) => {
                               return (
-                                <a key={i} className="inline-block flex-shrink-0 border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white mr-3 mb-3" href={e.buttonUrl} target="_blank" rel="noopener noreferrer">{e.buttonText}</a>
+                                <ScramblePillButton href={e.buttonUrl} label={e.buttonText} key={i} className="mr-3 mb-3" />
                               )
                             })}
                           </div>
@@ -196,7 +194,7 @@ export default function HomaLabChild(initialData) {
                       </div>
                       {e.sectionItems?.map((e, i) => {
                         return (
-                          <div className={`w-full ${i + 1 != 9 && 'border-b border-black/50'} px-6 xl:px-10 py-6 xl:py-10 flex flex-wrap`}>
+                          <div className={`w-full ${(i + 1) != e.sectionItems?.length && 'border-b border-black/50'} px-6 xl:px-10 py-6 xl:py-10 flex flex-wrap`}>
                             <div className="w-full">
                               <h3 className="font-black text-5xl lg:text-6xl xl:text-7xl leading-[0.95] mb-12 lg:mb-24 uppercase max-w-[500px] xl:max-w-none">0{i + 1}</h3>
 
@@ -212,7 +210,7 @@ export default function HomaLabChild(initialData) {
                 })}
                 {product.sectionItemsSingleSection?.map((e, i) => {
                   return (
-                    <div className={`w-full ${i + 1 != 9 && 'border-b border-black/50'} px-6 xl:px-10 py-6 xl:py-10 flex flex-wrap`}>
+                    <div className={`w-full ${i + 1 != product.sectionItemsSingleSection.length && 'border-b border-black/50'} px-6 xl:px-10 py-6 xl:py-10 flex flex-wrap`}>
                       <div className="w-full">
                         <h3 className="font-black text-5xl lg:text-6xl xl:text-7xl leading-[0.95] mb-12 lg:mb-24 uppercase max-w-[500px] xl:max-w-none">0{i + 1}</h3>
 

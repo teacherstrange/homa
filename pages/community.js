@@ -9,17 +9,12 @@ import { fade } from '@/helpers/transitions'
 import Layout from '@/components/layout'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
-import Container from '@/components/container'
-import FooterCta from '@/components/footer-cta'
 import { ScrollParallax } from 'react-just-parallax'
 import Image from 'next/image'
 import DayInfo from '@/components/day-info'
 import MousePosition from '@/components/mouse-position'
 import DiscordIcon from "@/icons/discord.svg"
 import TwitterIcon from "@/icons/twitter.svg"
-import TikTokIcon from "@/icons/tiktok.svg"
-import Link from 'next/link'
-import { CarouselPhone } from '@/components/carousel-phone'
 import { CarouselTeam } from '@/components/carousel-team'
 import AccordionList from '@/components/accordion'
 import TextScrambler from '@/components/text-scrambler'
@@ -29,6 +24,7 @@ import SanityPageService from '@/services/sanityPageService'
 import SanityImage from '@/components/sanity-image'
 import GridOverlay from '@/components/grid-overlay'
 import { CarouselTikTok } from '@/components/carousel-tiktok'
+import ScramblePillButton from '@/components/scramble-pill-button'
 
 const query = `{
   "team": *[_type == "team"]{
@@ -51,13 +47,25 @@ const query = `{
   },
   "community": *[_type == "community"][0]{
     title,
+    heroImage {
+      asset-> {
+        ...
+      },
+      caption,
+      alt,
+      hotspot {
+        x,
+        y
+      },
+    },
     gangQAndA[] {
       question,
       answer
     },
     tikToks[] {
       url,
-      video
+      video,
+      postDate
     },
     roadmap[] {
       date,
@@ -110,12 +118,9 @@ export default function Community(initialData) {
             <div className="w-full h-full min-h-screen lg:min-h-[110vh] bg-pink/30 pt-24 lg:pt-40 xl:pt-52 px-6 xl:px-10 mx-auto relative overflow-hidden">
               <div className="w-full h-full absolute inset-0 z-0 object-cover object-top scale-[1.07]">
                 <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.035}>
-                  <Image
-                    src="/images/community.jpg"
-                    alt="Community Landscape"
+                  <SanityImage
+                    image={community.heroImage}
                     layout="fill"
-                    quality={75}
-                    priority
                     className="w-full h-full absolute inset-0 z-0 object-cover object-top"
                   />
                 </ScrollParallax>
@@ -127,7 +132,7 @@ export default function Community(initialData) {
               </div>
 
               <div className="max-w-screen-3xl mx-auto">
-                <h1 className="font-black text-[clamp(55px,_8.5vw,_180px)] leading-[0.95] mb-4 uppercase relative z-10 w-11/12 lg:w-full"><TextScrambler text="Out of the game, into the universe." seed={30} step={2} /></h1>
+                <h1 className="font-black text-[clamp(55px,_8.5vw,_180px)] leading-[0.95] tracking-tight mb-4 uppercase relative z-10 w-11/12 lg:w-full"><TextScrambler text="Out of the game, into the universe." seed={30} step={2} /></h1>
               </div>
             </div>
 
@@ -209,7 +214,7 @@ export default function Community(initialData) {
                           </div>
 
 
-                          <a href="https://www.homagang.xyz/" target="_blank" rel="noopener noreferrer" className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white">Learn More</a>
+                          <ScramblePillButton href="https://homagang.xyz" label="Learn More" />
                         </div>
                       </div>
                       <div className="col-span-10 lg:col-span-5 lg:col-start-6 relative overflow-hidden">
@@ -403,7 +408,7 @@ export default function Community(initialData) {
                         <span className="w-full hidden lg:flex items-center pt-3 opacity-0 group-hover:opacity-100 group-focus:opacity-100">
                           <span className="inline-block border border-black text-xs uppercase tracking-widest px-2 py-1 font-medium rounded-sm">Join</span>
 
-                          <span className="inline-block ml-auto text-xs tracking-widest font-medium">/homegang</span>
+                          <span className="inline-block ml-auto text-xs tracking-widest font-medium">/homagang</span>
                         </span>
                       </a>
                     </li>

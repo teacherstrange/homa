@@ -45,7 +45,7 @@ export default function SocialScroller() {
                 <span className="w-full hidden lg:flex items-center pt-3 opacity-0 group-hover:opacity-100 group-focus:opacity-100">
                   <span className="inline-block border border-white text-xs uppercase tracking-widest px-2 py-1 font-medium rounded-sm">Join</span>
 
-                  <span className="inline-block ml-auto text-xs tracking-widest font-medium">/homegang</span>
+                  <span className="inline-block ml-auto text-xs tracking-widest font-medium">/homagang</span>
                 </span>
               </a>
             </li>
@@ -87,7 +87,7 @@ export default function SocialScroller() {
                 <span className="w-full hidden lg:flex items-center pt-3 opacity-0 group-hover:opacity-100 group-focus:opacity-100">
                   <span className="inline-block border border-white text-xs uppercase tracking-widest px-2 py-1 font-medium rounded-sm">Join</span>
 
-                  <span className="inline-block ml-auto text-xs tracking-widest font-medium">/homegang</span>
+                  <span className="inline-block ml-auto text-xs tracking-widest font-medium">/homagang</span>
                 </span>
               </a>
             </li>
@@ -170,7 +170,7 @@ export default function SocialScroller() {
                 <span className="w-full hidden lg:flex items-center pt-3 opacity-0 group-hover:opacity-100 group-focus:opacity-100">
                   <span className="inline-block border border-white text-xs uppercase tracking-widest px-2 py-1 font-medium rounded-sm">Join</span>
 
-                  <span className="inline-block ml-auto text-xs tracking-widest font-medium">/homegang</span>
+                  <span className="inline-block ml-auto text-xs tracking-widest font-medium">/homagang</span>
                 </span>
               </a>
             </li>

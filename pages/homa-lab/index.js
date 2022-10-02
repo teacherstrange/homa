@@ -14,7 +14,6 @@ import FooterCta from '@/components/footer-cta'
 import { MouseParallax, ScrollParallax } from 'react-just-parallax'
 import DayInfo from '@/components/day-info'
 import MousePosition from '@/components/mouse-position'
-import Link from 'next/link'
 import Image from 'next/image'
 import PixelatedImage from '@/components/pixelated-image'
 import TextScrambler from '@/components/text-scrambler'
@@ -52,6 +51,17 @@ const query = `{
   },
   "homaLab": *[_type == "homaLab"][0] {
     title,
+    heroImage {
+      asset-> {
+        ...
+      },
+      caption,
+      alt,
+      hotspot {
+        x,
+        y
+      },
+    },
     seo {
       ...,
       shareGraphic {
@@ -87,12 +97,9 @@ export default function HomaLab(initialData) {
             <div className="w-full h-full min-h-screen lg:min-h-[110vh] bg-pink/30 pt-24 lg:pt-40 xl:pt-52 border-b border-black/50 px-6 xl:px-10 mx-auto relative overflow-hidden">
               <div className="w-full h-full absolute inset-0 z-0 object-cover object-top scale-[1.07]">
                 <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.035}>
-                  <Image
-                    src="/images/homa-lab.jpg"
-                    alt="Homa Lab Landscape"
+                  <SanityImage
+                    image={homaLab.heroImage}
                     layout="fill"
-                    quality={75}
-                    priority
                     className="w-full h-full absolute inset-0 z-0 object-cover object-top"
                   />
                 </ScrollParallax>
@@ -104,10 +111,11 @@ export default function HomaLab(initialData) {
               </div>
 
               <div className="max-w-screen-3xl mx-auto relative z-10">
-                <h1 className="font-black text-[clamp(50px,_8.5vw,170px)] leading-[0.95] mb-16 lg:mb-32 uppercase relative z-10 w-11/12 lg:w-full"><TextScrambler text="If you’re not using this, you’re just playing around" seed={50} step={3} /></h1>
+                <h1 className="font-black text-[clamp(50px,_8.5vw,170px)] leading-[0.95] tracking-tight mb-16 lg:mb-32 uppercase relative z-10 w-11/12 lg:w-full"><TextScrambler text="If you’re not using this, you’re just playing around" seed={50} step={3} /></h1>
 
-                <a href="https://lab-v2.homagames.com/login" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-12 py-6 uppercase tracking-wide w-1/2 text-center">
-                  Submit your game
+                <a href="https://lab-v2.homagames.com/login" target="_blank" rel="noopener noreferrer" class="roll-btn inline-block">
+                  <span class="roll-btn__front">Submit your game</span>
+                  <span class="roll-btn__back">Submit your game</span>
                 </a>
               </div>
             </div>
@@ -134,7 +142,7 @@ export default function HomaLab(initialData) {
                           height={1236}
                         /> */}
 
-                        <PixelatedImage image={'/images/princess.webp'} width={994} height={1612} />
+                        <PixelatedImage image={'/images/girl-new.webp'} width={1555} height={2729} />
                       </div>
                     </ScrollParallax>
                   </MouseParallax>
@@ -234,13 +242,10 @@ export default function HomaLab(initialData) {
                       </div>
                     </div>
                   </div>
-                    
-                  <a
-                    href="https://academy.homagames.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block border border-black/50 font-medium uppercase leading-none py-6 px-10 rounded-sm bg-black text-white hover:bg-black hover:text-white focus:bg-black focus:text-white lg:w-1/3 2xl:w-1/3 text-center">
-                      Learn More
+
+                  <a href="https://academy.homagames.com" target="_blank" rel="noopener noreferrer" class="roll-btn block lg:w-1/3 2xl:w-1/3 text-center">
+                    <span class="roll-btn__front">Learn More</span>
+                    <span class="roll-btn__back">Learn More</span>
                   </a>
                 </div>
               </div>

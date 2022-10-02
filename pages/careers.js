@@ -9,10 +9,6 @@ import { fade } from '@/helpers/transitions'
 import Layout from '@/components/layout'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
-import Container from '@/components/container'
-import FooterCta from '@/components/footer-cta'
-import Image from 'next/image'
-import { ScrollParallax } from 'react-just-parallax'
 import DayInfo from '@/components/day-info'
 import MousePosition from '@/components/mouse-position'
 import TextScrambler from '@/components/text-scrambler'
@@ -32,8 +28,6 @@ import WorldIcon from '@/icons/world.svg'
 
 // Sanity
 import SanityPageService from '@/services/sanityPageService'
-import Marquee from 'react-fast-marquee'
-import SanityImage from '@/components/sanity-image'
 
 const query = `{
   "careers": *[_type == "careers"][0]{

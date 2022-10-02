@@ -22,6 +22,7 @@ import SkipButtons from './skip-buttons'
 import TextScrambler from './text-scrambler'
 import SanityImage from './sanity-image'
 import BlogCard from './blog-card'
+import ScramblePillButton from './scramble-pill-button'
 
 export const articlesPerPage = 24;
 
@@ -95,9 +96,7 @@ export default function BlogBody({blog, numberOfArticles, categories, subPage, i
                   <div className="w-full lg:w-2/3 flex flex-nowrap overflow-x-scroll lg:overflow-hidden lg:flex-wrap ">
                     {categories?.map((e, i) => {
                       return (
-                        <Link href={`/blog/categories/${e.slug.current}`}>
-                          <a className="inline-block flex-shrink-0 border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white mr-3 mb-3">{e.title}</a>
-                        </Link>
+                        <ScramblePillButton href={`/blog/categories/${e.slug.current}`} label={e.title} internal className="mr-3 mb-3" />
                       )
                     })}
                   </div>
@@ -110,9 +109,7 @@ export default function BlogBody({blog, numberOfArticles, categories, subPage, i
                 <div className="flex flex-wrap">
                   <div className="w-full lg:w-1/2 py-6 lg:py-10 pl-6 xl:pl-10 pr-6 xl:pr-10">
                     <div className="max-w-[920px] ml-auto">
-                      <Link href={`/blog/categories/${blog[0].category.slug.current}`}>
-                        <a className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white mr-3 mb-6 lg:mb-12">{blog[0].category.title}</a>
-                      </Link>
+                      <ScramblePillButton href={`/blog/categories/${blog[0].category.slug.current}`} label={blog[0].category.title} internal className="mr-3 mb-6 lg:mb-12" />
 
                       <Link href={`/blog/${blog[0].slug.current}`}>
                         <a className="block">

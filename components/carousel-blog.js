@@ -43,21 +43,21 @@ export const CarouselBlog = ({items}) => {
 
             return (
               <Link href={`/blog/${e.slug.current}`}>
-                <a className="embla__slide hover:bg-pink focus:bg-pink" key={i}>
-                  <div className="w-full bg-gray-100 aspect-square border-b border-black/50 relative overflow-hidden">
+                <a className="embla__slide group" key={i}>
+                  <div className="w-full bg-gray-100 aspect-square border-b border-black/50 relative overflow-hidden group-hover:bg-pink group-focus:bg-pink">
                     <SanityImage
                       image={e.heroImage}
                       layout="fill"
                       className="block w-full h-full absolute inset-0 aspect-square scale-[1.03] embla__slide-inner-blur"
                     />
                 </div>
-                  <div className="embla__slide-inner">
+                  <div className="embla__slide-inner group-hover:bg-pink group-focus:bg-pink">
                     <div className="embla__slide-inner-blur">
                       <h2 className="font-bold text-lg lg:text-xl xl:text-2xl uppercase w-full mb-12 md:mb-20 lg:mb-28 xl:mb-32">{e.title}</h2>
 
                       <div className="flex items-end">
                         {e.category && (
-                          <span className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white">{e.category.title}</span>
+                          <span className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm">{e.category.title}</span>
                         )}
 
                         <span className="block uppercase text-sm tracking-widest font-medium ml-auto">{da} {mo} {ye}</span>

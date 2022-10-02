@@ -8,7 +8,6 @@ import { fade } from '@/helpers/transitions'
 import Layout from '@/components/layout'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
-import Container from '@/components/container'
 import FooterCta from '@/components/footer-cta'
 import MousePosition from '@/components/mouse-position'
 import DayInfo from '@/components/day-info'
@@ -18,7 +17,6 @@ import SocialScroller from '@/components/social-scroller'
 import { useRef } from 'react'
 import PixelatedImage from '@/components/pixelated-image'
 import { CarouselBlog } from '@/components/carousel-blog'
-import Marquee from "react-fast-marquee";
 
 import MobileHandIcon from '@/icons/mobile-hand.svg'
 import GlobeIcon from '@/icons/globe.svg'
@@ -27,12 +25,10 @@ import PhoneIcon from '@/icons/phone.svg'
 
 // Sanity
 import SanityPageService from '@/services/sanityPageService'
-import TestWebgl from '@/components/test-webgl'
 import TextScrambler from '@/components/text-scrambler'
-import GridOverlay from '@/components/grid-overlay'
-import SanityImage from '@/components/sanity-image'
 import GridOverlayDense from '@/components/grid-overlay-dense'
 import ScramblePillButton from '@/components/scramble-pill-button'
+import SanityImage from '@/components/sanity-image'
 
 const query = `{
   "blog": *[_type == "blog"][0...5]{
@@ -68,6 +64,17 @@ const query = `{
   },
   "home": *[_type == "home"][0]{
     title,
+    heroImage {
+      asset-> {
+        ...
+      },
+      caption,
+      alt,
+      hotspot {
+        x,
+        y
+      },
+    },
     introText,
     makeAGameCtaHeading,
     makeAGameCtaText,
@@ -126,12 +133,9 @@ export default function Home(initialData) {
           <m.div variants={fade} className="w-full h-full min-h-screen lg:min-h-[115vh] bg-pink/30 pt-24 lg:pt-40 xl:pt-52 border-b border-black/50 px-6 xl:px-10 mx-auto relative overflow-hidden">
               <div className="w-full h-full absolute inset-0 z-0 object-cover object-top scale-y-[1.07] -scale-x-100">
                 <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.036}>
-                  <Image
-                    src="/images/home.jpg"
-                    alt="Character Test"
+                  <SanityImage
+                    image={home.heroImage}
                     layout="fill"
-                    quality={75}
-                    priority
                     className="w-full h-full absolute inset-0 z-0 object-cover object-top"
                   />
                 </ScrollParallax>
@@ -175,7 +179,7 @@ export default function Home(initialData) {
                 </div>
                 <MouseParallax isAbsolutelyPositioned lerpEase={0.15} strength={0.025}>
                   <ScrollParallax isAbsolutelyPositioned lerpEase={0.15}>
-                    <div className="absolute top-[-15vw] lg:top-auto lg:bottom-[-80%] right-[-5vw] lg:right-[-70%] xl:right-[-90%] w-[55vw] lg:w-[28vw] 2xl:w-[30vw] max-w-[460px] z-0">
+                    <div className="absolute top-[-15vw] lg:top-auto lg:bottom-[-80%] right-[-5vw] lg:right-[-70%] xl:right-[-90%] w-[55vw] lg:w-[28vw] 2xl:w-[30vw] max-w-[480px] z-0">
                       {/* <Image
                         src="/images/character-test.webp"
                         alt="Character Test"
@@ -184,7 +188,7 @@ export default function Home(initialData) {
                         height={1236}
                       /> */}
 
-                      <PixelatedImage image={'/images/character-test.webp'} width={'930'} height={1236} />
+                      <PixelatedImage image={'/images/panda-new.webp'} width={2162} height={2785} />
                     </div>
                   </ScrollParallax>
                 </MouseParallax>

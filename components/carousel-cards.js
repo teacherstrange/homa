@@ -21,7 +21,7 @@ export const CarouselCards = ({ heading, items }) => {
   }, [emblaApi])
 
   return (
-    <div className="embla embla--card">
+    <div className="embla embla--card relative">
       <div className="w-[91.05vw] lg:w-[93vw] ml-auto flex flex-wrap mb-6">
         <div className="flex-1">
           { heading && (
@@ -38,6 +38,10 @@ export const CarouselCards = ({ heading, items }) => {
           </button>
         </div>
       </div>
+
+      <button class="absolute hidden lg:block lg:top-[8vw] xl:top-[7vw] 2xl:top-[5vw] left-0 bottom-0 w-[6%] h-full bg-transparent z-[100]" onClick={scrollPrev}></button>
+      
+      <button class="absolute hidden lg:block lg:top-[8vw] xl:top-[7vw] 2xl:top-[5vw] right-0 left-auto bottom-0 w-[44%] h-full bg-transparent z-[100]" onClick={scrollNext}></button>
 
       <div class="embla__viewport w-full border border-r-0 border-black/50 ml-auto bg-opacity-70 overflow-hidden" ref={emblaRef}>
         <div className="embla__container">

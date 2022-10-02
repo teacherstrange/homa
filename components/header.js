@@ -9,7 +9,6 @@ import { useRouter } from "next/router"
 import Link from "next/link"
 import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from "body-scroll-lock"
 import useScrollDirection from '@/helpers/scroll-direction';
-import TextScrambler from "./text-scrambler"
 
 export default function Header() {
   const scrollDirection = useScrollDirection();
@@ -187,7 +186,7 @@ export default function Header() {
                 />
               </li>
 
-              <li>
+              <li className="overflow-hidden">
                 <a
                   href="https://lab-v2.homagames.com/login" target="_blank" rel="noopener noreferrer"
                   className="roll-btn roll-btn--header block mb-0 pb-0 lg:h-[70px] xl:h-[80px]"

@@ -18,11 +18,11 @@ export const CarouselTikTok = ({ heading, items }) => {
   }, [emblaApi])
 
   return (
-    <div className="embla embla--games">
+    <div className="embla embla--games relative">
       <div className="w-[91.05vw] lg:w-[93vw] ml-auto flex flex-wrap mb-6">
         <div className="flex-1">
           { heading && (
-            <h2 className="font-black text-[clamp(40px,_4.45vw,_86px)] leading-[0.9] uppercase">{heading}</h2>
+            <h2 className="font-black text-[clamp(40px,_4vw,_64px)] leading-[0.9] uppercase">{heading}</h2>
           )}
         </div>
 
@@ -36,15 +36,24 @@ export const CarouselTikTok = ({ heading, items }) => {
         </div>
       </div>
 
+      <button class="absolute hidden lg:block lg:top-[8vw] xl:top-[7vw] 2xl:top-[5vw] left-0 bottom-0 w-[6%] h-full bg-transparent z-[100]" onClick={scrollPrev}></button>
+      
+      <button class="absolute hidden lg:block lg:top-[8vw] xl:top-[7vw] 2xl:top-[5vw] right-0 left-auto bottom-0 w-[44%] h-full bg-transparent z-[100]" onClick={scrollNext}></button>
+
       <div class="embla__viewport w-full border border-r-0 border-black/50 ml-auto bg-opacity-70 overflow-hidden" ref={emblaTikTokRef}>
         <div className="embla__container">
           {items.map((e, i) => {
+            let d = new Date(e.postDate);
+            let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d);
+            let mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(d);
+            let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d);
+
             return (
               <div className="embla__slide">
                 <div className="embla__slide-inner flex flex-wrap">
                   <div className="flex flex-wrap w-full mb-auto">
                     <span className="block uppercase font-medium tracking-widest text-sm leading-none lg:text-base lg:leading-none flex-1">@Homagames</span>
-                    <span className="block uppercase font-medium tracking-widest text-sm leading-none lg:text-base lg:leading-none flex-1 text-right">Something</span>
+                    <span className="block uppercase font-medium tracking-widest text-sm leading-none lg:text-base lg:leading-none flex-1 text-right">{da} {mo} {ye}</span>
                   </div>
 
                   <div className="w-full flex justify-center embla__slide-inner-blur my-auto lg:py-0">

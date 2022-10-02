@@ -9,13 +9,11 @@ import { fade } from '@/helpers/transitions'
 import Layout from '@/components/layout'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
-import Container from '@/components/container'
 import FooterCta from '@/components/footer-cta'
 import { ScrollParallax } from 'react-just-parallax'
 import MousePosition from '@/components/mouse-position'
 import DayInfo from '@/components/day-info'
 import Link from 'next/link'
-import Image from 'next/image'
 
 // Sanity
 import SanityPageService from '@/services/sanityPageService'

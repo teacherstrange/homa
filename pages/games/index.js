@@ -15,9 +15,7 @@ import { MouseParallax, ScrollParallax } from 'react-just-parallax'
 import MousePosition from '@/components/mouse-position'
 import DayInfo from '@/components/day-info'
 import Image from 'next/image'
-import Link from 'next/link'
 import PixelatedImage from '@/components/pixelated-image'
-import { CarouselPhone } from '@/components/carousel-phone'
 import TextScrambler from '@/components/text-scrambler'
 import { CarouselGames } from '@/components/carousel-games'
 import { CarouselCards } from '@/components/carousel-cards'
@@ -116,20 +114,21 @@ export default function Games(initialData) {
               </div>
 
               <div className="max-w-screen-3xl mx-auto">
-                <h1 className="font-black text-[clamp(50px,_9vw,190px)] leading-[0.95] mb-4 uppercase relative z-10 w-11/12 lg:w-full"><TextScrambler text="Win with the ease of cheating" seed={15} step={2} /></h1>
+                <h1 className="font-black text-[clamp(50px,_9vw,190px)] leading-[0.95] tracking-tight mb-4 uppercase relative z-10 w-11/12 lg:w-full"><TextScrambler text="Win with the ease of cheating" seed={15} step={2} /></h1>
 
                 <div className="w-full lg:w-[50%] xl:w-[45%] 2xl:w-[40%] max-w-[600px] pt-[5%] lg:pt-[10%] relative pb-8 lg:pb-0">
                   <div className="relative z-10">
                     <p className="text-lg md:text-xl xl:text-2xl mb-12 lg:mb-16">{gamesLanding.heroIntroText}</p>
 
-                    <a href="https://lab-v2.homagames.com/login" target="_blank" rel="noreferrer noopener" className="bg-black text-white px-12 py-6 uppercase tracking-wide w-1/2 text-center block mb-6 lg:mb-10">
-                      Submit your game
+                    <a href="https://lab-v2.homagames.com/login" target="_blank" rel="noreferrer noopener" class="roll-btn inline-block mb-6 lg:mb-10">
+                      <span class="roll-btn__front">Submit your game</span>
+                      <span class="roll-btn__back">Submit your game</span>
                     </a>
                   </div>
                 </div>
                 
                 <ScrollParallax isAbsolutelyPositioned lerpEase={0.15}>
-                  <div className="absolute bottom-0 right-[10%] md:right-[3%] lg:right-[10%] z-0 w-[75%] lg:w-[65%] xl:w-[40%] max-w-[400px] lg:max-w-[580px] xl:max-w-[650px]">
+                  <div className="absolute bottom-[-25%] right-[14%] md:right-[5%] lg:right-[18%] z-0 w-[30%] lg:w-[17%] xl:w-[15%] max-w-[150px] md:max-w-[180px] lg:max-w-[260px] xl:max-w-[280px]">
                     {/* <Image
                       src="/images/horse.webp"
                       alt="Bee"
@@ -138,7 +137,7 @@ export default function Games(initialData) {
                       height={865}
                       className="w-full"
                     /> */}
-                    <PixelatedImage image={'/images/farmer.webp'} width={1120} height={1186} />
+                    <PixelatedImage image={'/images/farmer-new.webp'} width={325} height={1260} />
                   </div>
                 </ScrollParallax>
               </div>

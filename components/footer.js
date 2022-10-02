@@ -8,6 +8,7 @@ import InstagramIcon from "@/icons/instagram.svg"
 import HomaLogoIcon from "@/icons/homa-logo.svg"
 import AppleAppStoreIcon from "@/icons/apple-app-store.svg"
 import GoogleAppStoreIcon from "@/icons/google-app-store.svg"
+import Link from "next/link"
 
 export default function Footer() {
   return (
@@ -36,8 +37,12 @@ export default function Footer() {
             <div className="w-full 2xl:space-x-8 hidden md:flex md:flex-wrap">
               <a href="mailto:bonjour@homagames.com" className="w-full 2xl:w-auto mb-1 2xl:mb-0 text-white/40 block hover:opacity-75 focus:opacity-75">bonjour@homagames.com</a>
               <a href="tel:+33142861324" className="w-full 2xl:w-auto mb-1 2xl:mb-0 text-white/40 block hover:opacity-75 focus:opacity-75">+33 1 42 86 13 24</a>
-              <span className="w-full 2xl:w-auto mb-1 2xl:mb-0 text-white/40 block 2xl:mr-6">Privacy</span>
-              <span className="w-full 2xl:w-auto mb-1 2xl:mb-0 text-white/40 block">Terms</span>
+              <Link href="/privacy">
+                <a className="w-full 2xl:w-auto mb-1 2xl:mb-0 text-white/40 block 2xl:mr-6 hover:opacity-75 focus:opacity-75">Privacy</a>
+              </Link>
+              {/* <Link href="/terms">
+                <a className="w-full 2xl:w-auto mb-1 2xl:mb-0 text-white/40 block hover:opacity-75 focus:opacity-75">Terms</a>
+              </Link> */}
             </div>
           </div>
         </div>

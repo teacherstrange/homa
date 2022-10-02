@@ -9,7 +9,6 @@ import { fade } from "@/helpers/transitions";
 import Layout from "@/components/layout";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import Container from "@/components/container";
 import FooterCta from "@/components/footer-cta";
 import { MouseParallax, ScrollParallax } from "react-just-parallax";
 import MousePosition from "@/components/mouse-position";
@@ -23,12 +22,22 @@ import PixelatedImage from "@/components/pixelated-image";
 // Sanity
 import SanityPageService from '@/services/sanityPageService'
 import SanityImage from '@/components/sanity-image'
-import Marquee from 'react-fast-marquee'
 import SanityBlockContent from '@sanity/block-content-to-react'
 
 const query = `{
   "about": *[_type == "about"][0]{
     title,
+    heroImage {
+      asset-> {
+        ...
+      },
+      caption,
+      alt,
+      hotspot {
+        x,
+        y
+      },
+    },
     servicesList[] {
       heading,
       text,
@@ -98,12 +107,9 @@ export default function About(initialData) {
                 lerpEase={1}
                 strength={-0.035}
               >
-                <Image
-                  src="/images/who-we-are.jpg"
-                  alt="Who We Are Landscape"
+                <SanityImage
+                  image={about.heroImage}
                   layout="fill"
-                  quality={75}
-                  priority
                   className="w-full h-full absolute inset-0 z-0 object-cover object-top"
                 />
               </ScrollParallax>
@@ -115,7 +121,7 @@ export default function About(initialData) {
             </div>
 
             <div className="max-w-screen-3xl mx-auto">
-              <h1 className="font-black text-[clamp(55px,_9vw,190px)] leading-[0.95] mb-4 uppercase relative z-10 w-11/12 lg:w-full"><TextScrambler text="Mobile gaming’s major players" seed={25} step={2} /></h1>
+              <h1 className="font-black text-[clamp(65px,_9vw,200px)] leading-[0.95] tracking-tigh mb-4 uppercase relative z-10 w-11/12 t lg:w-full"><TextScrambler text="Mobile gaming’s major players" seed={25} step={2} /></h1>
             </div>
           </m.div>
 
@@ -147,7 +153,7 @@ export default function About(initialData) {
                         lerpEase={0.015}
                         zIndex={0}
                       >
-                        <div className="absolute bottom-[-55vw] left-[20vw] md:left-auto md:bottom-[-20vw] md:right-[-10vw] w-[120%] md:w-[66%] z-0">
+                        <div className="absolute bottom-[-55vw] right-[0vw] left-auto lg:right-[0vw] md:bottom-[-10vw] lg:bottom-[-18vw] md:right-[-10vw] w-[45%] md:w-[40%] lg:w-[35%] z-0 max-w-[450px]">
                           {/* <Image
                             src="/images/character-test.webp"
                             alt="Character Test"
@@ -157,9 +163,9 @@ export default function About(initialData) {
                           /> */}
 
                           <PixelatedImage
-                            image={"/images/character-skull.webp"}
-                            width={1982}
-                            height={2046}
+                            image={"/images/skull-new.webp"}
+                            width={1454}
+                            height={2368}
                           />
                         </div>
                       </ScrollParallax>
