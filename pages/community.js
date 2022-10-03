@@ -241,7 +241,7 @@ export default function Community(initialData) {
                           <div className="content mb-6 lg:mb-12 w-11/12">
                             <p>We’re building an interconnected universe where you take ownership of your favorite Homa character and traverse the universe together, playing new games, stacking stats, collecting prizes and running headfirst into adventure.</p>
                             
-                            <p>We call it Homa Gang. Get a character and step inside.</p>
+                            <p>We call it Homagang. Get a character and step inside.</p>
                           </div>
 
 
