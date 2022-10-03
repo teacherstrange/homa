@@ -19,6 +19,7 @@ import SanityImage from '@/components/sanity-image'
 import TextScrambler from '@/components/text-scrambler'
 import GridOverlayDense from '@/components/grid-overlay-dense'
 import ScramblePillButton from '@/components/scramble-pill-button'
+import LocalImage from '@/components/local-image'
 
 const query = `{
   "product": *[_type == "products" && slug.current == $slug][0] {
@@ -167,7 +168,7 @@ export default function HomaLabChild(initialData) {
                     <div className="w-full h-full p-6 xl:p-10 flex items-center justify-center relative z-10">
                       {/* <div className="w-[300px] h-[300px] bg-pink lg:-mt-32 xl:-mt-40"></div> */}
                       <div className="w-[75%]">
-                        <Image
+                        <LocalImage
                           src="/images/graph.webp"
                           layout="responsive"
                           width={1152}
@@ -220,7 +221,7 @@ export default function HomaLabChild(initialData) {
                 })}
                 {product.sectionItemsSingleSection?.map((e, i) => {
                   return (
-                    <div className={`w-full ${i + 1 != product.sectionItemsSingleSection.length && 'border-b border-black/50'} px-6 xl:px-10 py-6 xl:py-10 flex flex-wrap`}>
+                    <div className={`w-full ${i + 1 != product.sectionItemsSingleSection.length && 'border-b border-black/50'} px-6 xl:px-10 py-6 xl:py-10 flex flex-wrap`} key={i}>
                       <div className="w-full">
                         <h3 className="font-black text-5xl lg:text-6xl xl:text-7xl leading-[0.95] mb-12 lg:mb-24 uppercase max-w-[500px] xl:max-w-none">0{i + 1}</h3>
 

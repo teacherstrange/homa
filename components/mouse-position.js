@@ -20,7 +20,7 @@ export default function MousePosition() {
   
   return (
     <div>
-      <span className="block">x 
+      <span className="block tabular-nums">x 
       {mouseCoords.x < 1000 && '0'}{mouseCoords.x}
       &nbsp;:&nbsp;
       y
