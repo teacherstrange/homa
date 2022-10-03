@@ -243,7 +243,6 @@ export default function Community(initialData) {
                             
                             <p>We call it Homagang. Get a character and step inside.</p>
                           </div>
-                          
 
 
                           {/* <ScramblePillButton href="https://homagang.xyz" label="Learn More" /> */}
