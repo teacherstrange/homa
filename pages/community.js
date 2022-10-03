@@ -14,6 +14,7 @@ import Image from 'next/image'
 import DayInfo from '@/components/day-info'
 import MousePosition from '@/components/mouse-position'
 import DiscordIcon from "@/icons/discord.svg"
+import TikTokIcon from "@/icons/tiktok.svg"
 import TwitterIcon from "@/icons/twitter.svg"
 import { CarouselTeam } from '@/components/carousel-team'
 import AccordionList from '@/components/accordion'
@@ -199,6 +200,25 @@ export default function Community(initialData) {
                         </span>
                       </a>
                     </li>
+
+                    <li className="block col-span-6 lg:col-span-6">
+                      <a
+                        href={contact.tikTok}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block group w-full"
+                      >
+                        <span className="w-full aspect-square rounded-[15%] bg-[#E6C3E6]/10 group-hover:bg-white group-focus:bg-white mr-4 flex items-center justify-center">
+                          <TikTokIcon className="w-[50%] text-[#E6C3E6] group-hover:text-black group-focus:text-black" />
+                        </span>
+
+                        <span className="w-full hidden lg:flex items-center pt-3 opacity-0 group-hover:opacity-100 group-focus:opacity-100">
+                          <span className="inline-block border border-white text-xs uppercase tracking-widest px-2 py-1 font-medium rounded-sm">Follow</span>
+
+                          <span className="inline-block ml-auto text-xs tracking-widest font-medium">@homagames</span>
+                        </span>
+                      </a>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -225,7 +245,7 @@ export default function Community(initialData) {
                           </div>
 
 
-                          <ScramblePillButton href="https://homagang.xyz" label="Learn More" />
+                          {/* <ScramblePillButton href="https://homagang.xyz" label="Learn More" /> */}
                         </div>
                       </div>
                       <div className="col-span-10 lg:col-span-5 lg:col-start-6 relative overflow-hidden">
@@ -355,25 +375,26 @@ export default function Community(initialData) {
                 </div>
                 
                 <div className="col-span-12 lg:col-span-5 z-10">
-                  <h2 className="font-black text-[clamp(50px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase">HOMAGANG is a sistergang of  HOMA GAMES</h2>
+                  <h2 className="font-black text-[clamp(50px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase">HOMAGANG is a sistergang of HOMA</h2>
                   <div className="content max-w-3xl mb-8 xl:mb-12 w-10/12">
-                    <p>Homa Games is one of the world’s biggest mobile gaming engines and publishing arms. It’s a gaming technology lab that gives game creators the tools and human expertise needed to turn their creative ideas into commercial hits. Every day more than 10m people around the world play a game built on, or published through Homa.</p>
+                    <p>Homa is one of the world’s biggest mobile gaming engines and publishing arms. It’s a gaming technology lab that gives game creators the tools and human expertise needed to turn their creative ideas into commercial hits. Every day more than 10m people around the world play a game built on, or published through Homa.</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="pb-[8vw] mb-[8vw] border-b border-black/50">
+            <div className="pb-[8vw]">
               <CarouselTeam items={team} />
             </div>
-
-            <div className="mb-[8vw]">
+            
+            {/* Hidden as content not ready... */}
+            {/* <div className="mb-[8vw]">
               <div className="max-w-screen-2xl mx-auto">
                 <div className="px-6 lg:px-24">
                   <AccordionList items={community.gangQAndA} />
                 </div>
               </div>
-            </div>
+            </div> */}
 
             <div className="bg-orange/40 relative overflow-hidden pb-[45vw] lg:pb-0">
               <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.05} zIndex={0}>
