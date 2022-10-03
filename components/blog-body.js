@@ -57,12 +57,22 @@ export const query = `{
       current
     }
   },
-  "numberOfArticles": count(*[_type == "blog"]) 
+  "numberOfArticles": count(*[_type == "blog"]),
+  "contact": *[_type == "contact"][0]{
+    email,
+    phone,
+    twitter,
+    instagram,
+    linkedIn,
+    facebook,
+    tikTok,
+    discord
+  }
 }`
 
 const pageService = new SanityPageService(query)
 
-export default function BlogBody({blog, numberOfArticles, categories, subPage, index}) {
+export default function BlogBody({blog, numberOfArticles, categories, subPage, index, contact}) {
   
   return (
     <Layout>
@@ -176,7 +186,7 @@ export default function BlogBody({blog, numberOfArticles, categories, subPage, i
             </div>
 
             <FooterCta />
-            <Footer />
+            <Footer contact={contact} />
           </m.div>
         </m.div>
       </LazyMotion>

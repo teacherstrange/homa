@@ -78,6 +78,16 @@ const query = `{
         asset->
       }
     }
+  },
+  "contact": *[_type == "contact"][0]{
+    email,
+    phone,
+    twitter,
+    instagram,
+    linkedIn,
+    facebook,
+    tikTok,
+    discord
   }
 }`
 
@@ -85,7 +95,7 @@ const pageService = new SanityPageService(query)
 
 export default function About(initialData) {
   // Sanity Data
-  const { data: { about } } = pageService.getPreviewHook(initialData)()
+  const { data: { about, contact } } = pageService.getPreviewHook(initialData)()
   
   return (
     <Layout>
@@ -372,9 +382,9 @@ export default function About(initialData) {
               })}
             </Marquee> */}
 
-            <SocialScroller />
+            <SocialScroller contact={contact} />
             <FooterCta image={"/images/about-footer.jpg"} />
-            <Footer />
+            <Footer contact={contact} />
           </m.div>
         </m.div>
       </LazyMotion>

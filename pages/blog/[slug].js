@@ -73,6 +73,16 @@ const query = `{
         asset->
       }
     }
+  },
+  "contact": *[_type == "contact"][0]{
+    email,
+    phone,
+    twitter,
+    instagram,
+    linkedIn,
+    facebook,
+    tikTok,
+    discord
   }
 }`
 
@@ -80,7 +90,7 @@ const pageService = new SanityPageService(query)
 
 export default function BlogSlug(initialData) {
   // Sanity Data
-  const { data: { article } } = pageService.getPreviewHook(initialData)()
+  const { data: { article, contact } } = pageService.getPreviewHook(initialData)()
   let d = new Date(article.publishDate);
   let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d);
   let mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(d);
@@ -185,7 +195,7 @@ export default function BlogSlug(initialData) {
               </div>
 
               <FooterCta image={"/images/about.jpg"} />
-              <Footer />
+              <Footer contact={contact} />
             </div>
           </m.div>
         </m.div>

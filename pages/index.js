@@ -104,6 +104,16 @@ const query = `{
         asset->
       }
     }
+  },
+  "contact": *[_type == "contact"][0]{
+    email,
+    phone,
+    twitter,
+    instagram,
+    linkedIn,
+    facebook,
+    tikTok,
+    discord
   }
 }`
 
@@ -113,7 +123,7 @@ export default function Home(initialData) {
   const characterBinder = useRef(null);
 
   // Sanity Data
-  const { data: { blog, products, home } } = pageService.getPreviewHook(initialData)()
+  const { data: { blog, products, home, contact } } = pageService.getPreviewHook(initialData)()
 
   return (
     <Layout>
@@ -637,10 +647,10 @@ export default function Home(initialData) {
               </div>
             </div>
 
-            <SocialScroller />
+            <SocialScroller contact={contact} />
             <CarouselBlog items={blog} />
             <FooterCta />
-            <Footer />
+            <Footer contact={contact} />
           </m.div>
         </m.main>
       </LazyMotion>

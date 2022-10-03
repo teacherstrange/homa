@@ -71,6 +71,16 @@ const query = `{
         asset->
       }
     }
+  },
+  "contact": *[_type == "contact"][0]{
+    email,
+    phone,
+    twitter,
+    instagram,
+    linkedIn,
+    facebook,
+    tikTok,
+    discord
   }
 }`
 
@@ -78,7 +88,7 @@ const pageService = new SanityPageService(query)
 
 export default function Games(initialData) {
   // Sanity Data
-  const { data: { games, successStories, gamesLanding } } = pageService.getPreviewHook(initialData)()
+  const { data: { games, successStories, gamesLanding, contact } } = pageService.getPreviewHook(initialData)()
   
   return (
     <Layout>
@@ -428,7 +438,7 @@ export default function Games(initialData) {
               </div>
             </FooterCta>
 
-            <Footer />
+            <Footer contact={contact} />
           </m.div>
         </m.div>
       </LazyMotion>

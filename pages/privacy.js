@@ -29,6 +29,16 @@ const query = `{
         asset->
       }
     }
+  },
+  "contact": *[_type == "contact"][0]{
+    email,
+    phone,
+    twitter,
+    instagram,
+    linkedIn,
+    facebook,
+    tikTok,
+    discord
   }
 }`
 
@@ -36,7 +46,7 @@ const pageService = new SanityPageService(query)
 
 export default function Privacy(initialData) {
   // Sanity Data
-  const { data: { privacy } } = pageService.getPreviewHook(initialData)()
+  const { data: { privacy, contact } } = pageService.getPreviewHook(initialData)()
   
   return (
     <Layout>
@@ -85,7 +95,7 @@ export default function Privacy(initialData) {
               </div>
             </Container>
 
-            <Footer />
+            <Footer contact={contact} />
           </m.div>
         </m.div>
       </LazyMotion>

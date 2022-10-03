@@ -10,7 +10,7 @@ import AppleAppStoreIcon from "@/icons/apple-app-store.svg"
 import GoogleAppStoreIcon from "@/icons/google-app-store.svg"
 import Link from "next/link"
 
-export default function Footer() {
+export default function Footer({contact}) {
   return (
     <footer className="bg-black text-white mt-[0] px-6 xl:px-10 pt-8 md:pt-[20vw] pb-10 md:pb-10">
       <div className="grid grid-cols-5 md:grid-cols-12">
@@ -35,8 +35,8 @@ export default function Footer() {
             </div>
 
             <div className="w-full 2xl:space-x-8 hidden md:flex md:flex-wrap">
-              <a href="mailto:bonjour@homagames.com" className="w-full 2xl:w-auto mb-1 2xl:mb-0 text-white/40 block hover:opacity-75 focus:opacity-75">bonjour@homagames.com</a>
-              <a href="tel:+33142861324" className="w-full 2xl:w-auto mb-1 2xl:mb-0 text-white/40 block hover:opacity-75 focus:opacity-75">+33 1 42 86 13 24</a>
+              <a href={`mailto:${contact.email}`} className="w-full 2xl:w-auto mb-1 2xl:mb-0 text-white/40 block hover:opacity-75 focus:opacity-75">{contact.email}</a>
+              <a href={`tel:${contact.phone}`} className="w-full 2xl:w-auto mb-1 2xl:mb-0 text-white/40 block hover:opacity-75 focus:opacity-75">{contact.phone}</a>
               <Link href="/privacy">
                 <a className="w-full 2xl:w-auto mb-1 2xl:mb-0 text-white/40 block 2xl:mr-6 hover:opacity-75 focus:opacity-75">Privacy</a>
               </Link>
@@ -182,7 +182,7 @@ export default function Footer() {
               <ul className="w-full mb-10 md:mb-16 xl:mb-24 flex flex-wrap md:block md:flex-none">
                 <li className="block mb-4 md:mb-6 xl:mb-8">
                   <a
-                    href="https://discord.gg/homagames"
+                    href={contact.discord}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:opacity-75 focus:opacity-75 flex flex-wrap items-center"
@@ -196,7 +196,7 @@ export default function Footer() {
 
                 <li className="block mb-4 md:mb-6 xl:mb-8">
                   <a
-                    href="https://discord.gg/homagames"
+                    href={contact.linkedIn}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:opacity-75 focus:opacity-75 flex flex-wrap items-center"
@@ -210,7 +210,7 @@ export default function Footer() {
 
                 <li className="block mb-4 md:mb-6 xl:mb-8">
                   <a
-                    href="https://discord.gg/homagames"
+                    href={contact.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:opacity-75 focus:opacity-75 flex flex-wrap items-center"
@@ -224,7 +224,7 @@ export default function Footer() {
 
                 <li className="block mb-4 md:mb-6 xl:mb-8">
                   <a
-                    href="https://discord.gg/homagames"
+                    href={contact.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:opacity-75 focus:opacity-75 flex flex-wrap items-center"
@@ -243,7 +243,7 @@ export default function Footer() {
               <ul className="w-full mb-10 md:mb-16 xl:mb-24 flex flex-wrap md:block md:flex-none">
                 <li className="block mb-4 md:mb-6 xl:mb-8">
                   <a
-                    href="https://discord.gg/homagang"
+                    href={contact.discord}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:opacity-75 focus:opacity-75 flex flex-wrap items-center"
@@ -257,7 +257,7 @@ export default function Footer() {
 
                 <li className="block mb-4 md:mb-6 xl:mb-8">
                   <a
-                    href="https://discord.gg/homagames"
+                    href={contact.twitter}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:opacity-75 focus:opacity-75 flex flex-wrap items-center"
@@ -275,7 +275,7 @@ export default function Footer() {
               <ul className="w-full flex flex-wrap md:block md:flex-none">
                 <li className="block mb-4 md:mb-6 xl:mb-8">
                   <a
-                    href="https://discord.gg/homagames"
+                    href={contact.tikTok}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:opacity-75 focus:opacity-75 flex flex-wrap items-center"

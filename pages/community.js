@@ -90,6 +90,16 @@ const query = `{
         asset->
       }
     }
+  },
+  "contact": *[_type == "contact"][0]{
+    email,
+    phone,
+    twitter,
+    instagram,
+    linkedIn,
+    facebook,
+    tikTok,
+    discord
   }
 }`
 
@@ -97,7 +107,7 @@ const pageService = new SanityPageService(query)
 
 export default function Community(initialData) {
   // Sanity Data
-  const { data: { team, community } } = pageService.getPreviewHook(initialData)()
+  const { data: { team, community, contact } } = pageService.getPreviewHook(initialData)()
   
   return (
     <Layout>
@@ -155,7 +165,7 @@ export default function Community(initialData) {
                   <ul className="w-full grid gap-6 xl:gap-10 grid-cols-12 mb-12 lg:mb-16 xl:mb-24">
                     <li className="block col-span-3 lg:col-span-6">
                       <a
-                        href="https://discord.gg/homagames"
+                        href={contact.discord}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block group w-full"
@@ -173,7 +183,7 @@ export default function Community(initialData) {
                     </li>
                     <li className="block col-span-3 lg:col-span-6">
                       <a
-                        href="https://discord.gg/homagames"
+                        href={contact.twitter}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block group w-full"
@@ -436,7 +446,7 @@ export default function Community(initialData) {
               </div>
             </div>
 
-            <Footer />
+            <Footer contact={contact} />
           </m.div>
         </m.div>
       </LazyMotion>

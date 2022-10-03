@@ -61,13 +61,23 @@ const query = `{
       }
     }
   },
+  "contact": *[_type == "contact"][0]{
+    email,
+    phone,
+    twitter,
+    instagram,
+    linkedIn,
+    facebook,
+    tikTok,
+    discord
+  }
 }`
 
 const pageService = new SanityPageService(query)
 
 export default function HomaLabChild(initialData) {
   // Sanity Data
-  const { data: { product } } = pageService.getPreviewHook(initialData)()
+  const { data: { product, contact } } = pageService.getPreviewHook(initialData)()
   
   return (
     <Layout>
@@ -237,7 +247,7 @@ export default function HomaLabChild(initialData) {
             </div>
 
             <FooterCta />
-            <Footer />
+            <Footer contact={contact} />
           </m.div>
         </m.div>
       </LazyMotion>

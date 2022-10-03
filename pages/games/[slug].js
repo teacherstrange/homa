@@ -70,6 +70,16 @@ const query = `{
         asset->
       }
     }
+  },
+  "contact": *[_type == "contact"][0]{
+    email,
+    phone,
+    twitter,
+    linkedIn,
+    instagram,
+    facebook,
+    tikTok,
+    discord
   }
 }`
 
@@ -77,7 +87,7 @@ const pageService = new SanityPageService(query)
 
 export default function CaseStudySlug(initialData) {
   // Sanity Data
-  const { data: { article } } = pageService.getPreviewHook(initialData)()
+  const { data: { article, contact } } = pageService.getPreviewHook(initialData)()
 
   let d = new Date(article.publishDate);
   let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d);
@@ -196,7 +206,7 @@ export default function CaseStudySlug(initialData) {
                 </div>
 
               <FooterCta image={"/images/about.jpg"} />
-              <Footer />
+              <Footer contact={contact} />
             </div>
           </m.div>
         </m.div>

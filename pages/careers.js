@@ -57,6 +57,16 @@ const query = `{
         asset->
       }
     }
+  },
+  "contact": *[_type == "contact"][0]{
+    email,
+    phone,
+    twitter,
+    linkedIn,
+    instagram,
+    facebook,
+    tikTok,
+    discord
   }
 }`
 
@@ -64,7 +74,7 @@ const pageService = new SanityPageService(query)
 
 export default function Careers(initialData) {
   // Sanity Data
-  const { data: { careers } } = pageService.getPreviewHook(initialData)()
+  const { data: { careers, contact } } = pageService.getPreviewHook(initialData)()
   
   // Workable Data
   const careerPosts = initialData.careersWorkable
@@ -306,7 +316,7 @@ export default function Careers(initialData) {
               </div>
             </div>
 
-            <Footer />
+            <Footer contact={contact} />
           </m.div>
         </m.div>
       </LazyMotion>

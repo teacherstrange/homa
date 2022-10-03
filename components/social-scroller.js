@@ -8,7 +8,7 @@ import TextScrambler from "./text-scrambler"
 import Link from "next/link"
 import ScramblePillButton from "./scramble-pill-button"
 
-export default function SocialScroller() {
+export default function SocialScroller({ contact }) {
   return (
     <div className="w-full flex flex-wrap ">
       <div className="w-full lg:w-1/2 px-6 xl:px-10 py-8 lg:py-28 xl:py-32">
@@ -33,7 +33,7 @@ export default function SocialScroller() {
           <ul className="w-full grid gap-6 xl:gap-10 grid-cols-12 mb-12 lg:mb-16 xl:mb-24">
             <li className="block col-span-6 lg:col-span-6">
               <a
-                href="https://discord.gg/homagames"
+                href={contact.discord}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block group w-full"
@@ -51,7 +51,7 @@ export default function SocialScroller() {
             </li>
             <li className="block col-span-6 lg:col-span-6">
               <a
-                href="https://discord.gg/homagames"
+                href={contact.tikTok}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block group w-full"
@@ -75,7 +75,7 @@ export default function SocialScroller() {
           <ul className="w-full grid gap-6 xl:gap-10 grid-cols-12 mb-12 lg:mb-16 xl:mb-24">
             <li className="block col-span-6 lg:col-span-6">
               <a
-                href="https://discord.gg/homagames"
+                href={contact.discord}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block group w-full"
@@ -93,7 +93,7 @@ export default function SocialScroller() {
             </li>
             <li className="block col-span-6 lg:col-span-6">
               <a
-                href="https://discord.gg/homagames"
+                href={contact.linkedIn}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block group w-full"
@@ -111,7 +111,7 @@ export default function SocialScroller() {
             </li>
             <li className="block col-span-6 lg:col-span-6">
               <a
-                href="https://discord.gg/homagames"
+                href={contact.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block group w-full"
@@ -129,7 +129,7 @@ export default function SocialScroller() {
             </li>
             <li className="block col-span-6 lg:col-span-6">
               <a
-                href="https://discord.gg/homagames"
+                href={contact.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block group w-full group"
@@ -158,7 +158,7 @@ export default function SocialScroller() {
           <ul className="w-full grid gap-6 xl:gap-10 grid-cols-12">
             <li className="block col-span-6 lg:col-span-6">
               <a
-                href="https://discord.gg/homagames"
+                href={contact.discord}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block group w-full"
@@ -176,7 +176,7 @@ export default function SocialScroller() {
             </li>
             <li className="block col-span-6 lg:col-span-6">
               <a
-                href="https://discord.gg/homagames"
+                href={contact.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block group w-full"
