@@ -377,7 +377,7 @@ export default function Community(initialData) {
                 <div className="col-span-12 lg:col-span-5 z-10">
                   <h2 className="font-black text-[clamp(50px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase">HOMAGANG is a sistergang of HOMA</h2>
                   <div className="content max-w-3xl mb-8 xl:mb-12 w-10/12">
-                    <p>Homa is one of the world’s biggest mobile gaming engines and publishing arms. It’s a gaming technology lab that gives game creators the tools and human expertise needed to turn their creative ideas into commercial hits. Every day more than 10m people around the world play a game built on, or published through Homa.</p>
+                    <p>Behind Homagang is one of the world’s biggest mobile gaming engines and publishing arms. Homa is a gaming technology lab that gives game creators the tools and human expertise needed to turn their creative ideas into commercial hits. Every day more than 10m people around the world play a game built on, or published through Homa, and now Homagang let’s you escape the lab and explore a universe connected by the blockchain.</p>
                   </div>
                 </div>
               </div>
