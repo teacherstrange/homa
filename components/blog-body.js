@@ -27,7 +27,7 @@ import ScramblePillButton from './scramble-pill-button'
 export const articlesPerPage = 24;
 
 export const query = `{
-  "blog": *[_type == "blog"] | order(date desc) [$start ... $stop] {
+  "blog": *[_type == "blog"] | order(publishDate desc) [$start ... $stop] {
     title,
     heroImage {
       asset-> {

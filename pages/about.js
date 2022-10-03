@@ -257,7 +257,7 @@ export default function About(initialData) {
           <m.div variants={fade} className="w-full flex flex-wrap ">
             <div className="w-full lg:w-1/2 bg-gray-100 border-b lg:border-b-0 lg:border-r border-black/50">
               <div className="lg:sticky lg:top-0 relative overflow-hidden">
-                <div className="flex w-full min-h-screen scale-[1.1]">
+                <div className="flex w-full min-h-screen">
                   <div className="w-full min-h-screen">
                     {about.servicesList.map((e, i) => {
                       return (
