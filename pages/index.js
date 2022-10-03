@@ -181,18 +181,18 @@ export default function Home(initialData) {
                   </div>
 
                   <div className="grid grid-cols-2 gap-1">
-                    <div className="col-span-2 md:col-span-1 mb-6 md:mb-0">
+                    <div className="col-span-1 md:col-span-1">
                       <Link href="/homa-lab">
-                        <a className="roll-btn w-full" >
+                        <a className="roll-btn roll-btn--hero w-full" >
                           <span className="roll-btn__front">Make A Game</span>
                           <span className="roll-btn__back">Make A Game</span>
                         </a>
                       </Link>
                     </div>
 
-                    <div className="col-span-2 md:col-span-1">
+                    <div className="col-span-1 md:col-span-1">
                       <Link href="/careers">
-                        <a className="roll-btn w-full md:w-1/2">
+                        <a className="roll-btn roll-btn--hero w-full md:w-1/2">
                           <span className="roll-btn__front">Build A Career</span>
                           <span className="roll-btn__back">Build A Career</span>
                         </a>
