@@ -48,6 +48,17 @@ const query = `{
         y
       },
     },
+    innerProductVisual {
+      asset-> {
+        ...
+      },
+      caption,
+      alt,
+      hotspot {
+        x,
+        y
+      },
+    },
     contentSections[] {
       title,
       shortDescription,
@@ -190,7 +201,7 @@ export default function HomaLabChild(initialData) {
                       {/* <div className="w-[300px] h-[300px] bg-pink lg:-mt-32 xl:-mt-40"></div> */}
                       <div className="w-[70%]">
                         <SanityImage
-                          image={product.productVisual}
+                          image={product.innerProductVisual}
                           layout="responsive"
                           className="w-full"
                         />
