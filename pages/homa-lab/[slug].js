@@ -37,6 +37,17 @@ const query = `{
         y
       },
     },
+    productVisual {
+      asset-> {
+        ...
+      },
+      caption,
+      alt,
+      hotspot {
+        x,
+        y
+      },
+    },
     contentSections[] {
       title,
       shortDescription,
@@ -123,6 +134,16 @@ export default function HomaLabChild(initialData) {
 
                 <div className="w-full lg:w-1/2 order-1 lg:order-2 lg:border-l border-b lg:border-b-0 border-black/50 relative overflow-hidden">
                   <GridOverlayDense offset/>
+
+                  <div className="absolute inset-0 z-10 flex flex-wrap items-center justify-center overflow-hidden">
+                    <div className="w-[66%] relative overflow-hidden">
+                      <SanityImage
+                        image={product.productVisual}
+                        layout="responsive"
+                        className="w-full"
+                      />
+                    </div>
+                  </div>
                   <div className="scale-[1.125] w-full h-full aspect-square">
                     <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.05}>
                       <SanityImage
@@ -167,13 +188,10 @@ export default function HomaLabChild(initialData) {
                     <GridOverlayDense />
                     <div className="w-full h-full p-6 xl:p-10 flex items-center justify-center relative z-10">
                       {/* <div className="w-[300px] h-[300px] bg-pink lg:-mt-32 xl:-mt-40"></div> */}
-                      <div className="w-[75%]">
-                        <LocalImage
-                          src="/images/graph.webp"
+                      <div className="w-[70%]">
+                        <SanityImage
+                          image={product.productVisual}
                           layout="responsive"
-                          width={1152}
-                          height={1150}
-                          quality={80}
                           className="w-full"
                         />
                       </div>

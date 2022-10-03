@@ -30,6 +30,7 @@ import GridOverlayDense from '@/components/grid-overlay-dense'
 import ScramblePillButton from '@/components/scramble-pill-button'
 import SanityImage from '@/components/sanity-image'
 import LocalImage from '@/components/local-image'
+import ProductScroller from '@/components/product-scroller'
 
 const query = `{
   "blog": *[_type == "blog"][0...5]{
@@ -59,6 +60,17 @@ const query = `{
   "products": *[_type == "products"] | order(orderRank asc){
     title,
     introText,
+    productVisual {
+      asset-> {
+        ...
+      },
+      caption,
+      alt,
+      hotspot {
+        x,
+        y
+      },
+    },
     slug {
       current
     }
@@ -383,58 +395,8 @@ export default function Home(initialData) {
               </div>
             </div>
 
-
-            <div className="w-full flex flex-wrap border-t border-black/50">
-              <div className="w-full lg:w-1/2 border-b lg:border-b-0 lg:border-r border-black/50">
-                <div className="lg:sticky lg:top-0 xl:top-0 lg:pb-0">
-                  <div className="flex w-full lg:h-screen items-center justify-center relative overflow-hidden">
-                    <GridOverlayDense />
-                    <div className="w-full h-full p-6 xl:p-10 flex items-center justify-center relative z-10">
-                      {/* <div className="w-[300px] h-[300px] bg-pink lg:-mt-32 xl:-mt-40"></div> */}
-                      <div className="w-[75%]">
-                        <LocalImage
-                          src="/images/graph.webp"
-                          layout="responsive"
-                          width={1152}
-                          height={1150}
-                          quality={80}
-                          className="w-full"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="w-full lg:w-1/2 pb-12 lg:pb-16 xl:pb-24">
-                <div className={`w-full px-6 xl:px-10 py-6 xl:py-10 flex flex-wrap border-b border-black/50`}>
-                  <div className="w-auto mr-12">
-                    <span className="uppercase text-sm tracking-widest mt-1 block font-medium">00</span>
-                  </div>
-                  <div className="w-3/4">
-                    <h3 className="font-black text-3xl lg:text-5xl xl:text-5xl 2xl:text-6xl leading-[0.95] tracking-tight mb-24 lg:mb-[31vw] uppercase max-w-[500px] xl:max-w-none">Game The System</h3>
-                  </div>
-                </div>
-                {products.map((e, i) => {
-                  return (
-                    <Link href={`/homa-lab/${e.slug.current}`} key={i}>
-                      <a className={`w-full ${i + 1 != products.length && 'border-b border-black/50'} px-6 xl:px-10 py-6 xl:py-10 flex flex-wrap hover:bg-pink focus:bg-pink lg:pb-[20vw] xl:pb-[20vw]`}>
-                        <div className="w-auto mr-12">
-                          <span className="uppercase text-sm tracking-widest mt-1 block font-medium">0{i + 1}</span>
-                        </div>
-                        <div className="w-3/4">
-                          <h3 className="font-black text-3xl lg:text-5xl xl:text-5xl 2xl:text-6xl leading-[0.95] tracking-tight mb-12 lg:mb-24 uppercase max-w-[500px] xl:max-w-none">{e.title}</h3>
-
-                          <div className="content w-11/12 lg:w-11/12 max-w-[650px]">
-                            <p>{e.introText}</p>
-                          </div>
-                        </div>
-                      </a>
-                    </Link>
-                  )
-                })}
-              </div>
-            </div>
+            {/* Product Scroller */}
+            <ProductScroller products={products} />
 
 
             <div className="relative overflow-hidden border-t border-black/50">
