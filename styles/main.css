@@ -98,6 +98,22 @@ canvas {
 }
 
 .embla--games {
+  .embla__container {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 85%;
+
+    @apply justify-start;
+
+    @screen lg {
+      grid-auto-columns: 49%;
+    }
+  }
+
+  .embla__slide-inner {
+    @apply h-[130vw] lg:h-[60vw] xl:h-[55vw] 2xl:h-[50vw];
+  }
+
   .is-selected {
     .embla__slide-inner {
       @apply bg-pink/20;
@@ -166,8 +182,23 @@ canvas {
 }
 
 .embla--card {
+  @apply px-6 lg:px-0;
+
+  .embla__container {
+    grid-auto-columns: 100%;
+
+    @screen lg {
+      grid-auto-columns: 49%;
+      grid-column-gap: 0px;
+    }
+  }
+
+  .embla__slide {
+    @apply border-r-0 border-l-0 lg:border-r lg:mr-0 !important;
+  }
+
   .embla__slide-inner {
-    @apply p-0 lg:p-0
+    @apply p-0 lg:p-0;
   }
 
   .embla__slide-title {
@@ -175,12 +206,12 @@ canvas {
   }
 
   .embla__slide-inner-blur {
-    @apply blur-lg transition-all ease-in-out duration-500 scale-[1.04];
+    @apply blur-0 lg:blur-lg transition-all ease-in-out duration-500 lg:scale-[1.04];
   }
 
   .is-selected {
     .embla__slide-inner-blur {
-      @apply scale-[1.04] blur-0;
+      @apply lg:scale-[1.04] blur-0 lg:blur-0;
     }
 
     .embla__slide-title {

@@ -26,7 +26,7 @@ export const CarouselGames = ({ heading, items }) => {
           )}
         </div>
 
-        <div className="flex lg:justify-end w-full lg:w-auto lg:ml-auto pr-6 lg:pr-10 mb-5 lg:mb-0">
+        <div className="hidden lg:flex lg:justify-end w-full lg:w-auto lg:ml-auto pr-6 lg:pr-10 mb-5 lg:mb-0">
           <button className="embla__prev w-12 lg:w-16 h-12 lg:h-16 flex items-center p-3 lg:p-4 justify-center border border-black/50 border-r-0 transition-colors ease-in-out duration-300 hover:border-black/100 focus:border-black/100" onClick={scrollPrev}>
             <ArrowRightIcon className="w-full rotate-180" />
           </button>
@@ -92,6 +92,15 @@ export const CarouselGames = ({ heading, items }) => {
             )
           })}
         </div>
+      </div>
+
+      <div className="flex lg:hidden lg:justify-end w-full lg:w-auto lg:ml-auto pr-6 lg:pr-10 mb-5 lg:mb-0 px-6 lg:pl-0 mt-8  lg:mt-0">
+        <button className="embla__prev w-12 lg:w-16 h-12 lg:h-16 flex items-center p-3 lg:p-4 justify-center border border-black/50 border-r-0 transition-colors ease-in-out duration-300 hover:border-black/100 focus:border-black/100" onClick={scrollPrev}>
+          <ArrowRightIcon className="w-full rotate-180" />
+        </button>
+        <button className="embla__next w-12 lg:w-16 h-12 lg:h-16 flex items-center p-3 lg:p-4 justify-center border border-black/50 transition-colors ease-in-out duration-300 hover:border-black focus:border-black" onClick={scrollNext}>
+          <ArrowRightIcon className="w-full" />
+        </button>
       </div>
     </div>
   )
