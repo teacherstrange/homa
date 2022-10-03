@@ -210,7 +210,7 @@ export default function Home(initialData) {
           <m.div variants={fade}>
             <div className="bg-gradient-to-b from-pink/20 to-pink relative overflow-hidden">
               <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={0.025} zIndex={0}>
-                <div className="absolute bottom-0 right-[10%] md:right-[3%] z-0 w-[77%] lg:w-[30%] max-w-[320px] lg:max-w-[400px] xl:max-w-[480px]">
+                <div className="absolute bottom-[-12vw] lg:bottom-[-3vw] right-[10%] md:right-[3%] z-0 w-[65%] lg:w-[20%] max-w-[290px] lg:max-w-[350px] xl:max-w-[380px]">
                   {/* <Image
                     src="/images/horse.webp"
                     alt="Bee"
@@ -219,7 +219,7 @@ export default function Home(initialData) {
                     height={865}
                     className="w-full"
                   /> */}
-                  <LocalImage src={'/images/horse.webp'} width={865} height={865} />
+                  <LocalImage src={'/images/horse.webp'} width={792.5} height={1173.5} />
                 </div>
               </ScrollParallax>
               
@@ -552,7 +552,7 @@ export default function Home(initialData) {
                       <h3 className="font-bold text-2xl lg:text-3xl xl:text-3xl leading-[0.95] mb-12 lg:mb-32 uppercase w-11/12">Work In<br/>English</h3>
 
                       <div className="content content--small w-full">
-                        <p>We’re over 25 nationalities strong and we work in English all day long.</p>
+                        <p>We’re over 34 nationalities strong and we work in English all day long.</p>
                       </div>
                     </div>
 
@@ -591,7 +591,7 @@ export default function Home(initialData) {
               <div className="grid grid-cols-12 py-12 lg:pt-[15vw] lg:pb-[20.5vw] px-6 lg:px-24 xl:px-32 max-w-screen-3xl mx-auto">
                 
                 <div className="col-span-12 lg:col-span-7 z-10 mb-12 lg:mb-0">
-                  <h2 className="font-black text-[clamp(43px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase">There’s Hope.<br/>Then there’s Homa.</h2>
+                  <h2 className="font-black text-[clamp(43px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase">There is luck.<br/>Or there is Homa.</h2>
                   <div className="content max-w-3xl mb-6 xl:mb-8 w-10/12">
                     <p>With us, every step of your game’s build and launch phase – from ideation right through to monetization - is managed by experts and tested, tweaked and improved by data-rich technology.</p>
 

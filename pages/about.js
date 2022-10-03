@@ -347,7 +347,7 @@ export default function About(initialData) {
                   <h2 className="display-text mb-6 lg:mb-12 xl:mb-16">Curiosity</h2>
                   <span className="uppercase text-xl lg:text-2xl xl:text-3xl tracking-widest mb-3 lg:mb-5 block font-black leading-none lg:leading-none xl:leading-none">We keep our eyes open</span>
                   <div className="content content--lg max-w-3xl mb-8 xl:mb-12 w-10/12">
-                    <p>We believe the best way to know anything is to question everything. And to do that, you need open eyes and open minds at all times. Please excuse us, our office is full of dead cats.</p>
+                    <p>We believe the best way to know anything is to question everything. And to do that, you need open eyes and open minds at all times.</p>
                   </div>
                 </div>
 
