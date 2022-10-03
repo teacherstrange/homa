@@ -39,8 +39,9 @@ export default function Header() {
 
   return (
     <div className={`fixed top-0 left-0 right-0 w-full z-[1000] transition-translate ease-in-out duration-[350ms] ${scrollDirection == 'down' ? 'translate-y-[-100px]' : 'translate-y-[0]'}`}>
-      <header className="pl-6 xl:pl-10 bg-white bg-opacity-0 backdrop-blur-xl border-b border-black/50">
-        <div className="flex flex-wrap items-start">
+      <header className="pl-6 xl:pl-10 bg-white bg-opacity-0">
+        <div className="absolute inset-0 w-full h-full bg-white bg-opacity-0 backdrop-blur-lg z-0 border-b border-black/50"></div>
+        <div className="flex flex-wrap items-start relative z-10">
           <Link href="/">
             <a className="w-[100px] lg:w-[110px] xl:w-[125px] 2xl:w-[160px] flex items-center h-[60px] lg:h-[70px] xl:h-[80px]">
               <HomaLogoMarkIcon className="w-full" />
@@ -49,7 +50,7 @@ export default function Header() {
 
           {/* Main Navigation */}
           <nav className="ml-auto w-full text-sm md:text-base md:w-auto hidden lg:block">
-            <ul className="flex w-full">
+            <ul className="flex w-full ">
               {/* Games */}
               <li>
                 <FancyLink
@@ -73,7 +74,7 @@ export default function Header() {
 
                 {/* Homa Lab Subnav */}
                 <ul className="nav-child mt-[71px] xl:mt-[81px] lg:w-[750px] xl:w-[958px] 2xl:w-[1155px] 3xl:w-[1310px] ml-auto">
-                  <li className="block">
+                  <li className="block relative z-10">
                     <FancyLink
                       destination="/homa-lab"
                       a11yText="Navigate to the homa lab page"
@@ -82,7 +83,7 @@ export default function Header() {
                       active={router.asPath == '/homa-lab'}
                     />
                   </li>
-                  <li className="block">
+                  <li className="block relative z-10">
                     <FancyLink
                       destination="/homa-lab/ideas"
                       a11yText="Navigate to the homa lab page"
@@ -90,7 +91,7 @@ export default function Header() {
                       className="uppercase font-medium tracking-widest lg:text-sm lg:leading-none xl:text-base xl:leading-none inline-block py-4"
                     />
                   </li>
-                  <li className="block">
+                  <li className="block relative z-10">
                     <FancyLink
                       destination="/homa-lab/market-watchers"
                       a11yText="Navigate to the homa lab page"
@@ -98,7 +99,7 @@ export default function Header() {
                       className="uppercase font-medium tracking-widest lg:text-sm lg:leading-none xl:text-base xl:leading-none inline-block py-4"
                     />
                   </li>
-                  <li className="block">
+                  <li className="block relative z-10">
                     <FancyLink
                       destination="/homa-lab/homa-sdk"
                       a11yText="Navigate to the homa lab page"
@@ -106,7 +107,7 @@ export default function Header() {
                       className="uppercase font-medium tracking-widest lg:text-sm lg:leading-none xl:text-base xl:leading-none inline-block py-4"
                     />
                   </li>
-                  <li className="block">
+                  <li className="block relative z-10">
                     <FancyLink
                       destination="/homa-lab/dev-tools"
                       a11yText="Navigate to the homa lab page"
@@ -114,7 +115,7 @@ export default function Header() {
                       className="uppercase font-medium tracking-widest lg:text-sm lg:leading-none xl:text-base xl:leading-none inline-block py-4"
                     />
                   </li>
-                  <li className="block">
+                  <li className="block relative z-10">
                     <FancyLink
                       destination="/homa-lab/data-analytics"
                       a11yText="Navigate to the homa lab page"
@@ -122,7 +123,7 @@ export default function Header() {
                       className="uppercase font-medium tracking-widest lg:text-sm lg:leading-none xl:text-base xl:leading-none inline-block py-4"
                     />
                   </li>
-                  <li className="block">
+                  <li className="block relative z-10">
                     <FancyLink
                       destination="/homa-lab/submissions-and-creatives"
                       a11yText="Navigate to the homa lab page"
@@ -130,7 +131,7 @@ export default function Header() {
                       className="uppercase font-medium tracking-widest lg:text-sm lg:leading-none xl:text-base xl:leading-none inline-block py-4"
                     />
                   </li>
-                  <li className="block">
+                  <li className="block relative z-10">
                     <a
                       className="uppercase font-medium tracking-widest lg:text-sm lg:leading-none xl:text-base xl:leading-none inline-block py-4 group"
                       href="https://academy.homagames.com/"

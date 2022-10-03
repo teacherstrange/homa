@@ -42,11 +42,11 @@ html {
   }
   
   .nav-child {
-    @apply hidden absolute top-0 left-0 right-0 opacity-0 p-6 border-b border-black/50 backdrop-blur-3xl bg-white bg-opacity-40 w-full;
+    @apply hidden fixed top-0 left-0 right-0 opacity-0 p-6 bg-white bg-opacity-0 w-full z-[100];
 
     &:after {
       content: ' ';
-      @apply absolute top-0 left-0 bottom-[-1px] w-[100vw] translate-x-[-100vw] border-b border-black/50 backdrop-blur-3xl bg-white bg-opacity-40;
+      @apply absolute top-0 left-0 h-full translate-y-[-1px] w-[200vw] translate-x-[-100vw] border-b border-black/50 bg-opacity-0 backdrop-blur-lg z-0 bg-white/20;
     }
 
     &:focus-within {
