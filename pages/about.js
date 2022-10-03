@@ -1,6 +1,7 @@
 // Tools
 import { LazyMotion, domAnimation, m } from "framer-motion";
 import { NextSeo } from "next-seo";
+import { InView } from 'react-intersection-observer';
 
 // Transitions
 import { fade } from "@/helpers/transitions";
@@ -24,6 +25,7 @@ import SanityPageService from '@/services/sanityPageService'
 import SanityImage from '@/components/sanity-image'
 import SanityBlockContent from '@sanity/block-content-to-react'
 import LocalImage from "@/components/local-image";
+import { useState } from "react";
 
 const query = `{
   "about": *[_type == "about"][0]{
@@ -96,6 +98,7 @@ const pageService = new SanityPageService(query)
 export default function About(initialData) {
   // Sanity Data
   const { data: { about, contact } } = pageService.getPreviewHook(initialData)()
+  const [currentIndex, setCurrentIndex] = useState(0);
   
   return (
     <Layout>
@@ -253,13 +256,22 @@ export default function About(initialData) {
 
           <m.div variants={fade} className="w-full flex flex-wrap ">
             <div className="w-full lg:w-1/2 bg-gray-100 border-b lg:border-b-0 lg:border-r border-black/50">
-              <div className="lg:sticky lg:top-0 lg:pb-32 xl:pb-48 relative overflow-hidden">
-                <div className="flex w-full aspect-square scale-[1.1]">
-                  <SanityImage
-                    image={about.servicesList[0].image}
-                    layout="responsive"
-                    className="absolute inset-0 object-cover object-center"
-                  />
+              <div className="lg:sticky lg:top-0  relative overflow-hidden">
+                <div className="flex w-full min-h-screen scale-[1.1]">
+                  {about.servicesList.map((e, i) => {
+                    return (
+                      <div className={`${(currentIndex == i) ? 'opacity-100' : 'opacity-0' } w-full transition-opacity ease-in-out duration-300 ${i == 0 ? 'relative' : 'absolute inset-0' }`}>
+                        <SanityImage
+                          key={i}
+                          image={e.image}
+                          layout="fill"
+                          width={e.image.asset.metadata.width}
+                          height={e.image.asset.metadata.height}
+                          className="w-full inset-0 h-full object-cover object-center"
+                        />
+                      </div>
+                    )
+                  })}
                 </div>
               </div>
             </div>
@@ -267,24 +279,26 @@ export default function About(initialData) {
             <div className="w-full lg:w-1/2 pb-12 lg:pb-16 xl:pb-24 border-t border-black/50">
               {about.servicesList.map((e, i) => {
                 return (
-                  <div
-                    className={`w-full ${
-                      i + 1 != about.servicesList.length && "border-b border-black/50"
-                    } px-6 xl:px-10 py-6 xl:py-10 flex flex-wrap lg:pb-[20vw] xl:pb-[20vw]`}
-                  >
-                    <div className="w-auto mr-12">
-                      <span className="uppercase text-sm tracking-widest mt-1 block font-medium">
-                        0{i + 1}
-                      </span>
-                    </div>
-                    <div className="w-3/4">
-                      <h3 className="font-black text-3xl lg:text-4xl xl:text-5xl leading-[0.95] mb-12 lg:mb-24 uppercase max-w-[500px] xl:max-w-none">{e.heading}</h3>
+                  <InView threshold={1} as="div" onChange={(inView, entry) => inView && setCurrentIndex(i)}>
+                    <div
+                      className={`w-full ${
+                        i + 1 != about.servicesList.length && "border-b border-black/50"
+                      } px-6 xl:px-10 py-6 xl:py-10 flex flex-wrap lg:pb-[20vw] xl:pb-[20vw]`}
+                    >
+                      <div className="w-auto mr-12">
+                        <span className="uppercase text-sm tracking-widest mt-1 block font-medium">
+                          0{i + 1}
+                        </span>
+                      </div>
+                      <div className="w-3/4">
+                        <h3 className="font-black text-3xl lg:text-4xl xl:text-5xl leading-[0.95] mb-12 lg:mb-24 uppercase max-w-[500px] xl:max-w-none">{e.heading}</h3>
 
-                      <div className="content w-11/12 lg:w-11/12 max-w-[650px]">
-                        <p>{e.text}</p>
+                        <div className="content w-11/12 lg:w-11/12 max-w-[650px]">
+                          <p>{e.text}</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </InView>
                 );
               })}
             </div>
