@@ -141,14 +141,12 @@ export default function BlogBody({blog, numberOfArticles, categories, subPage, i
                   </div>
                   <div className="w-full lg:w-1/2 lg:border-l border-black/50 relative overflow-hidden">
                     <Link href={`/blog/${blog[0].slug.current}`}>
-                      <a className="scale-[1.125] w-full h-full aspect-square block">
-                        <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.05}>
-                          <SanityImage
-                            image={blog[0].heroImage}
-                            layout="fill"
-                            className="w-full h-full absolute inset-0 z-0 object-cover object-top"
-                          />
-                        </ScrollParallax>
+                      <a className="w-full h-full aspect-square block">
+                        <SanityImage
+                          image={blog[0].heroImage}
+                          layout="fill"
+                          className="w-full h-full absolute inset-0 z-0 object-cover object-top"
+                        />
                       </a>
                     </Link>
                   </div>

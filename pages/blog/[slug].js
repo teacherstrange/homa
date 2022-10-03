@@ -174,15 +174,13 @@ export default function BlogSlug(initialData) {
                     </div>
                   </div>
                   <div className="w-full lg:w-1/2 lg:border-l border-black/50 relative overflow-hidden">
-                    <div className="scale-[1.125] w-full h-full aspect-square">
-                      <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.05}>
-                        <SanityImage
-                          image={article.heroImage}
-                          alt="About Test"
-                          layout="fill"
-                          className="w-full h-full absolute inset-0 z-0 object-cover object-center"
-                        />
-                      </ScrollParallax>
+                    <div className="w-full h-full aspect-square">
+                      <SanityImage
+                        image={article.heroImage}
+                        alt="About Test"
+                        layout="fill"
+                        className="w-full h-full absolute inset-0 z-0 object-cover object-center"
+                      />
                     </div>
                   </div>
                 </div>
