@@ -139,7 +139,7 @@ export default function Games(initialData) {
                 </div>
                 
                 <ScrollParallax isAbsolutelyPositioned lerpEase={0.15}>
-                  <div className="absolute bottom-[-25%] right-[14%] md:right-[5%] lg:right-[18%] z-0 w-[30%] lg:w-[17%] xl:w-[15%] max-w-[150px] md:max-w-[180px] lg:max-w-[260px] xl:max-w-[280px]">
+                  <div className="absolute bottom-[-25%] right-[14%] md:right-[5%] lg:right-[18%] z-0 w-[30%] lg:w-[17%] xl:w-[14%] max-w-[150px] md:max-w-[180px] lg:max-w-[180px] xl:max-w-[260px]">
                     {/* <Image
                       src="/images/horse.webp"
                       alt="Bee"
@@ -310,8 +310,10 @@ export default function Games(initialData) {
                     </div>
                   </div>
 
-                
-                  <a href="https://lab-v2.homagames.com/login" target="_blank" rel="noreferrer noopener" className="inline-block border border-black/50 font-medium uppercase leading-none py-6 px-12 text-center rounded-sm bg-black text-white hover:bg-black hover:text-white focus:bg-black focus:text-white lg:w-1/2 xl:w-1/4">Submit your game</a>
+                  <a href="https://lab-v2.homagames.com/login" target="_blank" rel="noreferrer noopener" class="roll-btn inline-block lg:w-1/2 xl:w-1/4">
+                    <span class="roll-btn__front">Submit your game</span>
+                    <span class="roll-btn__back">Submit your game</span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -361,7 +363,11 @@ export default function Games(initialData) {
                     })}
                   </div>
 
-                  <a href="https://lab-v2.homagames.com/login" target="_blank" rel="noreferrer noopener" className="inline-block font-medium uppercase leading-none py-6 px-10 rounded-sm bg-black text-white hover:bg-black hover:text-white focus:bg-black focus:text-white">Submit your game</a>
+
+                  <a href="https://lab-v2.homagames.com/login" target="_blank" rel="noreferrer noopener" class="roll-btn inline-block">
+                    <span class="roll-btn__front">Submit your game</span>
+                    <span class="roll-btn__back">Submit your game</span>
+                  </a>
                 </div>
 
                 <div className="col-span-12 lg:col-span-3 relative hidden xl:block self-center">

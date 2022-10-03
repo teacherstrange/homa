@@ -156,6 +156,7 @@ export default function BlogBody({blog, numberOfArticles, categories, subPage, i
             )}
             
             <div className="max-w-screen-3xl mx-auto px-6 lg:px-10 mt-10 lg:mt-[6vw]">
+              <h2 className="block font-bold uppercase text-2xl lg:text-2xl xl:text-3xl w-full mb-6 lg:mb-10">More Stories</h2>
               <div className="flex flex-wrap md:-mx-4 lg:-mx-6">
                 {blog.map((e, i) => {
                   let d = new Date(e.publishDate);

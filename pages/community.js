@@ -149,7 +149,7 @@ export default function Community(initialData) {
             </div>
 
 
-            <div className="w-full flex flex-wrap border-b border-black/50 mb-12 lg:mb-[10vw]">
+            <div className="w-full flex flex-wrap border-b border-t border-black/50 mb-12 lg:mb-[10vw]">
               <div className="w-full lg:w-1/2 px-6 xl:px-10 py-8 lg:py-28 xl:py-32">
                 <div className="lg:pb-32 xl:pb-48 max-w-screen-md ml-auto">
                   <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">A new player has entered the game</span>
@@ -159,7 +159,7 @@ export default function Community(initialData) {
               </div>
 
               {/* Players & Fans */}
-              <div className="w-full lg:w-1/2 px-6 xl:px-10 py-12 lg:pt-[145px] xl:pt-[145px] lg:pb-24 xl:pb-24 bg-black text-white">
+              <div className="w-full lg:w-1/2 px-6 xl:px-10 py-12 lg:pt-[145px] xl:pt-[145px] lg:pb-24 xl:pb-24 bg-black text-white ">
                 <span className="uppercase text-sm tracking-widest mb-5 lg:mb-12 xl:mb-16 block font-medium">Follow us for updates</span>
                 
                 <div className="max-w-screen-md mr-auto">
@@ -344,9 +344,9 @@ export default function Community(initialData) {
 
 
 
-            <div className="bg-orange/40 mb-[8vw] relative overflow-hidden pb-[50vw] lg:pb-0">
+            <div className="bg-orange/40 mb-[8vw] relative overflow-hidden pb-[50vw] lg:pb-0 border-b border-black/50">
               <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.05} zIndex={0}>
-                <div className="scale-[1.12] absolute inset-0 w-full h-full">
+                <div className="scale-[1.11] absolute inset-0 w-full h-full">
                   <LocalImage
                     src="/images/homagang-cta.jpg"
                     alt="About Test"
@@ -396,11 +396,11 @@ export default function Community(initialData) {
               </div>
             </div> */}
 
-            <div className="bg-orange/40 relative overflow-hidden pb-[45vw] lg:pb-0">
+            <div className="bg-orange/40 relative overflow-hidden pb-[45vw] lg:pb-0 border-t border-black/50">
               <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.05} zIndex={0}>
                 <div className="scale-[1.12] absolute inset-0 w-full h-full">
                   <LocalImage
-                    src="/images/join-us-cta.jpg"
+                    src="/images/join-us-cta2.jpg"
                     alt="About Test"
                     layout="fill"
                     className="w-full h-full absolute inset-0 z-0 object-cover object-center"
@@ -421,14 +421,14 @@ export default function Community(initialData) {
                 </div>   
               </ScrollParallax>
 
-              <div className="grid grid-cols-12 py-12 lg:pt-[12vw] lg:pb-[20.5vw] px-6 xl:px-10 max-w-screen-3xl mx-auto">
+              <div className="grid grid-cols-12 py-12 lg:pt-[12vw] lg:pb-[20.5vw] px-6 xl:px-10 max-w-screen-3xl mx-auto ">
                 <div className="col-span-12 lg:col-span-5 z-10">
                   <h2 className="display-text mb-8 lg:mb-12 xl:mb-20">Want to join us?</h2>
 
                   <ul className="w-full grid gap-6 xl:gap-10 grid-cols-12 mb-12 lg:mb-16 xl:mb-24">
                     <li className="block col-span-3 lg:col-span-5">
                       <a
-                        href="https://discord.gg/homagames"
+                        href={contact.discord}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block group w-full"
@@ -446,7 +446,7 @@ export default function Community(initialData) {
                     </li>
                     <li className="block col-span-3 lg:col-span-5">
                       <a
-                        href="https://discord.gg/homagames"
+                        href={contact.twitter}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block group w-full"

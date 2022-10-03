@@ -251,7 +251,7 @@ export default function About(initialData) {
             </div>
           </m.div>
 
-          <m.div variants={fade} className="w-full flex flex-wrap">
+          <m.div variants={fade} className="w-full flex flex-wrap ">
             <div className="w-full lg:w-1/2 bg-gray-100 border-b lg:border-b-0 lg:border-r border-black/50">
               <div className="lg:sticky lg:top-0 lg:pb-32 xl:pb-48 relative overflow-hidden">
                 <div className="flex w-full aspect-square scale-[1.1]">
@@ -264,13 +264,13 @@ export default function About(initialData) {
               </div>
             </div>
 
-            <div className="w-full lg:w-1/2 pb-12 lg:pb-16 xl:pb-24">
+            <div className="w-full lg:w-1/2 pb-12 lg:pb-16 xl:pb-24 border-t border-black/50">
               {about.servicesList.map((e, i) => {
                 return (
                   <div
                     className={`w-full ${
                       i + 1 != about.servicesList.length && "border-b border-black/50"
-                    } px-6 xl:px-10 py-6 xl:py-10 flex flex-wrap`}
+                    } px-6 xl:px-10 py-6 xl:py-10 flex flex-wrap lg:pb-[20vw] xl:pb-[20vw]`}
                   >
                     <div className="w-auto mr-12">
                       <span className="uppercase text-sm tracking-widest mt-1 block font-medium">
@@ -297,7 +297,7 @@ export default function About(initialData) {
                 <div className="col-span-12 lg:col-span-6 z-10">
                   <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">We Value:</span>
                   <h2 className="display-text mb-6 lg:mb-12 xl:mb-16">Ambition</h2>
-                  <span className="uppercase text-xl lg:text-2xl xl:text-3xl tracking-widest mb-3 lg:mb-5 block font-black leading-none lg:leading-none xl:leading-none">We put flags on summits</span>
+                  <span className="uppercase text-xl lg:text-2xl xl:text-3xl tracking-normal mb-3 lg:mb-5 block font-black leading-none lg:leading-none xl:leading-none">We put flags on summits</span>
                   <div className="content content--lg max-w-3xl mb-8 xl:mb-12 w-10/12">
                     <p>We set our goals ambitiously high and don’t shy away from the climb. We’re on a mission to take over an industry thick with incumbents who won’t go quietly into the night. To succeed here, you’ll need a highly metaphorical shield and a sword.</p>
                   </div>
@@ -321,7 +321,7 @@ export default function About(initialData) {
                 <div className="col-span-12 lg:col-span-6 z-10">
                   <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">We Value:</span>
                   <h2 className="display-text mb-6 lg:mb-12 xl:mb-16">Humility</h2>
-                  <span className="uppercase text-xl lg:text-2xl xl:text-3xl tracking-widest mb-3 lg:mb-5 block font-black leading-none lg:leading-none xl:leading-none">We put our egos aside</span>
+                  <span className="uppercase text-xl lg:text-2xl xl:text-3xl tracking-normal mb-3 lg:mb-5 block font-black leading-none lg:leading-none xl:leading-none">We put our egos aside</span>
                   <div className="content content--lg max-w-3xl mb-8 xl:mb-12 w-10/12">
                   <p>We put our hands up. First to volunteer to help, second to high-five. Having an ego is natural, but letting it run the show is unhelpful to everyone. In the words of Mr. Lamar: Sit down. Be humble.</p>
                   </div>
@@ -345,7 +345,7 @@ export default function About(initialData) {
                 <div className="col-span-12 lg:col-span-6 z-10">
                   <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">We Value:</span>
                   <h2 className="display-text mb-6 lg:mb-12 xl:mb-16">Curiosity</h2>
-                  <span className="uppercase text-xl lg:text-2xl xl:text-3xl tracking-widest mb-3 lg:mb-5 block font-black leading-none lg:leading-none xl:leading-none">We keep our eyes open</span>
+                  <span className="uppercase text-xl lg:text-2xl xl:text-3xl tracking-normal mb-3 lg:mb-5 block font-black leading-none lg:leading-none xl:leading-none">We keep our eyes open</span>
                   <div className="content content--lg max-w-3xl mb-8 xl:mb-12 w-10/12">
                     <p>We believe the best way to know anything is to question everything. And to do that, you need open eyes and open minds at all times.</p>
                   </div>

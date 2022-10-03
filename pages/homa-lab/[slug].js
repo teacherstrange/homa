@@ -158,11 +158,11 @@ export default function HomaLabChild(initialData) {
             </div>
             {product.contentSections && (
               <div className="w-full flex flex-wrap">
-                <div className="w-full lg:w-1/2 px-6 xl:px-10 py-20 lg:py-28 xl:py-32 border-b lg:border-r border-black/50">
-                  <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">{product.title} Overview</span>
+                <div className="w-full lg:w-1/2 px-6 xl:px-10 py-16 lg:pt-20 xl:pt-24 border-b lg:border-r border-black/50">
+                  <span className="uppercase text-sm tracking-widest mb-8 lg:mb-24 block font-medium">{product.title} Overview</span>
                   {product.contentSections?.map((e, i) => {
                     return (
-                      <div key={i} className="mb-5 lg:mb-8">
+                      <div key={i} className="mb-6 lg:mb-[75px] xl:mb-[90px]">
                         <span className="font-bold text-xl lg:text-2xl xl:text-3xl uppercase tracking-wide leading-[1] lg:leading-[1] xl:leading-[1] block mb-3 lg:mb-5">{e.title}</span>
                         <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">{e.shortDescription}</span>
 
@@ -175,7 +175,7 @@ export default function HomaLabChild(initialData) {
                     )
                   })}
                 </div>
-                <div className="w-full lg:w-1/2 py-20 lg:py-28 xl:py-32 lg:border-r border-black/50 relative overflow-hidden aspect-square">
+                <div className={`hidden lg:block w-full lg:w-1/2 py-20 lg:py-28 xl:py-32 lg:border-r border-black/50 relative overflow-hidden aspect-square ${product.contentSections.length > 2 && 'border-b'}`}>
                   <GridOverlayDense/>
                 </div>
               </div>
@@ -223,7 +223,7 @@ export default function HomaLabChild(initialData) {
                       </div>
                       {e.sectionItems?.map((e, i) => {
                         return (
-                          <div className={`w-full ${(i + 1) != e.sectionItems?.length && 'border-b border-black/50'} px-6 xl:px-10 py-6 xl:py-10 flex flex-wrap`}>
+                          <div className={`w-full ${(i + 1) != e.sectionItems?.length && 'border-b border-black/50'} px-6 xl:px-10 py-6 xl:py-10 flex flex-wrap lg:pb-[20vw] xl:pb-[20vw]`}>
                             <div className="w-full">
                               <h3 className="font-black text-5xl lg:text-6xl xl:text-7xl leading-[0.95] mb-12 lg:mb-24 uppercase max-w-[500px] xl:max-w-none">0{i + 1}</h3>
 

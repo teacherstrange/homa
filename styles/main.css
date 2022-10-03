@@ -195,7 +195,7 @@ canvas {
 }
 
 .roll-btn__front {
-  @apply bg-black text-white text-center uppercase px-12 py-6 tracking-wide relative h-full flex items-center justify-center;
+  @apply bg-black text-white text-center uppercase px-12 py-6 tracking-wide relative h-full flex items-center justify-center border border-transparent;
   -webkit-transform-origin: 50% 100% 0;
   transform-origin: 50% 100% 0;
   transition: -webkit-transform .3s cubic-bezier(.76,0,.24,1) 0s;
@@ -204,7 +204,7 @@ canvas {
 }
 
 .roll-btn__back {
-  @apply flex items-center justify-center text-black h-full w-full text-center uppercase px-12 py-6 tracking-wide absolute left-0 top-[100%] z-[-1] bg-pink;
+  @apply flex items-center justify-center text-black h-full w-full text-center uppercase px-12 py-6 tracking-wide absolute left-0 top-[100%] z-[-1] bg-pink border border-black/50;
   -webkit-transform-origin: 50% 0 0;
   transform-origin: 50% 0 0;
   -webkit-transform: rotateX(-90deg);

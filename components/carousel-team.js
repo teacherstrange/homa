@@ -44,7 +44,7 @@ export const CarouselTeam = ({items}) => {
                 </div>
                 <div className="embla__slide-inner">
                   <div className="embla__slide-inner-blur">
-                    <span className="block uppercase font-bold tracking-widest text-xl leading-none lg:text-2xl lg:leading-none mb-3">{e.title}</span>
+                    <span className="block uppercase font-bold tracking-normal text-xl leading-none lg:text-2xl lg:leading-none mb-3">{e.title}</span>
                     {(e.jobTitle || e.company) && (
                       <span className="block text-base leading-[1.15] lg:text-lg lg:leading-[1.15]">{e.jobTitle ? e.jobTitle : null}, {e.company ? e.company : null}</span>
                     )}

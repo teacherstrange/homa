@@ -22,7 +22,7 @@ export default function MousePosition() {
     <div>
       <span className="block tabular-nums">x 
       {mouseCoords.x < 1000 && '0'}{mouseCoords.x}
-      &nbsp;:&nbsp;
+      &nbsp;<span className="inline-block ml-[3px]">:</span>&nbsp;
       y
       {mouseCoords.y < 1000 && '0'}{mouseCoords.y}
       </span>

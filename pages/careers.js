@@ -184,7 +184,7 @@ export default function Careers(initialData) {
               </div>
             </div>
 
-            <div className="bg-lime text-black">
+            <div className="bg-lime text-black border-b border-black/50">
               <div className="grid grid-cols-12 py-24 lg:py-[10vw] px-6 xl:px-10 max-w-screen-3xl mx-auto">
                 
                 <div className="col-span-12 z-10">
