@@ -192,8 +192,8 @@ export default function Header() {
                   href="https://lab-v2.homagames.com/login" target="_blank" rel="noopener noreferrer"
                   className="roll-btn roll-btn--header block mb-0 pb-0 lg:h-[70px] xl:h-[80px]"
                 >
-                  <span class="roll-btn__front"><span className="block w-full"><span className="hidden xl:inline-block">Enter The&nbsp;</span>Homa Lab</span></span>
-                  <span class="roll-btn__back"><span className="block w-full"><span className="hidden xl:inline-block">Enter The&nbsp;</span>Homa Lab</span></span>
+                  <span className="roll-btn__front"><span className="block w-full"><span className="hidden xl:inline-block">Enter The&nbsp;</span>Homa Lab</span></span>
+                  <span className="roll-btn__back"><span className="block w-full"><span className="hidden xl:inline-block">Enter The&nbsp;</span>Homa Lab</span></span>
                 </a>
               </li>
             </ul>

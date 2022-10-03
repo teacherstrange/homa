@@ -24,16 +24,16 @@ export const CarouselBlog = ({items}) => {
         </div>
 
         <div className="hidden lg:flex lg:justify-end w-full lg:w-auto lg:ml-auto pr-6 lg:pr-10 mb-5 lg:mb-0">
-          <button class="embla__prev w-12 lg:w-16 h-12 lg:h-16 flex items-center p-3 lg:p-4 justify-center border border-black/50 border-r-0 transition-colors ease-in-out duration-300 hover:border-black/100 focus:border-black/100" onClick={scrollPrev}>
+          <button className="embla__prev w-12 lg:w-16 h-12 lg:h-16 flex items-center p-3 lg:p-4 justify-center border border-black/50 border-r-0 transition-colors ease-in-out duration-300 hover:border-black/100 focus:border-black/100" onClick={scrollPrev}>
             <ArrowRightIcon className="w-full rotate-180" />
           </button>
-          <button class="embla__next w-12 lg:w-16 h-12 lg:h-16 flex items-center p-3 lg:p-4 justify-center border border-black/50 transition-colors ease-in-out duration-300 hover:border-black focus:border-black" onClick={scrollNext}>
+          <button className="embla__next w-12 lg:w-16 h-12 lg:h-16 flex items-center p-3 lg:p-4 justify-center border border-black/50 transition-colors ease-in-out duration-300 hover:border-black focus:border-black" onClick={scrollNext}>
             <ArrowRightIcon className="w-full" />
           </button>
         </div>
       </div>
 
-      <div class="embla__viewport ml-auto bg-opacity-70 overflow-hidden pl-6 lg:pl-20 mb-6 lg:mb-0" ref={emblaNewsRef}>
+      <div className="embla__viewport ml-auto bg-opacity-70 overflow-hidden pl-6 lg:pl-20 mb-6 lg:mb-0" ref={emblaNewsRef}>
         <div className="embla__container">
           {items.map((e, i) => {
             let d = new Date(e.publishDate);
@@ -72,10 +72,10 @@ export const CarouselBlog = ({items}) => {
       </div>
 
       <div className="flex lg:hidden lg:justify-end w-full lg:w-auto lg:ml-auto px-6 lg:pr-10 mb-5 lg:mb-0">
-        <button class="embla__prev w-12 lg:w-16 h-12 lg:h-16 flex items-center p-3 lg:p-4 justify-center border border-black/50 border-r-0 transition-colors ease-in-out duration-300 hover:border-black/100 focus:border-black/100" onClick={scrollPrev}>
+        <button className="embla__prev w-12 lg:w-16 h-12 lg:h-16 flex items-center p-3 lg:p-4 justify-center border border-black/50 border-r-0 transition-colors ease-in-out duration-300 hover:border-black/100 focus:border-black/100" onClick={scrollPrev}>
           <ArrowRightIcon className="w-full rotate-180" />
         </button>
-        <button class="embla__next w-12 lg:w-16 h-12 lg:h-16 flex items-center p-3 lg:p-4 justify-center border border-black/50 transition-colors ease-in-out duration-300 hover:border-black focus:border-black" onClick={scrollNext}>
+        <button className="embla__next w-12 lg:w-16 h-12 lg:h-16 flex items-center p-3 lg:p-4 justify-center border border-black/50 transition-colors ease-in-out duration-300 hover:border-black focus:border-black" onClick={scrollNext}>
           <ArrowRightIcon className="w-full" />
         </button>
       </div>

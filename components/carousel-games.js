@@ -27,20 +27,20 @@ export const CarouselGames = ({ heading, items }) => {
         </div>
 
         <div className="flex lg:justify-end w-full lg:w-auto lg:ml-auto pr-6 lg:pr-10 mb-5 lg:mb-0">
-          <button class="embla__prev w-12 lg:w-16 h-12 lg:h-16 flex items-center p-3 lg:p-4 justify-center border border-black/50 border-r-0 transition-colors ease-in-out duration-300 hover:border-black/100 focus:border-black/100" onClick={scrollPrev}>
+          <button className="embla__prev w-12 lg:w-16 h-12 lg:h-16 flex items-center p-3 lg:p-4 justify-center border border-black/50 border-r-0 transition-colors ease-in-out duration-300 hover:border-black/100 focus:border-black/100" onClick={scrollPrev}>
             <ArrowRightIcon className="w-full rotate-180" />
           </button>
-          <button class="embla__next w-12 lg:w-16 h-12 lg:h-16 flex items-center p-3 lg:p-4 justify-center border border-black/50 transition-colors ease-in-out duration-300 hover:border-black focus:border-black" onClick={scrollNext}>
+          <button className="embla__next w-12 lg:w-16 h-12 lg:h-16 flex items-center p-3 lg:p-4 justify-center border border-black/50 transition-colors ease-in-out duration-300 hover:border-black focus:border-black" onClick={scrollNext}>
             <ArrowRightIcon className="w-full" />
           </button>
         </div>
       </div>
 
-      <button class="absolute hidden lg:block lg:top-[8vw] xl:top-[7vw] 2xl:top-[5vw] left-0 bottom-0 w-[6%] h-full bg-transparent z-[100]" onClick={scrollPrev}></button>
+      <button className="absolute hidden lg:block lg:top-[8vw] xl:top-[7vw] 2xl:top-[5vw] left-0 bottom-0 w-[6%] h-full bg-transparent z-[100]" onClick={scrollPrev}></button>
       
-      <button class="absolute hidden lg:block lg:top-[8vw] xl:top-[7vw] 2xl:top-[5vw] right-0 left-auto bottom-0 w-[44%] h-full bg-transparent z-[100]" onClick={scrollNext}></button>
+      <button className="absolute hidden lg:block lg:top-[8vw] xl:top-[7vw] 2xl:top-[5vw] right-0 left-auto bottom-0 w-[44%] h-full bg-transparent z-[100]" onClick={scrollNext}></button>
 
-      <div class="embla__viewport w-full border border-r-0 border-black/50 ml-auto bg-opacity-70 overflow-hidden" ref={emblaRef}>
+      <div className="embla__viewport w-full border border-r-0 border-black/50 ml-auto bg-opacity-70 overflow-hidden" ref={emblaRef}>
         <div className="embla__container">
           {items.map((e, i) => {
             return (

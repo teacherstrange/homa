@@ -131,9 +131,9 @@ export default function Games(initialData) {
                   <div className="relative z-10">
                     <p className="text-lg md:text-xl xl:text-2xl mb-12 lg:mb-16">{gamesLanding.heroIntroText}</p>
 
-                    <a href="https://lab-v2.homagames.com/login" target="_blank" rel="noreferrer noopener" class="roll-btn inline-block mb-6 lg:mb-10">
-                      <span class="roll-btn__front">Submit your game</span>
-                      <span class="roll-btn__back">Submit your game</span>
+                    <a href="https://lab-v2.homagames.com/login" target="_blank" rel="noreferrer noopener" className="roll-btn inline-block mb-6 lg:mb-10">
+                      <span className="roll-btn__front">Submit your game</span>
+                      <span className="roll-btn__back">Submit your game</span>
                     </a>
                   </div>
                 </div>
@@ -310,9 +310,9 @@ export default function Games(initialData) {
                     </div>
                   </div>
 
-                  <a href="https://lab-v2.homagames.com/login" target="_blank" rel="noreferrer noopener" class="roll-btn inline-block lg:w-1/2 xl:w-1/4">
-                    <span class="roll-btn__front">Submit your game</span>
-                    <span class="roll-btn__back">Submit your game</span>
+                  <a href="https://lab-v2.homagames.com/login" target="_blank" rel="noreferrer noopener" className="roll-btn inline-block lg:w-1/2 xl:w-1/4">
+                    <span className="roll-btn__front">Submit your game</span>
+                    <span className="roll-btn__back">Submit your game</span>
                   </a>
                 </div>
               </div>
@@ -364,9 +364,9 @@ export default function Games(initialData) {
                   </div>
 
 
-                  <a href="https://lab-v2.homagames.com/login" target="_blank" rel="noreferrer noopener" class="roll-btn inline-block">
-                    <span class="roll-btn__front">Submit your game</span>
-                    <span class="roll-btn__back">Submit your game</span>
+                  <a href="https://lab-v2.homagames.com/login" target="_blank" rel="noreferrer noopener" className="roll-btn inline-block">
+                    <span className="roll-btn__front">Submit your game</span>
+                    <span className="roll-btn__back">Submit your game</span>
                   </a>
                 </div>
 

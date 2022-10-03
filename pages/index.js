@@ -183,18 +183,18 @@ export default function Home(initialData) {
                   <div className="grid grid-cols-2 gap-1">
                     <div className="col-span-2 md:col-span-1 mb-6 md:mb-0">
                       <Link href="/homa-lab">
-                        <a class="roll-btn w-full" >
-                          <span class="roll-btn__front">Make A Game</span>
-                          <span class="roll-btn__back">Make A Game</span>
+                        <a className="roll-btn w-full" >
+                          <span className="roll-btn__front">Make A Game</span>
+                          <span className="roll-btn__back">Make A Game</span>
                         </a>
                       </Link>
                     </div>
 
                     <div className="col-span-2 md:col-span-1">
                       <Link href="/careers">
-                        <a class="roll-btn w-full md:w-1/2">
-                          <span class="roll-btn__front">Build A Career</span>
-                          <span class="roll-btn__back">Build A Career</span>
+                        <a className="roll-btn w-full md:w-1/2">
+                          <span className="roll-btn__front">Build A Career</span>
+                          <span className="roll-btn__back">Build A Career</span>
                         </a>
                       </Link>
                     </div>
@@ -528,9 +528,9 @@ export default function Home(initialData) {
                   </div>
 
                   <Link href="/careers">
-                    <a class="roll-btn inline-block lg:w-1/3" >
-                      <span class="roll-btn__front">Apply for a job at Homa</span>
-                      <span class="roll-btn__back">Apply for a job at Homa</span>
+                    <a className="roll-btn inline-block lg:w-1/3" >
+                      <span className="roll-btn__front">Apply for a job at Homa</span>
+                      <span className="roll-btn__back">Apply for a job at Homa</span>
                     </a>
                   </Link>
                 </div>
@@ -542,7 +542,7 @@ export default function Home(initialData) {
               <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.05} zIndex={0}>
                 <div className="scale-[1.15] absolute inset-0 w-full h-full">
                   <LocalImage
-                    src="/images/hope-cta.jpg"
+                    src="/images/hope-cta2.jpg"
                     alt="About Test"
                     layout="fill"
                     className="w-full h-full absolute inset-0 z-0 object-cover object-center"

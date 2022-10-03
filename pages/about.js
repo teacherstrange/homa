@@ -256,22 +256,24 @@ export default function About(initialData) {
 
           <m.div variants={fade} className="w-full flex flex-wrap ">
             <div className="w-full lg:w-1/2 bg-gray-100 border-b lg:border-b-0 lg:border-r border-black/50">
-              <div className="lg:sticky lg:top-0  relative overflow-hidden">
+              <div className="lg:sticky lg:top-0 relative overflow-hidden">
                 <div className="flex w-full min-h-screen scale-[1.1]">
-                  {about.servicesList.map((e, i) => {
-                    return (
-                      <div className={`${(currentIndex == i) ? 'opacity-100' : 'opacity-0' } w-full transition-opacity ease-in-out duration-300 ${i == 0 ? 'relative' : 'absolute inset-0' }`}>
-                        <SanityImage
-                          key={i}
-                          image={e.image}
-                          layout="fill"
-                          width={e.image.asset.metadata.width}
-                          height={e.image.asset.metadata.height}
-                          className="w-full inset-0 h-full object-cover object-center"
-                        />
-                      </div>
-                    )
-                  })}
+                  <div className="w-full min-h-screen">
+                    {about.servicesList.map((e, i) => {
+                      return (
+                        <div className={`${(currentIndex == i) ? 'opacity-100' : 'opacity-0' } w-full transition-opacity min-h-screen ease-in-out duration-300 ${i == 0 ? 'relative' : 'absolute inset-0' }`}>
+                          <SanityImage
+                            key={i}
+                            image={e.image}
+                            layout="fill"
+                            width={e.image.asset.metadata.width}
+                            height={e.image.asset.metadata.height}
+                            className="inset-0 absolute w-full h-full object-cover object-center"
+                          />
+                        </div>
+                      )
+                    })}
+                  </div>
                 </div>
               </div>
             </div>

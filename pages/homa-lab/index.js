@@ -124,9 +124,9 @@ export default function HomaLab(initialData) {
               <div className="max-w-screen-3xl mx-auto relative z-10">
                 <h1 className="font-black text-[clamp(50px,_8.5vw,170px)] leading-[0.95] tracking-tight mb-16 lg:mb-32 uppercase relative z-10 w-11/12 lg:w-full"><TextScrambler text="If you’re not using this, you’re just playing around" seed={50} step={3} /></h1>
 
-                <a href="https://lab-v2.homagames.com/login" target="_blank" rel="noopener noreferrer" class="roll-btn inline-block">
-                  <span class="roll-btn__front">Submit your game</span>
-                  <span class="roll-btn__back">Submit your game</span>
+                <a href="https://lab-v2.homagames.com/login" target="_blank" rel="noopener noreferrer" className="roll-btn inline-block">
+                  <span className="roll-btn__front">Submit your game</span>
+                  <span className="roll-btn__back">Submit your game</span>
                 </a>
               </div>
             </div>
@@ -254,9 +254,9 @@ export default function HomaLab(initialData) {
                     </div>
                   </div>
 
-                  <a href="https://academy.homagames.com" target="_blank" rel="noopener noreferrer" class="roll-btn block lg:w-1/3 2xl:w-1/3 text-center">
-                    <span class="roll-btn__front">Learn More</span>
-                    <span class="roll-btn__back">Learn More</span>
+                  <a href="https://academy.homagames.com" target="_blank" rel="noopener noreferrer" className="roll-btn block lg:w-1/3 2xl:w-1/3 text-center">
+                    <span className="roll-btn__front">Learn More</span>
+                    <span className="roll-btn__back">Learn More</span>
                   </a>
                 </div>
               </div>

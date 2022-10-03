@@ -12,7 +12,7 @@ export default function LocalImage({ src, layout, width, height, className, prio
   if (priority) { attributes.priority = true } else { attributes.priority = false }
 
 	return (
-    <figure className={`image opacity-0 ${className} ${layout == 'fill' && 'cover-image' } ${imageIsLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300 ease-in-out will-change`}>
+    <figure className={`image ${className} ${layout == 'fill' && 'cover-image' } ${imageIsLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300 ease-in-out will-change`}>
 		  <Img src={src} {...attributes} onLoad={event => {
           const target = event.target;
           if (target.src.indexOf('data:image/gif;base64') < 0) {

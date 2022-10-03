@@ -173,9 +173,9 @@ export default function Careers(initialData) {
                   <div className="col-span-10 col-start-2 md:col-span-10 md:col-start-2 md:border-l md:border-r border-black/50 py-[8vw] md:px-10">
                     <div className="grid grid-cols-10 items-center">
                       <div className="col-span-9 md:col-span-5 mb-12 md:mb-0">
-                        <a href="https://apply.workable.com/homa-games/" target="_blank" rel="noopener noreferrer" class="roll-btn inline-block">
-                          <span class="roll-btn__front">Join Homa</span>
-                          <span class="roll-btn__back">Join Homa</span>
+                        <a href="https://apply.workable.com/homa-games/" target="_blank" rel="noopener noreferrer" className="roll-btn inline-block">
+                          <span className="roll-btn__front">Join Homa</span>
+                          <span className="roll-btn__back">Join Homa</span>
                         </a>
                       </div>
                     </div>
@@ -226,9 +226,9 @@ export default function Careers(initialData) {
                     })}
                   </div>
 
-                  <a href="https://apply.workable.com/homa-games/" target="_blank" rel="noopener noreferrer" class="roll-btn inline-block">
-                    <span class="roll-btn__front">Join Homa</span>
-                    <span class="roll-btn__back">Join Homa</span>
+                  <a href="https://apply.workable.com/homa-games/" target="_blank" rel="noopener noreferrer" className="roll-btn inline-block">
+                    <span className="roll-btn__front">Join Homa</span>
+                    <span className="roll-btn__back">Join Homa</span>
                   </a>
                 </div>
               </div>
@@ -308,9 +308,9 @@ export default function Careers(initialData) {
                     })}
                   </div>
 
-                  <a href="https://apply.workable.com/homa-games/" target="_blank" rel="noopener noreferrer" class="roll-btn inline-block">
-                    <span class="roll-btn__front">See All Open Roles</span>
-                    <span class="roll-btn__back">See All Open Roles</span>
+                  <a href="https://apply.workable.com/homa-games/" target="_blank" rel="noopener noreferrer" className="roll-btn inline-block">
+                    <span className="roll-btn__front">See All Open Roles</span>
+                    <span className="roll-btn__back">See All Open Roles</span>
                   </a>
                 </div>
               </div>
