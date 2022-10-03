@@ -73,7 +73,7 @@ export default function Header() {
                 />
 
                 {/* Homa Lab Subnav */}
-                <ul className="nav-child mt-[71px] xl:mt-[81px] lg:w-[750px] xl:w-[958px] 2xl:w-[1155px] 3xl:w-[1310px] ml-auto">
+                <ul className="nav-child mt-[71px] xl:mt-[81px] lg:w-[743px] xl:w-[952px] 2xl:w-[1130px] 3xl:w-[1255px] ml-auto">
                   <li className="block relative z-10">
                     <FancyLink
                       destination="/homa-lab"
