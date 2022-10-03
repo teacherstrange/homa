@@ -29,6 +29,7 @@ import TextScrambler from '@/components/text-scrambler'
 import GridOverlayDense from '@/components/grid-overlay-dense'
 import ScramblePillButton from '@/components/scramble-pill-button'
 import SanityImage from '@/components/sanity-image'
+import LocalImage from '@/components/local-image'
 
 const query = `{
   "blog": *[_type == "blog"][0...5]{
@@ -188,7 +189,7 @@ export default function Home(initialData) {
                         height={1236}
                       /> */}
 
-                      <PixelatedImage image={'/images/panda-new.webp'} width={2162} height={2785} />
+                      <LocalImage src={'/images/panda-new.webp'} width={1081} height={1392.5} />
                     </div>
                   </ScrollParallax>
                 </MouseParallax>
@@ -208,7 +209,7 @@ export default function Home(initialData) {
                     height={865}
                     className="w-full"
                   /> */}
-                  <PixelatedImage image={'/images/horse.webp'} width={865} height={865} />
+                  <LocalImage src={'/images/horse.webp'} width={865} height={865} />
                 </div>
               </ScrollParallax>
               
@@ -333,7 +334,7 @@ export default function Home(initialData) {
                         height={548}
                         className="w-full"
                       /> */}
-                      <PixelatedImage image={'/images/bee.webp'} width={398} height={548} />
+                      <LocalImage src={'/images/bee.webp'} width={398} height={548} />
                     </div>
                   </ScrollParallax>
                 </MouseParallax>
@@ -349,7 +350,7 @@ export default function Home(initialData) {
                         height={548}
                         className="w-full"
                       /> */}
-                      <PixelatedImage image={'/images/bee.webp'} width={398} height={548} />
+                      <LocalImage src={'/images/bee.webp'} width={398} height={548} />
                     </div>
                   </ScrollParallax>
                 </MouseParallax>
@@ -365,7 +366,7 @@ export default function Home(initialData) {
                         height={548}
                         className="w-full"
                       /> */}
-                      <PixelatedImage image={'/images/bee2.webp'} width={263} height={352} />
+                      <LocalImage src={'/images/bee2.webp'} width={263} height={352} />
                     </div>
                   </ScrollParallax>
                 </MouseParallax>
@@ -381,7 +382,7 @@ export default function Home(initialData) {
                     <div className="w-full h-full p-6 xl:p-10 flex items-center justify-center relative z-10">
                       {/* <div className="w-[300px] h-[300px] bg-pink lg:-mt-32 xl:-mt-40"></div> */}
                       <div className="w-[75%]">
-                        <Image
+                        <LocalImage
                           src="/images/graph.webp"
                           layout="responsive"
                           width={1152}
@@ -438,7 +439,7 @@ export default function Home(initialData) {
                       height={800}
                       className="w-full"
                     /> */}
-                    <PixelatedImage image={'/images/ninja.webp'} width={1056} height={800} />
+                    <LocalImage src={'/images/ninja.webp'} width={1056} height={800} />
                   </div>
                 </ScrollParallax>
               </MouseParallax>
@@ -568,7 +569,7 @@ export default function Home(initialData) {
             <div className="bg-orange/40 relative overflow-hidden pb-[25vw] lg:pb-0">
               <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.05} zIndex={0}>
                 <div className="scale-[1.15] absolute inset-0 w-full h-full">
-                  <Image
+                  <LocalImage
                     src="/images/hope-cta.jpg"
                     alt="About Test"
                     layout="fill"

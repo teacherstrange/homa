@@ -1,15 +1,13 @@
-import Image from "next/image"
-import Link from "next/link"
 import { ScrollParallax } from "react-just-parallax"
+import LocalImage from "./local-image"
 import ScramblePillButton from "./scramble-pill-button"
-import TextScrambler from "./text-scrambler"
 
 export default function FooterCta({ image, children }) {
   return (
     <div className="w-full bg-gray-100 relative overflow-hidden">
       <div className="w-full h-full absolute inset-0 z-0 object-cover object-center scale-[1.075]">
         <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={0.15} zIndex={0}>
-          <Image
+          <LocalImage
             src={image ? image : "/images/home.jpg" }
             alt="Character Test"
             layout="fill"

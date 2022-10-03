@@ -24,6 +24,7 @@ import { CarouselCards } from '@/components/carousel-cards'
 // Sanity
 import SanityPageService from '@/services/sanityPageService'
 import ScramblePillButton from '@/components/scramble-pill-button'
+import LocalImage from '@/components/local-image'
 
 const query = `{
   "games": *[_type == "gamesLibrary"] | order(orderRank asc){
@@ -137,7 +138,7 @@ export default function Games(initialData) {
                       height={865}
                       className="w-full"
                     /> */}
-                    <PixelatedImage image={'/images/farmer-new.webp'} width={325} height={1260} />
+                    <LocalImage src={'/images/farmer-new.webp'} width={325} height={1260} />
                   </div>
                 </ScrollParallax>
               </div>
@@ -181,7 +182,7 @@ export default function Games(initialData) {
                       height={548}
                       className="w-full"
                     /> */}
-                    <PixelatedImage image={'/images/bee.webp'} width={398} height={548} />
+                    <LocalImage src={'/images/bee.webp'} width={398} height={548} />
                   </div>
                 </ScrollParallax>
               </MouseParallax>
@@ -197,7 +198,7 @@ export default function Games(initialData) {
                       height={548}
                       className="w-full"
                     /> */}
-                    <PixelatedImage image={'/images/bee.webp'} width={398} height={548} />
+                    <LocalImage src={'/images/bee.webp'} width={398} height={548} />
                   </div>
                 </ScrollParallax>
               </MouseParallax>
@@ -213,7 +214,7 @@ export default function Games(initialData) {
                       height={548}
                       className="w-full"
                     /> */}
-                    <PixelatedImage image={'/images/bee.webp'} width={398} height={548} />
+                    <LocalImage src={'/images/bee.webp'} width={398} height={548} />
                   </div>
                 </ScrollParallax>
               </MouseParallax>
@@ -390,7 +391,7 @@ export default function Games(initialData) {
                     <div className="w-full lg:w-1/2 lg:border-l border-black/50 bg-gray-200 overflow-hidden relative">
                       <div className="scale-[1.125] w-full h-full">
                         <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.05}>
-                          <Image
+                          <LocalImage
                             src="/images/about.jpg"
                             alt="About Test"
                             layout="fill"

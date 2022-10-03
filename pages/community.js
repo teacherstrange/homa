@@ -25,6 +25,7 @@ import SanityImage from '@/components/sanity-image'
 import GridOverlay from '@/components/grid-overlay'
 import { CarouselTikTok } from '@/components/carousel-tiktok'
 import ScramblePillButton from '@/components/scramble-pill-button'
+import LocalImage from '@/components/local-image'
 
 const query = `{
   "team": *[_type == "team"]{
@@ -220,7 +221,7 @@ export default function Community(initialData) {
                       <div className="col-span-10 lg:col-span-5 lg:col-start-6 relative overflow-hidden">
                         <div className="scale-[1.15] w-full h-full aspect-square">
                           <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.05}>
-                            <Image
+                            <LocalImage
                               src="/images/character-yours.jpg"
                               alt="About Test"
                               layout="fill"
@@ -316,7 +317,7 @@ export default function Community(initialData) {
             <div className="bg-orange/40 mb-[8vw] relative overflow-hidden pb-[50vw] lg:pb-0">
               <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.05} zIndex={0}>
                 <div className="scale-[1.12] absolute inset-0 w-full h-full">
-                  <Image
+                  <LocalImage
                     src="/images/homagang-cta.jpg"
                     alt="About Test"
                     layout="fill"
@@ -327,7 +328,7 @@ export default function Community(initialData) {
 
               <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={0.05} zIndex={1}>
                 <div className="absolute bottom-0 right-0 w-[55%] lg:w-[40%] max-w-[900px] mb-[-0.4vw]">
-                  <Image
+                  <LocalImage
                     src="/images/princess-large.webp"
                     alt="About Test"
                     layout="responsive"
@@ -367,7 +368,7 @@ export default function Community(initialData) {
             <div className="bg-orange/40 relative overflow-hidden pb-[45vw] lg:pb-0">
               <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.05} zIndex={0}>
                 <div className="scale-[1.12] absolute inset-0 w-full h-full">
-                  <Image
+                  <LocalImage
                     src="/images/join-us-cta.jpg"
                     alt="About Test"
                     layout="fill"

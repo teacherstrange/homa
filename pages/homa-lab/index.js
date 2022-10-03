@@ -23,6 +23,7 @@ import SanityPageService from '@/services/sanityPageService'
 import SanityImage from '@/components/sanity-image'
 import GridOverlay from '@/components/grid-overlay'
 import ScramblePillButton from '@/components/scramble-pill-button'
+import LocalImage from '@/components/local-image'
 
 const query = `{
   "products": *[_type == "products"] | order(orderRank asc){
@@ -142,7 +143,7 @@ export default function HomaLab(initialData) {
                           height={1236}
                         /> */}
 
-                        <PixelatedImage image={'/images/girl-new.webp'} width={1555} height={2729} />
+                        <LocalImage src={'/images/girl-new.webp'} width={777.5} height={1364.5} />
                       </div>
                     </ScrollParallax>
                   </MouseParallax>

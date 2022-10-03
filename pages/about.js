@@ -23,6 +23,7 @@ import PixelatedImage from "@/components/pixelated-image";
 import SanityPageService from '@/services/sanityPageService'
 import SanityImage from '@/components/sanity-image'
 import SanityBlockContent from '@sanity/block-content-to-react'
+import LocalImage from "@/components/local-image";
 
 const query = `{
   "about": *[_type == "about"][0]{
@@ -162,10 +163,10 @@ export default function About(initialData) {
                             height={1236}
                           /> */}
 
-                          <PixelatedImage
-                            image={"/images/skull-new.webp"}
-                            width={1454}
-                            height={2368}
+                          <LocalImage
+                            src={"/images/skull-new.webp"}
+                            width={727}
+                            height={1184}
                           />
                         </div>
                       </ScrollParallax>
@@ -210,19 +211,18 @@ export default function About(initialData) {
             variants={fade}
             className="w-full py-[25vw] lg:py-[18vw] xl:py-[15vw] relative overflow-hidden mb-0 px-6 lg:px-10"
           >
-            <div className="w-full h-full absolute inset-0 z-0 object-cover object-center scale-[1.1]">
+            <div className="w-full h-full absolute inset-0 z-0 object-cover object-center scale-[1.1] bg-orange/20">
               <ScrollParallax
                 isAbsolutelyPositioned
                 lerpEase={1}
                 strength={-0.035}
                 zIndex={0}
               >
-                <Image
+                <LocalImage
                   src="/images/who-we-are.jpg"
                   alt="Who We Are Landscape"
                   layout="fill"
                   quality={75}
-                  priority
                   className="w-full h-full absolute inset-0 z-0 object-cover object-center"
                 />
               </ScrollParallax>
