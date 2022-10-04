@@ -170,6 +170,7 @@ export default function Games(initialData) {
 
                 <div className="w-full lg:w-1/2 flex items-start translate-y-[-15%] lg:translate-y-[-25%] scale-[1.1]">
                   <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-full`}>
+                    <source src={'/videos/faces.mp4'} type="video/mp4" />
                     <source src={'/videos/faces.webm'} type="video/webm" />
 
                     Sorry. Your browser does not support the video tag.
@@ -255,6 +256,7 @@ export default function Games(initialData) {
                   <div className="w-full flex flex-wrap border border-black/50 mb-6 lg:mb-8">
                     <div className="w-full lg:w-1/2 xl:w-1/4 border-b xl:border-b-0 lg:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
                       <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-full`}>
+                        <source src={'/videos/chess.mov'} type="video/quicktime" />
                         <source src={'/videos/chess.webm'} type="video/webm" />
 
                         Sorry. Your browser does not support the video tag.
@@ -269,6 +271,7 @@ export default function Games(initialData) {
 
                     <div className="w-full lg:w-1/2 xl:w-1/4 border-b xl:border-b-0 xl:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
                       <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-full`}>
+                        <source src={'/videos/cog.mov'} type="video/quicktime" />
                         <source src={'/videos/cog.webm'} type="video/webm" />
 
                         Sorry. Your browser does not support the video tag.
@@ -283,6 +286,7 @@ export default function Games(initialData) {
 
                     <div className="w-full lg:w-1/2 xl:w-1/4 border-b lg:border-b-0 lg:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
                       <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-full`}>
+                        <source src={'/videos/brick.mov'} type="video/quicktime" />
                         <source src={'/videos/brick.webm'} type="video/webm" />
 
                         Sorry. Your browser does not support the video tag.
@@ -297,6 +301,7 @@ export default function Games(initialData) {
 
                     <div className="w-full lg:w-1/2 xl:w-1/4 p-5 lg:p-6 xl:p-8 2xl:p-10">
                       <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-full`}>
+                        <source src={'/videos/rocket.mov'} type="video/quicktime" />
                         <source src={'/videos/rocket.webm'} type="video/webm" />
 
                         Sorry. Your browser does not support the video tag.
@@ -372,6 +377,7 @@ export default function Games(initialData) {
 
                 <div className="col-span-12 lg:col-span-3 relative hidden xl:block self-center">
                   <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-full scale-[1.4] xl:scale-[1.5] translate-x-[-25%] xl:translate-x-[-30%] xl:translate-y-[20%]`}>
+                    <source src={'/videos/chess.mp4'} type="video/mp4" />
                     <source src={'/videos/chess.webm'} type="video/webm" />
 
                     Sorry. Your browser does not support the video tag.

@@ -221,6 +221,7 @@ export default function HomaLab(initialData) {
                     <p>The Academy is a dev-centered learning hub where you can access game design and game play analysis of the latest hits, training on how to build great games, methods for ideation and player experience optimization.</p>
 
                     <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-[65%] absolute top-0 right-0 z-[1] translate-x-[65%] lg:translate-y-[-10%] xl:translate-y-[-20%] hidden lg:block`}>
+                      <source src={'/videos/flagpole.mov'} type="video/quicktime" />
                       <source src={'/videos/flagpole.webm'} type="video/webm" />
 
                       Sorry. Your browser does not support the video tag.

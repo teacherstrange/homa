@@ -192,7 +192,8 @@ export default function Home(initialData) {
 
                     <div className="col-span-1 md:col-span-1">
                       <Link href="/careers">
-                        <a className="roll-btn roll-btn--hero w-full md:w-1/2">
+                        <a className="roll-btn roll-btn--hero 
+                        w-full md:w-1/2">
                           <span className="roll-btn__front">Build A Career</span>
                           <span className="roll-btn__back">Build A Career</span>
                         </a>
@@ -248,7 +249,7 @@ export default function Home(initialData) {
                         <div className="w-[100%] md:w-[85%] lg:w-[65%] relative mx-auto">
                           <PhoneIcon className="w-full relative z-0 opacity-90" />
 
-                          <div className="absolute top-0 right-0 mr-[-35%] lg:mr-[-50%] mt-[15%] z-10 w-full lg:w-[70%]">
+                          <div className="absolute bottom-[50px] lg:bottom-auto lg:top-0 right-0 mr-[-35%] lg:mr-[-50%] mt-[15%] z-10 w-full lg:w-[70%]">
                             <div className="w-full">
                               <span className="block uppercase font-medium tracking-wider text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-b-0 border-black/50 px-3 py-5">{home.featuredGames[0].title}</span>
                             </div>
@@ -454,6 +455,7 @@ export default function Home(initialData) {
                 {/* Henry to replace with WebGl */}
                 {/* <TestWebgl /> */}
                 <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-full scale-[1.1]`}>
+                  <source src={'/videos/stairs.mp4'} type="video/mp4" codecs="hvc1" />
                   <source src={'/videos/stairs.webm'} type="video/webm" />
 
                   Sorry. Your browser does not support the video tag.
@@ -491,6 +493,7 @@ export default function Home(initialData) {
                 
                 <div className="col-span-12 lg:col-span-8 z-10 relative">
                   <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-[60%] absolute top-0 right-0 z-[1] translate-x-[65%] lg:translate-y-[10%] xl:translate-y-[-5%] hidden lg:block`}>
+                    <source src={'/videos/rocket.mov'} type="video/quicktime" />
                     <source src={'/videos/rocket.webm'} type="video/webm" />
 
                     Sorry. Your browser does not support the video tag.

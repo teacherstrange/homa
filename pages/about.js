@@ -322,6 +322,7 @@ export default function About(initialData) {
                 <div className="col-span-12 lg:col-span-6 z-10 h-full">
                   <div className="h-full flex items-center justify-center relative">
                     <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-full translate-y-[-1%]`}>
+                      <source src={'/videos/flagpole.mov'} type="video/quicktime" />
                       <source src={'/videos/flagpole.webm'} type="video/webm" />
 
                       Sorry. Your browser does not support the video tag.
@@ -346,6 +347,7 @@ export default function About(initialData) {
                 <div className="col-span-12 lg:col-span-6 z-10 h-full">
                   <div className="h-full flex items-center justify-center">
                     <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-full translate-y-[-1%]`}>
+                      <source src={'/videos/hands.mov'} type="video/quicktime" />
                       <source src={'/videos/hands.webm'} type="video/webm" />
 
                       Sorry. Your browser does not support the video tag.
@@ -370,6 +372,7 @@ export default function About(initialData) {
                 <div className="col-span-12 lg:col-span-6 z-10 h-full">
                   <div className="h-full flex items-center justify-center">
                     <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-full translate-y-[-1%]`}>
+                      <source src={'/videos/eye.mov'} type="video/quicktime" />
                       <source src={'/videos/eye.webm'} type="video/webm" />
 
                       Sorry. Your browser does not support the video tag.

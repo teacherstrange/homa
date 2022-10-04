@@ -285,3 +285,17 @@ canvas {
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
 }
+
+@supports not (aspect-ratio: 1 / 1) {
+  .aspect-square::before {
+    float: left;
+    padding-top: 100%;
+    content: "";
+  }
+
+  .aspect-square::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}

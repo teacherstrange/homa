@@ -1,6 +1,6 @@
 export default {
-  defaultTitle: 'Homa | Leave your mark on the gaming industry',
-  description: 'Leave your mark in the gaming industry. We are building a team of extraordinary individuals working together to build apps that entertain the world. We are experts in every step of the publishing process.',
+  defaultTitle: 'Homa | Game The System',
+  description: "We're believers in data and builders of tools that help game creators MAKE and PUBLISH",
   titleTemplate: 'Homa | %s',
   openGraph: {
     type: 'website',

@@ -256,6 +256,7 @@ export default function Careers(initialData) {
               <div className="grid grid-cols-12 max-w-screen-3xl mx-auto">
                 <div className="col-span-12 md:col-span-10 md:col-start-2 md:border-l md:border-r border-black/50 py-[10vw] px-6 md:px-16 xl:px-24 relative">
                   <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-[65%] absolute top-0 right-0 hidden lg:block translate-y-[-15.5%]`}>
+                    <source src={'/videos/faces.mov'} type="video/quicktime" />
                     <source src={'/videos/faces.webm'} type="video/webm" />
 
                     Sorry. Your browser does not support the video tag.
