@@ -1,6 +1,7 @@
 // Tools
 import { LazyMotion, domAnimation, m } from 'framer-motion'
 import { NextSeo } from 'next-seo'
+import { useScrollPercentage } from 'react-scroll-percentage'
 
 // Transitions
 import { fade } from '@/helpers/transitions'
@@ -89,6 +90,10 @@ const pageService = new SanityPageService(query)
 export default function Games(initialData) {
   // Sanity Data
   const { data: { games, successStories, gamesLanding, contact } } = pageService.getPreviewHook(initialData)()
+
+  const [marqueeRef, percentage] = useScrollPercentage({
+    threshold: 0,
+  })
   
   return (
     <Layout>
@@ -181,7 +186,7 @@ export default function Games(initialData) {
 
             <CarouselCards heading="Our Partners" items={successStories} />
 
-            <div className="hidden lg:block relative border-b border-black/50 ">
+            <div className="hidden lg:block relative border-b border-black/50 py-[25vw] overflow-hidden">
               <MouseParallax isAbsolutelyPositioned lerpEase={0.15} strength={-0.05} zIndex={10}>
                 <ScrollParallax enableOnTouchDevice={false} isAbsolutelyPositioned lerpEase={0.15} strength={-0.14} zIndex={10}>
                   <div className="absolute bottom-[25%] right-[48%] z-0 w-full max-w-[100px] lg:max-w-[180px]">
@@ -230,16 +235,8 @@ export default function Games(initialData) {
                 </ScrollParallax>
               </MouseParallax>
 
-              <div className="relative z-0 flex overflow-x-hidden">
-                <div className="my-56 lg:my-[25vw] animate-marquee whitespace-nowrap">
-                  <span className="mx-[5vw] lg:mx-[6vw] text-[clamp(80px,_11.2vw,_250px)] font-black uppercase leading-none">All Killer, No Filler</span>
-                  <span className="mx-[5vw] lg:mx-[6vw] text-[clamp(80px,_11.2vw,_250px)] font-black uppercase leading-none">All Killer, No Filler</span>
-                  <span className="mx-[5vw] lg:mx-[6vw] text-[clamp(80px,_11.2vw,_250px)] font-black uppercase leading-none">All Killer, No Filler</span>
-                </div>
-
-                <div className="my-56 lg:my-[25vw] absolute top-0 animate-marquee2 whitespace-nowrap">
-                  <span className="mx-[5vw] lg:mx-[6vw] text-[clamp(80px,_11.2vw,_250px)] font-black uppercase leading-none">All Killer, No Filler</span>
-                  <span className="mx-[5vw] lg:mx-[6vw] text-[clamp(80px,_11.2vw,_250px)] font-black uppercase leading-none">All Killer, No Filler</span>
+              <div className="relative z-0 flex overflow-hidden whitespace-nowrap" ref={marqueeRef}>
+                <div className="whitespace-nowrap transition-transform ease-out duration-300" style={{ transform: `translateX(-${((percentage.toPrecision(100) * 25))}%)`}}>
                   <span className="mx-[5vw] lg:mx-[6vw] text-[clamp(80px,_11.2vw,_250px)] font-black uppercase leading-none">All Killer, No Filler</span>
                 </div>
               </div>
