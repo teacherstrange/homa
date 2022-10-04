@@ -34,7 +34,7 @@ import ProductScroller from '@/components/product-scroller'
 import { CarouselMobileScroller } from '@/components/carousel-mobile-scroller'
 
 const query = `{
-  "blog": *[_type == "blog"][0...5]{
+  "blog": *[_type == "blog"] | order(publishDate desc) [0...5]{
     title,
     slug {
       current
