@@ -51,7 +51,7 @@
 
 .content--nolead {
   & > p {
-    @apply leading-[1.25] lg:leading-[1.25] xl:leading-[1.25]
+    @apply leading-[1.075] lg:leading-[1.25] xl:leading-[1.25]
   }
 }
 

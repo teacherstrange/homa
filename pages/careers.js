@@ -120,11 +120,11 @@ export default function Careers(initialData) {
                 <div className="grid grid-cols-12 max-w-screen-3xl mx-auto">
                   <div className="col-span-10 col-start-2 md:col-span-10 md:col-start-2 md:border-l md:border-r border-black/50 py-[10vw] md:px-10">
                     <div className="grid grid-cols-10 items-center">
-                      <div className="col-span-9 md:col-span-5 mb-12 md:mb-0">
+                      <div className="col-span-9 md:col-span-5 mb-5 md:mb-0">
 
-                        <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">Work With Us</span>
+                        <span className="uppercase text-sm tracking-wide mb-5 lg:mb-8 block font-medium">Work With Us</span>
 
-                        <p className="text-xl lg:text-2xl xl:text-3xl uppercase font-bold">{careers.introText}</p>
+                        <p className="text-xl lg:text-2xl xl:text-3xl uppercase font-bold leading-[1.24]">{careers.introText}</p>
                       </div>
                     </div>
                   </div>
@@ -136,8 +136,8 @@ export default function Careers(initialData) {
                   <div className="col-span-12 md:col-span-10 md:col-start-2 md:border-l md:border-r border-black/50 pb-0 md:pb-[10vw] py-[10vw] px-6 md:px-10">
                     {careers.introPerkItems.map((e, i) => {
                       return (
-                        <div className={`grid grid-cols-12 ${(i + 1) !== careers.introPerkItems.length && 'pb-[15vw] lg:pb-[10vw]'}`} key={i}>
-                          <div className="col-span-12 lg:col-span-3 mb-5 lg:mb-0">
+                        <div className={`grid grid-cols-12 ${(i + 1) !== careers.introPerkItems.length && 'pb-24 lg:pb-[10vw]'}`} key={i}>
+                          <div className="col-span-12 lg:col-span-3 mb-8 lg:mb-0">
                             { i == 0 && (
                               <HappyIcon className="w-[40%] max-w-[50px] lg:max-w-[100px] lg:mx-auto" />
                             )}
@@ -155,9 +155,9 @@ export default function Careers(initialData) {
                             )}
                           </div>
                           <div className="col-span-12 lg:col-span-7">
-                            <span className="block font-black text-[clamp(35px,_5vw,_86px)] leading-[0.95] mb-8 lg:mb-12 uppercase max-w-[550px]">{e.heading}</span>
+                            <span className="block font-black text-[clamp(36px,_5vw,_86px)] leading-[0.95] mb-8 lg:mb-12 uppercase max-w-[550px] w-[70%] lg:w-full">{e.heading}</span>
 
-                            <div className="content max-w-[550px]">
+                            <div className="content max-w-[550px] leading-[1.24]">
                               <p>{e.text}</p>
                             </div>
                           </div>

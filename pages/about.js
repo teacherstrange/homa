@@ -11,7 +11,7 @@ import Layout from "@/components/layout";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import FooterCta from "@/components/footer-cta";
-import { MouseParallax, ScrollParallax } from "react-just-parallax";
+import { MouseParallax, ScrollParallax} from "react-just-parallax";
 import MousePosition from "@/components/mouse-position";
 import DayInfo from "@/components/day-info";
 import Link from "next/link";
@@ -26,11 +26,24 @@ import SanityImage from '@/components/sanity-image'
 import SanityBlockContent from '@sanity/block-content-to-react'
 import LocalImage from "@/components/local-image";
 import { useState } from "react";
+import { CarouselMobileScroller } from "@/components/carousel-mobile-scroller";
+import { CarouselMobileScrollerTeam } from "@/components/carousel-mobile-scroller-team";
 
 const query = `{
   "about": *[_type == "about"][0]{
     title,
     heroImage {
+      asset-> {
+        ...
+      },
+      caption,
+      alt,
+      hotspot {
+        x,
+        y
+      },
+    },
+    mobileHeroImage {
       asset-> {
         ...
       },
@@ -117,6 +130,7 @@ export default function About(initialData) {
           >
             <div className="w-full h-full absolute inset-0 z-0 object-cover object-top scale-[1.07]">
               <ScrollParallax
+                enableOnTouchDevice={false}
                 isAbsolutelyPositioned
                 lerpEase={1}
                 strength={-0.035}
@@ -124,7 +138,12 @@ export default function About(initialData) {
                 <SanityImage
                   image={about.heroImage}
                   layout="fill"
-                  className="w-full h-full absolute inset-0 z-0 object-cover object-top"
+                  className="w-full h-full absolute inset-0 z-0 object-cover cover-image--bottom hidden lg:block"
+                />
+                <SanityImage
+                  image={about.mobileHeroImage}
+                  layout="fill"
+                  className="w-full h-full absolute inset-0 z-0 object-cover cover-image--bottom block lg:hidden"
                 />
               </ScrollParallax>
             </div>
@@ -135,7 +154,7 @@ export default function About(initialData) {
             </div>
 
             <div className="max-w-screen-3xl mx-auto">
-              <h1 className="font-black text-[clamp(65px,_9vw,200px)] leading-[0.95] tracking-tigh mb-4 uppercase relative z-10 w-11/12 t lg:w-full"><TextScrambler text="Mobile gaming’s major players" seed={25} step={2} /></h1>
+              <h1 className="font-black text-[clamp(54px,_9vw,200px)] leading-[0.95] tracking-tight mb-4 uppercase relative z-10 w-11/12 t lg:w-full"><TextScrambler text="Mobile gaming’s major players" seed={25} step={2} /></h1>
             </div>
           </m.div>
 
@@ -145,10 +164,10 @@ export default function About(initialData) {
           >
             <div className="w-full border-b border-black/50">
               <div className="grid grid-cols-12 max-w-screen-3xl mx-auto">
-                <div className="col-span-10 col-start-2 md:col-span-10 md:col-start-2 md:border-l md:border-r border-black/50 py-[15vw] pb-[50vw] md:py-[15vw] md:px-10">
+                <div className="col-span-10 col-start-2 md:col-span-10 md:col-start-2 md:border-l md:border-r border-black/50 py-20 pb-[95vw] md:py-[15vw] md:px-10 relative overflow-hidden md:overflow-visible">
                   <div className="grid grid-cols-10 items-center relative">
                     <div className="col-span-9 md:col-span-5 mb-12 md:mb-0 relative z-10 content text-2xl md:text-2xl lg:text-2xl xl:text-2xl uppercase font-bold content--nolead">
-
+                    
                     <SanityBlockContent
                       serializers={{ 
                         container: ({ children }) => children
@@ -158,16 +177,18 @@ export default function About(initialData) {
                     </div>
 
                     <MouseParallax
+                      enableOnTouchDevice={false}
                       isAbsolutelyPositioned
                       lerpEase={0.15}
                       strength={0.015}
                     >
                       <ScrollParallax
+                        enableOnTouchDevice={false}
                         isAbsolutelyPositioned
                         lerpEase={0.015}
                         zIndex={0}
                       >
-                        <div className="absolute bottom-[-55vw] right-[0vw] left-auto lg:right-[0vw] md:bottom-[-10vw] lg:bottom-[-18vw] md:right-[-10vw] w-[45%] md:w-[40%] lg:w-[35%] z-0 max-w-[450px]">
+                        <div className="absolute bottom-[-100vw] right-[12vw] left-auto lg:right-[0vw] md:bottom-[-10vw] lg:bottom-[-18vw] md:right-[-10vw] w-[70%] md:w-[40%] lg:w-[35%] z-0 max-w-[450px]">
                           {/* <Image
                             src="/images/character-test.webp"
                             alt="Character Test"
@@ -189,16 +210,16 @@ export default function About(initialData) {
               </div>
             </div>
 
-            <div className="w-full border-b border-black/50">
+            <div className="w-full border-b border-black/50 relative">
               <div className="grid grid-cols-12 max-w-screen-3xl mx-auto">
-                <div className="col-span-10 col-start-2 md:col-span-12 md:col-start-0 pt-[10vw] pb-[5vw] md:px-10">
+                <div className="col-span-10 col-start-2 md:col-span-12 md:col-start-0 pt-20 lg:pt-[10vw] pb-20 lg:pb-[5vw] md:px-10">
                   <div className="grid grid-cols-12">
                     <div className="col-span-12">
-                      <p className="text-2xl uppercase font-bold mb-8 lg:mb-12">
+                      <p className="tracking-widest lg:tracking-tight block font-medium text-sm lg:text-2xl uppercase lg:font-bold mb-3 lg:mb-12">
                         Our Community
                       </p>
 
-                      <h2 className="font-black text-[clamp(46px,_4.45vw,_86px)] leading-[0.9] mb-12 lg:mb-32 uppercase">{about.ourCommunityHeading}</h2>
+                      <h2 className="font-bold lg:font-black text-[clamp(18px,_4.45vw,_86px)] leading-[1.1] lg:leading-[0.9] mb-12 lg:mb-32 uppercase">{about.ourCommunityHeading}</h2>
 
                       <div className="w-full flex flex-wrap border border-black/50 mb-6 lg:mb-8">
                       {about.ourCommunityStats.map((e, i) => {
@@ -222,10 +243,11 @@ export default function About(initialData) {
 
           <m.div
             variants={fade}
-            className="w-full py-[25vw] lg:py-[18vw] xl:py-[15vw] relative overflow-hidden mb-0 px-6 lg:px-10"
+            className="w-full py-24 lg:py-[18vw] xl:py-[15vw] relative overflow-hidden mb-0 px-6 lg:px-10"
           >
             <div className="w-full h-full absolute inset-0 z-0 object-cover object-center scale-[1.1] bg-orange/20">
               <ScrollParallax
+                enableOnTouchDevice={false}
                 isAbsolutelyPositioned
                 lerpEase={1}
                 strength={-0.035}
@@ -242,8 +264,8 @@ export default function About(initialData) {
             </div>
 
             <div className="md:max-w-screen-md xl:max-w-screen-lg mx-auto text-center relative z-10">
-              <span className="text-2xl uppercase font-bold mb-8 lg:mb-12 block">Our People</span>
-              <h2 className="font-black text-[clamp(50px,_5.5vw,120px)] leading-[0.95] uppercase text-center relative z-10 w-11/12 lg:w-full mb-8 lg:mb-12">{about.ourPeopleCtaHeading}</h2>
+              <span className="text-lg lg:text-2xl uppercase font-bold mb-8 lg:mb-12 block">Our People</span>
+              <h2 className="font-black text-[clamp(38px,_5.5vw,120px)] leading-[0.95] uppercase text-center relative z-10 w-full mb-8 lg:mb-12 tracking-tight">{about.ourPeopleCtaHeading}</h2>
 
               <Link href="/careers">
                 <a class="roll-btn w-auto inline-block">
@@ -254,7 +276,8 @@ export default function About(initialData) {
             </div>
           </m.div>
 
-          <m.div variants={fade} className="w-full flex flex-wrap ">
+
+          <m.div variants={fade} className="w-full flex-wrap hidden lg:flex">
             <div className="w-full lg:w-1/2 bg-gray-100 border-b lg:border-b-0 lg:border-r border-black/50">
               <div className="lg:sticky lg:top-0 relative overflow-hidden">
                 <div className="flex w-full min-h-screen">
@@ -306,20 +329,24 @@ export default function About(initialData) {
             </div>
           </m.div>
 
+          <m.div variants={fade} className="w-full block lg:hidden pb-16 lg:pb-0">
+            <CarouselMobileScrollerTeam items={about.servicesList} />
+          </m.div>
+
           <m.div variants={fade}>
-            <div className={`bg-lime text-black border-t border-black/50 z-0 sticky top-0`}>
+            <div className={`bg-lime text-black border-t border-black/50 z-0 lg:sticky lg:top-0 pt-10 pb-20 lg:pt-0 lg:pb-0`}>
               <div className="grid grid-cols-12 h-screen px-6 xl:px-10 max-w-screen-3xl mx-auto items-center">
                 
-                <div className="col-span-12 lg:col-span-6 z-10">
-                  <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">We Value:</span>
-                  <h2 className="display-text mb-6 lg:mb-12 xl:mb-16">Ambition</h2>
-                  <span className="uppercase text-xl lg:text-2xl xl:text-3xl tracking-normal mb-3 lg:mb-5 block font-black leading-none lg:leading-none xl:leading-none">We put flags on summits</span>
-                  <div className="content content--lg max-w-3xl mb-8 xl:mb-12 w-10/12">
+                <div className="col-span-12 order-2 lg:order-1 lg:col-span-6 z-10">
+                  <span className="uppercase text-xs lg:text-sm tracking-widest mb-2 lg:mb-8 block font-medium">We Value:</span>
+                  <h2 className="display-text mb-12 lg:mb-12 xl:mb-16">Ambition</h2>
+                  <span className="uppercase text-lg lg:text-2xl xl:text-3xl tracking-tight mb-4 lg:mb-5 block font-bold leading-none lg:leading-none xl:leading-none">We put flags on summits</span>
+                  <div className="content content--lg max-w-3xl mb-8 xl:mb-12 w-full lg:w-10/12 leading-[1.24]">
                     <p>We set our goals ambitiously high and don’t shy away from the climb. We’re on a mission to take over an industry thick with incumbents who won’t go quietly into the night. To succeed here, you’ll need a highly metaphorical shield and a sword.</p>
                   </div>
                 </div>
 
-                <div className="col-span-12 lg:col-span-6 z-10 h-full">
+                <div className="col-span-12 order-1 lg:order-2 lg:col-span-6 z-10 h-full">
                   <div className="h-full flex items-center justify-center relative">
                     <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-full translate-y-[-1%]`}>
                       <source src={'/videos/flagpole.mov'} type="video/quicktime" />
@@ -332,19 +359,19 @@ export default function About(initialData) {
               </div>
             </div>
 
-            <div className={`bg-lime text-black border-t border-black/50 z-0 sticky top-0`}>
+            <div className={`bg-lime text-black border-t border-black/50 z-0 lg:sticky lg:top-0 pt-10 pb-20 lg:pt-0 lg:pb-0`}>
               <div className="grid grid-cols-12 h-screen px-6 xl:px-10 max-w-screen-3xl mx-auto items-center">
                 
-                <div className="col-span-12 lg:col-span-6 z-10">
-                  <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">We Value:</span>
-                  <h2 className="display-text mb-6 lg:mb-12 xl:mb-16">Humility</h2>
-                  <span className="uppercase text-xl lg:text-2xl xl:text-3xl tracking-normal mb-3 lg:mb-5 block font-black leading-none lg:leading-none xl:leading-none">We put our egos aside</span>
-                  <div className="content content--lg max-w-3xl mb-8 xl:mb-12 w-10/12">
+                <div className="col-span-12 order-2 lg:order-1 lg:col-span-6 z-10">
+                  <span className="uppercase text-xs lg:text-sm tracking-widest mb-2 lg:mb-8 block font-medium">We Value:</span>
+                  <h2 className="display-text mb-12 lg:mb-12 xl:mb-16">Humility</h2>
+                  <span className="uppercase text-lg lg:text-2xl xl:text-3xl tracking-tight mb-4 lg:mb-5 block font-bold leading-none lg:leading-none xl:leading-none">We put our egos aside</span>
+                  <div className="content content--lg max-w-3xl mb-8 xl:mb-12 w-full lg:w-10/12 leading-[1.24]">
                   <p>We put our hands up. First to volunteer to help, second to high-five. Having an ego is natural, but letting it run the show is unhelpful to everyone. In the words of Mr. Lamar: Sit down. Be humble.</p>
                   </div>
                 </div>
 
-                <div className="col-span-12 lg:col-span-6 z-10 h-full">
+                <div className="col-span-12 order-1 lg:order-2 lg:col-span-6 z-10 h-full">
                   <div className="h-full flex items-center justify-center">
                     <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-full translate-y-[-1%]`}>
                       <source src={'/videos/hands.mov'} type="video/quicktime" />
@@ -357,19 +384,19 @@ export default function About(initialData) {
               </div>
             </div>
 
-            <div className={`bg-lime text-black border-t border-black/50 relative z-10`}>
+            <div className={`bg-lime text-black border-t border-black/50 relative pt-0 pb-20 lg:pt-0 lg:pb-0 z-10`}>
               <div className="grid grid-cols-12 h-screen px-6 xl:px-10 max-w-screen-3xl mx-auto items-center">
                 
-                <div className="col-span-12 lg:col-span-6 z-10">
-                  <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">We Value:</span>
-                  <h2 className="display-text mb-6 lg:mb-12 xl:mb-16">Curiosity</h2>
-                  <span className="uppercase text-xl lg:text-2xl xl:text-3xl tracking-normal mb-3 lg:mb-5 block font-black leading-none lg:leading-none xl:leading-none">We keep our eyes open</span>
-                  <div className="content content--lg max-w-3xl mb-8 xl:mb-12 w-10/12">
+                <div className="col-span-12 order-2 lg:order-1 lg:col-span-6 z-10">
+                  <span className="uppercase text-xs lg:text-sm tracking-widest mb-2 lg:mb-8 block font-medium">We Value:</span>
+                  <h2 className="display-text mb-12 lg:mb-12 xl:mb-16">Curiosity</h2>
+                  <span className="uppercase text-lg lg:text-2xl xl:text-3xl tracking-tight mb-4 lg:mb-5 block font-bold leading-none lg:leading-none xl:leading-none">We keep our eyes open</span>
+                  <div className="content content--lg max-w-3xl mb-8 xl:mb-12 w-full lg:w-10/12 leading-[1.24]">
                     <p>We believe the best way to know anything is to question everything. And to do that, you need open eyes and open minds at all times.</p>
                   </div>
                 </div>
 
-                <div className="col-span-12 lg:col-span-6 z-10 h-full">
+                <div className="col-span-12 order-1 lg:order-2 lg:col-span-6 z-10 h-full">
                   <div className="h-full flex items-center justify-center">
                     <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-full translate-y-[-1%]`}>
                       <source src={'/videos/eye.mov'} type="video/quicktime" />

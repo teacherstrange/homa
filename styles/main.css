@@ -101,7 +101,7 @@ canvas {
   .embla__container {
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: 85%;
+    grid-auto-columns: 100%;
 
     @apply justify-start;
 
@@ -217,6 +217,14 @@ canvas {
     .embla__slide-title {
       @apply opacity-100;
     }
+  }
+}
+
+.embla--mobile-scroller--team {
+  @apply px-0 lg:px-0 !important;
+
+  .embla__slide-inner {
+    @apply px-6 !important;
   }
 }
 
@@ -345,8 +353,4 @@ canvas {
     content: "";
     clear: both;
   }
-}
-
-.min-h-screen {
-  min-height: -webkit-fill-available !important;
 }

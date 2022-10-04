@@ -5,9 +5,10 @@ import ArrowRightIcon from '@/icons/arrow-right.svg'
 import PhoneIcon from "@/icons/phone.svg"
 import PhoneOutline from "@/icons/phone-outline.svg"
 import Image from 'next/image'
+import { isMobile } from 'react-device-detect'
 
 export const CarouselGames = ({ heading, items }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, speed: 3.5, align: 0.065, inViewThreshold: 1 }, [ClassNames()])
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, speed: 3.5, align: isMobile ? 0 : 0.065, inViewThreshold: 1 }, [ClassNames()])
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev()
