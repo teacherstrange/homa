@@ -32,6 +32,7 @@ import SanityImage from '@/components/sanity-image'
 import LocalImage from '@/components/local-image'
 import ProductScroller from '@/components/product-scroller'
 import { CarouselMobileScroller } from '@/components/carousel-mobile-scroller'
+import { CarouselGameVideos } from '@/components/carousel-game-videos'
 
 const query = `{
   "blog": *[_type == "blog"] | order(publishDate desc) [0...5]{
@@ -255,57 +256,16 @@ export default function Home(initialData) {
               
               <div className="w-full border-b border-black/50 relative z-10">
                 <div className="grid grid-cols-12 max-w-screen-3xl mx-auto">
-                  <div className="col-span-10 col-start-2 md:col-span-10 md:col-start-2 md:border-l md:border-r border-black/50 py-[10vw] md:px-10">
+                  <div className="col-span-12 lg:col-span-10 lg:col-start-2 lg:border-l lg:border-r border-black/50 py-[10vw] lg:py-0 lg:pl-10 px-6 lg:px-0">
                     <div className="grid grid-cols-10 items-center">
-                      <div className="col-span-9 md:col-span-6 md:px-6 lg:px-10 xl:px-24 mb-12 md:mb-0">
-                        <p className="text-2xl xl:text-3xl uppercase font-bold leading-[1.15] xl:leading-[1.15]">{home.introText}</p>
+                      <div className="col-span-9 md:col-span-6 lg:px-12 xl:px-24 mb-4 md:mb-0">
+                        <p className="text-2xl xl:text-3xl uppercase font-bold leading-[1.15] xl:leading-[1.15] max-w-[700px]">{home.introText}</p>
                       </div>
 
                       {/* Abstract */}
-                      <div className="col-span-6 col-start-2 md:col-span-4 md:col-start-7 pb-24 lg:pb-0">
-                        <div className="w-[131%] md:w-[85%] lg:w-[65%] relative mx-auto">
-                          <PhoneIcon className="w-full relative z-0 opacity-90" />
-
-                          <div className="absolute bottom-[-65px] lg:bottom-auto lg:top-0 left-0 lg:left-auto lg:right-0 ml-[-15%] lg:ml-0 lg:mr-[-50%] mt-[15%] z-10 w-[100%] lg:w-[70%]">
-                            <div className="w-full">
-                              <span className="block uppercase font-medium tracking-wider text-sm lg:text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-b-0 border-black/50 px-3 py-5">{home.featuredGames[0].title}</span>
-                            </div>
-                            <div className="w-full">
-                              <span className="block uppercase font-medium tracking-wider text-sm lg:text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-black/50 border-b-0 lg:border-b px-3 py-5">{home.featuredGames[0].partnerName}</span>
-                            </div>
-
-                            <div className="w-full block lg:hidden">
-                              <span className="block uppercase font-medium tracking-wider text-sm lg:text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-black/50 px-3 py-5">{home.featuredGames[0].installs}</span>
-                            </div>
-                          </div>
-
-                          <div className="absolute inset-0 z-1 scale-y-[0.961] scale-x-[0.96] translate-x-[1.2%] border-1 border-black">
-
-                            <svg className="w-full scale-y-[0.97] scale-x-[0.97] translate-y-[-1.5%] translate-x-[-1.5%] absolute inset-0 z-30" viewBox="0 0 355 623" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <rect x="1" y="1" width="352.72" height="620.72" rx="48" stroke="#0F0F19" stroke-width="2"/>
-                            </svg>
-
-                            <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`object-cover object-center w-full h-full absolute inset-0 phone-mask`}>
-                              <source src={home.featuredGames[0].gameplayVideo} type="video/mp4" />
-
-                              Sorry. Your browser does not support the video tag.
-                            </video>
-
-                            {/* <Image
-                              src="/images/game-example.webp"
-                              layout="responsive"
-                              width={496}
-                              height={882}
-                              quality={75}
-                              className="w-full"
-                            /> */}
-                          </div>
-
-                          <div className="hidden lg:block absolute bottom-0 left-0 ml-[-40%] md:ml-[-20%] mb-[15%] z-10 w-[130%] md:w-[70%] min-w-[120px] md:min-w-[290px]">
-                            <div className="w-full">
-                              <span className="block uppercase font-medium tracking-wider text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-black/50 px-3 py-5 text-center">{home.featuredGames[0].installs}</span>
-                            </div>
-                          </div>
+                      <div className="col-span-10 lg:col-span-4 lg:col-start-7">
+                        <div className="w-full md:w-full lg:w-full relative mx-auto lg:translate-x-[5%]">
+                          <CarouselGameVideos items={home.featuredGames} />
                         </div>
                       </div>
                     </div>
@@ -573,7 +533,7 @@ export default function Home(initialData) {
             </div>
 
 
-            <div className="bg-orange/40 relative overflow-hidden pt-12 lg:pt-0 pb-[25vw] lg:pb-0">
+            <div className="bg-orange/40 relative overflow-hidden pt-12 pb-[25vw] lg:py-[7vw] xl:py-[4vw]">
               <ScrollParallax enableOnTouchDevice={false} isAbsolutelyPositioned lerpEase={1} strength={-0.05} zIndex={0}>
                 <div className="scale-[1.15] absolute inset-0 w-full h-full">
                   <LocalImage
@@ -585,9 +545,9 @@ export default function Home(initialData) {
                 </div>   
               </ScrollParallax>
 
-              <div className="grid grid-cols-12 py-12 lg:pt-[15vw] lg:pb-[20.5vw] px-6 lg:px-24 xl:px-32 max-w-screen-3xl mx-auto">
+              <div className="grid grid-cols-12 pb-0 py-12 px-6 lg:px-24 xl:px-32 max-w-screen-3xl mx-auto lg:items-center">
                 
-                <div className="col-span-12 col-start-0 lg:col-span-7 z-10 mb-12 lg:mb-0">
+                <div className="col-span-12 col-start-0 lg:col-span-7 z-10 mb-4 lg:mb-0">
                   <h2 className="font-black text-[clamp(52px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase">There is luck.<br/>Or there is Homa.</h2>
                   <div className="content max-w-3xl mb-6 xl:mb-8 w-10/12">
                     <p>With us, every step of your game’s build and launch phase – from ideation right through to monetization - is managed by experts and tested, tweaked and improved by data-rich technology.</p>
@@ -598,51 +558,9 @@ export default function Home(initialData) {
                   <ScramblePillButton href="/games" label="View Our Games" internal/>
                 </div>
 
-                <div className="col-span-6 col-start-2 lg:col-span-4 lg:col-start-8">
-                  <div className="w-[165%] lg:w-[70%] relative mx-auto lg:translate-y-[-1.5vw] lg:translate-x-[2.5vw]">
-                    <PhoneIcon className="w-full relative z-0 opacity-[0.85]" />
-
-                    <div className="absolute bottom-[-65px] lg:bottom-auto lg:top-0 left-0 lg:left-auto lg:right-0 ml-[-10%] lg:ml-0 lg:mr-[-50%] mt-[15%] z-10 w-[100%] lg:w-[70%]">
-                      <div className="w-full">
-                        <span className="block uppercase font-medium tracking-wider text-sm lg:text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-b-0 border-black/50 px-3 py-5">{home.featuredGames[1].title}</span>
-                      </div>
-                      <div className="w-full">
-                        <span className="block uppercase font-medium tracking-wider text-sm lg:text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-black/50 border-b-0 lg:border-b px-3 py-5">{home.featuredGames[1].partnerName}</span>
-                      </div>
-
-                      <div className="w-full block lg:hidden">
-                        <span className="block uppercase font-medium tracking-wider text-sm lg:text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-black/50 px-3 py-5">{home.featuredGames[1].installs}</span>
-                      </div>
-                    </div>
-
-
-                    <div className="absolute inset-0 z-1 scale-y-[0.961] scale-x-[0.96] translate-x-[1.2%] border-1 border-black">
-
-                      <svg className="w-full scale-y-[0.97] scale-x-[0.97] translate-y-[-1.5%] translate-x-[-1.5%] absolute inset-0 z-30" viewBox="0 0 355 623" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="1" y="1" width="352.72" height="620.72" rx="48" stroke="#0F0F19" stroke-width="2"/>
-                      </svg>
-
-                      <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`object-cover object-center w-full h-full absolute inset-0 phone-mask`}>
-                        <source src={home.featuredGames[1].gameplayVideo} type="video/mp4" />
-
-                        Sorry. Your browser does not support the video tag.
-                      </video>
-
-                      {/* <Image
-                        src="/images/game-example.webp"
-                        layout="responsive"
-                        width={496}
-                        height={882}
-                        quality={75}
-                        className="w-full"
-                      /> */}
-                    </div>
-
-                    <div className="hidden lg:block absolute bottom-0 left-0 ml-[-40%] md:ml-[-20%] mb-[15%] z-10 w-[130%] md:w-[70%] min-w-[120px] md:min-w-[290px]">
-                      <div className="w-full">
-                        <span className="block uppercase font-medium tracking-wider text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-black/50 px-3 py-5 text-left">{home.featuredGames[1].installs}</span>
-                      </div>
-                    </div>
+                <div className="col-span-12 lg:col-span-5 lg:pl-8">
+                  <div className="w-full md:w-full lg:w-full relative mx-auto lg:translate-x-[5%]">
+                    <CarouselGameVideos reversed items={home.featuredGames} />
                   </div>
                 </div>
               </div>

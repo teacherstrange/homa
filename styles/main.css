@@ -162,6 +162,50 @@ canvas {
   }
 }
 
+.embla--games-videos {
+  .embla__container {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+
+    @apply justify-start;
+
+    @screen lg {
+      grid-auto-columns: 100%;
+    }
+
+    @screen xl {
+      grid-auto-columns: 100%;
+    }
+  }
+
+  .embla__slide {
+    @apply border-r-0;
+  }
+
+  .embla__slide-inner {
+    @apply transition-all ease-in-out duration-500 h-auto lg:h-auto p-0 lg:p-0;
+  }
+
+  .embla__slide-text {
+    @apply transition-all ease-in-out duration-500 opacity-0 hidden;
+  }
+
+  .embla__slide-inner-blur {
+    @apply blur-lg transition-all ease-in-out duration-500;
+  }
+
+  .is-selected {
+    .embla__slide-inner-blur {
+      @apply blur-0;
+    }
+    
+    .embla__slide-text {
+      @apply opacity-100 block;
+    }
+  }
+}
+
 .embla--blog {
 
   .embla__slide {

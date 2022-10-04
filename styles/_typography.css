@@ -1,8 +1,9 @@
 /* Content Stylings */
 .content {
   & > p,
-  & > ul {
-    @apply mb-5 lg:mb-10 last-of-type:mb-0 md:text-xl 2xl:text-2xl leading-[1.25] md:leading-normal 2xl:leading-normal;
+  & > ul,
+  & > blockquote {
+    @apply mb-5 lg:mb-10 last-of-type:mb-0 md:text-xl 2xl:text-2xl leading-[1.25] md:leading-[1.35] 2xl:leading-[1.35];
   }
 
   & > ul {
@@ -26,7 +27,7 @@
   }
 
   & > h1, & > .h1 {
-    @apply text-2xl lg:text-4xl mb-[8vw] lg:mb-[5vw] tracking-tight font-bold;
+    @apply text-3xl lg:text-4xl xl:text-5xl mb-6 md:mb-10 md:pb-0 tracking-tight font-bold;
   }
 
   & > h2, & > .h2 {

@@ -6,7 +6,7 @@ import ArrowRightIcon from '@/icons/arrow-right.svg'
 import SanityImage from './sanity-image'
 
 export const CarouselBlog = ({items}) => {
-  const [emblaNewsRef, emblaApi] = useEmblaCarousel({ loop: true, speed: 3.5, align: 'start', inViewThreshold: 1 }, [ClassNames()])
+  const [emblaNewsRef, emblaApi] = useEmblaCarousel({ loop: true, speed: 5, align: 'start', inViewThreshold: 1 }, [ClassNames()])
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev()

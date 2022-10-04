@@ -7,7 +7,7 @@ import Link from 'next/link'
 import { isMobile } from 'react-device-detect';
 
 export const CarouselCards = ({ heading, items }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, speed: isMobile ? 100 : 3.5, align: isMobile ? 0 : 0.065, inViewThreshold: 1 }, [ClassNames()])
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, speed: isMobile ? 100 : 5, align: isMobile ? 0 : 0.065, inViewThreshold: 1 }, [ClassNames()])
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev()
