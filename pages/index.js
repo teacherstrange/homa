@@ -3,6 +3,7 @@ import { LazyMotion, domAnimation, m } from 'framer-motion'
 import { NextSeo } from 'next-seo'
 import { MouseParallax, ScrollParallax} from 'react-just-parallax'
 import { fade } from '@/helpers/transitions'
+import { useScrollPercentage } from 'react-scroll-percentage'
 
 // Components
 import Layout from '@/components/layout'
@@ -150,6 +151,11 @@ export default function Home(initialData) {
   // Sanity Data
   const { data: { blog, products, home, contact } } = pageService.getPreviewHook(initialData)()
 
+  const [marqueeRef, percentage] = useScrollPercentage({
+    threshold: 0,
+  })
+
+
   return (
     <Layout>
       <NextSeo
@@ -158,7 +164,7 @@ export default function Home(initialData) {
       />
 
       <Header />
-      
+
       <LazyMotion features={domAnimation}>
         <m.main
           initial="initial"
@@ -402,19 +408,19 @@ export default function Home(initialData) {
                 </ScrollParallax>
               </MouseParallax>
 
-              <div className="relative z-0 flex overflow-x-hidden">
-                
-                <div className="mt-56 lg:mt-[25vw] mb-[16vw] animate-marquee whitespace-nowrap">
+              <div className="relative z-0 flex overflow-hidden whitespace-nowrap mt-56 lg:mt-[25vw] mb-[16vw]" ref={marqueeRef}>
+                <div className="whitespace-nowrap transition-transform ease-out duration-300" style={{ transform: `translateX(-${((percentage.toPrecision(100) * 6.5) + 1.5 )}%)`}}>
                   <span className="mx-[10vw] lg:mx-[6vw] text-[clamp(150px,_20.2vw,_410px)] font-black uppercase leading-none">Play To Win</span>
                   <span className="mx-[10vw] lg:mx-[6vw] text-[clamp(150px,_20.2vw,_410px)] font-black uppercase leading-none">Play To Win</span>
                   <span className="mx-[10vw] lg:mx-[6vw] text-[clamp(150px,_20.2vw,_410px)] font-black uppercase leading-none">Play To Win</span>
                 </div>
-
+                
+                {/* 
                 <div className="mt-56 lg:mt-[25vw] mb-[16vw] absolute top-0 animate-marquee2 whitespace-nowrap">
                   <span className="mx-[10vw] lg:mx-[6vw] text-[clamp(150px,_20.2vw,_410px)] font-black uppercase leading-none">Play To Win</span>
                   <span className="mx-[10vw] lg:mx-[6vw] text-[clamp(150px,_20.2vw,_410px)] font-black uppercase leading-none">Play To Win</span>
                   <span className="mx-[10vw] lg:mx-[6vw] text-[clamp(150px,_20.2vw,_410px)] font-black uppercase leading-none">Play To Win</span>
-                </div>
+                </div> */}
               </div>
             </div>
 
