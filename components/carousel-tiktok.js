@@ -5,9 +5,10 @@ import ArrowRightIcon from '@/icons/arrow-right.svg'
 import PhoneIcon from "@/icons/phone.svg"
 import PhoneOutline from "@/icons/phone-outline.svg"
 import Image from 'next/image'
+import { isMobile } from 'react-device-detect'
 
 export const CarouselTikTok = ({ heading, items }) => {
-  const [emblaTikTokRef, emblaApi] = useEmblaCarousel({ loop: true, speed: 3.5, align: 0.065, inViewThreshold: 1 }, [ClassNames()])
+  const [emblaTikTokRef, emblaApi] = useEmblaCarousel({ loop: true, speed: 3.5, align: isMobile ? 0 : 0.065, inViewThreshold: 1 }, [ClassNames()])
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev()
@@ -22,17 +23,8 @@ export const CarouselTikTok = ({ heading, items }) => {
       <div className="w-[100vw] lg:w-[93vw] ml-auto flex flex-wrap mb-6 px-6 lg:px-0">
         <div className="flex-1">
           { heading && (
-            <h2 className="font-black text-[clamp(40px,_4vw,_64px)] leading-[0.9] uppercase">{heading}</h2>
+            <h2 className="font-black text-[clamp(36px,_4vw,_64px)] leading-[0.9] tracking-tight uppercase">{heading}</h2>
           )}
-        </div>
-
-        <div className="flex lg:justify-end w-full lg:w-auto lg:ml-auto pr-6 lg:pr-10 mb-5 lg:mb-0">
-          <button className="embla__prev w-12 lg:w-16 h-12 lg:h-16 flex items-center p-3 lg:p-4 justify-center border border-black/50 border-r-0 transition-colors ease-in-out duration-300 hover:border-black/100 focus:border-black/100" onClick={scrollPrev}>
-            <ArrowRightIcon className="w-full rotate-180" />
-          </button>
-          <button className="embla__next w-12 lg:w-16 h-12 lg:h-16 flex items-center p-3 lg:p-4 justify-center border border-black/50 transition-colors ease-in-out duration-300 hover:border-black focus:border-black" onClick={scrollNext}>
-            <ArrowRightIcon className="w-full" />
-          </button>
         </div>
       </div>
 
@@ -96,6 +88,15 @@ export const CarouselTikTok = ({ heading, items }) => {
             )
           })}
         </div>
+      </div>
+
+      <div className="flex lg:hidden lg:justify-end w-full lg:w-auto lg:ml-auto pr-6 lg:pr-10 mb-5 lg:mb-0 px-6 lg:pl-0 mt-8  lg:mt-0">
+        <button className="embla__prev w-12 lg:w-16 h-12 lg:h-16 flex items-center p-3 lg:p-4 justify-center border border-black/50 border-r-0 transition-colors ease-in-out duration-300 hover:border-black/100 focus:border-black/100" onClick={scrollPrev}>
+          <ArrowRightIcon className="w-full rotate-180" />
+        </button>
+        <button className="embla__next w-12 lg:w-16 h-12 lg:h-16 flex items-center p-3 lg:p-4 justify-center border border-black/50 transition-colors ease-in-out duration-300 hover:border-black focus:border-black" onClick={scrollNext}>
+          <ArrowRightIcon className="w-full" />
+        </button>
       </div>
     </div>
   )

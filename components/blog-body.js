@@ -98,16 +98,16 @@ export default function BlogBody({blog, numberOfArticles, categories, subPage, i
                 <MousePosition />
               </div>
 
-              <div className={`max-w-screen-3xl mx-auto hidden lg:block ${!subPage && 'mb-12 lg:mb-24 xl:mb-32' }`}>
-                <h1 className="text-base uppercase tracking-widest font-medium leading-none block"><TextScrambler text="The news arcade" seed={14} /></h1>
+              <div className={`max-w-screen-3xl mx-auto block ${!subPage && 'mb-6 lg:mb-24 xl:mb-32' }`}>
+                <h1 className="text-sm lg:text-base uppercase tracking-widest font-medium leading-none block"><TextScrambler text="The news arcade" seed={14} /></h1>
               </div>
 
               {!subPage && (
-                <div className="flex flex-wrap max-w-screen-3xl mx-auto mb-8 xl:mb-10">
+                <div className="flex flex-wrap max-w-screen-3xl mx-auto mb-5 lg:mb-8 xl:mb-10">
                   <div className="w-full lg:w-2/3 flex flex-nowrap overflow-x-scroll lg:overflow-hidden lg:flex-wrap ">
                     {categories?.map((e, i) => {
                       return (
-                        <ScramblePillButton href={`/blog/categories/${e.slug.current}`} label={e.title} internal className="mr-3 mb-3" />
+                        <ScramblePillButton href={`/blog/categories/${e.slug.current}`} label={e.title} internal className="mr-3 mb-3 min-w-[155px] text-center" />
                       )
                     })}
                   </div>
@@ -118,13 +118,13 @@ export default function BlogBody({blog, numberOfArticles, categories, subPage, i
             {!subPage && (
               <div className="w-full border-b border-black/50">
                 <div className="flex flex-wrap">
-                  <div className="w-full lg:w-1/2 py-6 lg:py-10 pl-6 xl:pl-10 pr-6 xl:pr-10">
+                  <div className="w-full lg:w-1/2 order-2 lg:order-1 py-12 lg:py-10 pl-6 xl:pl-10 pr-6 xl:pr-10">
                     <div className="max-w-[920px] ml-auto">
                       <ScramblePillButton href={`/blog/categories/${blog[0].category.slug.current}`} label={blog[0].category.title} internal className="mr-3 mb-6 lg:mb-12" />
 
                       <Link href={`/blog/${blog[0].slug.current}`}>
                         <a className="block">
-                          <h2 className="font-black text-[clamp(40px,_4.45vw,_86px)] leading-[0.9] mb-12 lg:mb-[15vw] uppercase w-11/12">{blog[0].title}</h2>
+                          <h2 className="font-black text-[clamp(40px,_4.45vw,_86px)] leading-[0.9] mb-12 lg:mb-[15vw] uppercase w-[99%] lg:w-11/12">{blog[0].title}</h2>
                         </a>
                       </Link>
 
@@ -139,7 +139,7 @@ export default function BlogBody({blog, numberOfArticles, categories, subPage, i
                       </div> */}
                     </div>
                   </div>
-                  <div className="w-full lg:w-1/2 lg:border-l border-black/50 relative overflow-hidden">
+                  <div className="w-full lg:w-1/2 order-1 lg:order-2 lg:border-l border-black/50 relative overflow-hidden">
                     <Link href={`/blog/${blog[0].slug.current}`}>
                       <a className="w-full h-full aspect-square block">
                         <SanityImage
@@ -154,8 +154,8 @@ export default function BlogBody({blog, numberOfArticles, categories, subPage, i
               </div>
             )}
             
-            <div className="max-w-screen-3xl mx-auto px-6 lg:px-10 mt-10 lg:mt-[6vw]">
-              <h2 className="block font-bold uppercase text-2xl lg:text-2xl xl:text-3xl w-full mb-6 lg:mb-10">More Stories</h2>
+            <div className="max-w-screen-3xl mx-auto px-6 lg:px-10 mt-20 lg:mt-[6vw]">
+              <h2 className="block font-bold uppercase text-lg lg:text-2xl xl:text-3xl w-full mb-6 lg:mb-10">More Stories</h2>
               <div className="flex flex-wrap md:-mx-4 lg:-mx-6">
                 {blog.map((e, i) => {
                   let d = new Date(e.publishDate);
@@ -164,7 +164,7 @@ export default function BlogBody({blog, numberOfArticles, categories, subPage, i
                   let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d);
 
                   return (
-                    <div className="md:px-4 lg:px-6 w-full md:w-1/2 lg:w-1/3 mb-6 md:mb-20 lg:mb-32" key={i}>
+                    <div className="md:px-4 lg:px-6 w-full md:w-1/2 lg:w-1/3 mb-12 md:mb-20 lg:mb-32" key={i}>
                       <BlogCard
                         href={`/blog/${e.slug.current}`}
                         heading={e.title}

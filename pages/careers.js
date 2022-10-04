@@ -139,7 +139,7 @@ export default function Careers(initialData) {
                         <div className={`grid grid-cols-12 ${(i + 1) !== careers.introPerkItems.length && 'pb-24 lg:pb-[10vw]'}`} key={i}>
                           <div className="col-span-12 lg:col-span-3 mb-8 lg:mb-0">
                             { i == 0 && (
-                              <HappyIcon className="w-[40%] max-w-[50px] lg:max-w-[100px] lg:mx-auto" />
+                              <HappyIcon className="w-[40%] max-w-[50px] lg:max-w-[100px] lg:mx-auto " />
                             )}
 
                             { i == 1 && (
@@ -185,10 +185,10 @@ export default function Careers(initialData) {
             </div>
 
             <div className="bg-lime text-black border-b border-black/50">
-              <div className="grid grid-cols-12 py-24 lg:py-[10vw] px-6 xl:px-10 max-w-screen-3xl mx-auto">
+              <div className="grid grid-cols-12 py-20 lg:py-[10vw] px-6 xl:px-10 max-w-screen-3xl mx-auto">
                 
                 <div className="col-span-12 z-10">
-                  <h2 className="display-text--large w-11/12 lg:w-11/12 mb-12 lg:mb-24 xl:mb-32">Success is its own reward. But there are perks as well.</h2>
+                  <h2 className="display-text--large w-full lg:w-11/12 mb-12 lg:mb-24 xl:mb-32">Success is its own reward. But there are perks as well.</h2>
 
                   <div className="w-full flex flex-wrap border border-black/50 mb-6 lg:mb-8">
                     {careers.successCtaItems.map((e, i) => {
@@ -209,7 +209,7 @@ export default function Careers(initialData) {
                       <div className={`w-full lg:w-1/3 xl:w-1/3 p-5 lg:p-6 xl:p-8 2xl:p-10 ${border}`} key={i}>
 
                         <div className="content content--small w-11/12 flex flex-wrap h-full lg:aspect-square">
-                          <div className="w-full mb-24 lg:mb-auto content">
+                          <div className="w-full mb-24 lg:mb-auto content leading-[1.24]">
                             <p>{e.text}</p>
                           </div>
                           
@@ -226,7 +226,7 @@ export default function Careers(initialData) {
                     })}
                   </div>
 
-                  <a href="https://apply.workable.com/homa-games/" target="_blank" rel="noopener noreferrer" className="roll-btn inline-block">
+                  <a href="https://apply.workable.com/homa-games/" target="_blank" rel="noopener noreferrer" className="roll-btn block lg:inline-block">
                     <span className="roll-btn__front">Join Homa</span>
                     <span className="roll-btn__back">Join Homa</span>
                   </a>
@@ -255,7 +255,7 @@ export default function Careers(initialData) {
             <div className="w-full bg-pink/20 border-b border-black/50 mx-auto relative overflow-hidden">
               <div className="grid grid-cols-12 max-w-screen-3xl mx-auto">
                 <div className="col-span-12 md:col-span-10 md:col-start-2 md:border-l md:border-r border-black/50 py-[10vw] px-6 md:px-16 xl:px-24 relative">
-                  <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-[65%] absolute top-0 right-0 hidden lg:block translate-y-[-15.5%]`}>
+                  <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-full lg:w-[65%] lg:absolute lg:top-0 lg:right-0 block lg:translate-y-[-15.5%]`}>
                     <source src={'/videos/faces.mov'} type="video/quicktime" />
                     <source src={'/videos/faces.webm'} type="video/webm" />
 
@@ -270,11 +270,11 @@ export default function Careers(initialData) {
                       return (
                         <a key={i} href={e.shortlink} target="_blank" rel="noreferrer noopener" className={`flex flex-wrap border-l border-r border-b border-black/50 p-6 lg:p-10 hover:bg-pink focus:bg-pink ${(i == 0) && 'border-t'}`}>
                           <div className="w-full lg:w-2/3 pr-8 lg:pr-16 xl:pr-24 mb-6 lg:mb-0">
-                            <span className="block font-black text-[clamp(25px,_3vw,_66px)] leading-[0.95] uppercase">{e.title}</span>
+                            <span className="block font-black text-[clamp(20px,_3vw,_66px)] leading-[0.95] uppercase mb-8 lg:mb-0">{e.title}</span>
                           </div>
                           <div className="w-full lg:w-1/3">
                             <div className="w-full">
-                              <span className="flex uppercase font-medium tracking-wider text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 border border-b-0 border-black/50">
+                              <span className="flex uppercase font-medium tracking-wider text-sm lg:text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 border border-b-0 border-black/50">
                                 <div className="px-4 border-r border-black/50 flex items-center justify-center">
                                   <LocationIcon className="w-[25px] lg:w-[30px]"/>
                                 </div>
@@ -284,7 +284,7 @@ export default function Careers(initialData) {
                               </span> 
                             </div>
                             <div className="w-full">
-                              <span className="flex uppercase font-medium tracking-wider text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 border border-b-0 border-black/50">
+                              <span className="flex uppercase font-medium tracking-wider text-sm lg:text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 border border-b-0 border-black/50">
                                 <div className="px-4 border-r border-black/50 flex items-center justify-center">
                                   <ClockIcon className="w-[25px] lg:w-[30px]"/>
                                 </div>
@@ -294,7 +294,7 @@ export default function Careers(initialData) {
                               </span>
                             </div>
                             <div className="w-full">
-                              <span className="flex uppercase font-medium tracking-wider text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 border border-black/50">
+                              <span className="flex uppercase font-medium tracking-wider text-sm lg:text-base leading-none lg:leading-none xl:leading-none 2xl:leading-none w-11/12 border border-black/50">
                                 <div className="px-4 border-r border-black/50 flex items-center justify-center">
                                   <GraphIcon className="w-[25px] lg:w-[30px]"/>
                                 </div>
@@ -309,7 +309,7 @@ export default function Careers(initialData) {
                     })}
                   </div>
 
-                  <a href="https://apply.workable.com/homa-games/" target="_blank" rel="noopener noreferrer" className="roll-btn inline-block">
+                  <a href="https://apply.workable.com/homa-games/" target="_blank" rel="noopener noreferrer" className="roll-btn block lg:inline-block">
                     <span className="roll-btn__front">See All Open Roles</span>
                     <span className="roll-btn__back">See All Open Roles</span>
                   </a>

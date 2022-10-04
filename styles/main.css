@@ -132,7 +132,7 @@ canvas {
   .embla__container {
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: 70%;
+    grid-auto-columns: 95%;
 
     @apply justify-start;
 
@@ -146,7 +146,7 @@ canvas {
   }
 
   .embla__slide {
-    @apply border border-black/50 mr-8 lg:mr-12 bg-pink/20;
+    @apply border border-black/50 mr-6 lg:mr-12 bg-pink/20;
   }
 
   .embla__slide-inner {

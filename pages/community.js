@@ -60,6 +60,17 @@ const query = `{
         y
       },
     },
+    mobileHeroImage {
+      asset-> {
+        ...
+      },
+      caption,
+      alt,
+      hotspot {
+        x,
+        y
+      },
+    },
     gangQAndA[] {
       question,
       answer
@@ -129,11 +140,16 @@ export default function Community(initialData) {
           <m.div variants={fade}>
             <div className="w-full h-full min-h-screen lg:min-h-[110vh] bg-pink/30 pt-24 lg:pt-40 xl:pt-52 px-6 xl:px-10 mx-auto relative overflow-hidden">
               <div className="w-full h-full absolute inset-0 z-0 object-cover object-top scale-[1.07]">
-                <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.035}>
+                <ScrollParallax enableOnTouchDevice={false} isAbsolutelyPositioned lerpEase={1} strength={-0.035}>
                   <SanityImage
                     image={community.heroImage}
                     layout="fill"
-                    className="w-full h-full absolute inset-0 z-0 object-cover object-top"
+                    className="w-full h-full absolute inset-0 z-0 object-cover cover-image--bottom hidden lg:block"
+                  />
+                  <SanityImage
+                    image={community.mobileHeroImage}
+                    layout="fill"
+                    className="w-full h-full absolute inset-0 z-0 object-cover cover-image--bottom block lg:hidden"
                   />
                 </ScrollParallax>
               </div>
@@ -150,21 +166,21 @@ export default function Community(initialData) {
 
 
             <div className="w-full flex flex-wrap border-b border-t border-black/50 mb-12 lg:mb-[10vw]">
-              <div className="w-full lg:w-1/2 px-6 xl:px-10 py-8 lg:py-28 xl:py-32">
+              <div className="w-full lg:w-1/2 px-6 xl:px-10 py-20 lg:py-28 xl:py-32">
                 <div className="lg:pb-32 xl:pb-48 max-w-screen-md ml-auto">
                   <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">A new player has entered the game</span>
 
-                  <h3 className="font-bold text-xl lg:text-2xl xl:text-3xl mb-8 lg:mb-[5vw] uppercase w-10/12 tracking-wide">Our characters were tired of playing games, so we’re turning them loose and putting them in your hands. Welcome to a universe where you and your favorite character become two sides of the same coin. Endless adventure awaits.<br/><br/>Launching soon.</h3>
+                  <h3 className="font-bold text-xl lg:text-2xl xl:text-3xl mb-8 lg:mb-[5vw] uppercase w-full lg:w-10/12 tracking-wide leading-[1.2]">Our characters were tired of playing games, so we’re turning them loose and putting them in your hands. Welcome to a universe where you and your favorite character become two sides of the same coin. Endless adventure awaits.<br/><br/>Launching soon.</h3>
                 </div>
               </div>
 
               {/* Players & Fans */}
-              <div className="w-full lg:w-1/2 px-6 xl:px-10 py-12 lg:pt-[145px] xl:pt-[145px] lg:pb-24 xl:pb-24 bg-black text-white ">
-                <span className="uppercase text-sm tracking-widest mb-5 lg:mb-12 xl:mb-16 block font-medium">Follow us for updates</span>
+              <div className="w-full lg:w-1/2 px-6 xl:px-10 py-20 lg:pt-[145px] xl:pt-[145px] lg:pb-24 xl:pb-24 bg-black text-white ">
+                <span className="uppercase text-sm tracking-widest mb-12 lg:mb-12 xl:mb-16 block font-medium">Follow us for updates</span>
                 
                 <div className="max-w-screen-md mr-auto">
                   <ul className="w-full grid gap-6 xl:gap-10 grid-cols-12 mb-12 lg:mb-16 xl:mb-24">
-                    <li className="block col-span-3 lg:col-span-6">
+                    <li className="block col-span-6 lg:col-span-6">
                       <a
                         href={contact.discord}
                         target="_blank"
@@ -182,7 +198,7 @@ export default function Community(initialData) {
                         </span>
                       </a>
                     </li>
-                    <li className="block col-span-3 lg:col-span-6">
+                    <li className="block col-span-6 lg:col-span-6">
                       <a
                         href={contact.twitter}
                         target="_blank"
@@ -224,7 +240,7 @@ export default function Community(initialData) {
               </div>
             </div>
 
-            <div className="mb-[8vw]">
+            <div className="lg:mb-[8vw] py-12 lg:py-0">
               <CarouselTikTok heading="Watch This Space, on Tik-Tok" items={community.tikToks} />
             </div>
 
@@ -233,12 +249,12 @@ export default function Community(initialData) {
                 <div className="grid grid-cols-12">
                   <div className="col-span-12 lg:col-span-10 lg:col-start-2 lg:border-l lg:border-r border-black/50">
                     <div className="grid grid-cols-10">
-                      <div className="col-span-9 lg:col-span-5 mb-12 lg:mb-0 py-10 lg:py-12 px-6 lg:px-12 flex flex-wrap ">
+                      <div className="col-span-9 lg:col-span-5 mb-0 lg:mb-0 py-10 lg:py-12 px-6 lg:px-12 flex flex-wrap order-2 lg:order-1">
                         <div className="w-full mb-auto">
                           <h2 className="font-black text-[clamp(46px,_4.45vw,_86px)] leading-[0.9] mb-12 lg:mb-32 uppercase max-w-[750px] ">Make The Character Yours</h2>
                         </div>
                         <div className="w-full mt-auto">
-                          <div className="content mb-6 lg:mb-12 w-11/12">
+                          <div className="content mb-0 lg:mb-12 w-full lg:w-11/12 leading-[1.24] pb-12 lg:pb-0">
                             <p>We’re building an interconnected universe where you take ownership of your favorite Homa character and traverse the universe together, playing new games, stacking stats, collecting prizes and running headfirst into adventure.</p>
                             
                             <p>We call it Homagang. Get a character and step inside.</p>
@@ -247,9 +263,9 @@ export default function Community(initialData) {
                           {/* <ScramblePillButton href="https://homagang.xyz" label="Learn More" /> */}
                         </div>
                       </div>
-                      <div className="col-span-10 lg:col-span-5 lg:col-start-6 relative overflow-hidden">
+                      <div className="col-span-10 lg:col-span-5 lg:col-start-6 relative overflow-hidden order-1 lg:order-2">
                         <div className="scale-[1.15] w-full h-full aspect-square">
-                          <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.05}>
+                          <ScrollParallax enableOnTouchDevice={false} isAbsolutelyPositioned lerpEase={1} strength={-0.05}>
                             <LocalImage
                               src="/images/character-yours.jpg"
                               alt="About Test"
@@ -284,7 +300,7 @@ export default function Community(initialData) {
                 <div className="col-span-12 lg:col-span-10 lg:col-start-2">
                   <div className="grid grid-cols-10">
                     <div className="col-span-9 lg:col-span-9 flex flex-wrap px-6 lg:px-0">
-                      <h2 className="display-text">Our Roadmap</h2>
+                      <h2 className="display-text tracking-tight">Our Roadmap</h2>
                     </div>
                   </div>
                 </div>
@@ -296,21 +312,21 @@ export default function Community(initialData) {
                       <div className="grid grid-cols-12">
                         <div className="col-span-12 lg:col-span-10 lg:col-start-2 lg:border-l lg:border-r border-black/50">
                           <div className="grid grid-cols-10">
-                            <div className="col-span-9 lg:col-span-5 mb-12 lg:mb-0 py-10 lg:py-12 px-6 lg:px-12 flex flex-wrap">
+                            <div className="col-span-10 lg:col-span-5 mb-12 lg:mb-0 py-10 lg:py-12 px-6 lg:px-12 flex flex-wrap order-2 lg:order-1">
                               <div className="w-full mb-auto">
                                 <span className="uppercase text-base tracking-widest mb-5 lg:mb-8 block font-medium">{e.date}</span>
                                 <h2 className="font-black text-[clamp(46px,_4.45vw,_86px)] leading-[0.9] mb-12 lg:mb-32 uppercase">{e.heading}</h2>
                               </div>
                               <div className="w-full mt-auto">
                                 <div className="w-11/12">
-                                  <p className="font-bold text-xl lg:text-2xl xl:text-3xl uppercase w-full lg:w-10/12 tracking-wide mb-0">{e.text}</p>
+                                  <p className="font-bold text-xl lg:text-2xl xl:text-3xl uppercase w-full lg:w-10/12 tracking-wide mb-0 leading-[1.24]">{e.text}</p>
                                 </div>
                               </div>
                             </div>
-                            <div className="col-span-10 lg:col-span-5 lg:col-start-6 relative overflow-hidden">
+                            <div className="col-span-10 lg:col-span-5 lg:col-start-6 relative overflow-hidden order-1 lg:order-2">
                               <GridOverlay/>
                               <div className="scale-[1.1725] w-full h-full aspect-square">
-                                <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.05}>
+                                <ScrollParallax enableOnTouchDevice={false} isAbsolutelyPositioned lerpEase={1} strength={-0.05}>
                                   <SanityImage
                                     image={e.image}
                                     alt="Roadmap"
@@ -343,8 +359,8 @@ export default function Community(initialData) {
 
 
 
-            <div className="bg-orange/40 mb-[8vw] relative overflow-hidden pb-[50vw] lg:pb-0 border-b border-black/50">
-              <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.05} zIndex={0}>
+            <div className="bg-orange/40 mb-[8vw] relative overflow-hidden pt-12 lg:pt-0 pb-[90vw] lg:pb-0 border-b border-black/50">
+              <ScrollParallax enableOnTouchDevice={false} isAbsolutelyPositioned lerpEase={1} strength={-0.05} zIndex={0}>
                 <div className="scale-[1.11] absolute inset-0 w-full h-full">
                   <LocalImage
                     src="/images/homagang-cta.jpg"
@@ -355,8 +371,8 @@ export default function Community(initialData) {
                 </div>   
               </ScrollParallax>
 
-              <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={0.05} zIndex={1}>
-                <div className="absolute bottom-0 right-0 w-[55%] lg:w-[40%] max-w-[900px] mb-[-0.4vw]">
+              <ScrollParallax enableOnTouchDevice={false} isAbsolutelyPositioned lerpEase={1} strength={0.05} zIndex={1}>
+                <div className="absolute bottom-0 right-0 w-[85%] lg:w-[40%] max-w-[900px] mb-[-0.4vw]">
                   <LocalImage
                     src="/images/princess-large.webp"
                     alt="About Test"
@@ -374,8 +390,8 @@ export default function Community(initialData) {
                 </div>
                 
                 <div className="col-span-12 lg:col-span-5 z-10">
-                  <h2 className="font-black text-[clamp(50px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase">HOMAGANG is a sistergang of HOMA</h2>
-                  <div className="content max-w-3xl mb-8 xl:mb-12 w-10/12">
+                  <h2 className="font-black text-[clamp(44px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase">HOMAGANG is a sistergang of HOMA</h2>
+                  <div className="content max-w-3xl mb-8 xl:mb-12 w-full lg:w-10/12 leading-[1.24]">
                     <p>Behind Homagang is one of the world’s biggest mobile gaming engines and publishing arms. Homa is a gaming technology lab that gives game creators the tools and human expertise needed to turn their creative ideas into commercial hits. Every day more than 10m people around the world play a game built on, or published through Homa, and now Homagang let’s you escape the lab and explore a universe connected by the blockchain.</p>
                   </div>
                 </div>
@@ -395,8 +411,8 @@ export default function Community(initialData) {
               </div>
             </div> */}
 
-            <div className="bg-orange/40 relative overflow-hidden pb-[45vw] lg:pb-0 border-t border-black/50">
-              <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.05} zIndex={0}>
+            <div className="bg-orange/40 relative overflow-hidden pb-[80vw] lg:pb-0 border-t border-black/50">
+              <ScrollParallax enableOnTouchDevice={false} isAbsolutelyPositioned lerpEase={1} strength={-0.05} zIndex={0}>
                 <div className="scale-[1.12] absolute inset-0 w-full h-full">
                   <LocalImage
                     src="/images/join-us-cta2.jpg"
@@ -407,8 +423,8 @@ export default function Community(initialData) {
                 </div>   
               </ScrollParallax>
 
-              <ScrollParallax isAbsolutelyPositioned lerpEase={0.025} strength={0.05} zIndex={1}>
-                <div className="absolute bottom-0 right-0 w-[35%] lg:w-[25%] max-w-[500px] mr-[10%] mb-[5%] lg:mb-[15%]">
+              <ScrollParallax enableOnTouchDevice={false} isAbsolutelyPositioned lerpEase={0.025} strength={0.05} zIndex={1}>
+                <div className="absolute bottom-0 right-0 w-[55%] lg:w-[25%] max-w-[500px] mr-[15%] mb-[5%] lg:mb-[15%] lg:mr-[10%]">
                   <Image
                     src="/images/character-test-2.webp"
                     alt="About Test"
@@ -420,12 +436,12 @@ export default function Community(initialData) {
                 </div>   
               </ScrollParallax>
 
-              <div className="grid grid-cols-12 py-12 lg:pt-[12vw] lg:pb-[20.5vw] px-6 xl:px-10 max-w-screen-3xl mx-auto ">
+              <div className="grid grid-cols-12 py-20 lg:pt-[12vw] lg:pb-[20.5vw] px-6 xl:px-10 max-w-screen-3xl mx-auto ">
                 <div className="col-span-12 lg:col-span-5 z-10">
                   <h2 className="display-text mb-8 lg:mb-12 xl:mb-20">Want to join us?</h2>
 
                   <ul className="w-full grid gap-6 xl:gap-10 grid-cols-12 mb-12 lg:mb-16 xl:mb-24">
-                    <li className="block col-span-3 lg:col-span-5">
+                    <li className="block col-span-6 lg:col-span-5">
                       <a
                         href={contact.discord}
                         target="_blank"
@@ -443,7 +459,7 @@ export default function Community(initialData) {
                         </span>
                       </a>
                     </li>
-                    <li className="block col-span-3 lg:col-span-5">
+                    <li className="block col-span-6 lg:col-span-5">
                       <a
                         href={contact.twitter}
                         target="_blank"

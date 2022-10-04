@@ -2,7 +2,7 @@
 .content {
   & > p,
   & > ul {
-    @apply mb-5 lg:mb-10 last-of-type:mb-0 md:text-xl 2xl:text-2xl md:leading-normal 2xl:leading-normal;
+    @apply mb-5 lg:mb-10 last-of-type:mb-0 md:text-xl 2xl:text-2xl leading-[1.25] md:leading-normal 2xl:leading-normal;
   }
 
   & > ul {
@@ -26,7 +26,7 @@
   }
 
   & > h1, & > .h1 {
-    @apply text-2xl lg:text-4xl mb-[8vw] lg:mb-[5vw];
+    @apply text-2xl lg:text-4xl mb-[8vw] lg:mb-[5vw] tracking-tight font-bold;
   }
 
   & > h2, & > .h2 {
@@ -67,7 +67,7 @@ h1, .h1, h2, .h2, h3, .h3 {
 
 .display-text--large {
   @apply font-black leading-none uppercase;
-  font-size: clamp(50px, 8vw, 180px);
+  font-size: clamp(40px, 8vw, 180px);
 }
 
 .index-heading {
