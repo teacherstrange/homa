@@ -20,6 +20,8 @@ import SanityPageService from '@/services/sanityPageService'
 import BodyRenderer from '@/components/body-renderer'
 import SanityImage from '@/components/sanity-image'
 
+const readingTime = require('reading-time');
+
 const query = `{
   "article": *[_type == "blog" && slug.current == $slug][0]{
     title,
@@ -96,6 +98,20 @@ export default function BlogSlug(initialData) {
   let mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(d);
   let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d);
 
+  let paragraphs = ''
+
+  article.contentBlocks?.map( function(blocks) {
+    if (blocks._type == 'textBlock') {
+      blocks.text?.map( function(text){
+        text.children.map( function(textInner) {
+          paragraphs += `${textInner.text}`
+        })
+      })
+    }
+  })
+
+  const estimatedReadTime = readingTime(paragraphs);
+
   return (
     <Layout>
       <NextSeo
@@ -166,10 +182,10 @@ export default function BlogSlug(initialData) {
                             <span className="block">{article.author.name}</span>
                           </span>
                         )}
-                        {/* <span className="uppercase text-sm lg:text-base tracking-widest mb-2 lg:mb-4 font-medium flex">
+                        <span className="uppercase text-sm lg:text-base tracking-widest mb-2 lg:mb-4 font-medium flex">
                           <span className="min-w-[150px]">Read Time:</span>
-                          <span className="block">X minutes</span>
-                        </span> */}
+                          <span className="block">{estimatedReadTime && (<>{estimatedReadTime.text}</>)}</span>
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -197,10 +213,10 @@ export default function BlogSlug(initialData) {
                         <span className="block">{article.author.name}</span>
                       </span>
                     )}
-                    {/* <span className="uppercase text-sm lg:text-base tracking-widest mb-2 lg:mb-4 font-medium flex">
+                    <span className="uppercase text-sm lg:text-base tracking-widest mb-2 lg:mb-4 font-medium flex">
                       <span className="min-w-[150px]">Read Time:</span>
-                      <span className="block">X minutes</span>
-                    </span> */}
+                      <span className="block">{estimatedReadTime && (<>{estimatedReadTime.text}</>)}</span>
+                    </span>
                   </div>
                 </div>
               </div>

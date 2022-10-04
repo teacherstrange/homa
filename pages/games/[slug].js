@@ -19,6 +19,10 @@ import Link from 'next/link'
 import SanityPageService from '@/services/sanityPageService'
 import SanityImage from '@/components/sanity-image'
 import BodyRenderer from '@/components/body-renderer'
+import { useEffect } from 'react'
+import { ConsoleView } from 'react-device-detect'
+
+const readingTime = require('reading-time');
 
 const query = `{
   "article": *[_type == "caseStudies" && slug.current == $slug][0]{
@@ -94,10 +98,26 @@ export default function CaseStudySlug(initialData) {
   let mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(d);
   let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d);
 
+  let paragraphs = ''
+
+  article.contentSections?.map( function(item) {
+    item.contentBlocks?.map( function(blocks) {
+      if (blocks._type == 'textBlock') {
+        blocks.text?.map( function(text){
+          text.children.map( function(textInner) {
+            paragraphs += `${textInner.text}`
+          })
+        })
+      }
+    })
+  })
+
+  const estimatedReadTime = readingTime(paragraphs);
+
   const kebabCase = string => string
-        .replace(/([a-z])([A-Z])/g, "$1-$2")
-        .replace(/[\s_]+/g, '-')
-        .toLowerCase();
+    .replace(/([a-z])([A-Z])/g, "$1-$2")
+    .replace(/[\s_]+/g, '-')
+    .toLowerCase();
   
   return (
     <Layout>
@@ -116,7 +136,7 @@ export default function CaseStudySlug(initialData) {
           className=""
         >
           <m.div variants={fade}>
-            <div className={`w-full bg-white px-6 xl:px-10 mx-auto relative overflow-hidden pt-16 lg:pt-28 xl:pt-32 border-b border-black/50`}>
+            <div className={`w-full bg-white px-6 xl:px-10 mx-auto relative overflow-hidden pt-16 lg:pt-28 xl:pt-32 lg:border-b border-black/50`}>
               <div className="absolute top-0 right-0 mt-24 lg:mt-28 xl:mt-32 px-6 xl:px-10 text-[11px] uppercase tracking-widest font-medium leading-none text-right hidden lg:block">
                 <DayInfo className="mb-1" />
                 <MousePosition />
@@ -132,17 +152,17 @@ export default function CaseStudySlug(initialData) {
             </div>
 
             <div className="bg-white">              
-              <div className="w-full border-b border-black/50">
+            <div className="w-full lg:border-b border-black/50">
                 <div className="flex flex-wrap">
-                  <div className="w-full lg:w-1/2 py-6 lg:py-10 pl-6 xl:pl-10 pr-6 xl:pr-10">
+                  <div className="w-full lg:w-1/2 py-10 lg:py-10 pl-6 xl:pl-10 pr-6 xl:pr-10">
                     <div className="max-w-[920px] ml-auto flex flex-wrap h-full">
                       <div className="w-full">
-                        <span className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm mr-3 mb-6 lg:mb-12">Success Story</span>
+                        <span className="inline-block border border-black/50 font-medium uppercase leading-none p-1 lg:p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white mr-3 mb-6 lg:mb-12 text-sm lg:text-base">Success Stories</span>
 
-                        <h2 className="font-black text-[clamp(46px,_4.45vw,_86px)] leading-[0.9] mb-12 lg:mb-[15vw] uppercase w-11/12">{article.title}</h2>
+                        <h2 className="font-black text-[clamp(40px,_4.45vw,_86px)] leading-[0.9] mb-2 lg:mb-[15vw] uppercase w-full lg:w-11/12">{article.title}</h2>
                       </div>
 
-                      <div className="mt-auto w-full">
+                      <div className="mt-auto w-full hidden lg:block">
                         {article.publishDate && (
                           <span className="uppercase text-sm lg:text-base tracking-widest mb-2 lg:mb-4 font-medium flex">
                             <span className="min-w-[150px]">Published:</span>
@@ -161,23 +181,47 @@ export default function CaseStudySlug(initialData) {
                             <span className="block">{article.partnerName}</span>
                           </span>
                         )}
-                        {/* <span className="uppercase text-sm lg:text-base tracking-widest mb-2 lg:mb-4 font-medium flex">
+                        <span className="uppercase text-sm lg:text-base tracking-widest mb-2 lg:mb-4 font-medium flex">
                           <span className="min-w-[150px]">Read Time:</span>
-                          <span className="block">X minutes</span>
-                        </span> */}
+                          <span className="block">{estimatedReadTime && (<>{estimatedReadTime.text}</>)}</span>
+                        </span>
                       </div>
                     </div>
                   </div>
                   <div className="w-full lg:w-1/2 lg:border-l border-black/50 relative overflow-hidden">
-                    <div className="scale-[1.125] w-full h-full aspect-square">
-                      <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.05}>
-                        <SanityImage
-                          image={article.heroImage}
-                          layout="fill"
-                          className="w-full h-full absolute inset-0 z-0 object-cover object-top"
-                        />                        
-                      </ScrollParallax>
+                    <div className="w-full h-full aspect-square">
+                      <SanityImage
+                        image={article.heroImage}
+                        alt="About Test"
+                        layout="fill"
+                        className="w-full h-full absolute inset-0 z-0 object-cover object-center"
+                      />
                     </div>
+                  </div>
+
+                  <div className="w-full block lg:hidden pt-12 pb-5 px-6">
+                    {article.publishDate && (
+                      <span className="uppercase text-sm lg:text-base tracking-widest mb-2 lg:mb-4 font-medium flex">
+                        <span className="min-w-[150px]">Published:</span>
+                        <span className="block">{da} {mo} {ye}</span>
+                      </span>
+                    )}
+                    {article.projectName && (
+                      <span className="uppercase text-sm lg:text-base tracking-widest mb-2 lg:mb-4 font-medium flex">
+                        <span className="min-w-[150px]">Project:</span>
+                        <span className="block">{article.projectName}</span>
+                      </span>
+                    )}
+                    {article.partnerName && (
+                      <span className="uppercase text-sm lg:text-base tracking-widest mb-2 lg:mb-4 font-medium flex">
+                        <span className="min-w-[150px]">Partner:</span>
+                        <span className="block">{article.partnerName}</span>
+                      </span>
+                    )}
+                    <span className="uppercase text-sm lg:text-base tracking-widest mb-2 lg:mb-4 font-medium flex">
+                      <span className="min-w-[150px]">Read Time:</span>
+                      <span className="block">{estimatedReadTime && (<>{estimatedReadTime.text}</>)}</span>
+                    </span>
                   </div>
                 </div>
               </div>
