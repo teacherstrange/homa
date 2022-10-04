@@ -87,14 +87,14 @@ export default function Footer({contact}) {
                   />
                 </li>
 
-                <li className="w-1/2 md:w-full block mb-4 md:mb-6 xl:mb-8">
+                {/* <li className="w-1/2 md:w-full block mb-4 md:mb-6 xl:mb-8">
                   <FancyLink
                     destination="/homa-lab/dev-tools"
                     a11yText="Navigate to the homa lab page"
                     label="Dev Tools"
                     className="uppercase text-sm xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:opacity-75 focus:opacity-75"
                   />
-                </li>
+                </li> */}
 
                 <li className="w-1/2 md:w-full block mb-4 md:mb-6 xl:mb-8">
                   <FancyLink

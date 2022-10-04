@@ -56,13 +56,13 @@ export default function MobileMenu({ menuClose, setMobileChildMenuOpen, mobileCh
                       </a>
                     </Link>
                   </li>
-                  <li className="block">
+                  {/* <li className="block">
                     <Link href="/homa-lab/dev-tools">
                       <a className="block px-6 py-5 uppercase text-base leading-none relative" onClick={menuClose}>
                         Dev Tools
                       </a>
                     </Link>
-                  </li>
+                  </li> */}
                   <li className="block">
                     <Link href="/homa-lab/data-analytics">
                       <a className="block px-6 py-5 uppercase text-base leading-none relative" onClick={menuClose}>

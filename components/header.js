@@ -107,14 +107,14 @@ export default function Header() {
                       className="uppercase font-medium tracking-widest lg:text-sm lg:leading-none xl:text-base xl:leading-none inline-block py-4"
                     />
                   </li>
-                  <li className="block relative z-10">
+                  {/* <li className="block relative z-10">
                     <FancyLink
                       destination="/homa-lab/dev-tools"
                       a11yText="Navigate to the homa lab page"
                       label="Dev Tools"
                       className="uppercase font-medium tracking-widest lg:text-sm lg:leading-none xl:text-base xl:leading-none inline-block py-4"
                     />
-                  </li>
+                  </li> */}
                   <li className="block relative z-10">
                     <FancyLink
                       destination="/homa-lab/data-analytics"
