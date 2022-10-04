@@ -297,7 +297,7 @@ export default function CaseStudySlug(initialData) {
                   </div>
                 </div>
 
-              <FooterCta image={"/images/about.jpg"} />
+              <FooterCta />
               <Footer contact={contact} />
             </div>
           </m.div>
