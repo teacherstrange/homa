@@ -15,26 +15,26 @@ export default function Header() {
   const router = useRouter()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [mobileChildMenuOpen, setMobileChildMenuOpen] = useState(false)
-  let scrollElement = null;
+  // let scrollElement = null;
 
-  useEffect(() => {
-    scrollElement = document.querySelector('body');
-  });
+  // useEffect(() => {
+  //   scrollElement = document.querySelector('body');
+  // });
 
   const menuToggle = () => {
     if (mobileMenuOpen) {
       setMobileMenuOpen(false)
-      enableBodyScroll(scrollElement);  
+      // enableBodyScroll(scrollElement);  
     } else {
       setMobileMenuOpen(true)
-      disableBodyScroll(scrollElement);
+      // disableBodyScroll(scrollElement);
     }
   }
 
   const menuClose = () => {
     setMobileMenuOpen(false)
     setMobileChildMenuOpen(false)
-    clearAllBodyScrollLocks()
+    // clearAllBodyScrollLocks()
   }
 
   return (
