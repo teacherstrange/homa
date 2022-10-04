@@ -11,7 +11,7 @@ import ScramblePillButton from "./scramble-pill-button"
 export default function SocialScroller({ contact }) {
   return (
     <div className="w-full flex flex-wrap border-t border-black">
-      <div className="w-full lg:w-1/2 px-6 xl:px-10 py-8 lg:py-28 xl:py-32">
+      <div className="w-full lg:w-1/2 px-6 xl:px-10 pt-20 pb-10 lg:py-28 xl:py-32 bg-black text-white lg:bg-white lg:text-black">
         <div className="lg:sticky lg:top-28 xl:top-32 lg:pb-32 xl:pb-48 max-w-screen-md ml-auto">
           <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium"><TextScrambler text="The Community" seed={5} step={1} singleLine /></span>
 
@@ -30,7 +30,7 @@ export default function SocialScroller({ contact }) {
         <span className="uppercase text-sm tracking-widest mb-5 lg:mb-12 xl:mb-16 block font-medium"><TextScrambler text="For Players And Fans" seed={5} step={1} singleLine /></span>
         
         <div className="max-w-screen-md mr-auto">
-          <ul className="w-full grid gap-6 xl:gap-10 grid-cols-12 mb-12 lg:mb-16 xl:mb-24">
+          <ul className="w-full grid gap-6 xl:gap-10 grid-cols-12 mb-24 lg:mb-16 xl:mb-24">
             <li className="block col-span-6 lg:col-span-6">
               <a
                 href={contact.discord}
@@ -70,7 +70,7 @@ export default function SocialScroller({ contact }) {
           </ul>
 
           {/* Game Makers */}
-          <span className="uppercase text-sm tracking-widest mb-5 lg:mb-12 xl:mb-16 block font-medium"><TextScrambler text="For Game Makers" seed={5} step={1} singleLine /></span>
+          <span className="uppercase text-sm tracking-widest mb-5 lg:mb-24 xl:mb-16 block font-medium"><TextScrambler text="For Game Makers" seed={5} step={1} singleLine /></span>
           
           <ul className="w-full grid gap-6 xl:gap-10 grid-cols-12 mb-12 lg:mb-16 xl:mb-24">
             <li className="block col-span-6 lg:col-span-6">
@@ -153,7 +153,7 @@ export default function SocialScroller({ contact }) {
           </ul>
 
           {/* Web3 Community */}
-          <span className="uppercase text-sm tracking-widest mb-5 lg:mb-12 xl:mb-16 block font-medium"><TextScrambler text="For Our Web3 Community" seed={5} step={1} singleLine /></span>
+          <span className="uppercase text-sm tracking-widest mb-5 lg:mb-24 xl:mb-16 block font-medium"><TextScrambler text="For Our Web3 Community" seed={5} step={1} singleLine /></span>
           
           <ul className="w-full grid gap-6 xl:gap-10 grid-cols-12">
             <li className="block col-span-6 lg:col-span-6">

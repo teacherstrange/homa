@@ -181,6 +181,45 @@ canvas {
 
 }
 
+.embla--mobile-scroller {
+  @apply px-6 lg:px-0;
+
+  .embla__container {
+    grid-auto-columns: 100%;
+
+    @screen lg {
+      grid-auto-columns: 49%;
+      grid-column-gap: 0px;
+    }
+  }
+
+  .embla__slide {
+    @apply border-r-0 border-l-0 border-t-0 border-b-0 lg:border-r lg:mr-0 !important;
+  }
+  
+  .embla__slide-inner {
+    @apply p-0 lg:p-0 border-0 h-auto !important;
+  }
+
+  .embla__slide-title {
+    @apply opacity-0 transition-opacity ease-in-out duration-300;
+  }
+
+  .embla__slide-inner-blur {
+    @apply blur-0 lg:blur-lg transition-all ease-in-out duration-500 lg:scale-[1.02];
+  }
+
+  .is-selected {
+    .embla__slide-inner-blur {
+      @apply lg:scale-[1.02] blur-0 lg:blur-0;
+    }
+
+    .embla__slide-title {
+      @apply opacity-100;
+    }
+  }
+}
+
 .embla--card {
   @apply px-6 lg:px-0;
 
@@ -270,12 +309,18 @@ canvas {
 }
 
 .pill-btn {
-  @apply inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white;
+  @apply inline-block border border-current border-opacity-50 font-medium uppercase leading-none p-1 lg:p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white text-sm lg:text-base;
 }
 
 .cover-image {
   img {
     @apply object-cover object-center;
+  }
+}
+
+.cover-image--bottom {
+  img {
+    @apply object-cover object-bottom;
   }
 }
 
@@ -298,4 +343,8 @@ canvas {
     content: "";
     clear: both;
   }
+}
+
+.min-h-screen {
+  min-height: -webkit-fill-available !important;
 }

@@ -17,7 +17,7 @@ export const CarouselBlog = ({items}) => {
   }, [emblaApi])
 
   return (
-    <div className="embla embla--team embla--blog border-t border-black/50 pt-[8vw] mb-[8vw]">
+    <div className="embla embla--team embla--blog border-t border-black/50 pt-20 lg:pt-[8vw] mb-[8vw]">
       <div className="ml-auto flex flex-wrap mb-0 lg:mb-6 pl-6 lg:pl-20 lg:pr-[1.7vw] xl:pr-[4vw] 2xl:pr-[3.6vw]">
         <div className="flex-1">
           <h2 className="font-bold text-xl lg:text-2xl xl:text-3xl leading-[0.9] lg:leading-[0.9] xl:leading-[0.9] uppercase">News Feed</h2>
@@ -53,11 +53,11 @@ export const CarouselBlog = ({items}) => {
                 </div>
                   <div className="embla__slide-inner group-hover:bg-pink group-focus:bg-pink">
                     <div className="embla__slide-inner-blur">
-                      <h2 className="font-bold text-lg lg:text-xl xl:text-2xl uppercase w-full mb-12 md:mb-20 lg:mb-28 xl:mb-32">{e.title}</h2>
+                      <h2 className="font-bold text-lg lg:text-xl xl:text-2xl leading-[1.2] uppercase w-full mb-12 md:mb-20 lg:mb-28 xl:mb-32">{e.title}</h2>
 
                       <div className="flex items-end">
                         {e.category && (
-                          <span className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm">{e.category.title}</span>
+                          <span className="inline-block border border-black/50 font-medium text-sm lg:text-base uppercase leading-none p-1 lg:p-3 rounded-sm">{e.category.title}</span>
                         )}
 
                         <span className="block uppercase text-sm tracking-widest font-medium ml-auto">{da} {mo} {ye}</span>

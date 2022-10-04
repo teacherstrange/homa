@@ -1,7 +1,7 @@
 // Tools
 import { LazyMotion, domAnimation, m } from 'framer-motion'
 import { NextSeo } from 'next-seo'
-import { MouseParallax, ScrollParallax } from 'react-just-parallax'
+import { MouseParallax, ScrollParallax} from 'react-just-parallax'
 import { fade } from '@/helpers/transitions'
 
 // Components
@@ -31,6 +31,7 @@ import ScramblePillButton from '@/components/scramble-pill-button'
 import SanityImage from '@/components/sanity-image'
 import LocalImage from '@/components/local-image'
 import ProductScroller from '@/components/product-scroller'
+import { CarouselMobileScroller } from '@/components/carousel-mobile-scroller'
 
 const query = `{
   "blog": *[_type == "blog"][0...5]{
@@ -78,6 +79,17 @@ const query = `{
   "home": *[_type == "home"][0]{
     title,
     heroImage {
+      asset-> {
+        ...
+      },
+      caption,
+      alt,
+      hotspot {
+        x,
+        y
+      },
+    },
+    mobileHeroImage {
       asset-> {
         ...
       },
@@ -153,13 +165,18 @@ export default function Home(initialData) {
           exit="exit"
           className=""
         >
-          <m.div variants={fade} className="w-full h-full min-h-screen lg:min-h-[115vh] bg-pink/30 pt-24 lg:pt-40 xl:pt-52 border-b border-black/50 px-6 xl:px-10 mx-auto relative overflow-hidden">
-              <div className="w-full h-full absolute inset-0 z-0 object-cover object-top scale-y-[1.07] -scale-x-100">
-                <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.036}>
+          <m.div variants={fade} className="w-full h-full min-h-[calc(100vh_-_500px)] lg:min-h-[115vh] bg-pink/30 pt-24 lg:pt-40 xl:pt-52 border-b border-black/50 px-6 xl:px-10 mx-auto relative overflow-hidden">
+              <div className="w-full h-full absolute inset-0 z-0 object-cover object-top lg:scale-y-[1.07] -scale-x-100">
+                <ScrollParallax enableOnTouchDevice={false} isAbsolutelyPositioned lerpEase={1} strength={-0.036}>
                   <SanityImage
                     image={home.heroImage}
                     layout="fill"
-                    className="w-full h-full absolute inset-0 z-0 object-cover object-top"
+                    className="w-full h-full absolute inset-0 z-0 object-cover object-top hidden lg:block"
+                  />
+                  <SanityImage
+                    image={home.mobileHeroImage}
+                    layout="fill"
+                    className="w-full h-full absolute inset-0 z-0 cover-image--bottom object-cover object-bottom block lg:hidden"
                   />
                 </ScrollParallax>
               </div>
@@ -174,10 +191,10 @@ export default function Home(initialData) {
                 <TextScrambler text="Game The System" seed={12} step={1} singleLine />
               </h1>
 
-              <div className="w-full lg:w-[50%] xl:w-[45%] 2xl:w-[35%] max-w-[720px] pt-[75%] lg:pt-[10%] relative pb-8 lg:pb-0">
+              <div className="w-full lg:w-[50%] xl:w-[45%] 2xl:w-[35%] max-w-[720px] pt-[70%] lg:pt-[10%] relative pb-8 lg:pb-0">
                 <div className="relative z-10">
                   <div className="mb-6 lg:mb-10">
-                    <p className="text-lg md:text-xl xl:text-2xl">We're believers in data and builders of tools that help game creators <Link href="/homa-lab"><a className="inline-block border border-black rounded-sm p-[2px] px-2 uppercase tracking-wider text-sm md:text-base xl:text-lg font-medium hover:bg-black hover:text-white focus:bg-black focus:text-white group"><span className="relative block"><span className="inline-block group-hover:opacity-0">Make</span><span className="absolute top-0 left-0 right-0 hidden  group-hover:block"><TextScrambler text="Make" seed={5} step={1} singleLine /></span></span></a></Link> and <Link href="/publish"><a className="inline-block border border-black rounded-sm p-[2px] px-2 uppercase tracking-wider text-sm md:text-base xl:text-lg font-medium hover:bg-black hover:text-white focus:bg-black focus:text-white group"><span className="relative block"><span className="inline-block group-hover:opacity-0">Publish</span><span className="absolute top-0 left-0 right-0 hidden  group-hover:block"><TextScrambler text="Publish" seed={5} step={1} singleLine /></span></span></a></Link> hit games with franchise potential built right in.</p>
+                    <p className="text-lg md:text-xl xl:text-2xl leading-[1.25] pr-4">We're believers in data and builders of tools that help game creators <Link href="/homa-lab"><a className="inline-block border border-black rounded-sm p-[2px] px-2 uppercase tracking-wider text-sm md:text-base xl:text-lg font-medium hover:bg-black hover:text-white focus:bg-black focus:text-white group"><span className="relative block"><span className="inline-block group-hover:opacity-0">Make</span><span className="absolute top-0 left-0 right-0 hidden  group-hover:block"><TextScrambler text="Make" seed={5} step={1} singleLine /></span></span></a></Link> and <Link href="/publish"><a className="inline-block border border-black rounded-sm p-[2px] px-2 uppercase tracking-wider text-sm md:text-base xl:text-lg font-medium hover:bg-black hover:text-white focus:bg-black focus:text-white group"><span className="relative block"><span className="inline-block group-hover:opacity-0">Publish</span><span className="absolute top-0 left-0 right-0 hidden  group-hover:block"><TextScrambler text="Publish" seed={5} step={1} singleLine /></span></span></a></Link> hit games with franchise potential built right in.</p>
                   </div>
 
                   <div className="grid grid-cols-2 gap-1">
@@ -201,8 +218,8 @@ export default function Home(initialData) {
                     </div>
                   </div>
                 </div>
-                <MouseParallax isAbsolutelyPositioned lerpEase={0.15} strength={0.025}>
-                  <ScrollParallax isAbsolutelyPositioned lerpEase={0.15}>
+                <MouseParallax enableOnTouchDevice={false} isAbsolutelyPositioned lerpEase={0.15} strength={0.025}>
+                  <ScrollParallax enableOnTouchDevice={false} isAbsolutelyPositioned lerpEase={0.15}>
                     <div className="absolute top-[-15vw] lg:top-auto lg:bottom-[-80%] right-[-5vw] lg:right-[-70%] xl:right-[-90%] w-[55vw] lg:w-[28vw] 2xl:w-[30vw] max-w-[480px] z-0">
                       {/* <Image
                         src="/images/character-test.webp"
@@ -222,7 +239,7 @@ export default function Home(initialData) {
         
           <m.div variants={fade}>
             <div className="bg-gradient-to-b from-pink/20 to-pink relative overflow-hidden">
-              <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={0.025} zIndex={0}>
+              <ScrollParallax enableOnTouchDevice={false} isAbsolutelyPositioned lerpEase={0.15} strength={0.025} zIndex={0}>
                 <div className="absolute bottom-[-12vw] lg:bottom-[-3vw] right-[10%] md:right-[3%] z-0 w-[65%] lg:w-[20%] max-w-[290px] lg:max-w-[350px] xl:max-w-[380px]">
                   {/* <Image
                     src="/images/horse.webp"
@@ -241,7 +258,7 @@ export default function Home(initialData) {
                   <div className="col-span-10 col-start-2 md:col-span-10 md:col-start-2 md:border-l md:border-r border-black/50 py-[10vw] md:px-10">
                     <div className="grid grid-cols-10 items-center">
                       <div className="col-span-9 md:col-span-6 md:px-6 lg:px-10 xl:px-24 mb-12 md:mb-0">
-                        <p className="text-2xl xl:text-3xl uppercase font-bold">{home.introText}</p>
+                        <p className="text-2xl xl:text-3xl uppercase font-bold leading-[1.15] xl:leading-[1.15]">{home.introText}</p>
                       </div>
 
                       {/* Abstract */}
@@ -299,32 +316,32 @@ export default function Home(initialData) {
               <div className="w-full border-b border-black/50 pb-56 md:pb-0 relative z-10">
                 <div className="grid grid-cols-12 max-w-screen-3xl mx-auto">
                   <div className="col-span-12  md:col-span-10 md:col-start-2 md:border-l md:border-r border-black/50 py-[5vw] px-6 md:px-10">
-                    <div className="grid grid-cols-12 pt-[4vw] pb-[10vw]">
+                    <div className="grid grid-cols-12 pt-[4vw] pb-[20vw] lg:pb-[10vw]">
                       <div className="col-span-12 lg:col-span-3 mb-5 lg:mb-0">
                         <GlobeIcon className="w-[40%] max-w-[50px] lg:max-w-[100px] lg:mx-auto" />
                       </div>
                       <div className="col-span-12 lg:col-span-7">
-                        <span className="text-lg lg:text-2xl 2xl:text-3xl uppercase font-bold block mb-4">Our data-driven creations have helped</span>
+                        <span className="text-lg lg:text-2xl 2xl:text-3xl uppercase leading-[1.15] lg:leading-[1.15] xl:leading-[1.15] font-bold block mb-4">Our data-driven creations have helped</span>
                         <span className="font-black text-[clamp(40px,_5vw,_86px)] tracking-tight leading-[0.95] mb-8 lg:mb-16 uppercase max-w-[500px]">1,000+ Studios &amp; Developers</span>
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-12 pb-[10vw]">
+                    <div className="grid grid-cols-12 pb-[20vw] lg:pb-[10vw]">
                       <div className="col-span-12 lg:col-span-3 mb-5 lg:mb-0">
                         <MobileHandIcon className="w-[40%] max-w-[50px] lg:max-w-[100px] lg:mx-auto" />
                       </div>
                       <div className="col-span-12 lg:col-span-7">
-                        <span className="text-lg lg:text-2xl 2xl:text-3xl uppercase font-bold block mb-4">Combining our creative expertise into</span>
+                        <span className="text-lg lg:text-2xl 2xl:text-3xl uppercase leading-[1.15] lg:leading-[1.15] xl:leading-[1.15] font-bold block mb-4">Combining our creative expertise into</span>
                         <span className="font-black text-[clamp(40px,_5vw,_86px)] tracking-tight leading-[0.95] mb-8 lg:mb-16 uppercase max-w-[500px]">80+ Mobile Games</span>
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-12 pb-[30vw] md:pb-[10vw]">
+                    <div className="grid grid-cols-12 pb-[45vw] md:pb-[10vw]">
                       <div className="col-span-12 lg:col-span-3 mb-5 lg:mb-0">
                         <DownloadIcon className="w-[40%] max-w-[50px] lg:max-w-[100px] lg:mx-auto" />
                       </div>
                       <div className="col-span-12 lg:col-span-7">
-                        <span className="text-lg lg:text-2xl 2xl:text-3xl uppercase font-bold block mb-4">Resulting in chart topping hits and</span>
+                        <span className="text-lg lg:text-2xl 2xl:text-3xl uppercase leading-[1.15] lg:leading-[1.15] xl:leading-[1.15] font-bold block mb-4">Resulting in chart topping hits and</span>
                         <span className="font-black text-[clamp(40px,_5vw,_86px)] tracking-tight leading-[0.95] mb-8 lg:mb-16 uppercase max-w-[500px]">1,000,000,000+ Downloads</span>
                       </div>
                     </div>
@@ -333,7 +350,7 @@ export default function Home(initialData) {
               </div>
             </div>
 
-            <div className="grid grid-cols-12 py-[15vw] px-6 xl:px-10 max-w-screen-3xl mx-auto">
+            <div className="grid grid-cols-12 pb-20 lg:pb-[15vw] py-[15vw] px-6 xl:px-10 max-w-screen-3xl mx-auto">
               <div className="order-2 md:order-1 col-span-12 lg:col-span-2 relative z-10">
                 <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">
                   <TextScrambler text="Make A Game" seed={5} step={1} singleLine /></span>
@@ -341,16 +358,16 @@ export default function Home(initialData) {
               
               <div className="order-3 md:order-2 col-span-12 md:col-span-6 z-10">
                 <h2 className="font-black text-[clamp(35px,_4.55vw,_90px)] leading-[0.95] mb-8 lg:mb-16 uppercase tracking-tight">{home.makeAGameCtaHeading}</h2>
-                <div className="content max-w-3xl mb-8 xl:mb-12 w-10/12">
+                <div className="content max-w-3xl mb-8 xl:mb-12 w-11/12 lg:w-10/12">
                   <p>{home.makeAGameCtaText}</p>
                 </div>
                 
                 <ScramblePillButton href="/homa-lab" label="Enter The Homa Lab" internal />
               </div>
               
-              <div className="order-1 md:order-3 col-span-12 md:col-span-6 lg:col-span-4 relative z-0 h-[300px] md:h-full">
-                <MouseParallax isAbsolutelyPositioned lerpEase={0.15} strength={-0.015} zIndex={0}>
-                  <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={-0.14} zIndex={0}>
+              <div className="order-1 md:order-3 col-span-12 md:col-span-6 lg:col-span-4 relative z-0 h-[300px] md:h-full mb-12 lg:mb-0">
+                <MouseParallax enableOnTouchDevice={false} isAbsolutelyPositioned lerpEase={0.15} strength={-0.015} zIndex={0}>
+                  <ScrollParallax enableOnTouchDevice={false} isAbsolutelyPositioned lerpEase={0.15} strength={-0.14} zIndex={0}>
                     <div className="absolute top-[25%] right-[5%] z-0 w-full lg:w-1/2 max-w-[150px] lg:max-w-[160px] xl:max-w-[180px] 2xl:max-w-[230px]">
                       {/* <Image
                         src="/images/bee.webp"
@@ -365,8 +382,8 @@ export default function Home(initialData) {
                   </ScrollParallax>
                 </MouseParallax>
 
-                <MouseParallax isAbsolutelyPositioned lerpEase={0.15} strength={-0.025} zIndex={0}>
-                  <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={-0.23} zIndex={0}>
+                <MouseParallax enableOnTouchDevice={false} isAbsolutelyPositioned lerpEase={0.15} strength={-0.025} zIndex={0}>
+                  <ScrollParallax enableOnTouchDevice={false} isAbsolutelyPositioned lerpEase={0.15} strength={-0.23} zIndex={0}>
                     <div className="absolute bottom-0 left-[0] z-0 w-full max-w-[90px] xl:max-w-[100px] -scale-x-100 rotate-[15deg]">
                       {/* <Image
                         src="/images/bee.webp"
@@ -381,8 +398,8 @@ export default function Home(initialData) {
                   </ScrollParallax>
                 </MouseParallax>
 
-                <MouseParallax isAbsolutelyPositioned lerpEase={0.15} strength={0.025} zIndex={0}>
-                  <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={0.1} zIndex={0}>
+                <MouseParallax enableOnTouchDevice={false} isAbsolutelyPositioned lerpEase={0.15} strength={0.025} zIndex={0}>
+                  <ScrollParallax enableOnTouchDevice={false} isAbsolutelyPositioned lerpEase={0.15} strength={0.1} zIndex={0}>
                     <div className="absolute top-[0] left-[17%] 2xl:left-[22%] z-0 w-full max-w-[70px] lg:max-w-[110px] xl:max-w-[135px] 2xl:max-w-[155px]">
                       {/* <Image
                         src="/images/bee.webp"
@@ -400,12 +417,17 @@ export default function Home(initialData) {
             </div>
 
             {/* Product Scroller */}
-            <ProductScroller products={products} />
+            <div className="hidden lg:block">
+              <ProductScroller products={products} />
+            </div>
+            <div className="block lg:hidden ">
+              <CarouselMobileScroller items={products} />
+            </div>
 
 
-            <div className="relative overflow-hidden border-t border-black/50">
-              <MouseParallax isAbsolutelyPositioned lerpEase={0.15} strength={-0.015} zIndex={10}>
-                <ScrollParallax isAbsolutelyPositioned lerpEase={0.15} strength={-0.14} zIndex={10}>
+            <div className="hidden lg:block relative overflow-hidden border-t border-black/50">
+              <MouseParallax enableOnTouchDevice={false} isAbsolutelyPositioned lerpEase={0.15} strength={-0.015} zIndex={10}>
+                <ScrollParallax enableOnTouchDevice={false} isAbsolutelyPositioned lerpEase={0.15} strength={-0.14} zIndex={10}>
                   <div className="absolute bottom-[15vw] right-[10vw] w-[60%] lg:w-1/3 max-w-[300px] lg:max-w-[550px] z-10">
                     {/* <Image
                       src="/images/ninja.webp"
@@ -437,14 +459,14 @@ export default function Home(initialData) {
             </div>
 
 
-            <div className="grid grid-cols-12 pb-12 lg:pb-[15vw] px-6 xl:px-10 max-w-screen-3xl mx-auto">
+            <div className="grid grid-cols-12 pb-24 lg:pb-[15vw] px-6 xl:px-10 max-w-screen-3xl mx-auto border-t border-black/50 lg:border-t-0">
               <div className="order-2 md:order-1 col-span-12 lg:col-span-2 relative z-10">
                 <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium"><TextScrambler text="Homa Academy" seed={5} step={1} singleLine /></span>
               </div>
               
               <div className="order-3 md:order-2 col-span-12 md:col-span-6 z-10">
                 <h2 className="font-black text-[clamp(50px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase max-w-[500px]">{home.homaAcademyCtaHeading}</h2>
-                <div className="content max-w-3xl mb-8 xl:mb-12 w-10/12">
+                <div className="content max-w-3xl mb-8 xl:mb-12 w-full lg:w-10/12">
                   <p>The Homa Academy provides developers and studios everywhere the insights needed to create games with hit potential coded right in.</p>
 
                   <p>Stop by to learn the ins and outs of game design, including in-depth game play analysis, methods for ideation &amp; player experience optimization, as well as hands-on game building tutorials, hangouts and more. </p>
@@ -457,7 +479,7 @@ export default function Home(initialData) {
 
                 {/* Henry to replace with WebGl */}
                 {/* <TestWebgl /> */}
-                <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-full scale-[1.1]`}>
+                <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-full mt-4 lg:mt-0 scale-[1.1]`}>
                   <source src={'/videos/stairs.mp4'} type="video/mp4" codecs="hvc1" />
                   <source src={'/videos/stairs.webm'} type="video/webm" />
 
@@ -491,6 +513,13 @@ export default function Home(initialData) {
             <div className="bg-lime text-black relative overflow-hidden border-t border-b border-black/50">
               <div className="grid grid-cols-12 py-12 lg:py-[15vw] px-6 xl:px-10 max-w-screen-3xl mx-auto">
                 <div className="col-span-12 lg:col-span-2 relative z-10">
+                  <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-full block lg:hidden scale-[1.2] mb-8`}>
+                    <source src={'/videos/rocket.mov'} type="video/quicktime" />
+                    <source src={'/videos/rocket.webm'} type="video/webm" />
+
+                    Sorry. Your browser does not support the video tag.
+                  </video>
+
                   <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium"><TextScrambler text="Build a career" seed={5} step={1} singleLine /></span>
                 </div>
                 
@@ -509,7 +538,7 @@ export default function Home(initialData) {
 
                   <div className="w-full flex flex-wrap border border-black/50 mb-6 lg:mb-8 relative bg-lime z-[10]">
                     <div className="w-full lg:w-1/3 border-b lg:border-b-0 lg:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
-                      <h3 className="font-bold text-2xl lg:text-3xl xl:text-3xl leading-[0.95] mb-12 lg:mb-32 uppercase">WFH, WFParis, WFAnywhere</h3>
+                      <h3 className="font-bold text-lg lg:text-2xl xl:text-3xl leading-[0.95] lg:leading-[0.95] xl:leading-[0.95] mb-12 lg:mb-32 uppercase">WFH, WFParis, WFAnywhere</h3>
 
                       <div className="content content--small w-full">
                         <p>We’re a distributed team with a flagship HQ in Paris. Work from here, or anywhere.</p>
@@ -517,7 +546,7 @@ export default function Home(initialData) {
                     </div>
 
                     <div className="w-full lg:w-1/3 border-b lg:border-b-0 lg:border-r border-black/50 p-5 lg:p-6 xl:p-8 2xl:p-10">
-                      <h3 className="font-bold text-2xl lg:text-3xl xl:text-3xl leading-[0.95] mb-12 lg:mb-32 uppercase w-11/12">Work In<br/>English</h3>
+                      <h3 className="font-bold text-lg lg:text-2xl xl:text-3xl leading-[0.95] lg:leading-[0.95] xl:leading-[0.95] mb-12 lg:mb-32 uppercase w-11/12">Work In <span className="inline-block lg:block">English</span></h3>
 
                       <div className="content content--small w-full">
                         <p>We’re over 34 nationalities strong and we work in English all day long.</p>
@@ -525,7 +554,7 @@ export default function Home(initialData) {
                     </div>
 
                     <div className="w-full lg:w-1/3 p-5 lg:p-6 xl:p-8 2xl:p-10">
-                      <h3 className="font-bold text-2xl lg:text-3xl xl:text-3xl leading-[0.95] mb-12 lg:mb-32 uppercase">Work your<br/>way up</h3>
+                      <h3 className="font-bold text-lg lg:text-2xl xl:text-3xl leading-[0.95] lg:leading-[0.95] xl:leading-[0.95] mb-12 lg:mb-32 uppercase">Work your <span className="inline-block lg:block">way up</span></h3>
 
                       <div className="content content--small w-full">
                         <p>Twice-yearly reviews: twice-yearly chances to prove you deserve more.</p>
@@ -544,8 +573,8 @@ export default function Home(initialData) {
             </div>
 
 
-            <div className="bg-orange/40 relative overflow-hidden pb-[25vw] lg:pb-0">
-              <ScrollParallax isAbsolutelyPositioned lerpEase={1} strength={-0.05} zIndex={0}>
+            <div className="bg-orange/40 relative overflow-hidden pt-12 lg:pt-0 pb-[25vw] lg:pb-0">
+              <ScrollParallax enableOnTouchDevice={false} isAbsolutelyPositioned lerpEase={1} strength={-0.05} zIndex={0}>
                 <div className="scale-[1.15] absolute inset-0 w-full h-full">
                   <LocalImage
                     src="/images/hope-cta2.jpg"
@@ -559,7 +588,7 @@ export default function Home(initialData) {
               <div className="grid grid-cols-12 py-12 lg:pt-[15vw] lg:pb-[20.5vw] px-6 lg:px-24 xl:px-32 max-w-screen-3xl mx-auto">
                 
                 <div className="col-span-12 col-start-0 lg:col-span-7 z-10 mb-12 lg:mb-0">
-                  <h2 className="font-black text-[clamp(43px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase">There is luck.<br/>Or there is Homa.</h2>
+                  <h2 className="font-black text-[clamp(52px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase">There is luck.<br/>Or there is Homa.</h2>
                   <div className="content max-w-3xl mb-6 xl:mb-8 w-10/12">
                     <p>With us, every step of your game’s build and launch phase – from ideation right through to monetization - is managed by experts and tested, tweaked and improved by data-rich technology.</p>
 
@@ -620,7 +649,9 @@ export default function Home(initialData) {
             </div>
 
             <SocialScroller contact={contact} />
+            
             <CarouselBlog items={blog} />
+
             <FooterCta />
             <Footer contact={contact} />
           </m.div>
