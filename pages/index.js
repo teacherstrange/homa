@@ -245,19 +245,22 @@ export default function Home(initialData) {
                       </div>
 
                       {/* Abstract */}
-                      <div className="col-span-6 col-start-3 md:col-span-4 md:col-start-7">
-                        <div className="w-[100%] md:w-[85%] lg:w-[65%] relative mx-auto">
+                      <div className="col-span-6 col-start-2 md:col-span-4 md:col-start-7 pb-24 lg:pb-0">
+                        <div className="w-[131%] md:w-[85%] lg:w-[65%] relative mx-auto">
                           <PhoneIcon className="w-full relative z-0 opacity-90" />
 
-                          <div className="absolute bottom-[50px] lg:bottom-auto lg:top-0 right-0 mr-[-35%] lg:mr-[-50%] mt-[15%] z-10 w-full lg:w-[70%]">
+                          <div className="absolute bottom-[-65px] lg:bottom-auto lg:top-0 left-0 lg:left-auto lg:right-0 ml-[-15%] lg:ml-0 lg:mr-[-50%] mt-[15%] z-10 w-[100%] lg:w-[70%]">
                             <div className="w-full">
-                              <span className="block uppercase font-medium tracking-wider text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-b-0 border-black/50 px-3 py-5">{home.featuredGames[0].title}</span>
+                              <span className="block uppercase font-medium tracking-wider text-sm lg:text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-b-0 border-black/50 px-3 py-5">{home.featuredGames[0].title}</span>
                             </div>
                             <div className="w-full">
-                              <span className="block uppercase font-medium tracking-wider text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-black/50 px-3 py-5">{home.featuredGames[0].partnerName}</span>
+                              <span className="block uppercase font-medium tracking-wider text-sm lg:text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-black/50 border-b-0 lg:border-b px-3 py-5">{home.featuredGames[0].partnerName}</span>
+                            </div>
+
+                            <div className="w-full block lg:hidden">
+                              <span className="block uppercase font-medium tracking-wider text-sm lg:text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-black/50 px-3 py-5">{home.featuredGames[0].installs}</span>
                             </div>
                           </div>
-
 
                           <div className="absolute inset-0 z-1 scale-y-[0.961] scale-x-[0.96] translate-x-[1.2%] border-1 border-black">
 
@@ -281,7 +284,7 @@ export default function Home(initialData) {
                             /> */}
                           </div>
 
-                          <div className="absolute bottom-0 left-0 ml-[-40%] md:ml-[-20%] mb-[15%] z-10 w-[130%] md:w-[70%] min-w-[120px] md:min-w-[290px]">
+                          <div className="hidden lg:block absolute bottom-0 left-0 ml-[-40%] md:ml-[-20%] mb-[15%] z-10 w-[130%] md:w-[70%] min-w-[120px] md:min-w-[290px]">
                             <div className="w-full">
                               <span className="block uppercase font-medium tracking-wider text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-black/50 px-3 py-5 text-center">{home.featuredGames[0].installs}</span>
                             </div>
@@ -555,7 +558,7 @@ export default function Home(initialData) {
 
               <div className="grid grid-cols-12 py-12 lg:pt-[15vw] lg:pb-[20.5vw] px-6 lg:px-24 xl:px-32 max-w-screen-3xl mx-auto">
                 
-                <div className="col-span-12 lg:col-span-7 z-10 mb-12 lg:mb-0">
+                <div className="col-span-12 col-start-0 lg:col-span-7 z-10 mb-12 lg:mb-0">
                   <h2 className="font-black text-[clamp(43px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase">There is luck.<br/>Or there is Homa.</h2>
                   <div className="content max-w-3xl mb-6 xl:mb-8 w-10/12">
                     <p>With us, every step of your game’s build and launch phase – from ideation right through to monetization - is managed by experts and tested, tweaked and improved by data-rich technology.</p>
@@ -566,16 +569,20 @@ export default function Home(initialData) {
                   <ScramblePillButton href="/games" label="View Our Games" internal/>
                 </div>
 
-                <div className="col-span-6 col-start-4 lg:col-span-4 lg:col-start-8">
-                  <div className="w-[100%] lg:w-[70%] relative mx-auto lg:translate-y-[-1.5vw] lg:translate-x-[2.5vw]">
+                <div className="col-span-6 col-start-2 lg:col-span-4 lg:col-start-8">
+                  <div className="w-[165%] lg:w-[70%] relative mx-auto lg:translate-y-[-1.5vw] lg:translate-x-[2.5vw]">
                     <PhoneIcon className="w-full relative z-0 opacity-[0.85]" />
 
-                    <div className="absolute top-0 right-0 mr-[-35%] lg:mr-[-50%] mt-[15%] z-10 w-full lg:w-[70%]">
+                    <div className="absolute bottom-[-65px] lg:bottom-auto lg:top-0 left-0 lg:left-auto lg:right-0 ml-[-10%] lg:ml-0 lg:mr-[-50%] mt-[15%] z-10 w-[100%] lg:w-[70%]">
                       <div className="w-full">
-                        <span className="block uppercase font-medium tracking-wider text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-b-0 border-black/50 px-3 py-5">{home.featuredGames[1].title}</span>
+                        <span className="block uppercase font-medium tracking-wider text-sm lg:text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-b-0 border-black/50 px-3 py-5">{home.featuredGames[1].title}</span>
                       </div>
                       <div className="w-full">
-                        <span className="block uppercase font-medium tracking-wider text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-black/50 px-3 py-5">{home.featuredGames[1].partnerName}</span>
+                        <span className="block uppercase font-medium tracking-wider text-sm lg:text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-black/50 border-b-0 lg:border-b px-3 py-5">{home.featuredGames[1].partnerName}</span>
+                      </div>
+
+                      <div className="w-full block lg:hidden">
+                        <span className="block uppercase font-medium tracking-wider text-sm lg:text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-black/50 px-3 py-5">{home.featuredGames[1].installs}</span>
                       </div>
                     </div>
 
@@ -602,7 +609,7 @@ export default function Home(initialData) {
                       /> */}
                     </div>
 
-                    <div className="absolute bottom-0 left-0 ml-[-40%] md:ml-[-20%] mb-[15%] z-10 w-[130%] md:w-[70%] min-w-[120px] md:min-w-[290px]">
+                    <div className="hidden lg:block absolute bottom-0 left-0 ml-[-40%] md:ml-[-20%] mb-[15%] z-10 w-[130%] md:w-[70%] min-w-[120px] md:min-w-[290px]">
                       <div className="w-full">
                         <span className="block uppercase font-medium tracking-wider text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-black/50 px-3 py-5 text-left">{home.featuredGames[1].installs}</span>
                       </div>
