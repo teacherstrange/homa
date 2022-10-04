@@ -285,14 +285,16 @@ canvas {
   transition: transform .3s cubic-bezier(.76,0,.24,1) 0s, -webkit-transform .3s cubic-bezier(.76,0,.24,1) 0s;
 }
 
-.roll-btn:hover {
-  .roll-btn__front {
-    -webkit-transform: translateY(-100%) rotateX(90deg);
-    transform: translateY(-100%) rotateX(90deg);
-  }
-  .roll-btn__back {
-    -webkit-transform: translateY(-100%) rotateX(0);
-    transform: translateY(-100%) rotateX(0);
+@screen lg {
+  .roll-btn:hover {
+    .roll-btn__front {
+      -webkit-transform: translateY(-100%) rotateX(90deg);
+      transform: translateY(-100%) rotateX(90deg);
+    }
+    .roll-btn__back {
+      -webkit-transform: translateY(-100%) rotateX(0);
+      transform: translateY(-100%) rotateX(0);
+    }
   }
 }
 
