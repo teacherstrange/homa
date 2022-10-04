@@ -1,6 +1,7 @@
 // Tools
 import { LazyMotion, domAnimation, m } from 'framer-motion'
 import { NextSeo } from 'next-seo'
+import { InView } from 'react-intersection-observer';
 
 // Transitions
 import { fade } from '@/helpers/transitions'
@@ -19,8 +20,12 @@ import Link from 'next/link'
 import SanityPageService from '@/services/sanityPageService'
 import SanityImage from '@/components/sanity-image'
 import BodyRenderer from '@/components/body-renderer'
-import { useEffect } from 'react'
-import { ConsoleView } from 'react-device-detect'
+
+import TwitterIcon from "@/icons/twitter.svg"
+import LinkedInIcon from "@/icons/linkedin.svg"
+import FacebookIcon from "@/icons/facebook.svg"
+import LinkIcon from "@/icons/link.svg"
+import { useState } from 'react'
 
 const readingTime = require('reading-time');
 
@@ -92,6 +97,7 @@ const pageService = new SanityPageService(query)
 export default function CaseStudySlug(initialData) {
   // Sanity Data
   const { data: { article, contact } } = pageService.getPreviewHook(initialData)()
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   let d = new Date(article.publishDate);
   let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d);
@@ -227,23 +233,65 @@ export default function CaseStudySlug(initialData) {
               </div>
 
                 <div className="w-full flex flex-wrap px-6 lg:px-10 mt-[10vw] mb-[5vw]">
-                  <div className="w-full lg:w-[12%] mb-12 lg:mb-0 lg:pt-1">
-                    <div className="lg:sticky lg:top-28 xl:top-32">
+                  <div className="w-full lg:w-[22%] xl:w-[18%] 2xl:w-[13%] mb-20 lg:mb-0 lg:pt-1">
+                    <div className="lg:sticky lg:top-28 xl:top-32 z-10">
                       {article.contentSections?.map((e, i) => {
                         return (
-                          <a href={`#${kebabCase(`${e.title}`)}`} className={`uppercase block text-sm lg:text-base tracking-widest mb-2 lg:mb-4 font-medium ${i == 0 ? 'text-black' : 'text-black/30'}`}>{e.title}</a>
+                          <a href={`#${kebabCase(`${e.title}`)}`} className={`uppercase block text-sm lg:text-base tracking-widest mb-2 lg:mb-4 font-medium ${currentIndex == i ? 'text-black' : 'text-black/30'}`}>{e.title}</a>
                         )
                       })}
 
-                      {/* <span className="uppercase block text-sm lg:text-base tracking-widest mb-2 lg:mb-4 font-medium mt-6 lg:mt-12">Share:</span> */}
+                      <span className="uppercase block text-sm lg:text-base tracking-widest mb-2 lg:mb-4 font-medium mt-12 lg:mt-12">Share:</span>
+                      
+                      <div className="flex flex-wrap">
+                        <a
+                          href={`http://twitter.com/share?text=${article.title}&url=https://homagames.com/games/${article.slug.current}
+                          `}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-base font-medium tracking-widest leading-none text-black hover:opacity-75 focus:opacity-75 w-[40px] h-[40px] lg:w-[42px] lg:h-[42px] rounded-md bg-[#FFF0FF] flex items-center justify-center mr-2"
+                        >
+                          <TwitterIcon className="w-[50%]" />
+                        </a>
+
+                        <a
+                          href={`https://www.facebook.com/share.php?u=https://homagames.com/games/${article.slug.current}&quote=${article.title}
+                          `}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-base font-medium tracking-widest leading-none text-black hover:opacity-75 focus:opacity-75 w-[40px] h-[40px] lg:w-[42px] lg:h-[42px] rounded-md bg-[#FFF0FF] flex items-center justify-center mr-2"
+                        >
+                          <FacebookIcon className="w-[50%]" />
+                        </a>
+
+                        <a
+                          href={`https://www.linkedin.com/sharing/share-offsite/?url=https://homagames.com/games/${article.slug.current}&quote=${article.title}
+                          `}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-base font-medium tracking-widest leading-none text-black hover:opacity-75 focus:opacity-75 w-[40px] h-[40px] lg:w-[42px] lg:h-[42px] rounded-md bg-[#FFF0FF] flex items-center justify-center mr-2"
+                        >
+                          <LinkedInIcon className="w-[50%]" />
+                        </a>
+
+                        <button
+                          onClick={() => {navigator.clipboard.writeText(`https://homagames.com/games/${article.slug.current}`)}}
+                          className="text-base font-medium tracking-widest leading-none text-black hover:opacity-75 focus:opacity-75 w-[40px] h-[40px] lg:w-[42px] lg:h-[42px] rounded-md bg-[#FFF0FF] flex items-center justify-center relative z-10"
+                        >
+                          <LinkIcon className="w-[50%]" />
+                        </button>
+                      </div>
                     </div>
                   </div>
-                  <div className="w-full lg:w-[88%] content lg:translate-x-[-6%]">
+
+                  <div className="w-full lg:w-[65%] xl:w-[82%] 2xl:w-[87%] content lg:translate-x-[6%] xl:translate-x-[-6%] 2xl:translate-x-[-7%] relative z-[100]">
                     {article.contentSections?.map((e, i) => {
                       return (
-                        <div id={kebabCase(`${e.title}`)} key={i} className="scroll-mt-32">
-                          <BodyRenderer body={e.contentBlocks} caseStudy />
-                        </div>
+                        <InView threshold={0.55} as="div" onChange={(inView, entry) => inView && setCurrentIndex(i)} key={i}>
+                          <div id={kebabCase(`${e.title}`)} className="scroll-mt-32">
+                            <BodyRenderer body={e.contentBlocks} caseStudy />                          
+                          </div>
+                        </InView>
                       )
                     })}
                   </div>

@@ -4,7 +4,6 @@ import GridOverlayDense from "./grid-overlay-dense";
 import ProductScrollerItem from "./product-scroller-item";
 import { InView } from 'react-intersection-observer';
 
-
 export default function ProductScroller({ products }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 

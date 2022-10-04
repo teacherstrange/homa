@@ -9,28 +9,28 @@ const bodySerializers = {
   block: {
     component: BlockContentWrapper,
     wrapper: ({ children }) => 
-      <div className="mb-12 md:mb-24 lg:mb-32 xl:mb-52">
+      <div className="mb-12 md:mb-20 lg:mb-24 xl:mb-40">
         {children}
       </div>
   },
   modularImageBlock: {
     component: ModularImageBlock,
     wrapper: ({ children }) => 
-      <div className="mb-12 md:mb-24 lg:mb-32 xl:mb-52">
+      <div className="mb-12 md:mb-20 lg:mb-24 xl:mb-40">
         {children}
       </div>
   },
   modularQuoteBlock: {
     component: ModularQuoteBlock,
     wrapper: ({ children }) => 
-      <div className="mb-12 md:mb-24 lg:mb-32 xl:mb-52">
+      <div className="mb-12 md:mb-20 lg:mb-24 xl:mb-40">
         {children}
       </div>
   },
   textBlock: {
     component: ModularTextBlock,
     wrapper: ({ children }) => 
-      <div className="mb-12 md:mb-24 lg:mb-32 xl:mb-52">
+      <div className="mb-12 md:mb-20 lg:mb-24 xl:mb-40">
         {children}
       </div>
   }

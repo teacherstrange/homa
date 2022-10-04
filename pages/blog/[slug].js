@@ -20,6 +20,11 @@ import SanityPageService from '@/services/sanityPageService'
 import BodyRenderer from '@/components/body-renderer'
 import SanityImage from '@/components/sanity-image'
 
+import TwitterIcon from "@/icons/twitter.svg"
+import LinkedInIcon from "@/icons/linkedin.svg"
+import FacebookIcon from "@/icons/facebook.svg"
+import LinkIcon from "@/icons/link.svg"
+
 const readingTime = require('reading-time');
 
 const query = `{
@@ -220,10 +225,54 @@ export default function BlogSlug(initialData) {
                   </div>
                 </div>
               </div>
+              
+              <div className="px-6 lg:px-10">
+                <div className="content lg:pt-[10vw] pb-[5vw] relative  max-w-screen-3xl mx-auto">
+                  <div className="lg:absolute lg:top-[7vw] lg:left-0 z-10 pb-20 lg:pb-0">
+                    <span className="uppercase block text-sm lg:text-base tracking-widest mb-2 lg:mb-4 font-medium mt-10 lg:mt-12">Share:</span>
+                    
+                    <div className="flex flex-wrap">
+                      <a
+                        href={`http://twitter.com/share?text=${article.title}&url=https://homagames.com/games/${article.slug.current}
+                        `}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-base font-medium tracking-widest leading-none text-black hover:opacity-75 focus:opacity-75 w-[40px] h-[40px] lg:w-[42px] lg:h-[42px] rounded-md bg-[#FFF0FF] flex items-center justify-center mr-2"
+                      >
+                        <TwitterIcon className="w-[50%]" />
+                      </a>
 
-              <div className="content pt-[10vw] pb-[5vw] px-6 lg:px-10">
-                <div className="w-full">
-                  <BodyRenderer body={article.contentBlocks} />
+                      <a
+                        href={`https://www.facebook.com/share.php?u=https://homagames.com/games/${article.slug.current}&quote=${article.title}
+                        `}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-base font-medium tracking-widest leading-none text-black hover:opacity-75 focus:opacity-75 w-[40px] h-[40px] lg:w-[42px] lg:h-[42px] rounded-md bg-[#FFF0FF] flex items-center justify-center mr-2"
+                      >
+                        <FacebookIcon className="w-[50%]" />
+                      </a>
+
+                      <a
+                        href={`https://www.linkedin.com/sharing/share-offsite/?url=https://homagames.com/games/${article.slug.current}&quote=${article.title}
+                        `}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-base font-medium tracking-widest leading-none text-black hover:opacity-75 focus:opacity-75 w-[40px] h-[40px] lg:w-[42px] lg:h-[42px] rounded-md bg-[#FFF0FF] flex items-center justify-center mr-2"
+                      >
+                        <LinkedInIcon className="w-[50%]" />
+                      </a>
+
+                      <button
+                        onClick={() => {navigator.clipboard.writeText(`https://homagames.com/games/${article.slug.current}`)}}
+                        className="text-base font-medium tracking-widest leading-none text-black hover:opacity-75 focus:opacity-75 w-[40px] h-[40px] lg:w-[42px] lg:h-[42px] rounded-md bg-[#FFF0FF] flex items-center justify-center relative z-10"
+                      >
+                        <LinkIcon className="w-[50%]" />
+                      </button>
+                    </div>
+                  </div>
+                  <div className="lg:w-10/12 xl:w-full mx-auto">
+                    <BodyRenderer body={article.contentBlocks} />
+                  </div>
                 </div>
               </div>
 
