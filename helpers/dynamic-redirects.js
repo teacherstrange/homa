@@ -12,7 +12,7 @@ const getClient = () => previewClient;
 
 module.exports = async () => {
   const query = `
-  *[_type == "contact"][0]{ 
+  *[_type == "admin"][0]{ 
     appAdsTxtFile { 
       asset-> { 
         url
@@ -23,9 +23,9 @@ module.exports = async () => {
   const data = await getClient().fetch(query);
   const redirects = Array.from(Array(1), (e, i) => {
     return {
-      source: `/new-test`,
-      destination: `${data?.appAdsTxtFile.asset.url}`,
-      permanent: false, 
+      source: `/app-ads.txt`,
+      destination: `${data.appAdsTxtFile.asset.url}`,
+      permanent: false,
     };
   });
   return redirects;
