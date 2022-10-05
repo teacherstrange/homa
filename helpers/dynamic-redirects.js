@@ -1,0 +1,72 @@
+const { createClient } = require('next-sanity');
+
+const previewClient = createClient({
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+  token: process.env.SANITY_API_TOKEN,
+  apiVersion: '2021-03-25',
+  useCdn: true
+});
+
+const getClient = () => previewClient;
+
+module.exports = async () => {
+  const query = `
+  *[_type == "contact"][0]{ 
+    appAdsTxtFile { 
+      asset-> { 
+        url
+      } 
+    }
+  }
+`;
+  const data = await getClient().fetch(query);
+  const redirects = Array.from(Array(1), (e, i) => {
+    return {
+      source: `/new-test`,
+      destination: `${data?.appAdsTxtFile.asset.url}`,
+      permanent: false, 
+    };
+  });
+  return redirects;
+};
+
+
+// const groq = require('groq');
+// const sanityClient = require('@sanity/client');
+
+// const options = {
+//   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+//   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+//   token: process.env.SANITY_API_TOKEN,
+//   apiVersion: '2021-03-25',
+//   useCdn: true
+// }
+
+// const client = sanityClient(options);
+
+// module.exports = async () => {
+//   const query = groq`
+//     *[_type == 'redirect'] {
+//       destination,
+//       source,
+//       permanent
+//     }
+//   `;
+//   const redirects = await client.fetch(query);
+//   return redirects;
+// }
+
+
+
+// module.exports = {
+//   async redirects() {
+//     return [
+//       {
+//         source: '/some-link',
+//         destination: sanityObjectField.url,
+//         permanent: true,
+//       },
+//     ]
+//   },
+// }
