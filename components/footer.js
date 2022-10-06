@@ -40,9 +40,9 @@ export default function Footer({contact}) {
               <Link href="/privacy">
                 <a className="w-full 2xl:w-auto mb-1 2xl:mb-0 text-white/40 block 2xl:mr-6 hover:opacity-75 focus:opacity-75">Privacy</a>
               </Link>
-              {/* <Link href="/terms">
+              <Link href="/terms">
                 <a className="w-full 2xl:w-auto mb-1 2xl:mb-0 text-white/40 block hover:opacity-75 focus:opacity-75">Terms</a>
-              </Link> */}
+              </Link>
             </div>
           </div>
         </div>
@@ -302,8 +302,8 @@ export default function Footer({contact}) {
           <div className="w-full 2xl:space-x-8">
             <a href="mailto:bonjour@homagames.com" className="w-full 2xl:w-auto text-white/40 block mb-2 hover:opacity-75 focus:opacity-75">bonjour@homagames.com</a>
             <a href="tel:+33142861324" className="w-full 2xl:w-auto text-white/40 block mb-2 hover:opacity-75 focus:opacity-75">+33 1 42 86 13 24</a>
-            <span className="w-full 2xl:w-auto text-white/40 block mb-2 2xl:mr-6">Privacy</span>
-            <span className="w-full 2xl:w-auto text-white/40 block">Terms</span>
+            <Link href="/privacy"><a className="w-full 2xl:w-auto text-white/40 block mb-2 2xl:mr-6">Privacy</a></Link>
+            <Link href="/terms"><a className="w-full 2xl:w-auto text-white/40 block mb-2 2xl:mr-6">Terms</a></Link>
           </div>
         </div>
       </div>

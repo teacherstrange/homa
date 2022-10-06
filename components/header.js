@@ -39,7 +39,7 @@ export default function Header() {
 
   return (
     <div className={`fixed top-0 left-0 right-0 w-full z-[1000] transition-translate ease-in-out duration-[350ms] ${scrollDirection == 'down' ? 'translate-y-[-100px]' : 'translate-y-[0]'}`}>
-      <header className="pl-6 xl:pl-10 bg-white bg-opacity-0">
+      <header className="pl-6 xl:pl-10 bg-white bg-opacity-20">
         <div className="absolute inset-0 w-full h-full bg-white bg-opacity-0 backdrop-blur-lg z-0 border-b border-black/50"></div>
         <div className="flex flex-wrap items-start relative z-10">
           <Link href="/">

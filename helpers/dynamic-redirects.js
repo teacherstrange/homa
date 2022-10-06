@@ -28,6 +28,12 @@ module.exports = async () => {
       permanent: false,
     };
   });
+
+  redirects.push({
+    source: '/general-terms-and-conditions-of-use-of-the-homa-lab-platform-2021-11-10',
+    destination: 'https://homagames.com/terms',
+    permanent: false,
+  })
   return redirects;
 };
 
