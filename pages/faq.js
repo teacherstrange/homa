@@ -51,7 +51,7 @@ export default function FAQ(initialData) {
   return (
     <Layout>
       <NextSeo
-        title={faq.seo?.metaTitle ? faq.seo?.metaTitle : 'faq'}
+        title={faq.seo?.metaTitle ? faq.seo?.metaTitle : 'FAQ'}
         description={faq.seo?.metaDesc ? faq.seo?.metaDesc : null}
         openGraph={{
           title: faq.seo?.metaTitle ? faq.seo?.metaTitle : faq.title,
