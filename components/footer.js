@@ -116,7 +116,7 @@ export default function Footer({contact}) {
 
                 <li className="w-1/2 md:w-full block mb-4 md:mb-16 xl:mb-24">
                   <a
-                    href="https://academy.homagames.com/"
+                    href="https://lab-v2.homagames.com/registration"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="uppercase text-xs xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:opacity-75 focus:opacity-75"

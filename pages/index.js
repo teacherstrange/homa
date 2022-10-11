@@ -438,7 +438,7 @@ export default function Home(initialData) {
                   <p>Stop by to learn the ins and outs of game design, including in-depth game play analysis, methods for ideation &amp; player experience optimization, as well as hands-on game building tutorials, hangouts and more. </p>
                 </div>
                 
-                <ScramblePillButton href="https://academy.homagames.com/" label="Learn More"/>
+                <ScramblePillButton href="https://lab-v2.homagames.com/registration" label="Learn More"/>
               </div>
               
               <div className="order-1 md:order-3 col-span-12 md:col-span-6 lg:col-span-4 relative z-0 md:h-full mb-8 lg:mb-0">

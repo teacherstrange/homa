@@ -281,7 +281,7 @@ export default function HomaLab(initialData) {
                     </div>
                   </div>
 
-                  <a href="https://academy.homagames.com" target="_blank" rel="noopener noreferrer" className="roll-btn block lg:w-1/3 2xl:w-1/3 text-center">
+                  <a href="https://lab-v2.homagames.com/registration" target="_blank" rel="noopener noreferrer" className="roll-btn block lg:w-1/3 2xl:w-1/3 text-center">
                     <span className="roll-btn__front">Learn More</span>
                     <span className="roll-btn__back">Learn More</span>
                   </a>

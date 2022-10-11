@@ -134,7 +134,7 @@ export default function Header() {
                   <li className="block relative z-10">
                     <a
                       className="uppercase font-medium tracking-widest lg:text-sm lg:leading-none xl:text-base xl:leading-none inline-block py-4 group"
-                      href="https://academy.homagames.com/"
+                      href="https://lab-v2.homagames.com/registration"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
