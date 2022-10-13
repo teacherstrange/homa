@@ -256,7 +256,7 @@ export default function Careers(initialData) {
             <div className="w-full bg-white border-b border-black/50 mx-auto relative overflow-hidden">
               <div className="grid grid-cols-12 max-w-screen-3xl mx-auto">
                 <div className="col-span-12 md:col-span-10 md:col-start-2 md:border-l md:border-r border-black/50 py-12 md:py-[9vw] lg:py-[10vw] px-6 md:px-8 xl:px-12 relative">
-                  <h2 className="display-text w-full mb-0 lg:mb-0 relative z-10">We believe true diversity is key to good tech.</h2>
+                  <h2 className="display-text w-full mb-0 lg:mb-0 relative z-10 tracking-tight">We believe true diversity is key to good tech.</h2>
 
                   <div className="absolute inset-0 w-full h-full col-span-12 md:col-span-10 md:col-start-2 z-0">
                     <div className="col-span-12 md:col-span-10 md:col-start-2 relative h-full">

@@ -111,7 +111,7 @@ canvas {
   }
 
   .embla__slide-inner {
-    @apply h-[130vw] lg:h-[60vw] xl:h-[55vw] 2xl:h-[50vw];
+    @apply h-[120vw] lg:h-[53vw] xl:h-[48vw] 2xl:h-[45vw];
   }
 
   .is-selected {
@@ -363,7 +363,7 @@ canvas {
 }
 
 .pill-btn {
-  @apply inline-block border border-current border-opacity-50 font-medium uppercase leading-none p-1 lg:p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white text-sm lg:text-base;
+  @apply inline-block border border-current border-opacity-50 font-medium uppercase leading-none p-1 lg:p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white text-sm lg:text-base hover:border-black;
 }
 
 .cover-image {

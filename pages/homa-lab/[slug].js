@@ -215,7 +215,7 @@ export default function HomaLabChild(initialData) {
                 {product.contentSections?.map((e, i) => {
                   return (
                     <>
-                      <div className={`w-full ${(i - 1) != product.contentSections.length && 'border-b border-black/50'} px-6 xl:px-10 py-12 xl:py-10 flex flex-wrap`}>
+                      <div className={`w-full ${i !== 0 && 'border-t'} ${(i - 1) != product.contentSections.length && 'border-b border-black/50'} px-6 xl:px-10 py-12 xl:py-10 flex flex-wrap`}>
                         <div className="w-full lg:w-3/4">
                           <h3 className="font-black text-4xl lg:text-6xl xl:text-7xl leading-[0.95] mb-12 lg:mb-24 uppercase max-w-[500px] xl:max-w-none">{e.title}</h3>
 

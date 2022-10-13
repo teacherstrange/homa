@@ -160,7 +160,7 @@ export default function Community(initialData) {
               </div>
 
               <div className="max-w-screen-3xl mx-auto">
-                <h1 className="font-black text-[clamp(55px,_8.5vw,_180px)] leading-[0.95] tracking-tight mb-4 uppercase relative z-10 w-11/12 lg:w-full"><TextScrambler text="Out of the game, into the universe." seed={30} step={2} /></h1>
+                <h1 className="font-black text-[clamp(55px,_8.8vw,_180px)] leading-[0.95] tracking-tighter mb-4 uppercase relative z-10 w-11/12 lg:w-full"><TextScrambler text="Out of the game, into the universe." seed={30} step={2} /></h1>
               </div>
             </div>
 
@@ -170,7 +170,7 @@ export default function Community(initialData) {
                 <div className="lg:pb-32 xl:pb-48 max-w-screen-md ml-auto">
                   <span className="uppercase text-sm tracking-widest mb-5 lg:mb-8 block font-medium">A new player has entered the game</span>
 
-                  <h3 className="font-bold text-xl lg:text-2xl xl:text-3xl mb-8 lg:mb-[5vw] uppercase w-full lg:w-10/12 tracking-wide leading-[1.2]">Our characters were tired of playing games, so we’re turning them loose and putting them in your hands. Welcome to a universe where you and your favorite character become two sides of the same coin. Endless adventure awaits.<br/><br/>Launching soon.</h3>
+                  <h3 className="font-bold text-xl lg:text-2xl xl:text-3xl mb-8 lg:mb-[5vw] uppercase w-full lg:w-10/12 tracking-normal leading-[1.2]">Our characters were tired of playing games, so we’re turning them loose and putting them in your hands. Welcome to a universe where you and your favorite character become two sides of the same coin. Endless adventure awaits.<br/><br/>Launching soon.</h3>
                 </div>
               </div>
 
@@ -263,7 +263,7 @@ export default function Community(initialData) {
                           {/* <ScramblePillButton href="https://homagang.xyz" label="Learn More" /> */}
                         </div>
                       </div>
-                      <div className="col-span-10 lg:col-span-5 lg:col-start-6 relative overflow-hidden order-1 lg:order-2">
+                      <div className="col-span-10 lg:col-span-5 lg:col-start-6 relative overflow-hidden order-1 lg:order-2 lg:border-l lg:border-black/50">
                         <div className="scale-[1.15] w-full h-full aspect-square">
                           <ScrollParallax enableOnTouchDevice={false} isAbsolutelyPositioned lerpEase={1} strength={-0.05}>
                             <LocalImage
@@ -323,7 +323,7 @@ export default function Community(initialData) {
                                 </div>
                               </div>
                             </div>
-                            <div className="col-span-10 lg:col-span-5 lg:col-start-6 relative overflow-hidden order-1 lg:order-2">
+                            <div className="col-span-10 lg:col-span-5 lg:col-start-6 relative overflow-hidden order-1 lg:order-2 lg:border-l lg:border-black/50">
                               <GridOverlay/>
                               <div className="scale-[1.1725] w-full h-full aspect-square">
                                 <ScrollParallax enableOnTouchDevice={false} isAbsolutelyPositioned lerpEase={1} strength={-0.05}>
@@ -426,11 +426,11 @@ export default function Community(initialData) {
               <ScrollParallax enableOnTouchDevice={false} isAbsolutelyPositioned lerpEase={0.025} strength={0.05} zIndex={1}>
                 <div className="absolute bottom-0 right-0 w-[55%] lg:w-[25%] max-w-[500px] mr-[15%] mb-[5%] lg:mb-[15%] lg:mr-[10%]">
                   <Image
-                    src="/images/character-test-2.webp"
+                    src="/images/gun-new.webp"
                     alt="About Test"
                     layout="responsive"
-                    width={902}
-                    height={1344}
+                    width={1200}
+                    height={1788}
                     className="w-full"
                   />             
                 </div>   

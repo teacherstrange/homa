@@ -82,7 +82,7 @@ export const CarouselGameVideos = ({ heading, items, reversed }) => {
                     </div>
                   </div>
 
-                  <div className="hidden lg:block absolute bottom-[22%] left-[3px] lg:w-[80%] xl:w-[70%] 2xl:w-[55%]">
+                  <div className="hidden lg:block absolute bottom-[22%] left-[3px] lg:w-[90%] xl:w-[85%] 2xl:w-[65%]">
                     <div className="w-full">
                       <span className="block uppercase font-medium tracking-wider text-sm xl:text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-black/50 px-3 py-5 text-left"><span className="block embla__slide-text"><TextScrambler text={e.installs} seed={5} step={1} singleLine /></span></span>
                     </div>

@@ -171,7 +171,7 @@ export default function BlogSlug(initialData) {
                           <a className="inline-block border border-black/50 font-medium uppercase leading-none p-1 lg:p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white mr-3 mb-6 lg:mb-12 text-sm lg:text-base">{article.category.title}</a>
                         </Link>
 
-                        <h2 className="font-black text-[clamp(40px,_4.45vw,_86px)] leading-[0.9] mb-2 lg:mb-[15vw] uppercase w-full lg:w-11/12">{article.title}</h2>
+                        <h2 className="font-black text-[clamp(40px,_4.45vw,_86px)] leading-[0.9] mb-2 lg:mb-[15vw] uppercase w-full lg:w-11/12 tracking-tight">{article.title}</h2>
                       </div>
 
                       <div className="mt-auto w-full hidden lg:block">

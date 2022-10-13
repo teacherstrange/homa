@@ -124,7 +124,7 @@ export default function BlogBody({blog, numberOfArticles, categories, subPage, i
 
                       <Link href={`/blog/${blog[0].slug.current}`}>
                         <a className="block">
-                          <h2 className="font-black text-[clamp(40px,_4.45vw,_86px)] leading-[0.9] mb-12 lg:mb-[15vw] uppercase w-[99%] lg:w-11/12">{blog[0].title}</h2>
+                          <h2 className="font-black text-[clamp(40px,_4.45vw,_86px)] leading-[0.9] mb-12 lg:mb-[15vw] uppercase w-[99%] lg:w-11/12 tracking-tight">{blog[0].title}</h2>
                         </a>
                       </Link>
 
