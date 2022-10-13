@@ -28,6 +28,7 @@ import WorldIcon from '@/icons/world.svg'
 
 // Sanity
 import SanityPageService from '@/services/sanityPageService'
+import LocalImage from '@/components/local-image'
 
 const query = `{
   "careers": *[_type == "careers"][0]{
@@ -251,6 +252,60 @@ export default function Careers(initialData) {
                 })}
               </Marquee>
             </div> */}
+
+            <div className="w-full bg-white border-b border-black/50 mx-auto relative overflow-hidden">
+              <div className="grid grid-cols-12 max-w-screen-3xl mx-auto">
+                <div className="col-span-12 md:col-span-10 md:col-start-2 md:border-l md:border-r border-black/50 py-12 md:py-[9vw] lg:py-[10vw] px-6 md:px-8 xl:px-12 relative">
+                  <h2 className="display-text w-full mb-0 lg:mb-0 relative z-10">We believe true diversity is key to good tech.</h2>
+
+                  <div className="absolute inset-0 w-full h-full col-span-12 md:col-span-10 md:col-start-2 z-0">
+                    <div className="col-span-12 md:col-span-10 md:col-start-2 relative h-full">
+                      <div className="flex flex-wrap h-full">
+                        <div className="w-full md:w-1/2 md:border-r md:border-black/50 p-6 md:p-8 xl:p-12">
+                        </div>
+                        <div className="w-full md:w-1/2">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="w-full bg-white border-b border-black/50 mx-auto relative overflow-hidden">
+              <div className="grid grid-cols-12 max-w-screen-3xl mx-auto">
+                <div className="col-span-12 md:col-span-10 md:col-start-2 md:border-l md:border-r border-black/50 relative">
+                  <div className="flex flex-wrap">
+                    <div className="w-full lg:w-1/2 lg:border-r lg:border-black/50 p-6 md:p-8 xl:p-12 content md:pr-16 xl:pr-24">
+                      <p>At Homa, we don’t care if/where you went to university, what you look like, what toilet you use, who you share a bed with, or how famous your father is. All we care about is your ambition, your resolve and how you can help us grow.</p>
+                      
+                      <p>We believe in that because we believe real growth is the result of diversity; a wide range of nationalities, backgrounds, skill sets, and personal experiences – all working towards a single objective. If you’ve got the smarts, the energy and the motivation, there are no barriers to keep you from going far here.</p>
+                    </div>
+
+                    <div className="w-full lg:w-1/2 relative aspect-square">
+                      <LocalImage src="/images/our-team-cta.jpg" alt="Team Image" layout="fill" className="w-full h-full absolute inset-0 object-center" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="w-full bg-white border-b border-black/50 mx-auto relative overflow-hidden hidden md:block">
+              <div className="grid grid-cols-12 max-w-screen-3xl mx-auto">
+                <div className="col-span-12 md:col-span-10 md:col-start-2 md:border-l md:border-r border-black/50 py-12 lg:py-[4vw] px-6 md:px-16 xl:px-24 relative">
+                  <div className="absolute inset-0 w-full h-full col-span-12 md:col-span-10 md:col-start-2 z-0">
+                    <div className="col-span-12 md:col-span-10 md:col-start-2 relative h-full">
+                      <div className="flex flex-wrap h-full">
+                        <div className="w-full md:w-1/2 md:border-r md:border-black/50 p-6 md:p-8 xl:p-12">
+                        </div>
+                        <div className="w-full md:w-1/2">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <div className="w-full bg-pink/20 border-b border-black/50 mx-auto relative overflow-hidden">
               <div className="grid grid-cols-12 max-w-screen-3xl mx-auto">

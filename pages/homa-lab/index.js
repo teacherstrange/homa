@@ -43,6 +43,17 @@ const query = `{
         y
       },
     },
+    productVisual {
+      asset-> {
+        ...
+      },
+      caption,
+      alt,
+      hotspot {
+        x,
+        y
+      },
+    },
     seo {
       ...,
       shareGraphic {
@@ -200,6 +211,17 @@ export default function HomaLab(initialData) {
 
                           <div className="col-span-10 lg:col-span-5 lg:col-start-6 relative overflow-hidden lg:border-l lg:border-black/50 order-1 lg:order-2">
                             <GridOverlay />
+
+                            <div className="absolute inset-0 z-10 flex flex-wrap items-center justify-center overflow-hidden">
+                              <div className="w-[43%] relative overflow-hidden">
+                                <SanityImage
+                                  image={e.productVisual}
+                                  layout="responsive"
+                                  className="w-full"
+                                />
+                              </div>
+                            </div>
+                            
                             <div className="scale-[1.25] w-full h-full aspect-square">
                               <ScrollParallax enableOnTouchDevice={false} isAbsolutelyPositioned lerpEase={1} strength={-0.05}>
                                 <SanityImage image={e.heroImage} layout="fill" className="w-full h-full absolute inset-0 z-0 object-cover object-top" />

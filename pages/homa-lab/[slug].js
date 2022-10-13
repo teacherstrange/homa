@@ -215,7 +215,7 @@ export default function HomaLabChild(initialData) {
                 {product.contentSections?.map((e, i) => {
                   return (
                     <>
-                      <div className={`w-full ${(i + 1) != product.contentSections.length && 'border-b border-black/50'} px-6 xl:px-10 py-12 xl:py-10 flex flex-wrap`}>
+                      <div className={`w-full ${(i - 1) != product.contentSections.length && 'border-b border-black/50'} px-6 xl:px-10 py-12 xl:py-10 flex flex-wrap`}>
                         <div className="w-full lg:w-3/4">
                           <h3 className="font-black text-4xl lg:text-6xl xl:text-7xl leading-[0.95] mb-12 lg:mb-24 uppercase max-w-[500px] xl:max-w-none">{e.title}</h3>
 
@@ -234,7 +234,7 @@ export default function HomaLabChild(initialData) {
                       </div>
                       {e.sectionItems?.map((e, i) => {
                         return (
-                          <div className={`w-full ${i != product.contentSections.length && 'border-b border-black/50'} px-6 xl:px-10 py-12 xl:py-10 flex flex-wrap lg:pb-[20vw] xl:pb-[20vw]`}>
+                          <div className={`w-full ${i - 1 != product.contentSections.length && 'border-b border-black/50'} px-6 xl:px-10 py-12 xl:py-10 flex flex-wrap lg:pb-[20vw] xl:pb-[20vw]`}>
                             <div className="w-full">
                               <h3 className="font-black text-4xl lg:text-6xl xl:text-7xl leading-[0.95] mb-8 lg:mb-24 uppercase max-w-[500px] xl:max-w-none">0{i + 1}</h3>
 
@@ -250,7 +250,7 @@ export default function HomaLabChild(initialData) {
                 })}
                 {product.sectionItemsSingleSection?.map((e, i) => {
                   return (
-                    <div className={`w-full ${i + 1 != product.sectionItemsSingleSection.length && 'border-b border-black/50'} px-6 xl:px-10 py-6 xl:py-10 flex flex-wrap`} key={i}>
+                    <div className={`w-full ${i + 1 != product.sectionItemsSingleSection.length && 'border-b border-black/50'} px-6 xl:px-10 py-6 xl:py-10 flex flex-wrap lg:pb-[20vw] xl:pb-[20vw]`} key={i}>
                       <div className="w-full">
                         <h3 className="font-black text-5xl lg:text-6xl xl:text-7xl leading-[0.95] mb-12 lg:mb-24 uppercase max-w-[500px] xl:max-w-none">0{i + 1}</h3>
 

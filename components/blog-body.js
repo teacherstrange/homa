@@ -104,10 +104,10 @@ export default function BlogBody({blog, numberOfArticles, categories, subPage, i
 
               {!subPage && (
                 <div className="flex flex-wrap max-w-screen-3xl mx-auto mb-5 lg:mb-8 xl:mb-10">
-                  <div className="w-full lg:w-2/3 flex flex-nowrap overflow-x-scroll lg:overflow-hidden lg:flex-wrap ">
+                  <div className="w-full lg:w-2/3 flex flex-nowrap overflow-x-scroll lg:overflow-hidden lg:flex-wrap">
                     {categories?.map((e, i) => {
                       return (
-                        <ScramblePillButton href={`/blog/categories/${e.slug.current}`} label={e.title} internal className="mr-3 mb-3 min-w-[155px] text-center" />
+                        <ScramblePillButton href={`/blog/categories/${e.slug.current}`} label={e.title} internal className="mr-3 mb-3 min-w-[155px] lg:min-w-min text-center" />
                       )
                     })}
                   </div>

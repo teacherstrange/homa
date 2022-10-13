@@ -375,7 +375,7 @@ export default function Games(initialData) {
                 </div>
 
                 <div className="col-span-12 lg:col-span-3 relative hidden xl:block self-center">
-                  <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-full scale-[1.4] xl:scale-[1.5] translate-x-[-25%] xl:translate-x-[-30%] xl:translate-y-[20%]`}>
+                  <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-full scale-[1.4] xl:scale-[1.7] translate-x-[-25%] xl:translate-x-[-25%] xl:translate-y-[20%]`}>
                     <source src={'/videos/chess.mp4'} type="video/mp4" />
                     <source src={'/videos/chess.webm'} type="video/webm" />
 
