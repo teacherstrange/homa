@@ -18,11 +18,16 @@ import TextScrambler from '@/components/text-scrambler'
 // Sanity
 import SanityPageService from '@/services/sanityPageService'
 import SanityBlockContent from '@sanity/block-content-to-react'
+import AccordionList from '@/components/accordion'
 
 const query = `{
   "faq": *[_type == "faqs"][0] {
     title,
     text,
+    faqs[] {
+      question,
+      answer
+    },
     seo {
       ...,
       shareGraphic {
@@ -88,9 +93,16 @@ export default function FAQ(initialData) {
             </div>
 
             <Container>
-              <div className="pt-[10vw] pb-[10vw] max-w-[800px] mx-auto">
+              <div className="pt-[10vw] pb-[10vw] max-w-screen-xl mx-auto">
                 <div className="w-full content">
-                  <SanityBlockContent serializers={{ container: ({ children }) => children }} blocks={faq.text} />
+                  <div className="mb-[8vw]">
+                    <div className="max-w-screen-2xl mx-auto">
+                      <div className="px-6 lg:px-24">
+                        <AccordionList items={faq.faqs} />
+                      </div>
+                    </div>
+                  </div>
+                  {/* <SanityBlockContent serializers={{ container: ({ children }) => children }} blocks={faq.text} /> */}
                 </div>
               </div>
             </Container>

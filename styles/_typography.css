@@ -4,6 +4,14 @@
   & > ul,
   & > blockquote {
     @apply mb-5 lg:mb-10 last-of-type:mb-0 md:text-xl 2xl:text-2xl leading-[1.25] md:leading-[1.35] 2xl:leading-[1.35];
+
+    em {
+      @apply normal-case not-italic !important;
+    }
+
+    strong {
+      @apply font-medium !important;
+    }
   }
 
   & > ul {
@@ -23,7 +31,7 @@
   }
 
   & > h1, & > h2, & > h3, & > h4 {
-    @apply uppercase tracking-wider font-bold;
+    @apply uppercase tracking-wider font-bold !important;
   }
 
   & > h1, & > .h1 {
