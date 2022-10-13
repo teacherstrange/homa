@@ -51,7 +51,7 @@ export default function FAQ(initialData) {
   return (
     <Layout>
       <NextSeo
-        title={faq.seo?.metaTitle ? faq.seo?.metaTitle : 'FAQ'}
+        title={faq.seo?.metaTitle ? faq.seo?.metaTitle : 'FAQs'}
         description={faq.seo?.metaDesc ? faq.seo?.metaDesc : null}
         openGraph={{
           title: faq.seo?.metaTitle ? faq.seo?.metaTitle : faq.title,
@@ -83,7 +83,7 @@ export default function FAQ(initialData) {
               </div>
 
               <div className="max-w-screen-3xl mx-auto">
-                <h1 className="font-black text-[clamp(50px,_9vw,190px)] leading-[0.95] tracking-tight mb-4 uppercase relative z-10 w-11/12 lg:w-full"><TextScrambler text="FAQ" seed={15} step={2} /></h1>
+                <h1 className="font-black text-[clamp(50px,_9vw,190px)] leading-[0.95] tracking-tight mb-4 uppercase relative z-10 w-11/12 lg:w-full"><TextScrambler text="FAQs" seed={15} step={2} /></h1>
               </div>
             </div>
 
