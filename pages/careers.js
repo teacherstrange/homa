@@ -282,8 +282,15 @@ export default function Careers(initialData) {
                       <p>We believe in that because we believe real growth is the result of diversity; a wide range of nationalities, backgrounds, skill sets, and personal experiences – all working towards a single objective. If you’ve got the smarts, the energy and the motivation, there are no barriers to keep you from going far here.</p>
                     </div>
 
-                    <div className="w-full lg:w-1/2 relative aspect-square">
-                      <LocalImage src="/images/our-team-cta.jpg" alt="Team Image" layout="fill" className="w-full h-full absolute inset-0 object-center" />
+                    <div className="w-full lg:w-1/2 relative aspect-square bg-pink/20 items-center justify-center hidden lg:flex">
+
+                      <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-10/12`}>
+                        <source src={'/videos/hands.mov'} type="video/quicktime" />
+                        <source src={'/videos/hands.webm'} type="video/webm" />
+
+                        Sorry. Your browser does not support the video tag.
+                      </video>
+                      {/* <LocalImage src="/images/our-team-cta.jpg" alt="Team Image" layout="fill" className="w-full h-full absolute inset-0 object-center" /> */}
                     </div>
                   </div>
                 </div>
