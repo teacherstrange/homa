@@ -10,7 +10,7 @@ import AppleAppStoreIcon from "@/icons/apple-app-store.svg"
 import GoogleAppStoreIcon from "@/icons/google-app-store.svg"
 import Link from "next/link"
 
-export default function Footer({contact}) {
+export default function Footer({contact, homaLabNav }) {
   return (
     <footer className="bg-black text-white mt-[0] px-6 xl:px-10 pt-8 md:pt-[20vw] pb-10 md:pb-10">
       <div className="grid grid-cols-5 md:grid-cols-12">
@@ -56,70 +56,29 @@ export default function Footer({contact}) {
                     destination="/homa-lab"
                     a11yText="Navigate to the homa lab page"
                     label="Homa Lab"
-                    className="uppercase text-xs xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:opacity-75 focus:opacity-75"
+                    className="uppercase text-xs xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:text-pink focus:text-pink"
                   />
                 </li>
 
-                <li className="w-1/2 md:w-full block mb-4 md:mb-6 xl:mb-8">
-                  <FancyLink
-                    destination="/homa-lab/ideas"
-                    a11yText="Navigate to the homa lab page"
-                    label="Ideas"
-                    className="uppercase text-xs xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:opacity-75 focus:opacity-75"
-                  />
-                </li>
+                {homaLabNav.map((e, i) => {
+                  return (
+                    <li className="w-1/2 md:w-full block mb-4 md:mb-6 xl:mb-8">
+                      <FancyLink
+                        destination={`/homa-lab/${e.slug.current}`}
+                        a11yText={`Navigate to the ${e.title} page`}
+                        label={e.title}
+                        className="uppercase text-xs xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:text-pink focus:text-pink"
+                      />
+                    </li>
+                  )
+                })}
 
-                <li className="w-1/2 md:w-full block mb-4 md:mb-6 xl:mb-8">
-                  <FancyLink
-                    destination="/homa-lab/market-watchers"
-                    a11yText="Navigate to the homa lab page"
-                    label="Market Watcher"
-                    className="uppercase text-xs xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:opacity-75 focus:opacity-75"
-                  />
-                </li>
-
-                <li className="w-1/2 md:w-full block mb-4 md:mb-6 xl:mb-8">
-                  <FancyLink
-                    destination="/homa-lab/homa-sdk"
-                    a11yText="Navigate to the homa lab page"
-                    label="Homa SDK"
-                    className="uppercase text-xs xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:opacity-75 focus:opacity-75"
-                  />
-                </li>
-
-                {/* <li className="w-1/2 md:w-full block mb-4 md:mb-6 xl:mb-8">
-                  <FancyLink
-                    destination="/homa-lab/dev-tools"
-                    a11yText="Navigate to the homa lab page"
-                    label="Dev Tools"
-                    className="uppercase text-xs xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:opacity-75 focus:opacity-75"
-                  />
-                </li> */}
-
-                <li className="w-1/2 md:w-full block mb-4 md:mb-6 xl:mb-8">
-                  <FancyLink
-                    destination="/homa-lab/data-analytics"
-                    a11yText="Navigate to the homa lab page"
-                    label="Data Analytics"
-                    className="uppercase text-xs xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:opacity-75 focus:opacity-75"
-                  />
-                </li>
-
-                <li className="w-1/2 md:w-full block mb-4 md:mb-6 xl:mb-8">
-                  <FancyLink
-                    destination="/homa-lab/submissions-and-creatives"
-                    a11yText="Navigate to the homa lab page"
-                    label="Submissions & Creatives"
-                    className="uppercase text-xs xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:opacity-75 focus:opacity-75"
-                  />
-                </li>
-
-                <li className="w-1/2 md:w-full block mb-4 md:mb-16 xl:mb-24">
+                <li className="w-1/2 md:w-full block mb-4 md:mb-12 xl:mb-20">
                   <a
                     href="https://lab-v2.homagames.com/registration"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="uppercase text-xs xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:opacity-75 focus:opacity-75"
+                    className="uppercase text-xs xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:text-pink focus:text-pink"
                   >
                     Homa Academy
                   </a>
@@ -130,7 +89,7 @@ export default function Footer({contact}) {
                     destination="/games"
                     a11yText="Navigate to the games page"
                     label="Games"
-                    className="uppercase text-xs xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:opacity-75 focus:opacity-75"
+                    className="uppercase text-xs xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:text-pink focus:text-pink"
                   />
                 </li>
                 <li className="w-1/2 md:w-full block mb-4 md:mb-6 xl:mb-8">
@@ -138,7 +97,7 @@ export default function Footer({contact}) {
                     destination="/homa-lab"
                     a11yText="Navigate to the homa lab page"
                     label="Homa Lab"
-                    className="uppercase text-xs xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:opacity-75 focus:opacity-75"
+                    className="uppercase text-xs xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:text-pink focus:text-pink"
                   />
                 </li>
                 <li className="w-1/2 md:w-full block mb-4 md:mb-6 xl:mb-8">
@@ -146,7 +105,7 @@ export default function Footer({contact}) {
                     destination="/community"
                     a11yText="Navigate to the community page"
                     label="Community"
-                    className="uppercase text-xs xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:opacity-75 focus:opacity-75"
+                    className="uppercase text-xs xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:text-pink focus:text-pink"
                   />
                 </li>
                 <li className="w-1/2 md:w-full block mb-4 md:mb-6 xl:mb-8">
@@ -154,7 +113,7 @@ export default function Footer({contact}) {
                     destination="/about"
                     a11yText="Navigate to the about page"
                     label="About"
-                    className="uppercase text-xs xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:opacity-75 focus:opacity-75"
+                    className="uppercase text-xs xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:text-pink focus:text-pink"
                   />
                 </li>
                 <li className="w-1/2 md:w-full block mb-4 md:mb-6 xl:mb-8">
@@ -162,15 +121,23 @@ export default function Footer({contact}) {
                     destination="/careers"
                     a11yText="Navigate to the careers page"
                     label="Careers"
-                    className="uppercase text-xs xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:opacity-75 focus:opacity-75"
+                    className="uppercase text-xs xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:text-pink focus:text-pink"
                   />
                 </li>
-                <li className="w-1/2 md:w-full block">
+                <li className="w-1/2 md:w-full block mb-4 md:mb-6 xl:mb-8">
                   <FancyLink
                     destination="/blog"
                     a11yText="Navigate to the blog page"
                     label="Blog"
-                    className="uppercase text-xs xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:opacity-75 focus:opacity-75"
+                    className="uppercase text-xs xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:text-pink focus:text-pink"
+                  />
+                </li>
+                <li className="w-1/2 md:w-full block">
+                  <FancyLink
+                    destination="/faq"
+                    a11yText="Navigate to the FAQs page"
+                    label="FAQs"
+                    className="uppercase text-xs xl:text-base font-medium tracking-widest leading-none xl:leading-none hover:text-pink focus:text-pink"
                   />
                 </li>
               </ul>
@@ -185,10 +152,10 @@ export default function Footer({contact}) {
                     href={contact.discord}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:opacity-75 focus:opacity-75 flex flex-wrap items-center"
+                    className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:text-pink focus:text-pink flex flex-wrap items-center group"
                   >
-                    <span className="w-14 h-14 md:w-12 md:h-12 2xl:w-12 2xl:h-12 rounded-xl bg-[#E6C3E6]/10 mr-4 flex items-center justify-center">
-                      <DiscordIcon className="w-[56.5%] text-[#E6C3E6]" />
+                    <span className="w-14 h-14 md:w-12 md:h-12 2xl:w-12 2xl:h-12 rounded-xl bg-[#E6C3E6]/10 group-hover:bg-pink group-focus:bg-pink mr-4 flex items-center justify-center">
+                      <DiscordIcon className="w-[56.5%] text-[#E6C3E6] group-hover:text-black group-focus:text-black" />
                     </span>
                     <span className="hidden md:block break-all">/homagames</span>
                   </a>
@@ -199,10 +166,10 @@ export default function Footer({contact}) {
                     href={contact.linkedIn}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:opacity-75 focus:opacity-75 flex flex-wrap items-center"
+                    className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:text-pink focus:text-pink flex flex-wrap items-center group"
                   >
-                    <span className="w-14 h-14 md:w-12 md:h-12 2xl:w-12 2xl:h-12 rounded-xl bg-[#E6C3E6]/10 mr-4 flex items-center justify-center">
-                      <LinkedInIcon className="w-[45%] text-[#E6C3E6]" />
+                    <span className="w-14 h-14 md:w-12 md:h-12 2xl:w-12 2xl:h-12 rounded-xl bg-[#E6C3E6]/10 group-hover:bg-pink group-focus:bg-pink mr-4 flex items-center justify-center">
+                      <LinkedInIcon className="w-[45%] text-[#E6C3E6] group-hover:text-black group-focus:text-black" />
                     </span>
                     <span className="hidden md:block break-all">/homa-games</span>
                   </a>
@@ -213,10 +180,10 @@ export default function Footer({contact}) {
                     href={contact.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:opacity-75 focus:opacity-75 flex flex-wrap items-center"
+                    className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:text-pink focus:text-pink flex flex-wrap items-center group"
                   >
-                    <span className="w-14 h-14 md:w-12 md:h-12 2xl:w-12 2xl:h-12 rounded-xl bg-[#E6C3E6]/10 mr-4 flex items-center justify-center">
-                      <FacebookIcon className="w-[50%] text-[#E6C3E6]" />
+                    <span className="w-14 h-14 md:w-12 md:h-12 2xl:w-12 2xl:h-12 rounded-xl bg-[#E6C3E6]/10 group-hover:bg-pink group-focus:bg-pink mr-4 flex items-center justify-center">
+                      <FacebookIcon className="w-[50%] text-[#E6C3E6] group-hover:text-black group-focus:text-black" />
                     </span>
                     <span className="hidden md:block break-all">/homagames</span>
                   </a>
@@ -227,10 +194,10 @@ export default function Footer({contact}) {
                     href={contact.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:opacity-75 focus:opacity-75 flex flex-wrap items-center"
+                    className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:text-pink focus:text-pink flex flex-wrap items-center group"
                   >
-                    <span className="w-14 h-14 md:w-12 md:h-12 2xl:w-12 2xl:h-12 rounded-xl bg-[#E6C3E6]/10 mr-4 flex items-center justify-center">
-                      <InstagramIcon className="w-[50%] text-[#E6C3E6]" />
+                    <span className="w-14 h-14 md:w-12 md:h-12 2xl:w-12 2xl:h-12 rounded-xl bg-[#E6C3E6]/10 group-hover:bg-pink group-focus:bg-pink mr-4 flex items-center justify-center">
+                      <InstagramIcon className="w-[50%] text-[#E6C3E6] group-hover:text-black group-focus:text-black" />
                     </span>
                     <span className="hidden md:block break-all">@homagames</span>
                   </a>
@@ -246,10 +213,10 @@ export default function Footer({contact}) {
                     href={contact.discord}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:opacity-75 focus:opacity-75 flex flex-wrap items-center"
+                    className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:text-pink focus:text-pink flex flex-wrap items-center group"
                   >
-                    <span className="w-14 h-14 md:w-12 md:h-12 2xl:w-12 2xl:h-12 rounded-xl bg-[#E6C3E6]/10 mr-4 flex items-center justify-center">
-                      <DiscordIcon className="w-[56.5%] text-[#E6C3E6]" />
+                    <span className="w-14 h-14 md:w-12 md:h-12 2xl:w-12 2xl:h-12 rounded-xl bg-[#E6C3E6]/10 group-hover:bg-pink group-focus:bg-pink mr-4 flex items-center justify-center">
+                      <DiscordIcon className="w-[56.5%] text-[#E6C3E6] group-hover:text-black group-focus:text-black" />
                     </span>
                     <span className="hidden md:block break-all">/homagang</span>
                   </a>
@@ -260,10 +227,10 @@ export default function Footer({contact}) {
                     href={contact.twitter}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:opacity-75 focus:opacity-75 flex flex-wrap items-center"
+                    className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:text-pink focus:text-pink flex flex-wrap items-center group"
                   >
-                    <span className="w-14 h-14 md:w-12 md:h-12 2xl:w-12 2xl:h-12 rounded-xl bg-[#E6C3E6]/10 mr-4 flex items-center justify-center">
-                      <TwitterIcon className="w-[53%] text-[#E6C3E6]" />
+                    <span className="w-14 h-14 md:w-12 md:h-12 2xl:w-12 2xl:h-12 rounded-xl bg-[#E6C3E6]/10 group-hover:bg-pink group-focus:bg-pink mr-4 flex items-center justify-center">
+                      <TwitterIcon className="w-[53%] text-[#E6C3E6] group-hover:text-black group-focus:text-black" />
                     </span>
                     <span className="hidden md:block break-all">@homagames</span>
                   </a>
@@ -278,10 +245,10 @@ export default function Footer({contact}) {
                     href={contact.tikTok}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:opacity-75 focus:opacity-75 flex flex-wrap items-center"
+                    className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:text-pink focus:text-pink flex flex-wrap items-center group"
                   >
-                    <span className="w-14 h-14 md:w-12 md:h-12 2xl:w-12 2xl:h-12 rounded-xl bg-[#E6C3E6]/10 mr-4 flex items-center justify-center">
-                      <TikTokIcon className="w-[42%] text-[#E6C3E6]" />
+                    <span className="w-14 h-14 md:w-12 md:h-12 2xl:w-12 2xl:h-12 rounded-xl bg-[#E6C3E6]/10 group-hover:bg-pink group-focus:bg-pink mr-4 flex items-center justify-center">
+                      <TikTokIcon className="w-[42%] text-[#E6C3E6] group-hover:text-black group-focus:text-black" />
                     </span>
                     <span className="hidden md:block break-all">@homagames</span>
                   </a>

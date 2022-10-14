@@ -1,4 +1,3 @@
-import { m, AnimatePresence } from 'framer-motion'
 import { useState } from 'react';
 import SanityBlockContent from '@sanity/block-content-to-react'
 import ArrowRightIcon from '@/icons/arrow-right.svg'
@@ -31,24 +30,16 @@ export default function AccordionItem({ heading, content, isOpen }) {
       </button>
       
       <div className={`w-full relative overflow-hidden transition-all ease-in-out duration-[450ms] ${open  ? 'max-h-full' : 'max-h-0' }`}>
-        {/* <AnimatePresence> */}
           {open && (
-            // <m.div
-            //   initial={{ opacity: 0, transition: { duration: 0.4, ease: [0.83, 0, 0.17, 1] } }}
-            //   animate={{ opacity: 1, transition: { duration: 0.4, ease: [0.83, 0, 0.17, 1] } }}
-            //   exit={{ opacity: 0, transition: { duration: 0.4, ease: [0.83, 0, 0.17, 1] } }}
-            // >
-              <div className="content w-[75%] lg:w-[75%] max-w-[800px] p-6 lg:p-10">
-                <SanityBlockContent
-                  serializers={{ 
-                    container: ({ children }) => children
-                  }}
-                    blocks={content}
-                  />
-              </div>
-            // </m.div>
+            <div className="content w-[75%] lg:w-[75%] max-w-[800px] p-6 lg:p-10">
+              <SanityBlockContent
+                serializers={{ 
+                  container: ({ children }) => children
+                }}
+                  blocks={content}
+                />
+            </div>
           )}
-        {/* </AnimatePresence> */}
       </div>
     </div>
   )

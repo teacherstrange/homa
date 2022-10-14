@@ -30,6 +30,12 @@ const query = `{
       }
     }
   },
+  "products": *[_type == "products"] | order(orderRank asc){
+    title,
+    slug {
+      current
+    }
+  },
   "contact": *[_type == "contact"][0]{
     email,
     phone,
@@ -46,7 +52,7 @@ const pageService = new SanityPageService(query)
 
 export default function Terms(initialData) {
   // Sanity Data
-  const { data: { terms, contact } } = pageService.getPreviewHook(initialData)()
+  const { data: { terms, contact, products } } = pageService.getPreviewHook(initialData)()
   
   return (
     <Layout>
@@ -67,7 +73,7 @@ export default function Terms(initialData) {
         }}
       />
 
-      <Header />
+      <Header homaLabNav={products} />
 
       <LazyMotion features={domAnimation}>
         <m.div
@@ -95,7 +101,7 @@ export default function Terms(initialData) {
               </div>
             </Container>
 
-            <Footer contact={contact} />
+            <Footer contact={contact} homaLabNav={products} />
           </m.div>
         </m.div>
       </LazyMotion>

@@ -3,7 +3,6 @@ import useEmblaCarousel from 'embla-carousel-react'
 import ClassNames from 'embla-carousel-class-names'
 import ArrowRightIcon from '@/icons/arrow-right.svg'
 import PhoneIcon from "@/icons/phone.svg"
-import PhoneOutline from "@/icons/phone-outline.svg"
 import Image from 'next/image'
 import { isMobile } from 'react-device-detect'
 

@@ -17,7 +17,6 @@ import DiscordIcon from "@/icons/discord.svg"
 import TikTokIcon from "@/icons/tiktok.svg"
 import TwitterIcon from "@/icons/twitter.svg"
 import { CarouselTeam } from '@/components/carousel-team'
-import AccordionList from '@/components/accordion'
 import TextScrambler from '@/components/text-scrambler'
 
 // Sanity
@@ -25,7 +24,6 @@ import SanityPageService from '@/services/sanityPageService'
 import SanityImage from '@/components/sanity-image'
 import GridOverlay from '@/components/grid-overlay'
 import { CarouselTikTok } from '@/components/carousel-tiktok'
-import ScramblePillButton from '@/components/scramble-pill-button'
 import LocalImage from '@/components/local-image'
 
 const query = `{
@@ -46,6 +44,12 @@ const query = `{
     company,
     linkedIn,
     twitter,
+  },
+  "products": *[_type == "products"] | order(orderRank asc){
+    title,
+    slug {
+      current
+    }
   },
   "community": *[_type == "community"][0]{
     title,
@@ -119,7 +123,7 @@ const pageService = new SanityPageService(query)
 
 export default function Community(initialData) {
   // Sanity Data
-  const { data: { team, community, contact } } = pageService.getPreviewHook(initialData)()
+  const { data: { team, community, contact, products } } = pageService.getPreviewHook(initialData)()
   
   return (
     <Layout>
@@ -128,7 +132,7 @@ export default function Community(initialData) {
         description={community.seo?.metaDesc ? community.seo.metaDesc : null}
       />
 
-      <Header />
+      <Header homaLabNav={products} />
 
       <LazyMotion features={domAnimation}>
         <m.div
@@ -482,7 +486,7 @@ export default function Community(initialData) {
               </div>
             </div>
 
-            <Footer contact={contact} />
+            <Footer contact={contact} homaLabNav={products} />
           </m.div>
         </m.div>
       </LazyMotion>

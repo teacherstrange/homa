@@ -5,7 +5,6 @@ import LinkedInIcon from "@/icons/linkedin.svg"
 import FacebookIcon from "@/icons/facebook.svg"
 import InstagramIcon from "@/icons/instagram.svg"
 import TextScrambler from "./text-scrambler"
-import Link from "next/link"
 import ScramblePillButton from "./scramble-pill-button"
 
 export default function SocialScroller({ contact }) {

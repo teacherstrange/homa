@@ -16,15 +16,15 @@ export default function FooterCta({ image, children }) {
         </ScrollParallax>
       </div>
 
-      <div className="grid grid-cols-12 border-black/50 border-t border-b relative z-10">
-        <div className="col-span-10 col-start-2 md:col-span-8 md:col-start-3 xl:col-span-6 xl:col-start-4 border-black/50 border-l border-r bg-transparent h-[18vw]">
+      <div className="grid grid-cols-12 border-black/50 border-t border-b relative z-10 items-center">
+        <div className="col-span-10 col-start-2 md:col-span-8 md:col-start-3 xl:col-span-6 xl:col-start-4 border-black/50 border-l border-r bg-transparent h-[18vw] w-full max-w-[720px] mx-auto">
         </div>
       </div>
 
       <div className="grid grid-cols-12 border-black/50 relative z-10">
         {children ? 
           children
-        : <div className="col-span-10 col-start-2 md:col-span-8 md:col-start-3 xl:col-span-6 xl:col-start-4 border-black/50 border-l border-r bg-white bg-gradient-to-b from-pink/20 to-pink p-6 md:p-10 xl:p-16 text-center flex flex-wrap justify-center aspect-square">
+        : <div className="col-span-10 col-start-2 md:col-span-8 md:col-start-3 xl:col-span-6 xl:col-start-4 border-black/50 border-l border-r bg-white bg-gradient-to-b from-pink/20 to-pink p-6 md:p-10 xl:p-16 text-center flex flex-wrap justify-center aspect-square max-w-[720px] mx-auto">
             <span className="block font-black uppercase text-lg md:text-3xl xl:text-4xl text-center w-full mb-auto">Guessing Game Over</span>
 
             <div className="w-full my-auto">
@@ -40,7 +40,7 @@ export default function FooterCta({ image, children }) {
       </div>
 
       <div className="grid grid-cols-12 border-black/50 border-t border-b relative z-10">
-        <div className="col-span-10 col-start-2 md:col-span-8 md:col-start-3 xl:col-span-6 xl:col-start-4 border-black/50 border-l border-r bg-transparent h-[18vw]">
+        <div className="col-span-10 col-start-2 md:col-span-8 md:col-start-3 xl:col-span-6 xl:col-start-4 border-black/50 border-l border-r bg-transparent h-[18vw] w-full max-w-[720px] mx-auto">
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 import FancyLink from "@/components/fancyLink"
 import MobileMenu from "@/components/mobile-menu"
@@ -7,34 +7,25 @@ import HomaLogoMarkIcon from "@/icons/homa-logo-mark.svg"
 
 import { useRouter } from "next/router"
 import Link from "next/link"
-import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from "body-scroll-lock"
 import useScrollDirection from '@/helpers/scroll-direction';
 
-export default function Header() {
+export default function Header({ homaLabNav }) {
   const scrollDirection = useScrollDirection();
   const router = useRouter()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [mobileChildMenuOpen, setMobileChildMenuOpen] = useState(false)
-  // let scrollElement = null;
-
-  // useEffect(() => {
-  //   scrollElement = document.querySelector('body');
-  // });
 
   const menuToggle = () => {
     if (mobileMenuOpen) {
       setMobileMenuOpen(false)
-      // enableBodyScroll(scrollElement);  
     } else {
       setMobileMenuOpen(true)
-      // disableBodyScroll(scrollElement);
     }
   }
 
   const menuClose = () => {
     setMobileMenuOpen(false)
     setMobileChildMenuOpen(false)
-    // clearAllBodyScrollLocks()
   }
 
   return (
@@ -83,54 +74,18 @@ export default function Header() {
                       active={router.asPath == '/homa-lab'}
                     />
                   </li>
-                  <li className="block relative z-10">
-                    <FancyLink
-                      destination="/homa-lab/ideas"
-                      a11yText="Navigate to the homa lab page"
-                      label="Ideas"
-                      className="uppercase font-medium tracking-widest lg:text-sm lg:leading-none xl:text-base xl:leading-none inline-block py-4"
-                    />
-                  </li>
-                  <li className="block relative z-10">
-                    <FancyLink
-                      destination="/homa-lab/market-watchers"
-                      a11yText="Navigate to the homa lab page"
-                      label="Market Watchers"
-                      className="uppercase font-medium tracking-widest lg:text-sm lg:leading-none xl:text-base xl:leading-none inline-block py-4"
-                    />
-                  </li>
-                  <li className="block relative z-10">
-                    <FancyLink
-                      destination="/homa-lab/homa-sdk"
-                      a11yText="Navigate to the homa lab page"
-                      label="Homa SDK"
-                      className="uppercase font-medium tracking-widest lg:text-sm lg:leading-none xl:text-base xl:leading-none inline-block py-4"
-                    />
-                  </li>
-                  {/* <li className="block relative z-10">
-                    <FancyLink
-                      destination="/homa-lab/dev-tools"
-                      a11yText="Navigate to the homa lab page"
-                      label="Dev Tools"
-                      className="uppercase font-medium tracking-widest lg:text-sm lg:leading-none xl:text-base xl:leading-none inline-block py-4"
-                    />
-                  </li> */}
-                  <li className="block relative z-10">
-                    <FancyLink
-                      destination="/homa-lab/data-analytics"
-                      a11yText="Navigate to the homa lab page"
-                      label="Data Analytics"
-                      className="uppercase font-medium tracking-widest lg:text-sm lg:leading-none xl:text-base xl:leading-none inline-block py-4"
-                    />
-                  </li>
-                  <li className="block relative z-10">
-                    <FancyLink
-                      destination="/homa-lab/submissions-and-creatives"
-                      a11yText="Navigate to the homa lab page"
-                      label="Submissions And Creatives"
-                      className="uppercase font-medium tracking-widest lg:text-sm lg:leading-none xl:text-base xl:leading-none inline-block py-4"
-                    />
-                  </li>
+                  {homaLabNav.map((e, i) => {
+                    return (
+                      <li className="block relative z-10" key={i}>
+                        <FancyLink
+                          destination={`/homa-lab/${e.slug.current}`}
+                          a11yText={`Navigate to the ${e.title} page`}
+                          label={e.title}
+                          className="uppercase font-medium tracking-widest lg:text-sm lg:leading-none xl:text-base xl:leading-none inline-block py-4"
+                        />
+                      </li>
+                    )
+                  })}
                   <li className="block relative z-10">
                     <a
                       className="uppercase font-medium tracking-widest lg:text-sm lg:leading-none xl:text-base xl:leading-none inline-block py-4 group"
@@ -215,6 +170,7 @@ export default function Header() {
           menuClose={menuClose}
           setMobileChildMenuOpen={setMobileChildMenuOpen}
           mobileChildMenuOpen={mobileChildMenuOpen}
+          homaLabNav={homaLabNav}
         />
       )}
     </div>

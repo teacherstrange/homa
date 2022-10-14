@@ -12,22 +12,18 @@ import Footer from '@/components/footer'
 import FooterCta from '@/components/footer-cta'
 import MousePosition from '@/components/mouse-position'
 import DayInfo from '@/components/day-info'
-import Image from 'next/image'
 import Link from 'next/link'
 import SocialScroller from '@/components/social-scroller'
 import { useRef } from 'react'
-import PixelatedImage from '@/components/pixelated-image'
 import { CarouselBlog } from '@/components/carousel-blog'
 
 import MobileHandIcon from '@/icons/mobile-hand.svg'
 import GlobeIcon from '@/icons/globe.svg'
 import DownloadIcon from '@/icons/download.svg'
-import PhoneIcon from '@/icons/phone.svg'
 
 // Sanity
 import SanityPageService from '@/services/sanityPageService'
 import TextScrambler from '@/components/text-scrambler'
-import GridOverlayDense from '@/components/grid-overlay-dense'
 import ScramblePillButton from '@/components/scramble-pill-button'
 import SanityImage from '@/components/sanity-image'
 import LocalImage from '@/components/local-image'
@@ -163,7 +159,7 @@ export default function Home(initialData) {
         description={home.seo?.metaDesc ? home.seo?.metaDesc : null}
       />
 
-      <Header />
+      <Header homaLabNav={products} />
 
       <LazyMotion features={domAnimation}>
         <m.main
@@ -577,7 +573,7 @@ export default function Home(initialData) {
             <CarouselBlog items={blog} />
 
             <FooterCta />
-            <Footer contact={contact} />
+            <Footer contact={contact} homaLabNav={products} />
           </m.div>
         </m.main>
       </LazyMotion>

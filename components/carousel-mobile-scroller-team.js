@@ -1,10 +1,8 @@
-import React, { useCallback, useEffect } from 'react'
+import React, { useCallback } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import ClassNames from 'embla-carousel-class-names'
 import ArrowRightIcon from '@/icons/arrow-right.svg'
 import SanityImage from './sanity-image'
-import GridOverlayDense from './grid-overlay-dense'
-import Link from 'next/link'
 
 export const CarouselMobileScrollerTeam = ({items}) => {
   const [emblaMobileTeamRef, emblaApi] = useEmblaCarousel({ loop: true, speed: 100, align: 'start', inViewThreshold: 1 }, [ClassNames()])

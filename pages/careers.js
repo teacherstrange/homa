@@ -28,7 +28,6 @@ import WorldIcon from '@/icons/world.svg'
 
 // Sanity
 import SanityPageService from '@/services/sanityPageService'
-import LocalImage from '@/components/local-image'
 
 const query = `{
   "careers": *[_type == "careers"][0]{
@@ -59,6 +58,12 @@ const query = `{
       }
     }
   },
+  "products": *[_type == "products"] | order(orderRank asc){
+    title,
+    slug {
+      current
+    }
+  },
   "contact": *[_type == "contact"][0]{
     email,
     phone,
@@ -75,7 +80,7 @@ const pageService = new SanityPageService(query)
 
 export default function Careers(initialData) {
   // Sanity Data
-  const { data: { careers, contact } } = pageService.getPreviewHook(initialData)()
+  const { data: { careers, contact, products } } = pageService.getPreviewHook(initialData)()
   
   // Workable Data
   const careerPosts = initialData.careersWorkable
@@ -87,7 +92,7 @@ export default function Careers(initialData) {
         description={careers.seo?.metaDesc ? careers.seo?.metaDesc : null}
       />
 
-      <Header />
+      <Header homaLabNav={products} />
 
       <LazyMotion features={domAnimation}>
         <m.div
@@ -379,7 +384,7 @@ export default function Careers(initialData) {
               </div>
             </div>
 
-            <Footer contact={contact} />
+            <Footer contact={contact} homaLabNav={products} />
           </m.div>
         </m.div>
       </LazyMotion>

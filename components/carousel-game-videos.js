@@ -1,11 +1,8 @@
-import React, { useCallback, useEffect } from 'react'
+import React, { useCallback } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import ClassNames from 'embla-carousel-class-names'
 import ArrowRightIcon from '@/icons/arrow-right.svg'
 import PhoneIcon from "@/icons/phone.svg"
-import PhoneOutline from "@/icons/phone-outline.svg"
-import Image from 'next/image'
-import { isMobile } from 'react-device-detect'
 import TextScrambler from './text-scrambler'
 
 export const CarouselGameVideos = ({ heading, items, reversed }) => {

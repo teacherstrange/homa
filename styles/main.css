@@ -398,3 +398,7 @@ canvas {
     clear: both;
   }
 }
+
+.nav-open {
+  @apply bg-opacity-20 !important;
+}

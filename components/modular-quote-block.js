@@ -1,5 +1,3 @@
-import SanityImage from "./sanity-image";
-
 export default function ModularQuoteBlock({ text, authorName, authorJobTitle }) {
   return (
     <div className="flex flex-wrap justify-center">

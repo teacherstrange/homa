@@ -17,7 +17,6 @@ import TextScrambler from '@/components/text-scrambler'
 
 // Sanity
 import SanityPageService from '@/services/sanityPageService'
-import SanityBlockContent from '@sanity/block-content-to-react'
 import AccordionList from '@/components/accordion'
 
 const query = `{
@@ -33,6 +32,12 @@ const query = `{
       shareGraphic {
         asset->
       }
+    }
+  },
+  "products": *[_type == "products"] | order(orderRank asc){
+    title,
+    slug {
+      current
     }
   },
   "contact": *[_type == "contact"][0]{
@@ -51,7 +56,7 @@ const pageService = new SanityPageService(query)
 
 export default function FAQ(initialData) {
   // Sanity Data
-  const { data: { faq, contact } } = pageService.getPreviewHook(initialData)()
+  const { data: { faq, contact, products } } = pageService.getPreviewHook(initialData)()
   
   return (
     <Layout>
@@ -72,7 +77,7 @@ export default function FAQ(initialData) {
         }}
       />
 
-      <Header />
+      <Header homaLabNav={products} />
 
       <LazyMotion features={domAnimation}>
         <m.div
@@ -107,7 +112,7 @@ export default function FAQ(initialData) {
               </div>
             </Container>
 
-            <Footer contact={contact} />
+            <Footer contact={contact} homaLabNav={products} />
           </m.div>
         </m.div>
       </LazyMotion>

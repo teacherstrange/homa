@@ -14,8 +14,6 @@ import FooterCta from '@/components/footer-cta'
 import { MouseParallax, ScrollParallax} from 'react-just-parallax'
 import DayInfo from '@/components/day-info'
 import MousePosition from '@/components/mouse-position'
-import Image from 'next/image'
-import PixelatedImage from '@/components/pixelated-image'
 import TextScrambler from '@/components/text-scrambler'
 
 // Sanity
@@ -117,7 +115,7 @@ export default function HomaLab(initialData) {
         description={homaLab.seo?.metaDesc ? homaLab.seo?.metaDesc : null}
       />
 
-      <Header />
+      <Header homaLabNav={products} />
 
       <LazyMotion features={domAnimation}>
         <m.div
@@ -312,20 +310,20 @@ export default function HomaLab(initialData) {
             </div>
 
             <FooterCta image="/images/homa-lab-footer.jpg">
-              <div className="col-span-10 col-start-2 md:col-span-8 md:col-start-3 xl:col-span-6 xl:col-start-4 border-black/50 border-l border-r bg-white bg-gradient-to-b from-pink/20 to-pink p-6 md:p-10 xl:p-16 text-center flex flex-wrap aspect-square">
+              <div className="col-span-10 col-start-2 md:col-span-8 md:col-start-3 xl:col-span-6 xl:col-start-4 border-black/50 border-l border-r bg-white bg-gradient-to-b from-pink/20 to-pink p-6 md:p-10 xl:p-16 text-center flex flex-wrap aspect-square max-w-[720px] mx-auto">
                 <span className="block font-black uppercase text-lg leading-[1.2] md:text-3xl xl:text-4xl w-full">Want to join us?</span>
 
-                <div className="w-full lg:w-8/12 mx-auto max-w-md mb-20 md:mb-[15vw] xl:mb-[12.5vw] text-base md:text-xl xl:text-2xl my-auto leading-[1.22]">
+                <div className="w-full lg:w-8/12 mx-auto max-w-md text-base md:text-xl xl:text-2xl my-auto leading-[1.22]">
                   <p>Start building games with data, insight and tested hit potential built right in.</p>
                 </div>
 
-                <div className="w-8/12 mx-auto max-w-md mb-auto">
+                <div className="w-8/12 mx-auto max-w-md mt-auto">
                   <ScramblePillButton href="/careers" label="See open roles" internal />
                 </div>
               </div>
             </FooterCta>
             
-            <Footer contact={contact} />
+            <Footer contact={contact} homaLabNav={products} />
           </m.div>
         </m.div>
       </LazyMotion>

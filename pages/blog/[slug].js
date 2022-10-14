@@ -10,7 +10,6 @@ import Layout from '@/components/layout'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import FooterCta from '@/components/footer-cta'
-import { ScrollParallax } from 'react-just-parallax'
 import MousePosition from '@/components/mouse-position'
 import DayInfo from '@/components/day-info'
 import Link from 'next/link'
@@ -81,6 +80,12 @@ const query = `{
       }
     }
   },
+  "products": *[_type == "products"] | order(orderRank asc){
+    title,
+    slug {
+      current
+    }
+  },
   "contact": *[_type == "contact"][0]{
     email,
     phone,
@@ -97,7 +102,7 @@ const pageService = new SanityPageService(query)
 
 export default function BlogSlug(initialData) {
   // Sanity Data
-  const { data: { article, contact } } = pageService.getPreviewHook(initialData)()
+  const { data: { article, contact, products } } = pageService.getPreviewHook(initialData)()
   let d = new Date(article.publishDate);
   let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d);
   let mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(d);
@@ -136,7 +141,7 @@ export default function BlogSlug(initialData) {
         }}
       />
 
-      <Header />
+      <Header homaLabNav={products} />
 
       <LazyMotion features={domAnimation}>
         <m.div
@@ -277,7 +282,7 @@ export default function BlogSlug(initialData) {
               </div>
 
               <FooterCta />
-              <Footer contact={contact} />
+              <Footer contact={contact} homaLabNav={products} />
             </div>
           </m.div>
         </m.div>

@@ -13,13 +13,11 @@ import FooterCta from '@/components/footer-cta'
 
 // Sanity
 import SanityPageService from '@/services/sanityPageService'
-import Image from 'next/image'
 import { ScrollParallax } from 'react-just-parallax'
 import SanityImage from '@/components/sanity-image'
 import TextScrambler from '@/components/text-scrambler'
 import GridOverlayDense from '@/components/grid-overlay-dense'
 import ScramblePillButton from '@/components/scramble-pill-button'
-import LocalImage from '@/components/local-image'
 
 const query = `{
   "product": *[_type == "products" && slug.current == $slug][0] {
@@ -84,6 +82,12 @@ const query = `{
       }
     }
   },
+  "products": *[_type == "products"] | order(orderRank asc){
+    title,
+    slug {
+      current
+    }
+  },
   "contact": *[_type == "contact"][0]{
     email,
     phone,
@@ -100,7 +104,7 @@ const pageService = new SanityPageService(query)
 
 export default function HomaLabChild(initialData) {
   // Sanity Data
-  const { data: { product, contact } } = pageService.getPreviewHook(initialData)()
+  const { data: { product, products, contact } } = pageService.getPreviewHook(initialData)()
   
   return (
     <Layout>
@@ -109,7 +113,7 @@ export default function HomaLabChild(initialData) {
         description={product.seo?.metaDesc ? product.seo?.metaDesc : null}
       />
 
-      <Header />
+      <Header homaLabNav={products} />
 
       <LazyMotion features={domAnimation}>
         <m.div
@@ -277,7 +281,7 @@ export default function HomaLabChild(initialData) {
             </div>
 
             <FooterCta />
-            <Footer contact={contact} />
+            <Footer contact={contact} homaLabNav={products} />
           </m.div>
         </m.div>
       </LazyMotion>

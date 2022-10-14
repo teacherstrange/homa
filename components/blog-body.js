@@ -10,8 +10,6 @@ import Layout from '@/components/layout'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import FooterCta from '@/components/footer-cta'
-import Image from 'next/image'
-import { ScrollParallax } from 'react-just-parallax'
 import MousePosition from '@/components/mouse-position'
 import DayInfo from '@/components/day-info'
 import Link from 'next/link'
@@ -58,6 +56,12 @@ export const query = `{
       current
     }
   },
+  "products": *[_type == "products"] | order(orderRank asc){
+    title,
+    slug {
+      current
+    }
+  },
   "numberOfArticles": count(*[_type == "blog"]),
   "contact": *[_type == "contact"][0]{
     email,
@@ -73,7 +77,7 @@ export const query = `{
 
 const pageService = new SanityPageService(query)
 
-export default function BlogBody({blog, numberOfArticles, categories, subPage, index, contact}) {
+export default function BlogBody({blog, numberOfArticles, categories, subPage, index, contact, products}) {
   
   return (
     <Layout>
@@ -82,7 +86,7 @@ export default function BlogBody({blog, numberOfArticles, categories, subPage, i
         description="Homa Games team is international, dynamic and passionate about games, working fully with partners all around the world."
       />
 
-      <Header />
+      <Header homaLabNav={products} />
 
       <LazyMotion features={domAnimation}>
         <m.div
@@ -127,16 +131,6 @@ export default function BlogBody({blog, numberOfArticles, categories, subPage, i
                           <h2 className="font-black text-[clamp(40px,_4.45vw,_86px)] leading-[0.9] mb-12 lg:mb-[15vw] uppercase w-[99%] lg:w-11/12 tracking-tight">{blog[0].title}</h2>
                         </a>
                       </Link>
-
-                      {/* <div className="flex flex-wrap">
-                        {Array.from(Array(4), (e, i) => {
-                          return (
-                            <Link href="#">
-                              <a className="inline-block border border-black/50 font-medium uppercase leading-none p-3 rounded-sm hover:bg-black hover:text-white focus:bg-black focus:text-white mr-3 mb-3">0{i + 1}</a>
-                            </Link>
-                          )
-                        })}
-                      </div> */}
                     </div>
                   </div>
                   <div className="w-full lg:w-1/2 order-1 lg:order-2 lg:border-l border-black/50 relative overflow-hidden">
@@ -186,7 +180,7 @@ export default function BlogBody({blog, numberOfArticles, categories, subPage, i
             </div>
 
             <FooterCta />
-            <Footer contact={contact} />
+            <Footer contact={contact} homaLabNav={products} />
           </m.div>
         </m.div>
       </LazyMotion>

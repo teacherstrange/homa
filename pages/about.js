@@ -15,10 +15,8 @@ import { MouseParallax, ScrollParallax} from "react-just-parallax";
 import MousePosition from "@/components/mouse-position";
 import DayInfo from "@/components/day-info";
 import Link from "next/link";
-import Image from "next/image";
 import SocialScroller from "@/components/social-scroller";
 import TextScrambler from "@/components/text-scrambler";
-import PixelatedImage from "@/components/pixelated-image";
 
 // Sanity
 import SanityPageService from '@/services/sanityPageService'
@@ -26,7 +24,6 @@ import SanityImage from '@/components/sanity-image'
 import SanityBlockContent from '@sanity/block-content-to-react'
 import LocalImage from "@/components/local-image";
 import { useState } from "react";
-import { CarouselMobileScroller } from "@/components/carousel-mobile-scroller";
 import { CarouselMobileScrollerTeam } from "@/components/carousel-mobile-scroller-team";
 
 const query = `{
@@ -94,6 +91,12 @@ const query = `{
       }
     }
   },
+  "products": *[_type == "products"] | order(orderRank asc){
+    title,
+    slug {
+      current
+    }
+  },
   "contact": *[_type == "contact"][0]{
     email,
     phone,
@@ -110,7 +113,7 @@ const pageService = new SanityPageService(query)
 
 export default function About(initialData) {
   // Sanity Data
-  const { data: { about, contact } } = pageService.getPreviewHook(initialData)()
+  const { data: { about, contact, products } } = pageService.getPreviewHook(initialData)()
   const [currentIndex, setCurrentIndex] = useState(0);
   
   return (
@@ -120,7 +123,7 @@ export default function About(initialData) {
         description={about.seo?.metaDesc ? about.seo?.metaDesc : null}
       />
 
-      <Header />
+      <Header homaLabNav={products} />
 
       <LazyMotion features={domAnimation}>
         <m.div initial="initial" animate="enter" exit="exit" className="">
@@ -430,7 +433,7 @@ export default function About(initialData) {
 
             <SocialScroller contact={contact} />
             <FooterCta image={"/images/about-footer.jpg"} />
-            <Footer contact={contact} />
+            <Footer contact={contact} homaLabNav={products} />
           </m.div>
         </m.div>
       </LazyMotion>

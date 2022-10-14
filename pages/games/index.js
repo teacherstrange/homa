@@ -15,8 +15,6 @@ import FooterCta from '@/components/footer-cta'
 import { MouseParallax, ScrollParallax} from 'react-just-parallax'
 import MousePosition from '@/components/mouse-position'
 import DayInfo from '@/components/day-info'
-import Image from 'next/image'
-import PixelatedImage from '@/components/pixelated-image'
 import TextScrambler from '@/components/text-scrambler'
 import { CarouselGames } from '@/components/carousel-games'
 import { CarouselCards } from '@/components/carousel-cards'
@@ -34,7 +32,18 @@ const query = `{
     partnerName,
     gameplayVideo,
     googlePlayStoreLink,
-    appStoreLink
+    appStoreLink,
+    appTileImage {
+      asset-> {
+        ...
+      },
+      caption,
+      alt,
+      hotspot {
+        x,
+        y
+      },
+    },
   },
   "successStories": *[_type == "caseStudies"]{
     title,
@@ -52,6 +61,12 @@ const query = `{
     partnerName,
     projectName,
     publishDate,
+    slug {
+      current
+    }
+  },
+  "products": *[_type == "products"] | order(orderRank asc){
+    title,
     slug {
       current
     }
@@ -89,7 +104,7 @@ const pageService = new SanityPageService(query)
 
 export default function Games(initialData) {
   // Sanity Data
-  const { data: { games, successStories, gamesLanding, contact } } = pageService.getPreviewHook(initialData)()
+  const { data: { games, successStories, gamesLanding, contact, products } } = pageService.getPreviewHook(initialData)()
 
   const [marqueeRef, percentage] = useScrollPercentage({
     threshold: 0,
@@ -114,7 +129,7 @@ export default function Games(initialData) {
         }}
       />
 
-      <Header />
+      <Header homaLabNav={products} />
 
       <LazyMotion features={domAnimation}>
         <m.div
@@ -436,10 +451,10 @@ export default function Games(initialData) {
             </div>
 
             <FooterCta image="/images/about-footer.jpg">
-              <div className="col-span-10 col-start-2 md:col-span-8 md:col-start-3 xl:col-span-6 xl:col-start-4 border-black/50 border-l border-r bg-white bg-gradient-to-b from-pink/20 to-pink p-6 md:p-10 xl:p-16 text-center aspect-square flex flex-wrap">
+              <div className="col-span-10 col-start-2 md:col-span-8 md:col-start-3 xl:col-span-6 xl:col-start-4 border-black/50 border-l border-r max-w-[720px] mx-auto bg-white bg-gradient-to-b from-pink/20 to-pink p-6 md:p-10 xl:p-16 text-center aspect-square flex flex-wrap">
                 <span className="block font-black uppercase text-lg md:text-3xl xl:text-4xl mb-auto w-full leading-[1.25] lg:leading-[1.25] xl:leading-[1.25] pb-12 lg:pb-0">One hit is good, Multiple is the goal.</span>
 
-                <div className="w-full lg:w-8/12 mx-auto max-w-md mb-20 md:mb-[15vw] xl:mb-[12.5vw] text-base md:text-xl xl:text-2xl my-auto leading-[1.22]">
+                <div className="w-full lg:w-8/12 mx-auto max-w-md text-base md:text-xl xl:text-2xl my-auto leading-[1.22]">
                   <p>There’s no secret to success, just a winning formula. So why stop at one?</p>
                 </div>
                 
@@ -449,7 +464,7 @@ export default function Games(initialData) {
               </div>
             </FooterCta>
 
-            <Footer contact={contact} />
+            <Footer contact={contact} homaLabNav={products} />
           </m.div>
         </m.div>
       </LazyMotion>

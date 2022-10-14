@@ -1,11 +1,11 @@
-import React, { useCallback, useEffect } from 'react'
+import React, { useCallback } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import ClassNames from 'embla-carousel-class-names'
 import ArrowRightIcon from '@/icons/arrow-right.svg'
 import PhoneIcon from "@/icons/phone.svg"
-import PhoneOutline from "@/icons/phone-outline.svg"
 import Image from 'next/image'
 import { isMobile } from 'react-device-detect'
+import SanityImage from './sanity-image'
 
 export const CarouselGames = ({ heading, items }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, speed: 5, align: isMobile ? 0 : 0.065, inViewThreshold: 1 }, [ClassNames()])
@@ -85,7 +85,17 @@ export const CarouselGames = ({ heading, items }) => {
 
                   {(e.appStoreLink || e.googlePlayStoreLink) && (
                     <div className="flex flex-wrap w-full mt-auto">
-                      <a href={e.appStoreLink ? e.appStoreLink : e.googlePlayStoreLink} target="_blank" rel="noopener noreferrer" className="block uppercase font-medium tracking-widest text-sm leading-none xl:text-base xl:leading-none flex-1">Download Game</a>
+                      <a href={e.appStoreLink ? e.appStoreLink : e.googlePlayStoreLink} target="_blank" rel="noopener noreferrer" className="uppercase font-medium tracking-widest text-sm leading-none xl:text-base xl:leading-none flex-1 flex items-center">
+                        <SanityImage
+                          image={e.appTileImage}
+                          layout="responsive"
+                          width={500}
+                          height={500}
+                          className="w-10 mr-3"
+                        />
+
+                        <span className="block">Download Game</span>
+                      </a>
                     </div>
                   )}
                 </div>

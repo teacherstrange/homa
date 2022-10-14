@@ -40,6 +40,12 @@ const query = `{
       current
     }
   },
+  "products": *[_type == "products"] | order(orderRank asc){
+    title,
+    slug {
+      current
+    }
+  },
   "contact": *[_type == "contact"][0]{
     email,
     phone,
@@ -55,7 +61,7 @@ const query = `{
 const pageService = new SanityPageService(query)
 
 export default function BlogCategory(initialData) {
-  const { data: { currentCat, blog, contact } } = pageService.getPreviewHook(initialData)()
+  const { data: { currentCat, blog, contact, products } } = pageService.getPreviewHook(initialData)()
 
   return (
     <Layout>
@@ -64,7 +70,7 @@ export default function BlogCategory(initialData) {
         description="Homa Games team is international, dynamic and passionate about games, working fully with partners all around the world."
       />
 
-      <Header />
+      <Header homaLabNav={products} />
 
       <LazyMotion features={domAnimation}>
         <m.div
@@ -117,7 +123,7 @@ export default function BlogCategory(initialData) {
             </div>
 
             <FooterCta />          
-            <Footer contact={contact} />
+            <Footer contact={contact} homaLabNav={products} />
           </m.div>
         </m.div>
       </LazyMotion>
