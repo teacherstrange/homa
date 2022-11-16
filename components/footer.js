@@ -34,15 +34,22 @@ export default function Footer({contact, homaLabNav }) {
               </div>
             </div>
 
-            <div className="w-full 2xl:space-x-8 hidden md:flex md:flex-wrap">
-              <a href={`mailto:${contact.email}`} className="w-full 2xl:w-auto mb-1 2xl:mb-0 text-white/40 block hover:opacity-75 focus:opacity-75">{contact.email}</a>
-              <a href={`tel:${contact.phone}`} className="w-full 2xl:w-auto mb-1 2xl:mb-0 text-white/40 block hover:opacity-75 focus:opacity-75">{contact.phone}</a>
-              <Link href="/privacy">
-                <a className="w-full 2xl:w-auto mb-1 2xl:mb-0 text-white/40 block 2xl:mr-6 hover:opacity-75 focus:opacity-75">Privacy</a>
-              </Link>
-              <Link href="/terms">
-                <a className="w-full 2xl:w-auto mb-1 2xl:mb-0 text-white/40 block hover:opacity-75 focus:opacity-75">Terms</a>
-              </Link>
+            <div className="w-full hidden md:flex md:flex-wrap">
+              <a href={`mailto:${contact.email}`} className="w-full 2xl:w-auto mb-1 2xl:mb-0 text-white/40 block hover:opacity-75 focus:opacity-75 2xl:mr-6">{contact.email}</a>
+              <a href={`tel:${contact.phone}`} className="w-full 2xl:w-auto mb-1 2xl:mb-0 text-white/40 block hover:opacity-75 focus:opacity-75 2xl:mr-6">{contact.phone}</a>
+
+              <div className="w-full flex flex-wrap 3xl:flex-1 3xl:w-auto">
+                <Link href="/privacy">
+                  <a className="w-full 2xl:w-auto mb-1 2xl:mb-0 text-white/40 block 2xl:mr-6 hover:opacity-75 focus:opacity-75">Privacy</a>
+                </Link>
+                
+                <Link href="/terms">
+                  <a className="w-full 2xl:w-auto mb-1 2xl:mb-0 text-white/40 block hover:opacity-75 focus:opacity-75 2xl:mr-6">Terms</a>
+                </Link>
+                <Link href="/subscription-terms">
+                  <a className="w-full 2xl:w-auto mb-1 2xl:mb-0 text-white/40 block hover:opacity-75 focus:opacity-75">Subscriptions</a>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -149,7 +156,7 @@ export default function Footer({contact, homaLabNav }) {
               <ul className="w-full mb-10 md:mb-16 xl:mb-24 flex flex-wrap md:block md:flex-none">
                 <li className="block mb-4 md:mb-6 xl:mb-8">
                   <a
-                    href={contact.discord}
+                    href={contact.discordGameMakers}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-base font-medium tracking-widest leading-none text-[#E6C3E6]/50 hover:text-pink focus:text-pink flex flex-wrap items-center group"
@@ -271,6 +278,7 @@ export default function Footer({contact, homaLabNav }) {
             <a href="tel:+33142861324" className="w-full 2xl:w-auto text-white/40 block mb-2 hover:opacity-75 focus:opacity-75">+33 1 42 86 13 24</a>
             <Link href="/privacy"><a className="w-full 2xl:w-auto text-white/40 block mb-2 2xl:mr-6">Privacy</a></Link>
             <Link href="/terms"><a className="w-full 2xl:w-auto text-white/40 block mb-2 2xl:mr-6">Terms</a></Link>
+            <Link href="/subscription-terms"><a className="w-full 2xl:w-auto text-white/40 block mb-2 2xl:mr-6">Subscriptions</a></Link>
           </div>
         </div>
       </div>

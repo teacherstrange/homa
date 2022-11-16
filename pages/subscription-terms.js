@@ -20,7 +20,7 @@ import SanityPageService from '@/services/sanityPageService'
 import SanityBlockContent from '@sanity/block-content-to-react'
 
 const query = `{
-  "privacy": *[_type == "privacy"][0] {
+  "terms": *[_type == "subscriptionTerms"][0] {
     title,
     text,
     seo {
@@ -51,23 +51,23 @@ const query = `{
 
 const pageService = new SanityPageService(query)
 
-export default function Privacy(initialData) {
+export default function Terms(initialData) {
   // Sanity Data
-  const { data: { privacy, contact, products } } = pageService.getPreviewHook(initialData)()
+  const { data: { terms, contact, products } } = pageService.getPreviewHook(initialData)()
   
   return (
     <Layout>
       <NextSeo
-        title={privacy.seo?.metaTitle ? privacy.seo?.metaTitle : 'Privacy'}
-        description={privacy.seo?.metaDesc ? privacy.seo?.metaDesc : null}
+        title={terms.seo?.metaTitle ? terms.seo?.metaTitle : 'Subscription Terms'}
+        description={terms.seo?.metaDesc ? terms.seo?.metaDesc : null}
         openGraph={{
-          title: privacy.seo?.metaTitle ? privacy.seo?.metaTitle : privacy.title,
-          description: privacy.seo?.metaDesc ? privacy.seo?.metaDesc : null,
-          images: privacy.seo?.shareGraphic?.asset[
+          title: terms.seo?.metaTitle ? terms.seo?.metaTitle : terms.title,
+          description: terms.seo?.metaDesc ? terms.seo?.metaDesc : null,
+          images: terms.seo?.shareGraphic?.asset[
             {
-              url: privacy.seo?.shareGraphic?.asset.url ? privacy.seo?.shareGraphic?.asset.url : null,
-              width: privacy.seo?.shareGraphic?.asset.metadata.dimensions.width ? privacy.seo?.shareGraphic?.asset.metadata.dimensions.width : null,
-              height: privacy.seo?.shareGraphic?.asset.metadata.dimensions.height ? privacy.seo?.shareGraphic?.asset.metadata.dimensions.height : null,
+              url: terms.seo?.shareGraphic?.asset.url ? terms.seo?.shareGraphic?.asset.url : null,
+              width: terms.seo?.shareGraphic?.asset.metadata.dimensions.width ? terms.seo?.shareGraphic?.asset.metadata.dimensions.width : null,
+              height: terms.seo?.shareGraphic?.asset.metadata.dimensions.height ? terms.seo?.shareGraphic?.asset.metadata.dimensions.height : null,
               type: 'image/jpeg',
             }
           ]
@@ -90,14 +90,14 @@ export default function Privacy(initialData) {
               </div>
 
               <div className="max-w-screen-3xl mx-auto">
-                <h1 className="font-black text-[clamp(50px,_9vw,190px)] leading-[0.95] tracking-tight mb-4 uppercase relative z-10 w-11/12 lg:w-full"><TextScrambler text="Privacy Policy" seed={15} step={2} /></h1>
+                <h1 className="font-black text-[clamp(50px,_8.5vw,180px)] leading-[0.95] tracking-tight mb-4 uppercase relative z-10 w-11/12 lg:w-full"><TextScrambler text="Subscription Terms" seed={20} step={2} /></h1>
               </div>
             </div>
 
             <Container>
               <div className="pt-[10vw] pb-[10vw] max-w-[800px] mx-auto">
                 <div className="w-full content">
-                  <SanityBlockContent serializers={{ container: ({ children }) => children }} blocks={privacy.text} />
+                  <SanityBlockContent serializers={{ container: ({ children }) => children }} blocks={terms.text} />
                 </div>
               </div>
             </Container>

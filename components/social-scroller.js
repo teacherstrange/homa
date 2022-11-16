@@ -74,7 +74,7 @@ export default function SocialScroller({ contact }) {
           <ul className="w-full grid gap-6 xl:gap-10 grid-cols-12 mb-12 lg:mb-16 xl:mb-24">
             <li className="block col-span-6 lg:col-span-6">
               <a
-                href={contact.discord}
+                href={contact.discordGameMakers}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block group w-full"
@@ -86,7 +86,7 @@ export default function SocialScroller({ contact }) {
                 <span className="w-full hidden lg:flex items-center pt-3 opacity-0 group-hover:opacity-100 group-focus:opacity-100">
                   <span className="inline-block border border-white text-xs uppercase tracking-widest px-2 py-1 font-medium rounded-sm">Join</span>
 
-                  <span className="inline-block ml-auto text-xs tracking-widest font-medium">/homagang</span>
+                  <span className="inline-block ml-auto text-xs tracking-widest font-medium">/homagames</span>
                 </span>
               </a>
             </li>

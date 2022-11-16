@@ -44,7 +44,8 @@ const query = `{
     linkedIn,
     facebook,
     tikTok,
-    discord
+    discord,
+    discordGameMakers
   }
 }`
 

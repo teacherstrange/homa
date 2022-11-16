@@ -93,7 +93,8 @@ const query = `{
     instagram,
     facebook,
     tikTok,
-    discord
+    discord,
+    discordGameMakers
   }
 }`
 
