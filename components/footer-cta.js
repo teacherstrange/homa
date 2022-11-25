@@ -34,7 +34,7 @@ export default function FooterCta({ image, children }) {
             </div>
 
             <div className="mt-auto">
-              <ScramblePillButton href="https://lab-v2.homagames.com/login" label="Enter The Homa Lab"/>
+              <ScramblePillButton href="https://lab-v2.homagames.com/login" label="Enter Homa Lab"/>
             </div>
           </div> }
       </div>

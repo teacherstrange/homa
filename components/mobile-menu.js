@@ -72,7 +72,7 @@ export default function MobileMenu({ menuClose, setMobileChildMenuOpen, mobileCh
             </li>
 
             <li className="block mb-3">
-              <MobileMenuItem href="/homa-lab" label="Enter The Homa Lab" onClick={menuClose} dark />
+              <MobileMenuItem href="/homa-lab" label="Enter Homa Lab" onClick={menuClose} dark />
             </li>
           </ul>
         </nav>

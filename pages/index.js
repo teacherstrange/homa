@@ -325,7 +325,7 @@ export default function Home(initialData) {
                   <p>{home.makeAGameCtaText}</p>
                 </div>
                 
-                <ScramblePillButton href="/homa-lab" label="Enter The Homa Lab" internal />
+                <ScramblePillButton href="/homa-lab" label="Enter Homa Lab" internal />
               </div>
               
               <div className="order-1 md:order-3 col-span-12 md:col-span-6 lg:col-span-4 relative z-0 h-[300px] md:h-full mb-12 lg:mb-0">
