@@ -68,6 +68,39 @@ export const CarouselBlog = ({items}) => {
               </Link>
             )
           })}
+          {items.map((e, i) => {
+            let d = new Date(e.publishDate);
+            let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d);
+            let mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(d);
+            let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d);
+
+            return (
+              <Link href={`/blog/${e.slug.current}`}>
+                <a className="flex flex-wrap flex-col justify-start items-start embla__slide group" key={i}>
+                  <div className="w-full bg-gray-100 aspect-square border-b border-black/50 relative overflow-hidden group-hover:bg-pink group-focus:bg-pink">
+                    <SanityImage
+                      image={e.heroImage}
+                      layout="fill"
+                      className="block w-full h-full absolute inset-0 aspect-square scale-[1.03] embla__slide-inner-blur"
+                    />
+                  </div>
+                  <div className="embla__slide-inner group-hover:bg-pink group-focus:bg-pink  w-full flex-1">
+                    <div className="embla__slide-inner-blur flex flex-wrap h-full">
+                      <h2 className="font-bold text-lg lg:text-xl xl:text-2xl leading-[1.2] uppercase w-full mb-12 md:mb-20 lg:mb-28 xl:mb-32">{e.title}</h2>
+
+                      <div className="flex w-full items-end mt-auto">
+                        {e.category && (
+                          <span className="inline-block border border-black/50 font-medium text-sm lg:text-base uppercase leading-none p-1 lg:p-3 rounded-sm">{e.category.title}</span>
+                        )}
+
+                        <span className="block uppercase text-sm tracking-widest font-medium ml-auto">{da} {mo} {ye}</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </Link>
+            )
+          })}
         </div>
       </div>
 

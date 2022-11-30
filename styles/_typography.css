@@ -74,6 +74,11 @@ h1, .h1, h2, .h2, h3, .h3 {
   font-size: clamp(50px, 7.5vw, 150px);
 }
 
+.display-text--small {
+  @apply font-black leading-none uppercase;
+  font-size: clamp(40px, 5vw, 90px);
+}
+
 .display-text--large {
   @apply font-black leading-none uppercase;
   font-size: clamp(40px, 8vw, 180px);
@@ -104,5 +109,158 @@ h1, .h1, h2, .h2, h3, .h3 {
 
   @media screen and (min-width: 2300px) {
     @apply text-[11.24vw];
+  }
+}
+
+
+#hubspot-form-wrapper {
+  @apply w-full !important;
+
+  form {
+    @apply w-full !important;
+  }
+
+  .hs-form-field {
+    @apply relative text-left !important;
+
+    label {
+      @apply relative text-left px-3 text-sm block !important;
+    }
+
+    legend {
+      @apply relative text-left px-3 text-sm block !important;
+    }
+
+    label:empty {
+      @apply hidden !important;
+    }
+
+    .hs-input {
+      @apply border-black/30 border border-b bg-transparent w-full p-3 mb-3 block mt-1 focus:border-black focus:outline-none placeholder:text-black/30 appearance-none !important;
+
+      &.invalid {
+        @apply border-[#8E0101] relative border-b !important;
+      }
+    }
+  }
+
+  .hs-fieldtype-select {
+    .input {
+      @apply relative !important;
+
+      &:after {
+        content: '↓';
+        @apply w-12 h-full absolute top-0 right-0 z-10 border-l border-black flex items-center justify-center text-2xl opacity-30;
+      }
+
+      select {
+        @apply appearance-none !important; 
+        -webkit-appearance:none !important;
+      }
+
+      select:focus {
+        &:after {
+          @apply opacity-100;
+        }
+      }
+    }
+  }
+
+  select {
+    @apply relative !important;
+  }
+  
+  .hs-fieldtype-radio {
+    @apply border-black/30 border border-b bg-transparent py-3 mb-3 !important;
+
+    label {
+      @apply block mb-3 !important;
+    }
+
+    .inputs-list {
+      .hs-input {
+        @apply block w-auto mr-3 mb-1 !important;
+      }
+
+      span {
+        @apply mt-[3px] ml-3;
+      }
+
+      input[type='radio'] {
+        @apply opacity-100 relative p-0 border-none !important;
+
+        &:after {
+          content: ' ';
+          @apply opacity-100 w-4 h-4 absolute top-0 left-0 z-10 border border-black bg-white;
+        }
+      }
+
+      input[type='radio']:checked {
+        &:after {
+          content: ' ';
+          @apply bg-black;
+        }
+      }
+
+      label {
+        @apply flex flex-wrap items-start mb-1 !important;
+      }
+    }
+  }
+
+  .hs-fieldtype-checkbox {
+    @apply border-black/30 border border-b bg-transparent py-3 mb-3 !important;
+
+    label {
+      @apply block mb-3 !important;
+    }
+
+    .inputs-list {
+      .hs-input {
+        @apply block w-auto mr-3 mb-1 !important;
+      }
+
+      span {
+        @apply mt-[3px] ml-3;
+      }
+
+      input[type='checkbox'] {
+        @apply opacity-100 relative p-0 border-none !important;
+
+        &:after {
+          content: ' ';
+          @apply opacity-100 w-4 h-4 absolute top-0 left-0 z-10 border border-black bg-white;
+        }
+      }
+
+      input[type='checkbox']:checked {
+        &:after {
+          content: ' ';
+          @apply bg-black;
+        }
+      }
+
+      label {
+        @apply flex flex-wrap items-start mb-1 !important;
+      }
+    }
+  }
+
+  .hs-error-msgs {
+    @apply text-[#8E0101] text-left px-3 py-0 m-0 last-of-type:mb-3 left-0 text-sm leading-snug !important;
+
+    label {
+      @apply relative p-0 block !important;
+    }
+  }
+
+  input[type='submit'] {
+    @apply pill-btn px-3 py-1 mt-6 lg:mt-8 cursor-pointer focus:outline-none !important;
+  }
+
+  .hs_error_rollup {
+    .hs-error-msgs {
+      @apply mt-8 pb-0 text-center !important;
+    }
   }
 }

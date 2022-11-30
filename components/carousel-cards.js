@@ -87,6 +87,51 @@ export const CarouselCards = ({ heading, items }) => {
               </Link>
             )
           })}
+          {items.map((e, i) => {
+            return (
+              <Link href={`/games/${e.slug.current}`}>
+                <a className="embla__slide" key={i}>
+                  <div className="embla__slide-inner flex flex-wrap relative overflow-hidden">
+                    <div className="hidden lg:block absolute top-0 left-0 right-0 z-10 w-full p-6 lg:p-10">
+                      <span className="block uppercase font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl leading-none lg:leading-none xl:leading-none 2xl:leading-none embla__slide-title">
+                        {e.title}
+                      </span>
+                    </div>
+
+                    <div className="w-full embla__slide-inner-blur relative overflow-hidden border border-black lg:border-0">
+                      <div className="absolute inset-0 w-full h-full lg:scale-[1.1] z-0">
+                        <SanityImage image={e.heroImage} layout="fill" className="w-full absolute inset-0 object-cover object-center h-full" />
+                      </div>
+                    </div>
+
+                    <div className="hidden lg:block absolute bottom-0 left-0 z-10 w-full p-6 lg:p-10">
+                      <div className="w-1/2">
+                        <span className="block uppercase font-medium tracking-wider text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-b-0 border-black/50 px-3 py-5">{e.partnerName}</span>
+                      </div>
+                      <div className="w-1/2">
+                        <span className="block uppercase font-medium tracking-wider text-base leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-black/50 px-3 py-5">{e.projectName}</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="block lg:hidden z-10 w-full py-6 lg:p-10">
+                    <span className="block uppercase font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl leading-none lg:leading-none xl:leading-none 2xl:leading-none">
+                      {e.title}
+                    </span>
+                  </div>
+
+                  <div className="block lg:hidden w-full p-0 lg:p-10">
+                    <div className="w-10/12">
+                      <span className="block uppercase font-medium tracking-wider text-sm leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-b-0 border-black/50 px-3 py-5">{e.partnerName}</span>
+                    </div>
+                    <div className="w-10/12">
+                      <span className="block uppercase font-medium tracking-wider text-sm leading-none lg:leading-none xl:leading-none 2xl:leading-non w-11/12 bg-white border border-black/50 px-3 py-5">{e.projectName}</span>
+                    </div>
+                  </div>
+                </a>
+              </Link>
+            )
+          })}
         </div>
 
         <div className="flex lg:hidden lg:justify-end w-full relative z-[100] mt-8 lg:mt-0">

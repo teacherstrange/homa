@@ -102,6 +102,66 @@ export const CarouselGames = ({ heading, items }) => {
               </div>
             )
           })}
+
+{items.map((e, i) => {
+            return (
+              <div className="embla__slide">
+                <div className="embla__slide-inner flex flex-wrap">
+                  <div className="flex flex-wrap w-full mb-auto">
+                    <span className="block uppercase font-medium tracking-widest text-sm leading-none lg:text-base lg:leading-none flex-1">{e.title}</span>
+                    <span className="block uppercase font-medium tracking-widest text-sm leading-none lg:text-base lg:leading-none flex-1 text-right">With {e.partnerName}</span>
+                  </div>
+
+                  <div className="w-full flex justify-center embla__slide-inner-blur my-auto lg:py-0">
+                    <div className="w-[55%] lg:w-[40%] relative">
+
+                    <PhoneIcon className="w-full relative z-0 opacity-[0.85]" />
+
+                    <div className="absolute inset-0 z-1 scale-y-[0.961] scale-x-[0.96] translate-x-[1.2%] border-1 border-black">
+
+                      <svg className="w-full scale-y-[0.97] scale-x-[0.97] translate-y-[-1.5%] translate-x-[-1.5%] absolute inset-0 z-30" viewBox="0 0 355 623" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="1" y="1" width="352.72" height="620.72" rx="48" stroke="#0F0F19" stroke-width="2"/>
+                      </svg>
+
+                      {e.gameplayVideo ? (
+                      <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`object-cover object-center w-full h-full absolute inset-0 phone-mask`}>
+                        <source src={e.gameplayVideo} type="video/mp4" />
+
+                        Sorry. Your browser does not support the video tag.
+                      </video>
+                      ) : (
+                        <Image
+                          src="/images/game-example.webp"
+                          layout="responsive"
+                          width={496}
+                          height={882}
+                          quality={75}
+                          className="w-full"
+                        />
+                      )}
+                      </div>
+                    </div>
+                  </div>
+
+                  {(e.appStoreLink || e.googlePlayStoreLink) && (
+                    <div className="flex flex-wrap w-full mt-auto">
+                      <a href={e.appStoreLink ? e.appStoreLink : e.googlePlayStoreLink} target="_blank" rel="noopener noreferrer" className="uppercase font-medium tracking-widest text-sm leading-none xl:text-base xl:leading-none flex-1 flex items-center">
+                        <SanityImage
+                          image={e.appTileImage}
+                          layout="responsive"
+                          width={500}
+                          height={500}
+                          className="w-10 mr-3"
+                        />
+
+                        <span className="block">Download Game</span>
+                      </a>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )
+          })}
         </div>
       </div>
 
