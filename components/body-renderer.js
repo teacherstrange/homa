@@ -15,6 +15,7 @@ import ModularMarketingMultipleCtaBlock from './modular-marketing-multiple-cta-b
 import ModularMarketingTextIconBlock from './modular-marketing-text-icon-block'
 import ModularMarketingCondensedCtaBlock from './modular-marketing-condensed-cta-block'
 import ModularMarketingHubspotFormBlock from './modular-marketing-hubspot-form-block'
+import ModularMarketingIconBlock from './modular-marketing-icon-block'
 
 const notImplemented = ({ type }) => <h1>Not implemented {type}</h1>
 
@@ -133,6 +134,13 @@ let bodySerializers = {
   },
   modularMarketingHubspotFormBlock: {
     component: ModularMarketingHubspotFormBlock,
+    wrapper: ({ children }) => 
+      <div className="">
+        {children}
+      </div>
+  },
+  modularMarketingIconBlock: {
+    component: ModularMarketingIconBlock,
     wrapper: ({ children }) => 
       <div className="">
         {children}

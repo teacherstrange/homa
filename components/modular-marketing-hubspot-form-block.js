@@ -24,28 +24,28 @@ export default function ModularMarketingHubspotFormBlock({ title, hubspotFormId,
       </div>
 
       <div className="grid grid-cols-12 border-black/50 border-t border-b relative z-10 items-center">
-        <div className="col-span-10 col-start-2 md:col-span-8 md:col-start-3 xl:col-span-6 xl:col-start-4 border-black/50 border-l border-r bg-transparent h-[12vw] w-full max-w-[720px] mx-auto">
+        <div className="col-span-10 col-start-2 md:col-span-8 md:col-start-3 xl:col-span-6 xl:col-start-4 border-black/50 border-l border-r bg-transparent h-[12vw] w-full mx-auto">
         </div>
       </div>
 
       <div className="grid grid-cols-12 border-black/50 relative z-10">
-        <div className="col-span-10 col-start-2 md:col-span-8 md:col-start-3 xl:col-span-6 xl:col-start-4 border-black/50 border-l border-r bg-white bg-gradient-to-b from-pink/20 to-pink p-6 md:p-16 xl:p-16 text-center flex flex-wrap justify-center max-w-[720px] mx-auto">
+        <div className="col-span-10 col-start-2 md:col-span-8 md:col-start-3 xl:col-span-6 xl:col-start-4 border-black/50 border-l border-r bg-white bg-gradient-to-b from-pink/20 to-pink p-6 md:p-16 xl:p-16 text-center flex flex-wrap justify-center">
           <span className="block font-black uppercase text-lg md:text-3xl xl:text-4xl text-center w-full mb-6 lg:mb-12">{ title ? title : 'Guessing Game Over' }</span>
 
           {text && (
             <p className="mb-6 lg:mb-10">{text}</p>
           )}
 
-          <div className="w-full my-auto">
+          <div className="w-full mx-auto">
             <div className="w-11/12 lg:w-8/12 max-w-md text-base mx-auto form--fancy">
-              <div id="hubspot-form-wrapper" />
+              <div id="hubspot-form-wrapper" className="w-full" />
             </div>
           </div>
         </div>
       </div>
 
       <div className="grid grid-cols-12 border-black/50 border-t border-b relative z-10">
-        <div className="col-span-10 col-start-2 md:col-span-8 md:col-start-3 xl:col-span-6 xl:col-start-4 border-black/50 border-l border-r bg-transparent h-[12vw] w-full max-w-[720px] mx-auto">
+        <div className="col-span-10 col-start-2 md:col-span-8 md:col-start-3 xl:col-span-6 xl:col-start-4 border-black/50 border-l border-r bg-transparent h-[12vw] w-full mx-auto">
         </div>
       </div>
     </div>

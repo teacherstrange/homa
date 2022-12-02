@@ -121,7 +121,7 @@ h1, .h1, h2, .h2, h3, .h3 {
   }
 
   .hs-form-field {
-    @apply relative text-left !important;
+    @apply relative text-left w-full !important;
 
     label {
       @apply relative text-left px-3 text-sm block !important;
