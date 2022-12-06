@@ -4,7 +4,7 @@ import { ScrollParallax } from "react-just-parallax";
 import LocalImage from "./local-image";
 import ScramblePillButton from "./scramble-pill-button";
 
-export default function ModularMarketingHubspotFormBlock({ title, hubspotFormId, text }) {
+export default function ModularMarketingHubspotFormBlock({ title, hubspotFormId, text, backgroundLandscape }) {
   const { loaded, error, formCreated } = useHubspotForm({
     portalId: '25941253',
     formId: hubspotFormId,
@@ -14,13 +14,16 @@ export default function ModularMarketingHubspotFormBlock({ title, hubspotFormId,
 
   return (
     <div className="w-full bg-gray-100 relative overflow-hidden">
-      <div className="w-full h-full absolute inset-0 z-0 object-cover object-center lg:scale-[1.075] ">
-        <LocalImage
-          src={'/images/home.jpg'}
-          alt="Character Test"
-          layout="fill"
-          className="w-full h-full absolute inset-0 z-0 object-cover object-top"
-        />
+      <div className="w-full h-full absolute inset-0 z-0 object-cover object-center lg:scale-[1.075] bg-gray-200">
+        { (backgroundLandscape && backgroundLandscape !== 'none') ? (
+          <LocalImage
+            src={`/images/heros/${backgroundLandscape}.jpg`}
+            layout="fill"
+            className="w-full h-full absolute inset-0 z-0 object-cover object-top"
+          />
+        ) : (
+          <></>
+        )}
       </div>
 
       <div className="grid grid-cols-12 border-black/50 border-t border-b relative z-10 items-center">

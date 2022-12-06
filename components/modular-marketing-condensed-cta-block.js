@@ -1,21 +1,22 @@
 import { ScrollParallax } from "react-just-parallax";
+import LocalImage from "./local-image";
 import SanityImage from "./sanity-image";
 import TextScrambler from "./text-scrambler";
 
 
-export default function ModularMarketingCondensedCtaBlock({ heading, subHeading, backgroundImage, ctaButtonText, ctaButtonUrl }) {
+export default function ModularMarketingCondensedCtaBlock({ heading, subHeading, backgroundImage, ctaButtonText, ctaButtonUrl, backgroundLandscape }) {
   return (
-    <div className={`w-full h-full bg-gradient-to-b from-pink to-pink/30  border-b border-black/50 px-6 xl:px-10 mx-auto relative overflow-hidden py-[20vw] lg:py-[12vw]`}>
+    <div className={`w-full h-full bg-gradient-to-b from-pink to-pink/30  border-b border-black/50 px-6 xl:px-10 mx-auto relative overflow-hidden pt-[25vw] pb-[18vw] lg:py-[15vw]`}>
 
-      { backgroundImage && (
+      { backgroundLandscape !== 'none' && (
         <div className="w-full h-full absolute inset-0 z-0 object-cover object-top scale-[1.07]">
-          <SanityImage
-            image={backgroundImage}
+          <LocalImage
+            src={`/images/heros/${backgroundLandscape}.jpg`}
             layout="fill"
             className="w-full h-full absolute inset-0 z-0 object-cover cover-image--bottom hidden lg:block"
           />
-          <SanityImage
-            image={backgroundImage}
+          <LocalImage
+            src={`/images/heros/${backgroundLandscape}.jpg`}
             layout="fill"
             className="w-full h-full absolute inset-0 z-0 object-cover cover-image--bottom block lg:hidden"
           />
@@ -24,9 +25,9 @@ export default function ModularMarketingCondensedCtaBlock({ heading, subHeading,
 
       <div className="max-w-screen-3xl mx-auto relative z-10 pb-8 md:pb-12 text-center">
         { subHeading && (
-          <span className="uppercase text-base md:text-lg lg:text-xl xl:text-2xl tracking-widest mb-5 lg:mb-8 block font-medium">{subHeading}</span>
+          <span className="uppercase text-sm md:text-lg lg:text-xl xl:text-2xl tracking-widest mb-5 lg:mb-8 block font-medium">{subHeading}</span>
         )}
-        <h1 className="font-black text-[clamp(45px,_7vw,120px)] leading-[0.9] tracking-tight mb-16 lg:mb-32 uppercase relative z-10 w-full lg:w-full">{heading}</h1>
+        <h1 className="font-black text-[clamp(50px,_7vw,120px)] leading-[0.9] tracking-tight mb-12 lg:mb-20 uppercase relative z-10 w-full lg:w-full max-w-screen-2xl mx-auto">{heading}</h1>
         
         { ctaButtonText && ctaButtonUrl && (
           <a href={ctaButtonUrl} target="_blank" rel="noopener noreferrer" className="roll-btn block lg:inline-block">

@@ -2,21 +2,23 @@ import { ScrollParallax } from "react-just-parallax"
 import SanityImage from "./sanity-image"
 import SanityBlockContent from '@sanity/block-content-to-react'
 
-export default function ModularMarketingTextImageSplitBlock({ heading, text, backgroundImage, flipImage }) {
+export default function ModularMarketingTextImageSplitBlock({ heading, text, backgroundImage, flipImage, removeTopPadding, removeBottomPadding }) {
   return (
     <div className="bg-white relative overflow-hidden">
-      <div className="w-full border-b border-black/50 hidden lg:block">
-        <div className="grid grid-cols-12">
-          <div className="col-span-12 lg:col-span-10 lg:col-start-2 lg:border-l lg:border-r border-black/50 h-[8vw]">
-            <div className="grid grid-cols-10">
-              <div className="col-span-9 lg:col-span-5">
-              </div>
-              <div className="col-span-10 lg:col-span-5 lg:col-start-6 lg:border-l lg:border-black/50 h-[8vw]">
+      {!removeTopPadding && (
+        <div className="w-full border-b border-black/50 hidden lg:block">
+          <div className="grid grid-cols-12">
+            <div className="col-span-12 lg:col-span-10 lg:col-start-2 lg:border-l lg:border-r border-black/50 h-[8vw]">
+              <div className="grid grid-cols-10">
+                <div className="col-span-9 lg:col-span-5">
+                </div>
+                <div className="col-span-10 lg:col-span-5 lg:col-start-6 lg:border-l lg:border-black/50 h-[8vw]">
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
       <div className="w-full border-b border-black/50">
         <div className="grid grid-cols-12">
           <div className="col-span-12 lg:col-span-10 lg:col-start-2 lg:border-l lg:border-r border-black/50">
@@ -48,18 +50,20 @@ export default function ModularMarketingTextImageSplitBlock({ heading, text, bac
           </div>
         </div>
       </div>
-      <div className="w-full border-b border-black/50 hidden lg:block">
-        <div className="grid grid-cols-12">
-          <div className="col-span-12 lg:col-span-10 lg:col-start-2 lg:border-l lg:border-r border-black/50 h-[8vw]">
-            <div className="grid grid-cols-10">
-              <div className="col-span-9 lg:col-span-5">
-              </div>
-              <div className="col-span-10 lg:col-span-5 lg:col-start-6 lg:border-l lg:border-black/50 h-[8vw]">
+      {!removeBottomPadding && (
+        <div className="w-full border-b border-black/50 hidden lg:block">
+          <div className="grid grid-cols-12">
+            <div className="col-span-12 lg:col-span-10 lg:col-start-2 lg:border-l lg:border-r border-black/50 h-[8vw]">
+              <div className="grid grid-cols-10">
+                <div className="col-span-9 lg:col-span-5">
+                </div>
+                <div className="col-span-10 lg:col-span-5 lg:col-start-6 lg:border-l lg:border-black/50 h-[8vw]">
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   )
 }

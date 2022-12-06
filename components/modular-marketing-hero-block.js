@@ -6,7 +6,7 @@ import SanityImage from "./sanity-image";
 import TextScrambler from "./text-scrambler";
 
 
-export default function ModularMarketingHeroBlock({ heading, text, backgroundImage, ctaButtonText, ctaButtonUrl, characterIcon }) {
+export default function ModularMarketingHeroBlock({ heading, text, backgroundImage, ctaButtonText, ctaButtonUrl, characterIcon, backgroundLandscape }) {
   let character = null
   let characterW = null
   let characterH = null
@@ -67,16 +67,16 @@ export default function ModularMarketingHeroBlock({ heading, text, backgroundIma
         </ScrollParallax>
       )}
 
-      { backgroundImage && (
+      { backgroundLandscape !== 'none' && (
         <div className="w-full h-full absolute inset-0 z-0 object-cover object-top scale-[1.07]">
           <ScrollParallax enableOnTouchDevice={false} isAbsolutelyPositioned lerpEase={1} strength={-0.035}>
-            <SanityImage
-              image={backgroundImage}
+            <LocalImage
+              src={`/images/heros/${backgroundLandscape}.jpg`}
               layout="fill"
               className="w-full h-full absolute inset-0 z-0 object-cover cover-image--bottom hidden lg:block"
             />
-            <SanityImage
-              image={backgroundImage}
+            <LocalImage
+              src={`/images/heros/${backgroundLandscape}.jpg`}
               layout="fill"
               className="w-full h-full absolute inset-0 z-0 object-cover cover-image--bottom block lg:hidden"
             />
