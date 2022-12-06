@@ -136,7 +136,7 @@ h1, .h1, h2, .h2, h3, .h3 {
     }
 
     .hs-input {
-      @apply border-black/30 border border-b bg-transparent w-full p-3 mb-3 block mt-1 focus:border-black focus:outline-none placeholder:text-black/30 appearance-none !important;
+      @apply border-black/30 border border-b bg-transparent w-full p-3 mb-3 block mt-1 focus:border-black focus:outline-none placeholder:text-black/30 placeholder:uppercase appearance-none !important;
 
       &.invalid {
         @apply border-[#8E0101] relative border-b !important;
