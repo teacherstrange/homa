@@ -2,9 +2,9 @@ import { ScrollParallax } from "react-just-parallax";
 import LocalImage from "./local-image";
 import SanityImage from "./sanity-image";
 
-export default function ModularMarketingLongIconListBlock({ title, listItems, character, removeBottomBorder, removeTopBorder }) {
+export default function ModularMarketingLongIconListBlock({ title, listItems, character, removeBottomBorder, removeTopBorder, internalId }) {
   return (
-    <div className={`bg-gradient-to-b from-pink/20 to-pink relative overflow-hidden ${!removeTopBorder && 'border-t border-black'} ${!removeBottomBorder && 'border-b border-black'}`}>
+    <div className={`bg-gradient-to-b from-pink/20 to-pink relative overflow-hidden ${!removeTopBorder && 'border-t border-black'} ${!removeBottomBorder && 'border-b border-black'}`} id={internalId ? internalId : 'section' }>
       {character && (
         <ScrollParallax enableOnTouchDevice={false} isAbsolutelyPositioned lerpEase={0.15} strength={0.025} zIndex={0}>
           <div className="absolute bottom-[-12vw] lg:bottom-[-3vw] right-[10%] md:right-[3%] z-0 w-[65%] lg:w-[20%] max-w-[290px] lg:max-w-[350px] xl:max-w-[380px]">

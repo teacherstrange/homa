@@ -2,9 +2,9 @@ import { ScrollParallax } from "react-just-parallax"
 import SanityImage from "./sanity-image"
 import SanityBlockContent from '@sanity/block-content-to-react'
 
-export default function ModularMarketingTextOverImageBlock({ heading, text, backgroundImage }) {
+export default function ModularMarketingTextOverImageBlock({ heading, text, backgroundImage, internalId }) {
   return (
-    <div className="bg-orange/40 relative overflow-hidden pt-12 lg:pt-0 pb-[90vw] lg:pb-0 border-b border-t border-black/50">
+    <div className="bg-orange/40 relative overflow-hidden pt-12 lg:pt-0 pb-[90vw] lg:pb-0 border-b border-t border-black/50" id={internalId ? internalId : 'section' }>
       
       <div className="scale-[1.11] absolute inset-0 w-full h-full">
         <SanityImage

@@ -6,9 +6,9 @@ import VolumeIcon from '@/icons/volume.svg'
 import WorldIcon from '@/icons/world.svg'
 import SanityImage from './sanity-image'
 
-export default function ModularMarketingIconBlock({ title, listItems, removeTopBorder, removeBottomBorder }) {
+export default function ModularMarketingIconBlock({ title, listItems, removeTopBorder, removeBottomBorder, internalId }) {
   return (
-    <div className={`bg-lime text-black border-black/50 ${!removeTopBorder && 'border-t'} ${!removeBottomBorder && 'border-b'}`}>
+    <div className={`bg-lime text-black border-black/50 ${!removeTopBorder && 'border-t'} ${!removeBottomBorder && 'border-b'}`} id={internalId ? internalId : 'section' }>
       <div className="grid grid-cols-12 py-20 lg:py-[10vw] px-6 xl:px-10 max-w-screen-3xl mx-auto">
         
         <div className="col-span-12 z-10">

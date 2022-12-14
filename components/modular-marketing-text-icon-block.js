@@ -3,7 +3,7 @@ import { MouseParallax, ScrollParallax } from 'react-just-parallax'
 import LocalImage from './local-image'
 import ScramblePillButton from './scramble-pill-button'
 
-export default function ModularMarketingTextIconBlock({ heading, text, subHeading, ctaButtonText, ctaButtonUrl, animatedIcon, characterIcon }) {
+export default function ModularMarketingTextIconBlock({ heading, text, subHeading, ctaButtonText, ctaButtonUrl, animatedIcon, characterIcon, internalId }) {
 
   let webmVideo = null
   if (animatedIcon == 'flagpole') {
@@ -51,7 +51,7 @@ export default function ModularMarketingTextIconBlock({ heading, text, subHeadin
   }
 
   return (
-    <div className={`bg-white text-black border-t border-black/50 z-0 pt-10 pb-20 lg:pt-0 lg:pb-0`}>
+    <div className={`bg-white text-black border-t border-black/50 z-0 pt-10 pb-20 lg:pt-0 lg:pb-0`} id={internalId ? internalId : 'section' }>
       <div className="grid grid-cols-12 px-6 xl:px-10 max-w-screen-3xl mx-auto items-center py-[15vw] lg:py-[10vw]">
         
         <div className="col-span-12 order-2 lg:order-1 lg:col-span-6 z-10">

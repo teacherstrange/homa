@@ -6,7 +6,7 @@ import SanityImage from "./sanity-image";
 import TextScrambler from "./text-scrambler";
 
 
-export default function ModularMarketingHeroBlock({ heading, text, backgroundImage, ctaButtonText, ctaButtonUrl, characterIcon, backgroundLandscape }) {
+export default function ModularMarketingHeroBlock({ heading, text, backgroundImage, ctaButtonText, ctaButtonUrl, ctaButtonId, characterIcon, backgroundLandscape }) {
   let character = null
   let characterW = null
   let characterH = null
@@ -98,11 +98,17 @@ export default function ModularMarketingHeroBlock({ heading, text, backgroundIma
           </div>
         )}
         
-        { ctaButtonText && ctaButtonUrl && (
-          <a href={ctaButtonUrl} target="_blank" rel="noopener noreferrer" className="roll-btn block lg:inline-block">
-            <span className="roll-btn__front">{ctaButtonText}</span>
-            <span className="roll-btn__back">{ctaButtonText}</span>
-          </a>
+        { ctaButtonText && (ctaButtonUrl || ctaButtonId ) && (
+          <>
+            <a 
+              href={ctaButtonUrl ? ctaButtonUrl : `#${ctaButtonId}` }
+              {...(ctaButtonUrl ? {target: 'blank', rel: 'noreferrer noopener'} : {})}
+              className="roll-btn block lg:inline-block"
+            >
+              <span className="roll-btn__front">{ctaButtonText}</span>
+              <span className="roll-btn__back">{ctaButtonText}</span>
+            </a>
+          </>
         )}
       </div>
     </div>

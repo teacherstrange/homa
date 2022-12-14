@@ -3,12 +3,12 @@ import ClockIcon from '@/icons/clock.svg'
 import GraphIcon from '@/icons/graph.svg'
 import useSWR from 'swr'
 
-export default function ModularMarketingCareersBlock() {
+export default function ModularMarketingCareersBlock({ internalId }) {
   const fetcher = (url) => fetch(url).then((res) => res.json());
   const { data, error } = useSWR('https://apply.workable.com/api/v1/widget/accounts/homa-games?details=true', fetcher)
 
   return (
-    <div className="w-full bg-pink/20 border-b border-black/50 mx-auto relative overflow-hidden">
+    <div className="w-full bg-pink/20 border-b border-black/50 mx-auto relative overflow-hidden" id={internalId ? internalId : 'section' }>
       <div className="grid grid-cols-12 max-w-screen-3xl mx-auto">
         <div className="col-span-12 md:col-span-10 md:col-start-2 md:border-l md:border-r border-black/50 py-[10vw] px-6 md:px-16 xl:px-24 relative">
           <video loop={true} autoPlay="autoplay" playsInline={true} muted className={`w-full lg:w-[65%] lg:absolute lg:top-0 lg:right-0 block lg:translate-y-[-15.5%]`}>

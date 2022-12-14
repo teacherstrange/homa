@@ -1,8 +1,8 @@
 import ScramblePillButton from "./scramble-pill-button"
 
-export default function ModularMarketingStatListBlock({ title, listItems, removeTopBorder, removeBottomBorder }) {
+export default function ModularMarketingStatListBlock({ title, listItems, removeTopBorder, removeBottomBorder, internalId }) {
   return (
-    <div className={`bg-orange text-black ${!removeTopBorder && 'border-t border-black'} ${!removeBottomBorder && 'border-b border-black'}`}>
+    <div className={`bg-orange text-black ${!removeTopBorder && 'border-t border-black'} ${!removeBottomBorder && 'border-b border-black'}`} id={internalId ? internalId : 'section' }>
       <div className="grid grid-cols-12 py-20 lg:py-[10vw] lg:px-6 xl:px-24 max-w-screen-3xl mx-auto">
         
         <div className="col-span-12 z-10">

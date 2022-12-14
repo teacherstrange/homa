@@ -2,9 +2,9 @@ import { ScrollParallax } from "react-just-parallax"
 import SanityImage from "./sanity-image"
 import SanityBlockContent from '@sanity/block-content-to-react'
 
-export default function ModularMarketingTextImageSplitBlock({ heading, text, backgroundImage, flipImage, removeTopPadding, removeBottomPadding }) {
+export default function ModularMarketingTextImageSplitBlock({ heading, text, backgroundImage, flipImage, removeTopPadding, removeBottomPadding, internalId }) {
   return (
-    <div className="bg-white relative overflow-hidden">
+    <div className="bg-white relative overflow-hidden" id={internalId ? internalId : 'section' }>
       {!removeTopPadding && (
         <div className="w-full border-b border-black/50 hidden lg:block">
           <div className="grid grid-cols-12">

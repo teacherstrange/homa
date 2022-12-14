@@ -1,8 +1,8 @@
 import ScramblePillButton from "./scramble-pill-button"
 
-export default function ModularMarketingMultipleCtaBlock({ title, listItems }) {
+export default function ModularMarketingMultipleCtaBlock({ title, listItems, internalId }) {
   return (
-    <div className="bg-white text-black mt-0 lg:mt-0">
+    <div className="bg-white text-black mt-0 lg:mt-0" id={internalId ? internalId : 'section' }>
       <div className="grid grid-cols-12 py-16 lg:py-[10vw] lg:px-6 xl:px-24 max-w-screen-3xl mx-auto">
         
         <div className="col-span-12 z-10">
