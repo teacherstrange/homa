@@ -402,3 +402,7 @@ canvas {
 .nav-open {
   @apply bg-opacity-20 !important;
 }
+
+iframe {
+  @apply w-full h-auto aspect-video !important;
+}
