@@ -43,9 +43,9 @@ export default function ModularMarketingHeroBlock({ heading, text, backgroundIma
     characterH = (2785 / 2)
     classList = 'bottom-[-3%] w-[60%] lg:w-[35%] xl:w-[28%] max-w-[300px] md:max-w-[320px] lg:max-w-[420px] xl:max-w-[520px] right-[25%] md:right-[35%] lg:right-[12%]'
   } else if (characterIcon == 'none') {
-    character = null
-    characterW = null
-    characterH = null
+    character = '/images/panda-new.webp'
+    characterW = (2162 / 2)
+    characterH = (2162 / 2)
   }
 
   return (

@@ -28,7 +28,7 @@ export default function SanityImage({ image, layout, widthOverride, heightOverri
   if (layout) { attributes.layout = layout } else { attributes.layout = 'responsive' }
   if (priority) { attributes.priority = true } else { attributes.priority = false }
 
-	return image.overrideVideo ? (
+	return (image.overrideVideo ? (
     <div className={`image ${className} w-full h-full overflow-hidden relative ${layout == 'fill' && 'cover-image' }`}>
       {(image.caption && !noCaption) && (
         <span className={`text-base md:text-lg xl:text-xl leading-tight xl:leading-tight md:leading-tight ${layout == 'fill' && 'mt-2 -mb-1 py-2 bg-white absolute bottom-0 left-0 w-full z-[10]'}`}>{image.caption}{image.captionSubHeading && (<span className="block text-gray">{image.captionSubHeading}</span>)}</span>
@@ -47,5 +47,5 @@ export default function SanityImage({ image, layout, widthOverride, heightOverri
         <figcaption className={`text-base md:text-lg xl:text-xl leading-tight xl:leading-tight md:leading-tight ${layout == 'fill' && 'mt-2 -mb-1 py-2 bg-white absolute bottom-0 left-0 w-full z-[10]'}`}>{image.caption}{image.captionSubHeading && (<span className="block text-gray">{image.captionSubHeading}</span>)}</figcaption>
       )}
     </figure>
-  )
+  ))
 }

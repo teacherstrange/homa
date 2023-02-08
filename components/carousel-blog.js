@@ -42,7 +42,7 @@ export const CarouselBlog = ({items}) => {
             let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d);
 
             return (
-              <Link href={`/blog/${e.slug.current}`}>
+              <Link href={`/blog/${e.slug ? e.slug.current : null}`}>
                 <a className="flex flex-wrap flex-col justify-start items-start embla__slide group" key={i}>
                   <div className="w-full bg-gray-100 aspect-square border-b border-black/50 relative overflow-hidden group-hover:bg-pink group-focus:bg-pink">
                     <SanityImage
@@ -75,14 +75,16 @@ export const CarouselBlog = ({items}) => {
             let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d);
 
             return (
-              <Link href={`/blog/${e.slug.current}`}>
+              <Link href={`/blog/${e.slug ? e.slug.current : null}`}>
                 <a className="flex flex-wrap flex-col justify-start items-start embla__slide group" key={i}>
                   <div className="w-full bg-gray-100 aspect-square border-b border-black/50 relative overflow-hidden group-hover:bg-pink group-focus:bg-pink">
-                    <SanityImage
-                      image={e.heroImage}
-                      layout="fill"
-                      className="block w-full h-full absolute inset-0 aspect-square scale-[1.03] embla__slide-inner-blur"
-                    />
+                    {e.heroImage && (
+                      <SanityImage
+                        image={e.heroImage}
+                        layout="fill"
+                        className="block w-full h-full absolute inset-0 aspect-square scale-[1.03] embla__slide-inner-blur"
+                      />
+                    )}
                   </div>
                   <div className="embla__slide-inner group-hover:bg-pink group-focus:bg-pink  w-full flex-1">
                     <div className="embla__slide-inner-blur flex flex-wrap h-full">
