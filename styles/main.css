@@ -327,7 +327,7 @@ canvas {
 }
 
 .roll-btn__back {
-  @apply flex items-center justify-center text-black h-full w-full text-center uppercase px-12 py-6 tracking-wide absolute left-0 top-[100%] z-[-1] bg-pink border border-black/50;
+  @apply flex items-center justify-center text-black h-full w-full text-center uppercase px-12 py-6 tracking-wide absolute left-0 right-0 top-[100%] z-[-1] bg-pink border border-black/50;
   -webkit-transform-origin: 50% 0 0;
   transform-origin: 50% 0 0;
   -webkit-transform: rotateX(-90deg);
