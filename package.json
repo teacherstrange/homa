@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "@a7sc11u/scramble": "0.0.6",
+    "@portabletext/react": "^2.0.2",
     "@sanity/block-content-to-react": "^3.0.0",
     "@svgr/webpack": "^6.3.1",
     "@twistezo/react-text-scramble": "^1.0.6",

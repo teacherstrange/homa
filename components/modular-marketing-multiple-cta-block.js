@@ -19,13 +19,17 @@ export default function ModularMarketingMultipleCtaBlock({ title, listItems, int
                     <h3 className="font-black tracking-tight text-xl lg:text-2xl xl:text-2xl leading-[0.95] uppercase">{e.heading}</h3>
                   </div>
 
-                  <div className="content content--small w-full lg:w-11/12 pb-2 lg:pb-0 leading-[1.2] mt-auto">
-                    <p>{e.text}</p>
+                  { (e.ctaButtonText && e.ctaButtonUrl || e.text) && (
+                    <div className="content content--small w-full lg:w-11/12 pb-2 lg:pb-0 leading-[1.2] mt-auto">
+                      { e.text && (
+                        <p>{e.text}</p>
+                      )}
 
-                    { e.ctaButtonText && e.ctaButtonUrl && (
-                      <ScramblePillButton href={e.ctaButtonUrl} label={e.ctaButtonText} className="p-1 lg:p-1 lg:px-3 mt-3 lg:mt-5" />
-                    )}
-                  </div>
+                      { e.ctaButtonText && e.ctaButtonUrl && (
+                        <ScramblePillButton href={e.ctaButtonUrl} label={e.ctaButtonText} className="p-1 lg:p-1 lg:px-3 mt-3 lg:mt-5" />
+                      )}
+                    </div>
+                  )}
                 </div>
               )
             })}

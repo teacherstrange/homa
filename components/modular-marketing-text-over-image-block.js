@@ -19,13 +19,19 @@ export default function ModularMarketingTextOverImageBlock({ heading, text, back
       <div className="grid grid-cols-12 py-12 lg:pt-[15vw] lg:pb-[20.5vw] px-6 xl:px-10 max-w-screen-3xl mx-auto">
         <div className="col-span-12 lg:col-span-1 relative z-10">
         </div>
-        
-        <div className="col-span-12 lg:col-span-6 z-10">
-          <h2 className="font-black text-[clamp(44px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase">{heading}</h2>
-          <div className="content max-w-3xl mb-8 xl:mb-12 w-full lg:w-10/12 leading-[1.24]">
-            <SanityBlockContent serializers={{ container: ({ children }) => children }} blocks={text} />
+
+        { (heading || text) && (
+          <div className="col-span-12 lg:col-span-6 z-10">
+            { heading && (
+              <h2 className="font-black text-[clamp(44px,_4.45vw,_86px)] leading-[0.95] mb-8 lg:mb-16 uppercase">{heading}</h2>
+            )}
+            { text && (
+              <div className="content max-w-3xl mb-8 xl:mb-12 w-full lg:w-10/12 leading-[1.24]">
+                <SanityBlockContent serializers={{ container: ({ children }) => children }} blocks={text} />
+              </div>
+            )}
           </div>
-        </div>
+        )}
       </div>
     </div>
   )

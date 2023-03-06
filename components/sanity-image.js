@@ -25,6 +25,7 @@ export default function SanityImage({ image, layout, widthOverride, heightOverri
   }
 
   if (image.alt) { attributes.alt = image.alt } else { attributes.alt = 'MISSING ALT TEXT' }
+  if (image.alt) { attributes.title = image.alt }
   if (layout) { attributes.layout = layout } else { attributes.layout = 'responsive' }
   if (priority) { attributes.priority = true } else { attributes.priority = false }
 

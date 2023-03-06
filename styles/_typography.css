@@ -2,11 +2,12 @@
 .content {
   & > p,
   & > ul,
+  & > ol,
   & > blockquote {
     @apply mb-5 lg:mb-10 last-of-type:mb-0 md:text-xl 2xl:text-2xl leading-[1.25] md:leading-[1.35] 2xl:leading-[1.35];
 
     em {
-      @apply normal-case not-italic !important;
+      @apply normal-case font-medium not-italic !important;
     }
 
     strong {
@@ -22,6 +23,42 @@
         content: '>';
         position: relative;
         margin-right: 10px;
+      }
+
+      a {
+        @apply underline;
+      }
+
+      em {
+        @apply normal-case font-medium not-italic !important;
+      }
+  
+      strong {
+        @apply font-medium !important;
+      }
+    }
+  }
+
+  & > ol {
+    @apply mb-5 lg:mb-10 last-of-type:mb-5 lg:last-of-type:mb-10 list-decimal;
+
+    li {
+      &:before {
+        content: '>';
+        position: relative;
+        margin-right: 10px;
+      }
+
+      a {
+        @apply underline;
+      }
+
+      em {
+        @apply normal-case font-medium not-italic !important;
+      }
+  
+      strong {
+        @apply font-medium !important;
       }
     }
   }
